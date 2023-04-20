@@ -94,12 +94,21 @@ ul {
   .triangle {
     width: 0;
     height: 0;
-    border-top: 25px solid transparent;
-    border-left: 50px solid #555;
-    border-bottom: 25px solid transparent;
+    border-top: 15px solid transparent;
+    border-left: 30px solid #555;
+    border-bottom: 15px solid transparent;
+    margin-right: 10px;
   }
-  .square {
-    height: 50px;
-    width: 10px;
-    background-color: #555;
+  .play1, .play2 {
+    height: 30px;
+    width: 5px;
+    background-color:#555;
+    margin-left: 3px;
+    display: inline-block;
+  }
+  .containerAudio{
+    border: #555;
+    width: 60px;
+    display: inline;
+    margin-left: 10px;
   }
