@@ -88,6 +88,7 @@ ul {
 
   h2{
     font-size: 30px;
+    margin-bottom: 30px;
   }
 
   a{
@@ -153,6 +154,7 @@ ul {
   .photoTextCo{
     display: inline-block;
     margin-top: 10px;
+    margin-left: 20PX;
     text-align: center;
   }
 
@@ -161,4 +163,15 @@ ul {
     display:block;
     margin-top: 10px;
     margin-bottom: 10px 
+  }
+
+  .pName{
+    font-weight: 900;
+    font-size: 18px;
+  }
+
+  .pDesc{
+    color:#929090;
+    font-weight: 700;
+    font-size: 16px;
   }
