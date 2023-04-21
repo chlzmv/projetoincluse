@@ -101,17 +101,26 @@ ul {
     width: 0;
     height: 0;
     border-top: 11px solid transparent;
-    border-left: 21px solid rgb(47, 42, 42);
+    border-left: 21px solid  rgb(47, 42, 42) ;
     border-bottom: 11px solid transparent;
-    margin-right: auto;
-    margin-left: 6px;
+    margin:auto;
     align-items: center;
     display:inline-block;
     cursor: pointer;
+  }
 
+  .borderTriangle{
+    border-radius: 100%;
+    border: solid  rgb(47, 42, 42) ;
+    display: inline-block;
+    padding-top:5px;
+    padding-left: 9px;
+    padding-bottom: 0px;
+    padding-right: 4px;
+    
 
   }
-  .play1, .play2 {
+  /* .play1, .play2 {
     height: 22px;
     width: 5px;
     background-color:rgb(47, 42, 42);
@@ -119,13 +128,14 @@ ul {
     display: inline-block;
     cursor: pointer;
     
-   }
+   } */
 
    .center {
-    margin-top: 20px; 
-    margin-left: 33%;
-    width: 35%;
+    margin-top: 9px; 
+    margin-left: 34%;
+    width: 45%;
     padding: 2px;
+    /* border: solid coral; */
   }
 
   hr{
