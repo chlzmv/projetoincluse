@@ -1,8 +1,33 @@
 .body{
-    background-color: #d4650b;
+    background-color: #f2f0ed;
     font-family:sans-serif;
 }
 
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color:  #d4650b;
+  }
+  
+  li {
+    float: left;
+  }
+  
+  li a {
+    display: block;
+    color: white;
+    text-align: right;
+    padding: 19px ;
+    text-decoration: none;
+    font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+  }
+  .aplicafontelogo{
+    font-family: 'Shrikhand', cursive;
+    font-size: 25px;
+    margin-top: 7px;
+  }
 .h1{
     color: #d4650b;
     text-align: center;
