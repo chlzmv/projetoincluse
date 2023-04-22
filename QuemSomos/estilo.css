@@ -1,24 +1,35 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Shrikhand&display=swap');
 
-body{
+  body{
     margin: 0px;
+  
 }
-ul {
+
+/* BARRA DE MENU */
+
+/* ul do conteudo da barra */
+  ul {
     list-style-type: none;
     margin: 0;
     padding: 0;
     overflow: hidden;
-    background-color:  #d4650b;
+    background-color:   white;
+    
   }
-  
+
+
+  .divMenu{
+    box-shadow: 0px 3px 4px 0px #d6d5d5;
+  }
+
   li {
     float: left;
   }
   
   li a {
     display: block;
-    color: white;
+    color:  #e0853b;
     text-align: right;
     padding: 19px ;
     text-decoration: none;
@@ -35,28 +46,39 @@ ul {
   } */
 
   .liLogin{
-    margin-top:10px;
+    margin-top:13px;
     text-align: right ;
     float: right;
     font-size: 22px;
+    cursor: pointer;
+    font-weight: 550;
+    
   }
 
   .configimagem{
     width: 4em;
     height: 4em;
-    background-color: white;
-    margin: 10px 10px 10px 0px;
     cursor: pointer;
-    
-
   }
 
+  .backgroundImagem{
+    background-color: white;
+    border-radius: 100%;
+    padding: 3px 5px 7px 5px; 
+    width: 4em;
+    height: 4em;
+    margin: 10px 10px 10px 0px;
+    
+  }
+  /* caract da font logo */
   .aplicafontelogo{
     font-family: 'Shrikhand', cursive;
     font-size: 25px;
     margin-top: 7px;
+    
   }
 
+  /* div do menu hamburg */
   .containerIconMenu {
     display: inline-block;
     cursor: pointer;
@@ -66,17 +88,114 @@ ul {
     position: static ;
   }
 
+  /* config barras do menu hamburg */
   .iconMenu1, .iconMenu2, .iconMenu3 {
     height: 6px;
     width: 35px;
-    background-color: white;
+    background-color: #e0853b;
     margin: 6px 0;
   }
+
+  /* ///////////////// */
+  
+  /* DISPLAY DE AUDIO */
+
+  /* barra de progres */
+  .timeline {
+    width: 100%;
+    background:#fafafa;
+    display: block;
+    border-radius: 20px;
+    width: 95%;
+    padding: 2px 2px 2px 4px;
+    margin: 10% 5% 5% 1%
+  }
+
+  /* bolinha de progres */
+  .objProgress {
+    width: 10px;
+    height: 10px;
+    background: #e0853b;
+    border-radius: 100%;
+  }
+
+  /* config triang intrno play */
+  .triangle {
+    width: 0;
+    height: 0;
+    border-top: 10px solid transparent;
+    border-left: 20px solid #fafafa;
+    border-bottom: 10px solid transparent;
+    margin:auto;
+    align-items: center;
+    display:inline-block;
+    cursor: pointer;
+  }
+
+  /* config borda play */
+  .borderTriangle{
+    border-radius: 100%;
+    border: solid  #fafafa ;
+    display: inline-block;
+    padding-top: 8px;
+    padding-left: 12px;
+    padding-bottom: 2px;
+    padding-right: 6px;
+    margin-top: 5px;
+  
+  }
+
+  /* barras de pause */
+  /* .play1, .play2 {
+    height: 22px;
+    width: 5px;
+    background-color:rgb(47, 42, 42);
+    margin-left:1px;
+    display: inline-block;
+    cursor: pointer;
+    
+   } */
+
+   /* div para centralzr pause play */
+   .center {
+    margin-top: 9px; 
+    margin-left: 35%;
+    width: 45%;
+    padding: 2px;
+    /* border: solid coral; */
+  }
+
+  /* linha para progress inativa */
+  hr{
+    border-bottom: rgb(47, 42, 42) solid 3px;
+    margin-top:30px;
+    margin-bottom:0px;
+  }
+
+  /* config do display total */
+  .containerPlayer{
+    display:inline-block;
+    position:fixed;
+    margin: 4px auto auto 65px;
+    width: 180px;
+    height: 100px;
+    /* border:#7a7a7a  solid 4px; */
+    border-radius: 10px;
+    background-color:#e0853b ;
+    padding:2px 5px 1px 5px;
+    align-items:center;
+  }
+  
+  /* /////////////////////// */
+
+  /* CONTEUDO DA PAGINA */
+
   .divText{
     display: block;
     font-family: Arial, Helvetica, sans-serif;
     color: rgb(47, 42, 42);
-    margin: 10px 25px 10px 230px;
+    margin: 10px 400px 10px 350px;
+    text-align: left;
     
   }
   h1{
@@ -90,84 +209,19 @@ ul {
     font-size: 30px;
     margin-bottom: 30px;
   }
-
   a{
     font-size: 18px;
     display:block;
-    text-align:justify;
+    text-align:left;
   }
-  
-  .triangle {
-    width: 0;
-    height: 0;
-    border-top: 11px solid transparent;
-    border-left: 21px solid  rgb(47, 42, 42) ;
-    border-bottom: 11px solid transparent;
-    margin:auto;
-    align-items: center;
-    display:inline-block;
-    cursor: pointer;
-  }
-
-  .borderTriangle{
-    border-radius: 100%;
-    border: solid  rgb(47, 42, 42) ;
-    display: inline-block;
-    padding-top:5px;
-    padding-left: 9px;
-    padding-bottom: 0px;
-    padding-right: 4px;
-    
-
-  }
-  /* .play1, .play2 {
-    height: 22px;
-    width: 5px;
-    background-color:rgb(47, 42, 42);
-    margin-left:1px;
-    display: inline-block;
-    cursor: pointer;
-    
-   } */
-
-   .center {
-    margin-top: 9px; 
-    margin-left: 34%;
-    width: 45%;
-    padding: 2px;
-    /* border: solid coral; */
-  }
-
-  hr{
-    border-bottom: rgb(47, 42, 42) solid 2px;
-    margin-top:30px;
-    margin-bottom:0px;
-  }
-  .containerPlayer{
-    display:inline-block;
-    position:fixed;
-    margin: 4px auto auto 25px;
-    width: 150px;
-    height: 80px;
-    border:rgb(47, 42, 42) solid 3px;
-    padding:2px 5px 5px 5px;
-    align-items:center;
-  }
- 
-  /* .divConteudo{
-    
-    font-family: arial;
-  } */
-
-  
-
   .photoTextCo{
     display: inline-block;
     margin-top: 10px;
     margin-left: 20PX;
     text-align: center;
   }
-
+  
+  /* para conteud do equip */
   p{
     font-size: 18px;
     display:block;
@@ -175,11 +229,13 @@ ul {
     margin-bottom: 10px 
   }
 
+  /* para nome equip */
   .pName{
     font-weight: 900;
     font-size: 18px;
   }
 
+  /* para desc equip */
   .pDesc{
     color:#929090;
     font-weight: 700;
