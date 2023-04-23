@@ -2,7 +2,7 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Nunito&family=Nunito+Sans:wght@300;700;800&display=swap');
 
-body{
+    body{
     background:#fafafa;
   }
 
@@ -50,19 +50,6 @@ body{
   .close:after {
     transform: rotate(-45deg);
   }
-
-  /* .container{
-      background-color: white;
-      border-radius: 10px;
-      margin: 150px auto 20px auto;
-      width: 400px;
-      height: 430px; 
-      border: none;
-      box-shadow: 0px 3px 4px rgb(165, 163, 163);
-      font-family: arial;
-      padding:100px auto 20px auto;
-      display:block;
-  } */
 
  .container{
     background-color: white;
