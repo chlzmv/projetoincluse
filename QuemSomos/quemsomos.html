@@ -29,18 +29,27 @@
             <ul>
                 <li><a class="liLogin" href="login.html">Entrar</a></li>
                 <li href="#">
-                    <div class="backgroundImagem"><img src="iconUser.png" class="configimagem"></div>
+                    <div class="backgroundImagem"><img src="iconUser.png" class="configimagem" onclick = "clickProf()"></div>
                 <li>
             </ul>
         </li>
     </ul>
     </div>
 
-    <menu id="itens">
+    <!-- botões menu hamburger -->
+    <menu id="menu">
         <ul>
             <li><a href="#">Criar Formulário</a></li>
             <li><a href="#">Meus Formulários</a></li>
             <li><a href="#">Quem Somos?</a></li>
+        </ul>   
+    </menu>
+    
+    <!-- botões menu profile -->
+    <menu class="menuProf" id="prof">
+        <ul class="ulProf">
+            <li class="liProf"><a href="#" class="aProf">Trocar usuário</a></li>
+            <li class="liProf"><a href="#" class="aProf">Sair</a></li>
         </ul>   
     </menu>
 
@@ -101,11 +110,17 @@
     <script>
         function clickMenu(){
 
-            if (itens.style.display == "block") {
-                itens.style.display = "none"
+            if (menu.style.display == "block") {
+                menu.style.display = "none"
             } 
-            else {itens.style.display = "block"}
+            else {menu.style.display = "block"}
     
+        }
+        function clickProf(){
+            if (prof.style.display == "block") {
+                prof.style.display = "none"
+            } 
+            else {prof.style.display = "block"}
         }
     </script>
     
