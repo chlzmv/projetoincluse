@@ -77,16 +77,6 @@
     
   }
 
-  /* div do menu hamburg */
-  .containerIconMenu {
-    display: inline-block;
-    cursor: pointer;
-    margin-top: 23px;
-    margin-left: 10px;
-    margin-right: 10px;
-    position: static ;
-  }
-
     /* Icon menu hamburg */
 
     .containerIconMenu {
@@ -159,7 +149,6 @@
 
     menu > ul > li{
       float: none;
-      
     }
   
     menu > ul > li > a{
