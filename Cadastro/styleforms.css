@@ -101,6 +101,10 @@ body{
       font-family: 'Nunito Sans', sans-serif;
   }
   
+  .button:hover {
+    background-color: #c97d3f;
+  }
+  
   input{
     background:#f3f3f3;
       border-radius: 5px;
