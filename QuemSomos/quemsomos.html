@@ -13,11 +13,15 @@
    <!-- codigo do menu -->
     <div class="divMenu"><ul>
         <li style="float: left">
-            <div href="#" class="containerIconMenu">
-                <div class="iconMenu1"></div>
-                <div class="iconMenu2"></div>
-                <div class="iconMenu3"></div>
-            <div>
+            <div class="containerIconMenu">
+                <input type="checkbox" onclick="clickMenu()" id="checkbox-menu" >
+        
+                <label for="checkbox-menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </label>
+            </div>
         </li>    
         <li><a href="#contact" class="aplicafontelogo">Incluse.com</a></li>
         
@@ -33,6 +37,15 @@
         </li>
     </ul>
     </div>
+
+    <menu id="itens">
+        <ul>
+            <li><a href="#">Criar Formulário</a></li>
+            <li><a href="#">Meus Formulários</a></li>
+            <li><a href="#">Quem Somos?</a></li>
+        </ul>   
+    </menu>
+
     <!-- codigo do conteudo -->
     <div class="divConteudo">
         <div class="containerPlayer">
@@ -84,5 +97,19 @@
 
         </div>
     </div>
+
+    <!-- Script botão menu -->
+
+    <script>
+        function clickMenu(){
+
+            if (itens.style.display == "block") {
+                itens.style.display = "none"
+            } 
+            else {itens.style.display = "block"}
+    
+        }
+    </script>
+    
 </body>
 </html>
