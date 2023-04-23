@@ -2,7 +2,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Nunito&family=Nunito+Sans:wght@300;700;800&display=swap');
   body{
     margin: 0px;
-  }
+  
+}
 
 /* BARRA DE MENU */
 
@@ -75,16 +76,6 @@
     
   }
 
-  /* div do menu hamburg */
-  .containerIconMenu {
-    display: inline-block;
-    cursor: pointer;
-    margin-top: 23px;
-    margin-left: 10px;
-    margin-right: 10px;
-    position: static ;
-  }
-
     /* Icon menu hamburg */
 
     .containerIconMenu {
@@ -143,11 +134,8 @@
     
       /* Botões dropdown */
 
-    menu > ul > li{
-      float: none;
-      
-    }
-  
+    /* hamburg */
+
     menu{
       display: none;
       position: absolute;
@@ -156,6 +144,10 @@
       
     menu > ul{
       list-style-type: none;
+    }
+
+    menu > ul > li{
+      float: none;
     }
   
     menu > ul > li > a{
@@ -170,3 +162,30 @@
       box-shadow: 2px 3px 3px 1px #c2c1c1;
       border-radius: 10px;
     }
+
+    /* profile */
+
+  .menuProf{
+    display: none;
+    position: absolute;
+    margin-left: 75%;
+  }
+
+  .ulProf{
+    list-style-type: none;
+  }
+  .liProf{
+    float: none;
+  }
+  .aProf{
+    padding: 10px;
+    margin: 5px;
+    background-color: white;
+    text-decoration: none;
+    color: #e0853b;
+    font-weight: 600;
+    font-family: 'Nunito Sans', sans-serif;
+    text-align: center;
+    box-shadow: 2px 3px 3px 1px #c2c1c1;
+    border-radius: 10px;
+  }
