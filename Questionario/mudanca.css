@@ -1,0 +1,47 @@
+.corpo{
+    border: 1px solid black;
+    border-radius: 5px;
+    width: 180px;
+
+}
+
+.doidera{
+width: 10px;
+height: 25px;
+}
+
+
+.direcao{
+   margin: 10px 20px auto 10px;
+}
+
+
+.direcao2{
+    margin: 60px 10px auto 1px;
+}
+
+
+.doidera2{
+    display: inline-block;
+}
+
+
+.textao{
+    border: 1px solid black;
+    border-radius: 5px;
+    width: 610px;
+    height: 121px;
+}
+
+.tamanho{
+    width: 25px;
+    height: 25px;
+    border-radius: 5px;
+}
+
+
+.titulo{
+    width: 200px;
+    height: 44px;
+    border-radius: 5px;
+}

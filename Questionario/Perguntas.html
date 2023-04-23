@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="mudanca.css">
+</head>
+<body>
+    
+
+<div class = "doidera">
+<input type = "text" id = "texto" name = "texto" class = "titulo"> 
+</div>
+
+
+<div id = "div1" class = "corpo direcao2">
+    <h1>
+        Questão 01
+    </h1>
+</div>
+
+<div class = "direcao doidera2">
+    <form action="questao" method="get">
+    <label for = "questao">Escolha o tipo de questão</label>
+    <input list ="questoes" name = "questao" id = "questao">
+    <datalist id = "questoes">
+        <option value = "Quadrado">
+        <option value = "Circulo">
+    </datalist>
+    
+</form>
+</div>
+
+<div class = "doidera2">
+    <h2>
+        valor :
+        <input type = "text" id ="texto2" name = "texto2" class = "tamanho" >
+    </h2>
+    
+</div>
+
+
+<div class = "textao">
+<a>
+    lapsum ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum '
+</a>
+
+</div>
+
+
+<div>
+    <form action="/action_page.php" class = "direcao2">
+        <input type="checkbox" id="Resposta1" name="Resposta1" value="Troiani">
+        <label for="Resposta1">Troiani é a resposta correta </label><br>
+        <input type="checkbox" id="Resposta2" name="Resposta2" value="Serpentus">
+        <label for="Resposta2">Serpentus é a resposta correta</label><br>
+        <input type="checkbox" id="Resposta3" name="Resposta3" value="Equum">
+        <label for="vehicle3">Equum é a resposta correta</label><br><br>
+        
+      </form>
+</div>
+
+
+<button onclick = "minhafuncao()">+</button>
+<script>
+    function minhafuncao(){
+        const node = document.createElement("progress");
+        const textnode = document.createTextNode("Rex é a resposta correta");
+        node.appendChild(textnode);
+        document.getElementById("banco").appendChild(node);
+    }
+
+</script>
+</body>
+</html>
