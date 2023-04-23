@@ -1,11 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Shrikhand&display=swap');
 
 /* @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@200&display=swap'); */
-@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@200;400;700&display=swap');
-
-  body{
+/* @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@200;400;700&display=swap'); */
+/* @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@200;400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300&family=Nunito:wght@400;700&display=swap');  */
+@import url('https://fonts.googleapis.com/css2?family=Nunito&family=Nunito+Sans:wght@300;700;800&display=swap');
+body{
     background:#fafafa;
-    font-family:sans-serif;
   }
 
   .divMenu{
@@ -82,8 +83,8 @@
   h1{
       color: #e0853b;
       font-size: 30px;
-      font-family: 'Nunito', sans-serif;
-      font-weight: ;
+      font-family: 'Nunito Sans', sans-serif;
+      font-weight: 800;
 
   }
 
@@ -100,7 +101,7 @@
       width: 30%;
       height: 4vh;
       display: block;
-      font-family: 'Nunito', sans-serif;
+      font-family: 'Nunito Sans', sans-serif;
   }
   
   input{
@@ -111,8 +112,8 @@
       height: 4vh;
       border: none; 
       display: block;
-      font-family: 'Nunito', sans-serif;
-      font-weight: 500;
+      font-family: 'Nunito Sans', sans-serif;
+      font-weight: 300;
       padding-left: 6px;
   }
   .inputNome{
