@@ -208,18 +208,25 @@ ul {
   }
   
   .containerInfoForms{
-    margin:0px 11% 30px 11%;
-    padding: 10px 10px 10px 10px;
+    margin:0px auto 30px auto;
+    padding: 10px auto  10px auto;
+    display: inline-block;
+    text-align: center;
     }  
+    
   .divInfoForms1{
     color:rgb(47, 42, 42);
     font-family: 'Nunito Sans', sans-serif;
-    float:right;
+    display:inline;
+    margin: 10px 10px 10px auto ;
+    
   }
   .divInfoForms2{
-    float:left;
     color:rgb(47, 42, 42);
     font-family: 'Nunito Sans', sans-serif;
+    display:inline;
+    
+    margin: 10px auto 10px 10px ;
   }
   .containerResult{
     margin:10px auto 10px auto;
@@ -232,8 +239,9 @@ ul {
     border-radius: 15px;
     font-family: 'Nunito Sans', sans-serif;
     padding: 10px 10px 10px 10px;;
-    width: 530px;
-    margin: 10px 10px 10px auto;
+    width: 630px;
+    height: 100px;
+    margin: 3px 10px 3px auto;
     padding: 7px 7px 7px 7px;
     cursor: pointer;
     color:rgb(47, 42, 42);
@@ -248,12 +256,18 @@ ul {
     color:#d3d1d1;
     margin: 5px 15px 5px 5px;
   }
+
+  .divbotoes{
+
+  }
   #add_circle{
-    float:right;
-    margin: 10px 10px ;
+    float: right;
+    margin:-40px 10px 10px 10px ;
+    font-size:35px;
+    
   }
   .porcent{
-    margin:1px 1px 1px 1px;
+    margin: 1px 1px 1px 1px;
     display: inline;
   }
   
