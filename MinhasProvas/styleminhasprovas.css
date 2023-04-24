@@ -48,7 +48,6 @@
     float: right;
     font-size: 22px;
     cursor: pointer;
-    font-weight: 550;
     font-family: 'Nunito Sans', sans-serif;
     
   }
@@ -60,7 +59,7 @@
   }
 
   .backgroundImagem{
-    background-color: white;
+    background-color: transparent;
     border-radius: 100%;
     padding: 8px 20px 9px 2px; 
     width: 2em;
