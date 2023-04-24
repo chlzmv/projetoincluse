@@ -189,3 +189,63 @@
     box-shadow: 2px 3px 3px 1px #c2c1c1;
     border-radius: 10px;
   }
+  /* ////////////////////////////////////// */
+
+  /* LISTA FORMS */
+
+  
+  h1{
+    font-family: 'Nunito Sans', sans-serif;
+    font-size: 35px;
+    font-weight: 300;
+    text-align: center;
+    color: #e0853b;
+  }
+  .divTitulo{
+    margin: 40px auto 40px auto;
+  }
+  .divForms{
+    /* background-color:#f7ebe1; */
+    box-shadow: 0px 1px 4px 0px #d6d5d5;
+    border: none;
+    border-radius: 15px;
+    font-family: 'Nunito Sans', sans-serif;
+    padding: 10px 10px 10px 10px;;
+    width: 550px;
+    margin: 10px auto 10px auto;
+
+  }
+  h2{
+    display: inline;
+  }
+  .divInconForms{
+    font-family: 'Nunito Sans', sans-serif;
+  }
+
+  #description{
+    float: left;
+    font-size: 80px;
+    color:#c2c1c1;
+  }
+  #delete{
+    font-size: 30px;
+    float:right;
+    margin: auto auto 3px;
+
+  }
+  .divInfoForms{
+    display:inline-block;
+  }
+  .divBotoes{
+    float:right;
+    margin: 10px auto auto auto;
+
+  }
+  .button{
+    border:none;
+    border-radius: 5px;
+    padding: 4px 6px 4px 6px;
+    margin:
+
+  }
+
