@@ -8,7 +8,50 @@
     <link rel="stylesheet" href="mudanca.css">
 </head>
 <body>
+    <!-- codigo do menu -->
+    <div class="divMenu"><ul>
+        <li style="float: left">
+            <div class="containerIconMenu">
+                <input type="checkbox" onclick="clickMenu()" id="checkbox-menu" >
+        
+                <label for="checkbox-menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </label>
+            </div>
+        </li>    
+        <li><a href="#contact" class="aplicafontelogo">Incluse.com</a></li>
+        
+      
+        
+        <li style="float: right">
+            <ul>
+                <li><a class="liLogin" href="login.html">Entrar</a></li>
+                <li href="#">
+                    <div class="backgroundImagem"><img src="iconUser.png" class="configimagem" onclick = "clickProf()"></div>
+                <li>
+            </ul>
+        </li>
+    </ul>
+    </div>
+
+    <!-- botões menu hamburger -->
+    <menu id="menu">
+        <ul>
+            <li><a href="#">Criar Formulário</a></li>
+            <li><a href="#">Meus Formulários</a></li>
+            <li><a href="#">Quem Somos?</a></li>
+        </ul>   
+    </menu>
     
+    <!-- botões menu profile -->
+    <menu class="menuProf" id="prof">
+        <ul class="ulProf">
+            <li class="liProf"><a href="#" class="aProf">Trocar usuário</a></li>
+            <li class="liProf"><a href="#" class="aProf">Sair</a></li>
+        </ul>   
+    </menu>
 
 <div>
 <input type = "text" id = "texto" name = "texto" class = "titulo" placeholder="Digite aqui seu titulo"> 
@@ -67,6 +110,22 @@
         document.getElementById("banco").appendChild(node);
     }
 
+</script>
+<script>
+    function clickMenu(){
+
+        if (menu.style.display == "block") {
+            menu.style.display = "none"
+        } 
+        else {menu.style.display = "block"}
+
+    }
+    function clickProf(){
+        if (prof.style.display == "block") {
+            prof.style.display = "none"
+        } 
+        else {prof.style.display = "block"}
+    }
 </script>
 </body>
 </html>

@@ -1,6 +1,4 @@
 
- 
-
 <!DOCTYPE HTML>
 <html lang="pt-br">
 <head>
@@ -13,11 +11,15 @@
    <!-- codigo do menu -->
     <div class="divMenu"><ul>
         <li style="float: left">
-            <div href="#" class="containerIconMenu">
-                <div class="iconMenu1"></div>
-                <div class="iconMenu2"></div>
-                <div class="iconMenu3"></div>
-            <div>
+            <div class="containerIconMenu">
+                <input type="checkbox" onclick="clickMenu()" id="checkbox-menu" >
+        
+                <label for="checkbox-menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </label>
+            </div>
         </li>    
         <li><a href="#contact" class="aplicafontelogo">Incluse.com</a></li>
         
@@ -25,14 +27,32 @@
         
         <li style="float: right">
             <ul>
-                <li><a class="liLogin" href="login.html">Login</a></li>
+                <li><a class="liLogin" href="login.html">Entrar</a></li>
                 <li href="#">
-                    <div class="backgroundImagem"><img src="iconUser.png" class="configimagem"></div>
+                    <div class="backgroundImagem"><img src="iconUser.png" class="configimagem" onclick = "clickProf()"></div>
                 <li>
             </ul>
         </li>
     </ul>
     </div>
+
+    <!-- botões menu hamburger -->
+    <menu id="menu">
+        <ul>
+            <li><a href="#">Criar Formulário</a></li>
+            <li><a href="#">Meus Formulários</a></li>
+            <li><a href="#">Quem Somos?</a></li>
+        </ul>   
+    </menu>
+    
+    <!-- botões menu profile -->
+    <menu class="menuProf" id="prof">
+        <ul class="ulProf">
+            <li class="liProf"><a href="#" class="aProf">Trocar usuário</a></li>
+            <li class="liProf"><a href="#" class="aProf">Sair</a></li>
+        </ul>   
+    </menu>
+
     <!-- codigo do conteudo -->
     <div class="divConteudo">
         <div class="containerPlayer">
@@ -48,9 +68,11 @@
                 </div>
             </div>
         </div>
-        <div class="divText"><h1>Quem Somos</h1></div>   
         <div class="divText">
-            <h2>Conheça a Incluse:</h2>
+            <h1>'Lorem ipsum dolor sit amet, s et magnis dis parturient montes, nascetur '</h1>
+        </div>   
+        <div class="divText">
+            <h2>Conheça a Incluse</h2>
             <a >Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum '
             </a>
         </div>
@@ -61,7 +83,7 @@
         <div class="divText">
                 <h2>Nossa Equipe</h2>
                 <div class="photoTextCo">
-                    <p class="photoTextCo"><img src="davi.png" width="150x" height="150px"></ class="pDesc">
+                    <p class="photoTextCo"><img src="davi.png" width="150x" height="150px">
                     <p class="pName">Davi Campos Sutil</p>
                     <p class="pDesc">BACK-END FRONT-END</p>
                 </div>
@@ -83,5 +105,25 @@
 
         </div>
     </div>
+
+    <!-- Script botão menu -->
+
+    <script>
+        function clickMenu(){
+
+            if (menu.style.display == "block") {
+                menu.style.display = "none"
+            } 
+            else {menu.style.display = "block"}
+    
+        }
+        function clickProf(){
+            if (prof.style.display == "block") {
+                prof.style.display = "none"
+            } 
+            else {prof.style.display = "block"}
+        }
+    </script>
+    
 </body>
 </html>

@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="styleminhasprovas.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+
+
+</head>
+<body>
+    <!-- codigo do menu -->
+    <div class="divMenu"><ul>
+        <li style="float: left">
+            <div class="containerIconMenu">
+                <input type="checkbox" onclick="clickMenu()" id="checkbox-menu" >
+        
+                <label for="checkbox-menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </label>
+            </div>
+        </li>    
+        <li><a href="#contact" class="aplicafontelogo">Incluse.com</a></li>
+        
+      
+        
+        <li style="float: right">
+            <ul>
+                <li><a class="liLogin" href="login.html">Entrar</a></li>
+                <li href="#">
+                    <div class="backgroundImagem"><img src="iconUser.png" class="configimagem" onclick = "clickProf()"></div>
+                <li>
+            </ul>
+        </li>
+    </ul>
+    </div>
+
+    <!-- botões menu hamburger -->
+    <menu id="menu">
+        <ul>
+            <li><a href="#">Criar Formulário</a></li>
+            <li><a href="#">Meus Formulários</a></li>
+            <li><a href="#">Quem Somos?</a></li>
+        </ul>   
+    </menu>
+    
+    <!-- botões menu profile -->
+    <menu class="menuProf" id="prof">
+        <ul class="ulProf">
+            <li class="liProf"><a href="#" class="aProf">Trocar usuário</a></li>
+            <li class="liProf"><a href="#" class="aProf">Sair</a></li>
+        </ul>   
+    </menu>
+
+    <!-- LISTA DE FORMULARIOS -->
+    
+    <div class="divTitulo">
+        <h1> Meus Formulários</h1>
+    </div>
+    <div class="divForms">
+        <span id="description" class="material-symbols-outlined">description</span>
+        <div class="divInfoForms">       
+           <h2>Título do Formulário</h2>
+           <div>
+                <a>Criado em:</a>
+                <a>xx/xx/xxxx</a>
+           </div>
+           <div>
+                <a>Concluídos:</a>
+                <a>xx/xx</a>
+           </div>
+        </div>   
+        
+        <div class="divBotoes">
+            <span id="delete" class="material-symbols-outlined">delete</span>
+            <div>
+                <input class="button" type="submit" value="Acessar Resultados">
+            </div>
+        </div>
+    </div>
+    <div class="divForms">
+        <span id="description" class="material-symbols-outlined">description</span>
+        <div class="divInfoForms">       
+           <h2>Título do Formulário</h2>
+           <div>
+                <a>Criado em:</a>
+                <a>xx/xx/xxxx</a>
+           </div>
+           <div>
+                <a>Concluídos:</a>
+                <a>xx/xx</a>
+           </div>
+        </div>   
+        
+        <div class="divBotoes">
+            <span id="delete" class="material-symbols-outlined">delete</span>
+            <div>
+            <input class="button" type="submit" value="Acessar Resultados">
+            </div>
+        </div>
+    </div>
+
+     <!-- Script botão menu -->
+
+     <script>
+        function clickMenu(){
+
+            if (menu.style.display == "block") {
+                menu.style.display = "none"
+            } 
+            else {menu.style.display = "block"}
+    
+        }
+        function clickProf(){
+            if (prof.style.display == "block") {
+                prof.style.display = "none"
+            } 
+            else {prof.style.display = "block"}
+        }
+    </script>
+</body>
+</html>
