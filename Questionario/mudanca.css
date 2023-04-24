@@ -2,12 +2,18 @@
     border: 1px solid black;
     border-radius: 5px;
     width: 180px;
+    box-shadow:5px 5px 10px black;
+    background-color: white;
+    color: black;
 
 }
 
-.doidera{
-width: 10px;
-height: 25px;
+.dimensao{
+    width: 10px;
+    height: 25px;
+    box-shadow: 5px 5px 10px black;
+    background-color: white;
+    color: black;
 }
 
 
@@ -21,22 +27,28 @@ height: 25px;
 }
 
 
-.doidera2{
+.tela{
     display: inline-block;
 }
 
 
-.textao{
+.texto{
     border: 1px solid black;
     border-radius: 5px;
     width: 610px;
     height: 121px;
+    box-shadow:5px 5px 10px black;
+    background-color: white;
+    color: black;
 }
 
 .tamanho{
     width: 25px;
     height: 25px;
     border-radius: 5px;
+    box-shadow: 5px 5px 10px black;
+    background-color: white;
+    color: black;
 }
 
 
@@ -44,4 +56,17 @@ height: 25px;
     width: 200px;
     height: 44px;
     border-radius: 5px;
+    box-shadow:5px 5px 10px black;
+    background-color: white;
+    color: black;
+}
+
+
+.quest{
+    width: 477px;
+    height: 164px;
+}
+
+.quest2{
+    width: 200px;
 }
