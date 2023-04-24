@@ -3,7 +3,7 @@
   body{
     margin: 0px;
   
-}
+  } 
 
 /* BARRA DE MENU */
 
@@ -213,39 +213,52 @@
     padding: 10px 10px 10px 10px;;
     width: 550px;
     margin: 10px auto 10px auto;
-
+    padding: 7px 7px 7px 7px;
+    color:rgb(47, 42, 42);
+  }
+  .divForms:hover {
+    background-color: #f0f0f0;
+    
   }
   h2{
     display: inline;
-  }
-  .divInconForms{
-    font-family: 'Nunito Sans', sans-serif;
   }
 
   #description{
     float: left;
     font-size: 80px;
-    color:#c2c1c1;
+    color:#d3d1d1;
+    margin: 5px 5px 5px 5px;
   }
+  
+
   #delete{
     font-size: 30px;
     float:right;
-    margin: auto auto 3px;
-
+    margin: 0px auto 4px 0px;
+    cursor: pointer;;
+  }
+  #delete:hover{
+    color: rgb(192, 49, 49);
   }
   .divInfoForms{
     display:inline-block;
+    margin: 5px 5px 5px 5px;
   }
   .divBotoes{
     float:right;
-    margin: 10px auto auto auto;
+    margin: 10px 10px auto auto;
 
   }
   .button{
     border:none;
     border-radius: 5px;
     padding: 4px 6px 4px 6px;
-    margin:
+    margin: 10px 3px 3px 3px;
+    
 
   }
-
+  .button:hover {
+    background-color:white;
+    
+  }
