@@ -32,7 +32,8 @@ body{
     height: 32px;
     opacity: 0.3;
     color:  #e0853b;
-    margin: 0px 10%
+    margin: 0px 10%;
+    cursor: pointer;
   }
 
   .close:hover {
@@ -89,6 +90,7 @@ body{
       height: 4vh;
       display: block;
       font-family: 'Nunito Sans', sans-serif;
+      cursor: pointer;
   }
 
   .button:hover {

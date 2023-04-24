@@ -130,6 +130,7 @@
       display: none;
       position: absolute;
       width: 20%;
+      cursor: pointer;
     }
       
     menu > ul{
@@ -159,6 +160,7 @@
     display: none;
     position: absolute;
     margin-left: 75%;
+    cursor: pointer;
   }
 
   .ulProf{
@@ -205,6 +207,7 @@
     width: 550px;
     margin: 10px auto 10px auto;
     padding: 7px 7px 7px 7px;
+    cursor: pointer;
     color:rgb(47, 42, 42);
   }
   .divForms:hover {
@@ -250,6 +253,7 @@
     border-radius: 5px;
     padding: 4px 6px 4px 6px;
     margin: 10px 3px 3px 3px;
+    cursor: pointer;
   }
   .button:hover {
     background-color:white;

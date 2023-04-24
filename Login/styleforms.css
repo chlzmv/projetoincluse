@@ -31,7 +31,8 @@
     height: 32px;
     opacity: 0.3;
     color:  #e0853b;
-    margin: 0px 10%
+    margin: 0px 10%;
+    cursor: pointer;
   }
 
   .close:hover {
@@ -86,6 +87,7 @@
       height: 4vh;
       display: block;
       font-family: 'Nunito Sans', sans-serif;
+      cursor: pointer;
   }
   
   .button:hover {
@@ -110,6 +112,7 @@
     font-size: 14px;
     color: #e0853b;
     text-decoration: none;
+    cursor: pointer;
   }
   .divA{
     margin: 5px auto 0px 191px;
