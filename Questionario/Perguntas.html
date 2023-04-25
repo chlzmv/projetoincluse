@@ -14,13 +14,7 @@
     <div class="divMenu"><ul>
         <li style="float: left">
             <div class="containerIconMenu">
-                <input type="checkbox" onclick="clickMenu()" id="checkbox-menu" >
-        
-                <label for="checkbox-menu">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </label>
+                <span class="material-symbols-outlined" onclick="clickMenu()" id="dropdown">menu</span>
             </div>
         </li>    
         <li><a class="aplicafontelogo">Incluse.com</a></li>
@@ -54,6 +48,16 @@
             <li class="liProf"><a href="#" class="aProf">Sair</a></li>
         </ul>   
     </menu>
+
+    <!-- menu flutuante -->
+    <div class="menuFlut">
+        <div class="botMenuFlut" id="botFlut">    
+            <span class="material-symbols-outlined" id="add">add_circle</span>
+            <span class="material-symbols-outlined" id="minus">do_not_disturb_on</span>
+            <span class="material-symbols-outlined" id="color">contrast</span>
+        </div>
+        <span class="material-symbols-outlined" id="arrow" onclick="clickflut()">expand_circle_down</span>
+    </div>
 
 <div class = "telona">
 
@@ -93,7 +97,7 @@
 </div>
 
 
-<div class = "telao">
+<div>
     <form action="/action_page.php">
 
         <div>
@@ -134,9 +138,6 @@
         node.appendChild(textnode);
         document.getElementById("banco").appendChild(node);
     }
-
-</script>
-<script>
     function clickMenu(){
 
         if (menu.style.display == "block") {
@@ -151,7 +152,14 @@
         } 
         else {prof.style.display = "block"}
     }
-</script>
+
+    function clickflut(){
+        if (botFlut.style.display == "block") {
+            botFlut.style.display = "none"
+        } 
+        else {botFlut.style.display = "block"}
+    }
+    </script>
 
 </div>
 </body>

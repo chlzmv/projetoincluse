@@ -51,88 +51,67 @@ ul {
     cursor: pointer;
     font-weight: 550;
     font-family: 'Nunito Sans', sans-serif;
+    transition: 0.25s;
+  }
 
+  .liLogin:hover{
+    font-size: 23px;
   }
 
   .configimagem{
-    width: 3em;
-    height: 3em;
+    width: 2em;
+    height: 2em;
     cursor: pointer;
+    transition: 0.5s;
+  }
+
+  .configimagem:hover{
+    width: 2.2em;
+    height: 2.2em;
   }
 
   .backgroundImagem{
     background-color: white;
     border-radius: 100%;
-    padding: 8px 20px 9px 2px;
+    padding: 8px ; 
     width: 2em;
     height: 2em;
-    margin: 10px 10px 10px 0px;
-
+    margin: 19px 20px 10px 0px;
   }
+  
   /* caract da font logo */
   .aplicafontelogo{
     font-family: 'Shrikhand', cursive;
     font-size: 25px;
     margin-top: 7px;
-
+    transition: 0.25s;
   }
+
+  .aplicafontelogo:hover{
+    font-size: 25.8px;
+  }
+
 
     /* Icon menu hamburg */
 
     .containerIconMenu {
       cursor: pointer;
-      margin-top: 30px;
+      margin-top: 24px;
       margin-left: 25px;
       margin-right: 10px;
       position: static ;
     }
+  
+   #dropdown{
+    font-size: 40px;
+    color: #e0853b;
+    transition: 0.5s;
+   }
 
-    #checkbox-menu{
-      position:relative;
-      opacity: 0;
-    }
-
-    label{
-      cursor: pointer;
-      position: relative;
-      display: block;
-      width: 30px;
-    }
-
-    label span{
-      position: absolute;
-      display: block;
-      height: 7px;
-      width: 120%;
-      border-radius: 30px;
-      background-color: #e0853b;
-      transition: 0.25s ease-in-out;
-    }
-
-    label span:nth-child(1){
-      top: 0;
-    }
-    label span:nth-child(2){
-      top: -11px;
-    }
-    label span:nth-child(3){
-      top: -22px;
-    }
-
-    #checkbox-menu:checked + label span:nth-child(1){
-      transform: rotate(-45deg);
-      top: -8px;
-    }
-
-    #checkbox-menu:checked + label span:nth-child(2){
-      opacity: 0;
-    }
-
-    #checkbox-menu:checked + label span:nth-child(3){
-      transform: rotate(45deg);
-      top: -8px;
-    }
-
+   #dropdown:hover {
+    font-size: 43px;
+  }
+    
       /* Botões dropdown */
 
     /* hamburg */
@@ -140,9 +119,9 @@ ul {
     menu{
       display: none;
       position: absolute;
-      width: 20%;
+      width: 250px;
     }
-
+      
     menu > ul{
       list-style-type: none;
     }
@@ -150,7 +129,7 @@ ul {
     menu > ul > li{
       float: none;
     }
-
+  
     menu > ul > li > a{
       padding: 10px;
       margin: 5px;
@@ -162,9 +141,15 @@ ul {
       text-align: center;
       box-shadow: 2px 3px 3px 1px #c2c1c1;
       border-radius: 10px;
+      transition: 0.5s;
     }
 
- /* profile */
+    menu > ul > li > a:hover {
+      background: #e0853b ;
+      color: white;
+
+    }
+    /* profile */
 
   .menuProf{
     display: none;
@@ -189,6 +174,79 @@ ul {
     text-align: center;
     box-shadow: 2px 3px 3px 1px #c2c1c1;
     border-radius: 10px;
+  }
+
+  /* Menu Flutuante */
+
+  .material-symbols-outlined {
+    font-variation-settings:
+    'FILL' 1,
+    'wght' 400,
+    'GRAD' 0,
+    'opsz' 48
+  }
+
+  #arrow{
+    cursor: pointer;
+    color: #e0853b;
+    font-size: 60px;
+    margin: 60px 0px 10px 0px;
+    border: #e0853b solid 2px;
+    border-radius: 50%;
+    transition: 0.25s;
+    transform: rotate(-180deg);
+  }
+
+  #arrow:hover {
+    font-size: 62px;
+  }
+
+  #add{
+    position: absolute;
+    margin: 1px 10px 10px 8px;
+    font-size: 55px;
+    color: #e0853b;
+    cursor: pointer;
+    transition: 0.25s;
+  }
+
+  #add:hover {
+    font-size: 57px;
+  }
+
+  #minus{
+    position: absolute;
+    margin: 25px 10px 0px 69px;
+    font-size: 55px;
+    color: #e0853b;
+    cursor: pointer;
+    transition: 0.25s;
+  }
+
+  #minus:hover {
+    font-size: 57px;
+  }
+
+  #color{
+    position: absolute;
+    margin: 85px 10px 10px 68px;
+    font-size: 55px;
+    color: #e0853b;
+    cursor: pointer;
+    transition: 0.25s;
+  }
+
+  #color:hover {
+    font-size: 57px;
+  }
+  
+  .menuFlut{
+    position: fixed;
+    margin: 380px 20px 30px 35px; 
+  }
+  .botMenuFlut{
+    position: absolute;
+    display: none;
   }
 
   /* ///////////////// */
