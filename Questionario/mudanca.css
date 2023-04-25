@@ -188,8 +188,7 @@
 .direcao{
    margin: 10px 20px auto 10px;
    text-align: center;
-   display: flex;
-  align-items: stretch;
+   
    
 }
 
@@ -309,5 +308,7 @@ color:grey;
   border-radius: 5px;
   margin: 10px 20px auto 10px;
   text-align: center;
+  
+  
 
 }
