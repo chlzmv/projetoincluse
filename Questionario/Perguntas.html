@@ -76,7 +76,7 @@
 <div class = "tela">
     <h2>
         valor :
-        <input type = "text" id ="texto2" name = "texto2" class = "tamanho" >
+        <input type = "text" id = "texto" name = "texto" class = "tamanho">
     </h2>
     
 </div>
@@ -89,19 +89,19 @@
 
 
 <div>
-    <form action="/action_page.php" class = "tela direcao2">
+    <form action="/action_page.php" class = "tela direcao box">
         <input type="checkbox" id="Resposta1" name="Resposta1" value="Troiani">
         <label for="Resposta1">Troiani é a resposta correta </label><br>
         <input type="checkbox" id="Resposta2" name="Resposta2" value="Serpentus">
         <label for="Resposta2">Serpentus é a resposta correta</label><br>
         <input type="checkbox" id="Resposta3" name="Resposta3" value="Equum">
         <label for="vehicle3">Equum é a resposta correta</label><br><br>
-        
+        <input type = "button" type= "submit" value = "+">
       </form>
 </div>
 
 
-<button onclick = "minhafuncao()">+</button>
+<button onclick = "minhafuncao()" class = "direcao">Salvar formulario</button>
 <script>
     function minhafuncao(){
         const node = document.createElement("progress");

@@ -11,6 +11,7 @@
 
 .tela{
     display: inline-block;
+    
 }
 
 
@@ -19,7 +20,7 @@
     border-radius: 5px;
     width: 610px;
     height: 121px;
-    box-shadow:5px 5px 10px black;
+    box-shadow:2px 3px 3px 1px #c2c1c1;
     background-color: white;
     color: black;
 }
@@ -28,9 +29,10 @@
     width: 25px;
     height: 25px;
     border-radius: 5px;
-    box-shadow: 5px 5px 10px black;
+    box-shadow: 2px 3px 3px 1px #c2c1c1;
     background-color: white;
     color: black;
+    border: none;
 }
 
 
@@ -38,9 +40,10 @@
     width: 200px;
     height: 44px;
     border-radius: 5px;
-    box-shadow:5px 5px 10px black;
-    background-color: white;
+    box-shadow:2px 3px 3px 1px #c2c1c1;
+    background-color: #ffff;
     color: black;
+    border: none;
 }
 
 
@@ -52,3 +55,15 @@
 .quest2{
     width: 200px;
 }
+
+.box{
+    width: 250px;
+    height: 100px;
+    box-shadow: 2px 3px 3px 1px #c2c1c1;
+    background-color: #ffff;
+    border-radius: 5px;
+}
+
+
+
+
