@@ -188,11 +188,12 @@
 .direcao{
    margin: 10px 20px auto 10px;
    text-align: center;
+   
 }
 
 
 .direcao2{
-    margin: 60px 10px auto 1px;
+    margin: 40px auto 10px auto;
     text-align: center;
 }
 
@@ -200,6 +201,7 @@
 .tela{
     
     text-align: center;
+    
 }
 
 
@@ -271,16 +273,37 @@ color:grey;
 
 .telao{
   display: inline-block;
-  width: 500px;
+  width: 480px;
   height: 500px;
   box-shadow: 2px 3px 3px 1px #c2c1c1;
   background-color: #ffff;
   border-radius: 5px;
   margin: 10px 20px auto 10px;
   
+  
 }
 
 .centro{
   text-align: center;
   margin-top: 35px;
+}
+
+.borda{
+  text-align: center;
+}
+
+.ted{
+  text-align: center;
+  margin: 10px 20px auto 10px;
+}
+
+.telona{
+  display: inline-block;
+  width: 800px;
+  height: 1000px;
+  box-shadow: 2px 3px 3px 1px #c2c1c1;
+  background-color: g;
+  border-radius: 5px;
+  margin: 10px 20px auto 10px;
+
 }
