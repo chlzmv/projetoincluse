@@ -1,0 +1,277 @@
+@import url('https://fonts.googleapis.com/css2?family=Shrikhand&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nunito&family=Nunito+Sans:wght@300;700;800&display=swap');
+
+body{
+    margin: 0px;  
+    padding: 0px;
+}
+
+/* BARRA DE MENU */
+
+/* ul do conteudo da barra */
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color:   white;
+  }
+
+  .divMenu{
+    box-shadow: 0px 3px 4px 0px #d6d5d5;
+  }
+
+  li {
+    float: left;
+  }
+  
+  li a {
+    display: block;
+    color:  #e0853b;
+    text-align: right;
+    padding: 19px ;
+    text-decoration: none;
+    
+  }
+  
+  /* li a:hover:not(.active) {
+    background-color: #111;
+  }
+   */
+  /* .active {
+    background-color: #04AA6D;
+   
+  } */
+
+  .liLogin{
+    margin-top:13px;
+    text-align: right ;
+    float: right;
+    font-size: 22px;
+    cursor: pointer;
+    font-weight: 550;
+    font-family: 'Nunito Sans', sans-serif;
+    
+  }
+
+  .configimagem{
+    width: 3em;
+    height: 3em;
+    cursor: pointer;
+  }
+
+  .backgroundImagem{
+    background-color: white;
+    border-radius: 100%;
+    padding: 8px 20px 9px 2px; 
+    width: 2em;
+    height: 2em;
+    margin: 10px 10px 10px 0px;
+    
+  }
+  /* caract da font logo */
+  .aplicafontelogo{
+    font-family: 'Shrikhand', cursive;
+    font-size: 25px;
+    margin-top: 7px;
+    
+  }
+
+    /* Icon menu hamburg */
+
+    .containerIconMenu {
+      cursor: pointer;
+      margin-top: 30px;
+      margin-left: 25px;
+      margin-right: 10px;
+      position: static ;
+    }
+  
+    #checkbox-menu{
+      position:relative;
+      opacity: 0;
+    }
+  
+    label{
+      cursor: pointer;
+      position: relative;
+      display: block;
+      width: 30px;
+    }
+  
+    label span{
+      position: absolute;
+      display: block;
+      height: 7px;
+      width: 120%;
+      border-radius: 30px;
+      background-color: #e0853b;
+      transition: 0.25s ease-in-out;
+    }
+  
+    label span:nth-child(1){
+      top: 0;
+    }
+    label span:nth-child(2){
+      top: -11px;
+    }
+    label span:nth-child(3){
+      top: -22px;
+    }
+  
+    #checkbox-menu:checked + label span:nth-child(1){
+      transform: rotate(-45deg);
+      top: -8px;
+    }
+  
+    #checkbox-menu:checked + label span:nth-child(2){
+      opacity: 0;
+    }
+  
+    #checkbox-menu:checked + label span:nth-child(3){
+      transform: rotate(45deg);
+      top: -8px;
+    }
+    
+      /* Botões dropdown */
+
+    /* hamburg */
+
+    menu{
+      display: none;
+      position: absolute;
+      width: 20%;
+    }
+      
+    menu > ul{
+      list-style-type: none;
+    }
+
+    menu > ul > li{
+      float: none;
+    }
+  
+    menu > ul > li > a{
+      padding: 10px;
+      margin: 5px;
+      background-color: white;
+      text-decoration: none;
+      color: #e0853b;
+      font-weight: 600;
+      font-family: 'Nunito Sans', sans-serif;
+      text-align: center;
+      box-shadow: 2px 3px 3px 1px #c2c1c1;
+      border-radius: 10px;
+    }
+
+    /* profile */
+
+  .menuProf{
+    display: none;
+    position: absolute;
+    margin-left: 75%;
+  }
+
+  .ulProf{
+    list-style-type: none;
+  }
+  .liProf{
+    float: none;
+  }
+  .aProf{
+    padding: 10px;
+    margin: 5px;
+    background-color: white;
+    text-decoration: none;
+    color: #e0853b;
+    font-weight: 600;
+    font-family: 'Nunito Sans', sans-serif;
+    text-align: center;
+    box-shadow: 2px 3px 3px 1px #c2c1c1;
+    border-radius: 10px;
+  }
+
+  /* ///////////////// */
+
+  /* CONTEUDO PAGINA */
+
+  /* titulo pag */
+  h1{
+    font-family: 'Nunito Sans', sans-serif;
+    font-size: 35px;
+    font-weight: 300;
+    text-align: center;
+    color: #e0853b;
+  }
+  .divTitulo{
+    margin: 40px auto 40px auto;
+  }
+  
+  .containerInfoForms{
+    margin:0px auto 30px auto;
+    padding: 10px auto  10px auto;
+    display: inline-block;
+    text-align: center;
+    }  
+    
+  .divInfoForms1{
+    color:rgb(47, 42, 42);
+    font-family: 'Nunito Sans', sans-serif;
+    display:inline;
+    margin: 10px 10px 10px auto ;
+    
+  }
+  .divInfoForms2{
+    color:rgb(47, 42, 42);
+    font-family: 'Nunito Sans', sans-serif;
+    display:inline;
+    
+    margin: 10px auto 10px 10px ;
+  }
+  .containerResult{
+    margin:10px auto 10px auto;
+    padding: 30px 20% 10% 20%;
+  }
+  .divResult{
+    display: inline-block;
+    box-shadow: 0px 1px 4px 0px #d6d5d5;
+    border: none;
+    border-radius: 15px;
+    font-family: 'Nunito Sans', sans-serif;
+    padding: 10px 10px 10px 10px;;
+    width: 630px;
+    height: 100px;
+    margin: 3px 10px 3px auto;
+    padding: 7px 7px 7px 7px;
+    cursor: pointer;
+    color:rgb(47, 42, 42);
+  }
+  .divResult:hover {
+    background-color: #f0f0f0;
+  }
+  /* icone aluno */
+  #school{
+    float: left;
+    font-size: 80px;
+    color:#d3d1d1;
+    margin: 5px 15px 5px 5px;
+  }
+
+  .divbotoes{
+
+  }
+  #add_circle{
+    float: right;
+    margin:-40px 10px 10px 10px ;
+    font-size:35px;
+    
+  }
+  .porcent{
+    margin: 1px 1px 1px 1px;
+    display: inline;
+  }
+  
+  /* nome aluno */
+  h2{
+    display: inline;
+  }
