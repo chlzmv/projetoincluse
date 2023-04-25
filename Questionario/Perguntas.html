@@ -8,23 +8,63 @@
     <link rel="stylesheet" href="mudanca.css">
 </head>
 <body>
+    <!-- codigo do menu -->
+    <div class="divMenu"><ul>
+        <li style="float: left">
+            <div class="containerIconMenu">
+                <input type="checkbox" onclick="clickMenu()" id="checkbox-menu" >
+        
+                <label for="checkbox-menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </label>
+            </div>
+        </li>    
+        <li><a href="#contact" class="aplicafontelogo">Incluse.com</a></li>
+        
+      
+        
+        <li style="float: right">
+            <ul>
+                <li><a class="liLogin" href="login.html">Entrar</a></li>
+                <li href="#">
+                    <div class="backgroundImagem"><img src="iconUser.png" class="configimagem" onclick = "clickProf()"></div>
+                <li>
+            </ul>
+        </li>
+    </ul>
+    </div>
+
+    <!-- botões menu hamburger -->
+    <menu id="menu">
+        <ul>
+            <li><a href="#">Criar Formulário</a></li>
+            <li><a href="#">Meus Formulários</a></li>
+            <li><a href="#">Quem Somos?</a></li>
+        </ul>   
+    </menu>
     
+    <!-- botões menu profile -->
+    <menu class="menuProf" id="prof">
+        <ul class="ulProf">
+            <li class="liProf"><a href="#" class="aProf">Trocar usuário</a></li>
+            <li class="liProf"><a href="#" class="aProf">Sair</a></li>
+        </ul>   
+    </menu>
 
-<div class = "doidera">
-<input type = "text" id = "texto" name = "texto" class = "titulo"> 
+<div>
+<input type = "text" id = "texto" name = "texto" class = "titulo" placeholder="Digite aqui seu titulo"> 
 </div>
 
 
-<div id = "div1" class = "corpo direcao2">
-    <h1>
-        Questão 01
-    </h1>
+<div  class = "direcao2">
+    <input type = "text" id = "texto" name = "texto" class = "titulo">
 </div>
 
-<div class = "direcao doidera2">
+<div class = "direcao tela">
     <form action="questao" method="get">
-    <label for = "questao">Escolha o tipo de questão</label>
-    <input list ="questoes" name = "questao" id = "questao">
+    <input list ="questoes" name = "questao" id = "questao" placeholder="Escolha seu tipo de formulario" class="quest2">
     <datalist id = "questoes">
         <option value = "Quadrado">
         <option value = "Circulo">
@@ -33,37 +73,35 @@
 </form>
 </div>
 
-<div class = "doidera2">
+<div class = "tela">
     <h2>
         valor :
-        <input type = "text" id ="texto2" name = "texto2" class = "tamanho" >
+        <input type = "text" id = "texto" name = "texto" class = "tamanho">
     </h2>
     
 </div>
 
 
-<div class = "textao">
-<a>
-    lapsum ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum '
-</a>
+<div>
+    <input type = "text" id = "texto" name = "texto" class = "titulo quest">
 
 </div>
 
 
 <div>
-    <form action="/action_page.php" class = "direcao2">
+    <form action="/action_page.php" class = "tela direcao box">
         <input type="checkbox" id="Resposta1" name="Resposta1" value="Troiani">
         <label for="Resposta1">Troiani é a resposta correta </label><br>
         <input type="checkbox" id="Resposta2" name="Resposta2" value="Serpentus">
         <label for="Resposta2">Serpentus é a resposta correta</label><br>
         <input type="checkbox" id="Resposta3" name="Resposta3" value="Equum">
         <label for="vehicle3">Equum é a resposta correta</label><br><br>
-        
+        <input type = "button" type= "submit" value = "+">
       </form>
 </div>
 
 
-<button onclick = "minhafuncao()">+</button>
+<button onclick = "minhafuncao()" class = "direcao">Salvar formulario</button>
 <script>
     function minhafuncao(){
         const node = document.createElement("progress");
@@ -72,6 +110,22 @@
         document.getElementById("banco").appendChild(node);
     }
 
+</script>
+<script>
+    function clickMenu(){
+
+        if (menu.style.display == "block") {
+            menu.style.display = "none"
+        } 
+        else {menu.style.display = "block"}
+
+    }
+    function clickProf(){
+        if (prof.style.display == "block") {
+            prof.style.display = "none"
+        } 
+        else {prof.style.display = "block"}
+    }
 </script>
 </body>
 </html>

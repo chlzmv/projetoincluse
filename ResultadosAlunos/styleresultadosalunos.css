@@ -1,15 +1,15 @@
-
 @import url('https://fonts.googleapis.com/css2?family=Shrikhand&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Nunito&family=Nunito+Sans:wght@300;700;800&display=swap');
-  body{
-    margin: 0px;
-  
-  } 
+
+body{
+    margin: 0px;  
+    padding: 0px;
+}
 
 /* BARRA DE MENU */
 
 /* ul do conteudo da barra */
-  ul {
+ul {
     list-style-type: none;
     margin: 0;
     padding: 0;
@@ -33,6 +33,15 @@
     text-decoration: none;
     
   }
+  
+  /* li a:hover:not(.active) {
+    background-color: #111;
+  }
+   */
+  /* .active {
+    background-color: #04AA6D;
+   
+  } */
 
   .liLogin{
     margin-top:13px;
@@ -40,6 +49,7 @@
     float: right;
     font-size: 22px;
     cursor: pointer;
+    font-weight: 550;
     font-family: 'Nunito Sans', sans-serif;
     
   }
@@ -51,7 +61,7 @@
   }
 
   .backgroundImagem{
-    background-color: transparent;
+    background-color: white;
     border-radius: 100%;
     padding: 8px 20px 9px 2px; 
     width: 2em;
@@ -131,7 +141,6 @@
       display: none;
       position: absolute;
       width: 20%;
-      cursor: pointer;
     }
       
     menu > ul{
@@ -161,7 +170,6 @@
     display: none;
     position: absolute;
     margin-left: 75%;
-    cursor: pointer;
   }
 
   .ulProf{
@@ -182,73 +190,90 @@
     box-shadow: 2px 3px 3px 1px #c2c1c1;
     border-radius: 10px;
   }
-  /* ////////////////////////////////////// */
 
-.direcao{
-   margin: 10px 20px auto 10px;
-}
+  /* ///////////////// */
 
+  /* CONTEUDO PAGINA */
 
-.direcao2{
-    margin: 60px 10px auto 1px;
-}
-
-
-.tela{
+  /* titulo pag */
+  h1{
+    font-family: 'Nunito Sans', sans-serif;
+    font-size: 35px;
+    font-weight: 300;
+    text-align: center;
+    color: #e0853b;
+  }
+  .divTitulo{
+    margin: 40px auto 40px auto;
+  }
+  
+  .containerInfoForms{
+    margin:0px auto 30px auto;
+    padding: 10px auto  10px auto;
     display: inline-block;
+    text-align: center;
+    }  
     
-}
-
-
-.texto{
-    border: 1px solid black;
-    border-radius: 5px;
-    width: 610px;
-    height: 121px;
-    box-shadow:2px 3px 3px 1px #c2c1c1;
-    background-color: white;
-    color: black;
-}
-
-.tamanho{
-    width: 25px;
-    height: 25px;
-    border-radius: 5px;
-    box-shadow: 2px 3px 3px 1px #c2c1c1;
-    background-color: white;
-    color: black;
+  .divInfoForms1{
+    color:rgb(47, 42, 42);
+    font-family: 'Nunito Sans', sans-serif;
+    display:inline;
+    margin: 10px 10px 10px auto ;
+    
+  }
+  .divInfoForms2{
+    color:rgb(47, 42, 42);
+    font-family: 'Nunito Sans', sans-serif;
+    display:inline;
+    margin: 10px auto 10px 10px ;
+  }
+  .containerResult{
+    margin:10px auto 10px auto;
+    padding: 30px 20% 10% 20%;
+    display:
+  }
+  .divResult{
+    box-shadow: 0px 1px 4px 0px #d6d5d5;
     border: none;
-}
-
-
-.titulo{
-    width: 200px;
-    height: 44px;
-    border-radius: 5px;
-    box-shadow:2px 3px 3px 1px #c2c1c1;
-    background-color: #ffff;
-    color: black;
-    border: none;
-}
-
-
-.quest{
-    width: 477px;
-    height: 164px;
-}
-
-.quest2{
-    width: 200px;
-}
-
-.box{
-    width: 250px;
+    border-radius: 15px;
+    font-family: 'Nunito Sans', sans-serif;
+    padding: 10px 10px 10px 10px;;
+    width: 630px;
     height: 100px;
-    box-shadow: 2px 3px 3px 1px #c2c1c1;
-    background-color: #ffff;
-    border-radius: 5px;
-}
+    margin: 3px 10px 3px auto;
+    padding: 7px 7px 7px 7px;
+    cursor: pointer;
+    color:rgb(47, 42, 42);
+  }
+  .divResult:hover {
+    background-color: #f0f0f0;
+  }
+  /* icone aluno */
+  #school{
+    float: left;
+    font-size: 80px;
+    color:#d3d1d1;
+    margin: 5px 15px 5px 5px;
+  }
 
+  .divbotoes{
 
-
-
+  }
+  #add_circle{
+    float: right;
+    margin:-40px 10px 10px 10px ;
+    font-size:35px;
+    
+  }
+  .porcent{
+    margin: 1px 1px 1px 1px;
+    display: inline;
+    font-size: 50px;
+    font-weight: 700;
+    color:rgb(88, 88, 88);
+  }
+  
+  /* nome aluno */
+  h2{
+    display: block;
+  }
