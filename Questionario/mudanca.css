@@ -185,80 +185,6 @@
   }
   /* ////////////////////////////////////// */
 
-.direcao{
-   margin: 10px 20px auto 10px;
-   text-align: center;
-   
-   
-}
-
-
-.direcao2{
-    margin: 40px auto 10px auto;
-    text-align: center;
-}
-
-
-.tela{
-    
-    text-align: center;
-    
-}
-
-
-.texto{
-    border: 1px solid black;
-    border-radius: 5px;
-    width: 610px;
-    height: 121px;
-    box-shadow:2px 3px 3px 1px #c2c1c1;
-    background-color: white;
-    color: black;
-}
-
-.tamanho{
-    width: 25px;
-    height: 25px;
-    border-radius: 5px;
-    box-shadow: 2px 3px 3px 1px #c2c1c1;
-    background-color: white;
-    color: black;
-    border: none;
-}
-
-
-.titulo{
-    width: 200px;
-    height: 44px;
-    border-radius: 5px;
-    box-shadow:2px 3px 3px 1px #c2c1c1;
-    background-color: #ffff;
-    color: black;
-    border: none;
-}
-
-
-.quest{
-    width: 477px;
-    height: 164px;
-}
-
-.quest2{
-    width: 200px;
-}
-
-.box{
-    width: 450px;
-    height: 100px;
-    box-shadow: 2px 3px 3px 1px #c2c1c1;
-    background-color: #ffff;
-    border-radius: 5px;
-}
-
-
-.resposta{
-  display: inline;
-}
 
 #delete{
 color:grey;
@@ -268,47 +194,49 @@ color:grey;
   color:red
 }
 
-.borda{
-  border-radius: 5px;
-}
-
-.telao{
-  display: inline-block;
-  width: 480px;
-  height: 500px;
-  box-shadow: 2px 3px 3px 1px #c2c1c1;
-  background-color: #ffff;
-  border-radius: 5px;
-  margin: 10px 20px auto 10px;
-  
-  
-}
-
-.centro{
-  text-align: center;
-  margin-top: 35px;
-
-}
-
-.borda{
-  text-align: center;
-}
-
-.ted{
-  text-align: center;
-  margin: 10px 20px auto 10px;
-}
 
 .telona{
-  display: inline-block;
-  width: 800px;
-  height: 1000px;
+  width: 50rem;
+  height: 25rem;
   box-shadow: 2px 3px 3px 1px #c2c1c1;
   background-color: #ffff;
   border-radius: 5px;
-  margin: 10px 20px auto 10px;
-  text-align: center;
-  
-  
+  margin: 2rem auto auto 15rem;
+  display:flex;
+}
+
+.espaco{
+  margin: auto auto 21rem auto;
+  border: none;
+  background-color: white;
+  border-radius: 1rem;
+  width: 7rem;
+  height: 2rem;
+  box-shadow: 2px 3px 3px 1px #c2c1c1;;
 
 }
+
+.alinhamento{
+ margin: 2rem auto auto 35rem;
+ width: 3rem;
+ height: 2rem;
+ border: none;
+ background-color: white;
+ border-radius: 1rem;
+ box-shadow: 2px 3px 3px 1px #c2c1c1;
+}
+
+.borda{
+  border:none;
+  border-radius: 1rem;
+}
+
+.texto{
+  margin: 9rem auto auto auto;  
+  width: 15rem;
+  height: 10rem;
+  border:none;
+  background-color: white;
+  border-radius: 1rem;
+  box-shadow: 2px 3px 3px 1px #c2c1c1;
+}  
