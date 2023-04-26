@@ -61,83 +61,24 @@
 
 <div class = "telona">
 
+    <div class = "espaco">
+        <input type = "text" id = "textos" name = "textos" class = "espaco"> 
+    </div>
 
-<div class = "centro">
-<input type = "text" id = "texto" name = "texto" class = "titulo" placeholder="Digite aqui seu titulo"> 
-</div>
+    <div>
+        <input type = "text" id = "textos" name = "textos" class = "alinhamento">
+    </div>
 
-
-<div  class = "direcao2">
-    <input type = "text" id = "texto" name = "texto" class = "titulo">
-</div>
-
-<div class = "ted">
-    <form action="questao" method="get">
-    <input list ="questoes" name = "questao" id = "questao" placeholder="Escolha um formulario">
-    <datalist id = "questoes">
-        <option value = "Quadrado">
-        <option value = "Circulo">
-    </datalist>
-    
-</form>
-</div>
-
-<div class = "tela">
-    <h2>
-        valor :
-        <input type = "text" id = "texto" name = "texto" class = "tamanho">
-    </h2>
+    <div>
+        <input type = "text" id = "textos" name = "textos" class = "texto">
+    </div>
     
 </div>
 
 
-<div class = "direcao">
-    <input type = "text" id = "texto" name = "texto" class = "titulo quest">
 
-</div>
-
-
-<div>
-    <form action="/action_page.php">
-
-        <div>
-        <input type="checkbox" id="Resposta1" name="Resposta1" value="Troiani">
-        <label for="Resposta1">Troiani é a resposta correta </label><br>
-        <span id = "delete" class="material-symbols-outlined">
-            delete
-            </span>
-         </div>
-
-
-        <div>
-        <input type="checkbox" id="Resposta2" name="Resposta2" value="Serpentus">
-        <label for="Resposta2">Serpentus é a resposta correta</label><br>
-        <span id = "delete" class="material-symbols-outlined">
-            delete
-            </span>
-        </div>
-
-        <div>
-        <input type="checkbox" id="Resposta3" name="Resposta3" value="Equum">
-        <label for="vehicle3">Equum é a resposta correta</label><br><br>
-        <span id = "delete" class="material-symbols-outlined">
-            delete
-            </span>
-        </div>
-        
-        <input type = "button" type= "submit" value = "+">
-      </form>
-</div>
-
-
-<button onclick = "minhafuncao()" class = "direcao">Salvar formulario</button>
 <script>
-    function minhafuncao(){
-        const node = document.createElement("progress");
-        const textnode = document.createTextNode("Rex é a resposta correta");
-        node.appendChild(textnode);
-        document.getElementById("banco").appendChild(node);
-    }
+
     function clickMenu(){
 
         if (menu.style.display == "block") {
