@@ -252,16 +252,16 @@ li a {
   /* ////////////////////////////////////// */
 
 
-#delete{
+/* #delete{
 color:grey;
 }
 
 #delete:hover{
   color:red
-}
+} */
 
 
-.telona{
+/* .telona{
   width: 50rem;
   height: 25rem;
   box-shadow: 2px 3px 3px 1px #c2c1c1;
@@ -305,4 +305,4 @@ color:grey;
   background-color: white;
   border-radius: 1rem;
   box-shadow: 2px 3px 3px 1px #c2c1c1;
-}  
+}   */
