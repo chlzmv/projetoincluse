@@ -13,13 +13,7 @@
     <div class="divMenu"><ul>
         <li style="float: left">
             <div class="containerIconMenu">
-                <input type="checkbox" onclick="clickMenu()" id="checkbox-menu" >
-        
-                <label for="checkbox-menu">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </label>
+                <span class="material-symbols-outlined" onclick="clickMenu()" id="dropdown">menu</span>
             </div>
         </li>    
         <li><a class="aplicafontelogo">Incluse.com</a></li>
@@ -51,10 +45,19 @@
         </ul>   
     </menu>
 
+    <!-- menu flutuante -->
+    <div class="menuFlut">
+        <div class="botMenuFlut" id="botFlut">    
+            <span class="material-symbols-outlined" id="add">add_circle</span>
+            <span class="material-symbols-outlined" id="minus">do_not_disturb_on</span>
+            <span class="material-symbols-outlined" id="color">contrast</span>
+        </div>
+        <span class="material-symbols-outlined" id="arrow" onclick="clickflut()">expand_circle_down</span>
+    </div>
+
     <!-- CONTEUDO PAGINA -->
     <div class="containerConteudo">
     <!-- titulo pag -->
-        
 
         <!-- infos add forms -->
         <div class="containerInfoForms bottom">
@@ -77,7 +80,7 @@
         <div class="divResult">
             <div class="divInfoAluno">
                 <span id="school" class="material-symbols-outlined">school</span>       
-                <h2>Nome Aluno silva vieira</h2>
+                <h2>Nome Aluno santos</h2>
                 <div class="emailAcertos">
                     <div >
                         <a>Email:</a>
@@ -97,7 +100,7 @@
         <div class="divResult">
             <div class="divInfoAluno">
                 <span id="school" class="material-symbols-outlined">school</span>       
-                <h2>Nome Aluno silva vieira</h2>
+                <h2>Nome Aluno silva </h2>
                 <div class="emailAcertos">
                     <div >
                         <a>Email:</a>
@@ -117,7 +120,7 @@
         <div class="divResult">
             <div class="divInfoAluno">
                 <span id="school" class="material-symbols-outlined">school</span>       
-                <h2>Nome Aluno silva vieira</h2>
+                <h2>Nome Aluno vieira</h2>
                 <div class="emailAcertos">
                     <div >
                         <a>Email:</a>
@@ -134,6 +137,31 @@
                 <span id="add_circle" class="material-symbols-outlined">add_circle</span>
             </div>
         </div>
-    </div>    
+    </div>
+    
+    <script>
+        function clickMenu(){
+
+            if (menu.style.display == "block") {
+                menu.style.display = "none"
+            } 
+            else {menu.style.display = "block"}
+    
+        }
+        function clickProf(){
+            if (prof.style.display == "block") {
+                prof.style.display = "none"
+            } 
+            else {prof.style.display = "block"}
+        }
+
+        function clickflut(){
+            if (botFlut.style.display == "block") {
+                botFlut.style.display = "none"
+            } 
+            else {botFlut.style.display = "block"}
+        }
+    </script>
+
 </body>
 </html>
