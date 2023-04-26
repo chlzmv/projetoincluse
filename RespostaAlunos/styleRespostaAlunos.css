@@ -251,94 +251,103 @@ ul {
 
   /* /* /////////////////  */
 
-  /* CONTEUDO PAGINA
-  .containerConteudo{
+.containerConteudo{
     font-family: 'Nunito Sans', sans-serif;
     color:rgb(47, 42, 42);
-    margin:0px 20%
+    margin:0px 20%;
+}
+
+  /* CONTEUDO PAGINA*/
+
+  
+   /* conteudo infos ALUNO  */
+  .containerInfoForms{
+    box-shadow: 0px 10px 6px -10px #d6d5d5;
+    display: flex;
+    padding: 0px 10px ;
+    margin-bottom: 20px;
   }
-   titulo pag 
+
   h1{
     font-family: 'Nunito Sans', sans-serif;
     font-size: 35px;
     font-weight: 300;
-    text-align: center;
+    text-align: left;
     margin: 40px auto 0px auto;
   }
-
-   conteudo infos forms 
-  .containerInfoForms{
-    display: block;
-    box-shadow: 0px 10px 6px -10px #d6d5d5;
-  }
-
   .divInfoForms{
     padding: 10px 0;
-    text-align: center;
-    margin: 20px auto 20px auto;
-
+    text-align: left;
+    margin: 10px auto 20px 0px;
   }
-    espaco entre infos forms 
+    /* espaco entre infos forms  */
   .espace{
-    margin: 0px 50px 0px 50px;
+    margin: 0px 10px 0px 10px;
+  }
+  .porcent{
+    margin: auto 0px 30px auto;
+    font-size: 50px;
+    font-weight: 300;
+
   }
 
-   conteudo area resultado alunos 
-  .divResult {
-    height: auto;
+   /* conteudo area resultado alunos  */
+  .divResultC {
+    height: 40px;
     width: auto;
     box-shadow: 0px 1px 4px 0px #d6d5d5;
     border: none;
-    border-radius: 15px;
-    margin: auto auto 5px auto;
+    border-radius: 5px;
+    margin: 10px auto 10px auto;
     cursor: pointer;
   }
-  .divResult:hover {
-    background-color: #f0f0f0;
+  .divResultC:hover {
+    background-color: #c3e2ca;
   }
-
-   icone esquerda 
-  #school{
-    float:left;
-    font-size: 50px;
-    color:#d3d1d1;
-    margin: auto 10px auto 10px;
-  }
-
-   icone direita 
-  #add_circle{
-    float: right;
-    margin: auto 10px auto 10px;
+  .divResultE {
+    height: 40px;
+    width: auto;
+    box-shadow: 0px 1px 4px 0px #d6d5d5;
+    border: none;
+    border-radius: 5px;
+    margin: 10px auto 0px auto;
     cursor: pointer;
-
   }
-  #add_circle:hover {
-    color:#e0853b;
+  .divResultE:hover {
+    background-color: #eccece;
   }
 
-   infos  resultado alunos 
-  .divInfoAluno{
+   /* icone esquerda */
+
+   /* infos  resultado alunos  */
+  .divInfoResposta{
   display: flex;
-  align-items: stretch;
-  margin-top: 30px;
-  margin: auto 10px auto 10px;
+  margin: auto 10px ;
+  padding-top: 8px;
   }
-    nome 
-  h2{
-    font-size: 15px;
-    margin: auto 10px auto 10px;
+  .numero{
+    font-size: 20px;
+    margin:auto 10px
   }
-
-  .emailAcertos{
+  .respostaCerta{
     text-align: left;
     margin: auto auto auto auto;
   }
-  .porcent{
+
+  .respostaAluno{
+    text-align: left;
     margin: auto auto auto auto;
-    font-size: 30px;
-
   }
- 
 
+  #check{
+    margin: auto 10px;
+    font-size: 25px;
+   
+  }
 
- */
+  #close{
+    margin: auto 10px;
+    font-size: 25px;
+  }
+  
+  
