@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="stylerespquest.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+</head>
+<body>
+    <!-- codigo do menu -->
+    <div class="divMenu"><ul>
+        <li style="float: left">
+            <div class="containerIconMenu">
+                <span class="material-symbols-outlined" onclick="clickMenu()" id="dropdown">menu</span>
+            </div>
+        </li>    
+        <li><a href="#contact" class="aplicafontelogo">Incluse.com</a></li>
+        <li style="float: right">
+            <ul>
+                <li><a class="liLogin" href="login.html">Entrar</a></li>
+                <li href="#">
+                    <div class="backgroundImagem"><img src="iconUser.png" class="configimagem" onclick = "clickProf()"></div>
+                <li>
+            </ul>
+        </li>
+    </ul>
+    </div>
+
+    <!-- botões menu hamburger -->
+    <menu id="menu">
+        <ul>
+            <li><a href="#">Criar Formulário</a></li>
+            <li><a href="#">Meus Formulários</a></li>
+            <li><a href="#">Quem Somos?</a></li>
+        </ul>   
+    </menu>
+    
+    <!-- botões menu profile -->
+    <menu class="menuProf" id="prof">
+        <ul class="ulProf">
+            <li class="liProf"><a href="#" class="aProf">Trocar usuário</a></li>
+            <li class="liProf"><a href="#" class="aProf">Sair</a></li>
+        </ul>   
+    </menu>
+    
+    <!-- menu flutuante -->
+    <div class="menuFlut">
+        <div class="botMenuFlut" id="botFlut">    
+            <span class="material-symbols-outlined" id="add">add_circle</span>
+            <span class="material-symbols-outlined" id="minus">do_not_disturb_on</span>
+            <span class="material-symbols-outlined" id="color">contrast</span>
+        </div>
+        <span class="material-symbols-outlined" id="arrow" onclick="clickflut()">expand_circle_down</span>
+    </div>
+
+    <div class="containerPlayer">
+        <!-- <hr> -->
+        <div class="timeline">
+            <div class="objProgress"></div>
+        </div>
+        <div class="center">
+            <!-- <div href="#" class="play1"></div>
+            <div href="#" class="play2"></div> -->
+            <div class="borderTriangle">
+                <div href="#" class="triangle"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- codigo do conteudo -->
+    <div class="divConteudo">
+
+        <!-- Cabeçalho -->
+        <div class="divInfoAlu">
+            <div class="labelInfo">
+                <label for="email">Email: </label><br>
+                <label for="nome">Nome:</label><br>
+            </div>
+            <div>
+                <input type="email" id="email" name="email" class="boxInfo" >
+                <input type="name" id="name" name="nome" class="boxInfo">
+            </div>
+        </div>
+
+        <!-- Questão -->
+        <div class="divQuest">
+            <div class="divValor">
+                <a style="float: left;">Questão 1</a>
+                <a style="float: right;">2,0</a>
+            </div>
+            <div>
+                <a>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime nostrum quisquam quae, distinctio facere cumque cupiditate nam iure doloribus repellat perspiciatis, deserunt laudantium. Qui quod, deserunt quo obcaecati ad reprehenderit. Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas alias quo nobis nesciunt enim, vero consequuntur facere provident culpa nemo. Ducimus harum debitis inventore excepturi quibusdam ipsam voluptate, tenetur blanditiis.</a>
+            </div>
+            <div class="divResp">
+                <input type="checkbox" id="checkbox" name="Resposta1" value="Troiani">
+                <label for="Resposta1">Troiani é a resposta correta </label><br>
+                <input type="checkbox" id="checkbox" name="Resposta2" value="Serpentus">
+                <label for="Resposta2">Serpentus é a resposta correta</label><br>
+                <input type="checkbox" id="checkbox" name="Resposta3" value="Equum">
+                <label for="vehicle3">Equum é a resposta correta</label><br><br>
+            </div>
+        </div>
+
+        <!-- Botões -->
+        <div class="botQuest">
+            <div class="botBack">
+                <span class="material-symbols-outlined" id="arrowBac">arrow_forward_ios</span>
+            </div>
+            <div class="botForw">
+                <span class="material-symbols-outlined" id="arrowFor">arrow_forward_ios</span>          
+            </div>
+        </div>
+    </div>
+
+    <!-- Script botão menu -->
+
+    <script>
+        function clickMenu(){
+
+            if (menu.style.display == "block") {
+                menu.style.display = "none"
+            } 
+            else {menu.style.display = "block"}
+    
+        }
+        function clickProf(){
+            if (prof.style.display == "block") {
+                prof.style.display = "none"
+            } 
+            else {prof.style.display = "block"}
+        }
+
+        function clickflut(){
+            if (botFlut.style.display == "block") {
+                botFlut.style.display = "none"
+            } 
+            else {botFlut.style.display = "block"}
+        }
+    </script>
+    
+</body>
+</html>
