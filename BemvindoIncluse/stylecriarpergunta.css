@@ -30,22 +30,13 @@ li a {
   display: block;
   color:  #e0853b;
   text-align: right;
-  padding: 19px ;
+  padding: 1.2rem;
   text-decoration: none;
   
 }
 
-/* li a:hover:not(.active) {
-  background-color: #111;
-}
- */
-/* .active {
-  background-color: #04AA6D;
- 
-} */
-
 .liLogin{
-  margin-top:13px;
+  margin-top: 0.6rem;
   text-align: right ;
   float: right;
   font-size: 22px;
@@ -77,14 +68,14 @@ li a {
   padding: 8px ; 
   width: 2em;
   height: 2em;
-  margin: 19px 20px 10px 0px;
+  margin: 1.1rem 1.4rem 0.8rem auto;
 }
 
 /* caract da font logo */
 .aplicafontelogo{
   font-family: 'Shrikhand', cursive;
   font-size: 25px;
-  margin-top: 7px;
+  margin-top: 0.4rem;
   transition: 0.25s;
 }
 
@@ -96,9 +87,9 @@ li a {
 
   .containerIconMenu {
     cursor: pointer;
-    margin-top: 24px;
-    margin-left: 25px;
-    margin-right: 10px;
+    margin-top: 1.5rem;
+    margin-left: 1.55rem;
+    margin-right: 0.8rem;
     position: static ;
   }
 
@@ -119,7 +110,7 @@ li a {
   menu{
     display: none;
     position: absolute;
-    width: 250px;
+    width: 15.7rem;
   }
     
   menu > ul{
@@ -131,7 +122,7 @@ li a {
   }
 
   menu > ul > li > a{
-    padding: 10px;
+    padding: 0.7rem;
     margin: 5px;
     background-color: white;
     text-decoration: none;
@@ -164,7 +155,7 @@ li a {
   float: none;
 }
 .aProf{
-  padding: 10px;
+  padding: 0.7rem;
   margin: 5px;
   background-color: white;
   text-decoration: none;
@@ -203,7 +194,7 @@ li a {
 
 #add{
   position: absolute;
-  margin: 1px 10px 10px 8px;
+  margin: 1px 0.7rem 0.7rem 0.6rem;
   font-size: 55px;
   color: #e0853b;
   cursor: pointer;
@@ -216,7 +207,7 @@ li a {
 
 #minus{
   position: absolute;
-  margin: 25px 10px 0px 69px;
+  margin: 1.4rem 0.7rem 0px 4.4rem;
   font-size: 55px;
   color: #e0853b;
   cursor: pointer;
@@ -229,7 +220,7 @@ li a {
 
 #color{
   position: absolute;
-  margin: 85px 10px 10px 68px;
+  margin: 5.4rem 0.7rem 0.7rem 4.3rem;
   font-size: 55px;
   color: #e0853b;
   cursor: pointer;
