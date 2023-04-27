@@ -68,12 +68,14 @@
         <hr>
         <div class="divInfoForm">
             <input type="text" id="numQuest" placeholder="N° Questão" >
-            <select id="formSelect" >
-                <option selected>Tipo da Questão:</option>
-                <option value="1">Resposta Única</option>
-                <option value="2">Múltipla Escolha</option>
-            </select>
-            <input type="text" id="valorQuest" placeholder="Valor">
+            <div class="inputSV">
+                <select id="formSelect">
+                    <option selected disabled>Tipo da Questão:</option>
+                    <option value="1">Resposta Única</option>
+                    <option value="2">Múltipla Escolha</option>
+                </select>
+                <input type="text" id="valorQuest" placeholder="Valor">
+            </div>
         </div>
         <div class="divCaixaTexto">
             <textarea id="caixaTexto" cols="30" rows="20" placeholder="Insira o texto"></textarea>
