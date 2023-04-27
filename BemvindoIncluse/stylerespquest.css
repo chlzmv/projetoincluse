@@ -8,161 +8,119 @@
 /* BARRA DE MENU */
 
 /* ul do conteudo da barra */
-  ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
-    background-color:   white;
-  }
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color:   white;
+}
 
-  .divMenu{
-    box-shadow: 0px 3px 4px 0px #d6d5d5;
-  }
+.divMenu{
+  box-shadow: 0px 3px 4px 0px #d6d5d5;
+}
 
-  li {
-    float: left;
-  }
+li {
+  float: left;
+}
+
+li a {
+  display: block;
+  color:  #e0853b;
+  text-align: right;
+  padding: 1.2rem;
+  text-decoration: none;
   
-  li a {
-    display: block;
-    color:  #e0853b;
-    text-align: right;
-    padding: 19px ;
-    text-decoration: none;
-    
-  }
-  
-  /* li a:hover:not(.active) {
-    background-color: #111;
-  }
-   */
-  /* .active {
-    background-color: #04AA6D;
-   
-  } */
+}
 
-  .liLogin{
-    margin-top:13px;
-    text-align: right ;
-    float: right;
-    font-size: 22px;
+.liLogin{
+  margin-top: 0.6rem;
+  text-align: right ;
+  float: right;
+  font-size: 22px;
+  cursor: pointer;
+  font-weight: 550;
+  font-family: 'Nunito Sans', sans-serif;
+  transition: 0.25s;
+}
+
+.liLogin:hover{
+  font-size: 23px;
+}
+
+.configimagem{
+  width: 2em;
+  height: 2em;
+  cursor: pointer;
+  transition: 0.5s;
+}
+
+.configimagem:hover{
+  width: 2.2em;
+  height: 2.2em;
+}
+
+.backgroundImagem{
+  background-color: white;
+  border-radius: 100%;
+  padding: 8px ; 
+  width: 2em;
+  height: 2em;
+  margin: 1.1rem 1.4rem 0.8rem auto;
+}
+
+/* caract da font logo */
+.aplicafontelogo{
+  font-family: 'Shrikhand', cursive;
+  font-size: 25px;
+  margin-top: 0.4rem;
+  transition: 0.25s;
+}
+
+.aplicafontelogo:hover{
+  font-size: 25.8px;
+}
+
+  /* Icon menu hamburg */
+
+  .containerIconMenu {
     cursor: pointer;
-    font-weight: 550;
-    font-family: 'Nunito Sans', sans-serif;
-    transition: 0.25s;
+    margin-top: 1.5rem;
+    margin-left: 1.55rem;
+    margin-right: 0.8rem;
+    position: static ;
   }
 
-  .liLogin:hover{
-    font-size: 23px;
-  }
+ #dropdown{
+  font-size: 40px;
+  color: #e0853b;
+  transition: 0.5s;
+ }
 
-  .configimagem{
-    width: 2em;
-    height: 2em;
-    cursor: pointer;
-    transition: 0.5s;
-  }
-
-  .configimagem:hover{
-    width: 2.2em;
-    height: 2.2em;
-  }
-
-  .backgroundImagem{
-    background-color: white;
-    border-radius: 100%;
-    padding: 8px ; 
-    width: 2em;
-    height: 2em;
-    margin: 19px 20px 10px 0px;
-  }
-
-  /* caract da font logo */
-  .aplicafontelogo{
-    font-family: 'Shrikhand', cursive;
-    font-size: 25px;
-    margin-top: 7px;
-    transition: 0.25s;
-  }
-
-  .aplicafontelogo:hover{
-    font-size: 25.8px;
-  }
-
-    /* Icon menu hamburg */
-
-    .containerIconMenu {
-      cursor: pointer;
-      margin-top: 24px;
-      margin-left: 25px;
-      margin-right: 10px;
-      position: static ;
-    }
+ #dropdown:hover {
+  font-size: 43px;
+}
   
-   #dropdown{
-    font-size: 40px;
-    color: #e0853b;
-    transition: 0.5s;
-   }
+    /* Botões dropdown */
 
-   #dropdown:hover {
-    font-size: 43px;
-  }
-    
-      /* Botões dropdown */
+  /* hamburg */
 
-    /* hamburg */
-
-    menu{
-      display: none;
-      position: absolute;
-      width: 250px;
-    }
-      
-    menu > ul{
-      list-style-type: none;
-    }
-
-    menu > ul > li{
-      float: none;
-    }
-  
-    menu > ul > li > a{
-      padding: 10px;
-      margin: 5px;
-      background-color: white;
-      text-decoration: none;
-      color: #e0853b;
-      font-weight: 600;
-      font-family: 'Nunito Sans', sans-serif;
-      text-align: center;
-      box-shadow: 2px 3px 3px 1px #c2c1c1;
-      border-radius: 10px;
-      transition: 0.5s;
-    }
-
-    menu > ul > li > a:hover {
-      background: #e0853b ;
-      color: white;
-
-    }
-    /* profile */
-
-  .menuProf{
+  menu{
     display: none;
     position: absolute;
-    margin-left: 75%;
+    width: 15.7rem;
   }
-
-  .ulProf{
+    
+  menu > ul{
     list-style-type: none;
   }
-  .liProf{
+
+  menu > ul > li{
     float: none;
   }
-  .aProf{
-    padding: 10px;
+
+  menu > ul > li > a{
+    padding: 0.7rem;
     margin: 5px;
     background-color: white;
     text-decoration: none;
@@ -172,83 +130,115 @@
     text-align: center;
     box-shadow: 2px 3px 3px 1px #c2c1c1;
     border-radius: 10px;
+    transition: 0.5s;
   }
 
-  /* Menu Flutuante */
+  menu > ul > li > a:hover {
+    background: #e0853b ;
+    color: white;
 
-  .material-symbols-outlined {
-    font-variation-settings:
-    'FILL' 1,
-    'wght' 400,
-    'GRAD' 0,
-    'opsz' 48
   }
+  /* profile */
 
-  #arrow{
-    cursor: pointer;
-    color: #e0853b;
-    font-size: 60px;
-    margin: 60px 0px 10px 0px;
-    border: #e0853b solid 2px;
-    border-radius: 50%;
-    transition: 0.25s;
-    transform: rotate(-180deg);
-  }
+.menuProf{
+  display: none;
+  position: absolute;
+  margin-left: 75%;
+}
 
-  #arrow:hover {
-    font-size: 62px;
-  }
+.ulProf{
+  list-style-type: none;
+}
+.liProf{
+  float: none;
+}
+.aProf{
+  padding: 0.7rem;
+  margin: 5px;
+  background-color: white;
+  text-decoration: none;
+  color: #e0853b;
+  font-weight: 600;
+  font-family: 'Nunito Sans', sans-serif;
+  text-align: center;
+  box-shadow: 2px 3px 3px 1px #c2c1c1;
+  border-radius: 10px;
+}
 
-  #add{
-    position: absolute;
-    margin: 1px 10px 10px 8px;
-    font-size: 55px;
-    color: #e0853b;
-    cursor: pointer;
-    transition: 0.25s;
-  }
+/* Menu Flutuante */
 
-  #add:hover {
-    font-size: 57px;
-  }
+.material-symbols-outlined {
+  font-variation-settings:
+  'FILL' 1,
+  'wght' 400,
+  'GRAD' 0,
+  'opsz' 48
+}
 
-  #minus{
-    position: absolute;
-    margin: 25px 10px 0px 69px;
-    font-size: 55px;
-    color: #e0853b;
-    cursor: pointer;
-    transition: 0.25s;
-  }
+#arrow{
+  cursor: pointer;
+  color: #e0853b;
+  font-size: 60px;
+  margin: 3.8rem auto 0.7rem auto;
+  border: #e0853b solid 2px;
+  border-radius: 50%;
+  transition: 0.25s;
+  transform: rotate(-180deg);
+}
 
-  #minus:hover {
-    font-size: 57px;
-  }
+#arrow:hover {
+  font-size: 62px;
+}
 
-  #color{
-    position: absolute;
-    margin: 85px 10px 10px 68px;
-    font-size: 55px;
-    color: #e0853b;
-    cursor: pointer;
-    transition: 0.25s;
-  }
+#add{
+  position: absolute;
+  margin: 1px 0.7rem 0.7rem 0.6rem;
+  font-size: 55px;
+  color: #e0853b;
+  cursor: pointer;
+  transition: 0.25s;
+}
 
-  #color:hover {
-    font-size: 57px;
-  }
-  
-  .menuFlut{
-    position: fixed;
-    bottom: 1.5rem;
-    left: 1.5rem;
-  }
+#add:hover {
+  font-size: 57px;
+}
 
-  .botMenuFlut{
-    position: absolute;
-    display: none;
-    float: right;
-  }
+#minus{
+  position: absolute;
+  margin: 1.4rem 0.7rem 0px 4.4rem;
+  font-size: 55px;
+  color: #e0853b;
+  cursor: pointer;
+  transition: 0.25s;
+}
+
+#minus:hover {
+  font-size: 57px;
+}
+
+#color{
+  position: absolute;
+  margin: 5.4rem 0.7rem 0.7rem 4.3rem;
+  font-size: 55px;
+  color: #e0853b;
+  cursor: pointer;
+  transition: 0.25s;
+}
+
+#color:hover {
+  font-size: 57px;
+}
+
+.menuFlut{
+  position: fixed;
+  bottom: 1.5rem;
+  left: 1.5rem;
+}
+
+.botMenuFlut{
+  position: absolute;
+  display: none;
+}
 
   /* ///////////////// */
   
@@ -259,7 +249,7 @@
     width: 100%;
     background:#fafafa;
     display: block;
-    border-radius: 20px;
+    border-radius: 1.3rem;
     width: 95%;
     padding: 2px 2px 2px 4px;
     margin: 10% 5% 5% 1%
@@ -278,7 +268,7 @@
     width: 0;
     height: 0;
     border-top: 10px solid transparent;
-    border-left: 20px solid #fafafa;
+    border-left: 1.3rem solid #fafafa;
     border-bottom: 10px solid transparent;
     margin:auto;
     align-items: center;
@@ -299,30 +289,18 @@
   
   }
 
-  /* barras de pause */
-  /* .play1, .play2 {
-    height: 22px;
-    width: 5px;
-    background-color:rgb(47, 42, 42);
-    margin-left:1px;
-    display: inline-block;
-    cursor: pointer;
-    
-   } */
-
    /* div para centralzr pause play */
    .center {
     margin-top: 9px; 
     margin-left: 35%;
     width: 45%;
     padding: 2px;
-    /* border: solid coral; */
   }
 
   /* linha para progress inativa */
   hr{
     border-bottom: rgb(47, 42, 42) solid 3px;
-    margin-top:30px;
+    margin-top: 1.9rem;
     margin-bottom:0px;
   }
 
@@ -332,8 +310,8 @@
     position:fixed;
     right: 5rem;
     top: 20rem;
-    width: 180px;
-    height: 100px;
+    width: 11.3rem;
+    height: 6.3rem;
     border-radius: 10px;
     background-color:#e0853b ;
     padding:2px 5px 1px 5px;
@@ -346,12 +324,12 @@
   /* CONTEUDO PAGINA */
   
   .divConteudo{
-    margin: 30px 320px 30px 320px ;
+    margin: 1.9rem 20rem 1.9rem 20rem ;
     font-family: 'Nunito Sans', sans-serif;
   }
   .divInfoAlu{
-    margin: 0px 5px 20px 5px;
-    padding: 15px;
+    margin: 0px 5px 1.3rem 5px;
+    padding: 1rem;
     border-radius: 10px;
     box-shadow: 0px 1px 4px 0px #d6d5d5;
     align-items: center;
@@ -361,7 +339,7 @@
     background:#f3f3f3;
     border-radius: 5px;
     margin: 2.4px auto 0px auto;
-    width: 500px;
+    width: 31.3rem;
     height: 4vh;
     border: none;
     display: block;
@@ -373,12 +351,12 @@
   .labelInfo{
     float: left;
     margin-top: 8px;
-    margin-left: 15px;
+    margin-left: 1rem;
   }
 
   .divQuest{
-    margin: 0px 5px 20px 5px;
-    padding: 20px;
+    margin: 0px 5px 1.3rem 5px;
+    padding: 1.3rem;
     border-radius: 10px;
     box-shadow: 0px 1px 4px 0px #d6d5d5;
   }
@@ -390,7 +368,7 @@
   }
 
   .divResp{
-   margin-top: 30px;
+   margin-top: 1.9rem;
   }
 
  .botForw{

@@ -17,7 +17,7 @@ ul {
 }
 
 .divMenu{
-  box-shadow: 0px 3px 4px 0px #d6d5d5;
+  box-shadow: 0px 0.2rem 0.3rem 0px #d6d5d5;
 }
 
 li {
@@ -28,22 +28,13 @@ li a {
   display: block;
   color:  #e0853b;
   text-align: right;
-  padding: 19px ;
+  padding: 1.2rem;
   text-decoration: none;
   
 }
 
-/* li a:hover:not(.active) {
-  background-color: #111;
-}
- */
-/* .active {
-  background-color: #04AA6D;
- 
-} */
-
 .liLogin{
-  margin-top:13px;
+  margin-top: 0.6rem;
   text-align: right ;
   float: right;
   font-size: 22px;
@@ -75,14 +66,14 @@ li a {
   padding: 8px ; 
   width: 2em;
   height: 2em;
-  margin: 19px 20px 10px 0px;
+  margin: 1.1rem 1.4rem 0.8rem auto;
 }
 
 /* caract da font logo */
 .aplicafontelogo{
   font-family: 'Shrikhand', cursive;
   font-size: 25px;
-  margin-top: 7px;
+  margin-top: 0.4rem;
   transition: 0.25s;
 }
 
@@ -94,14 +85,14 @@ li a {
 
   .containerIconMenu {
     cursor: pointer;
-    margin-top: 24px;
-    margin-left: 25px;
-    margin-right: 10px;
+    margin-top: 1.5rem;
+    margin-left: 1.55rem;
+    margin-right: 0.8rem;
     position: static ;
   }
 
  #dropdown{
-  font-size: 40px;
+  font-size: 2.5rem;
   color: #e0853b;
   transition: 0.5s;
  }
@@ -117,7 +108,7 @@ li a {
   menu{
     display: none;
     position: absolute;
-    width: 250px;
+    width: 15.7rem;
   }
     
   menu > ul{
@@ -129,16 +120,16 @@ li a {
   }
 
   menu > ul > li > a{
-    padding: 10px;
-    margin: 5px;
+    padding: 0.7rem;
+    margin: 0.3rem;
     background-color: white;
     text-decoration: none;
     color: #e0853b;
     font-weight: 600;
     font-family: 'Nunito Sans', sans-serif;
     text-align: center;
-    box-shadow: 2px 3px 3px 1px #c2c1c1;
-    border-radius: 10px;
+    box-shadow: 2px 0.2rem 0.2rem 1px #c2c1c1;
+    border-radius: 0.7rem;
     transition: 0.5s;
   }
 
@@ -162,16 +153,16 @@ li a {
   float: none;
 }
 .aProf{
-  padding: 10px;
-  margin: 5px;
+  padding: 0.7rem;
+  margin: 0.3rem;
   background-color: white;
   text-decoration: none;
   color: #e0853b;
   font-weight: 600;
   font-family: 'Nunito Sans', sans-serif;
   text-align: center;
-  box-shadow: 2px 3px 3px 1px #c2c1c1;
-  border-radius: 10px;
+  box-shadow: 2px 0.2rem 0.2rem 1px #c2c1c1;
+  border-radius: 0.7rem;
 }
 
 /* Menu Flutuante */
@@ -188,7 +179,7 @@ li a {
   cursor: pointer;
   color: #e0853b;
   font-size: 60px;
-  margin: 60px 0px 10px 0px;
+  margin: 3.8rem auto 0.7rem auto;
   border: #e0853b solid 2px;
   border-radius: 50%;
   transition: 0.25s;
@@ -201,7 +192,7 @@ li a {
 
 #add{
   position: absolute;
-  margin: 1px 10px 10px 8px;
+  margin: 1px 0.7rem 0.7rem 0.6rem;
   font-size: 55px;
   color: #e0853b;
   cursor: pointer;
@@ -214,7 +205,7 @@ li a {
 
 #minus{
   position: absolute;
-  margin: 25px 10px 0px 69px;
+  margin: 1.4rem 0.7rem 0px 4.4rem;
   font-size: 55px;
   color: #e0853b;
   cursor: pointer;
@@ -227,7 +218,7 @@ li a {
 
 #color{
   position: absolute;
-  margin: 85px 10px 10px 68px;
+  margin: 5.4rem 0.7rem 0.7rem 4.3rem;
   font-size: 55px;
   color: #e0853b;
   cursor: pointer;
@@ -240,8 +231,10 @@ li a {
 
 .menuFlut{
   position: fixed;
-  margin: 380px 20px 30px 35px; 
+  bottom: 1.5rem;
+  left: 1.5rem;
 }
+
 .botMenuFlut{
   position: absolute;
   display: none;
@@ -260,19 +253,19 @@ li a {
     color: #e0853b;
   }
   .divTitulo{
-    margin: 40px auto 40px auto;
+    margin: 2.5rem auto 2.5rem auto;
   }
 
 
   .divForms{
-    box-shadow: 0px 1px 4px 0px #d6d5d5;
+    box-shadow: 0px 1px 0.3rem 0px #d6d5d5;
     border: none;
     border-radius: 15px;
     font-family: 'Nunito Sans', sans-serif;
-    padding: 10px 10px 10px 10px;;
-    width: 550px;
-    margin: 10px auto 10px auto;
-    padding: 7px 7px 7px 7px;
+    padding: 0.7rem 0.7rem 0.7rem 0.7rem;;
+    width: 34.4rem;
+    margin: 0.7rem auto 0.7rem auto;
+    padding: 0.5rem 0.5rem 0.5rem 0.5rem;
     cursor: pointer;
     color:rgb(47, 42, 42);
   }
@@ -290,14 +283,14 @@ li a {
     float: left;
     font-size: 80px;
     color:#d3d1d1;
-    margin: 5px 5px 5px 5px;
+    margin: 0.3rem 0.3rem 0.3rem 0.3rem;
   }
   
   /* icone lixo */
   #delete{
     font-size: 30px;
     float:right;
-    margin: 0px auto 4px 0px;
+    margin: 0px auto 0.3rem 0px;
     cursor: pointer;;
   }
   #delete:hover{
@@ -307,18 +300,18 @@ li a {
   /* infos forms */
   .divInfoForms{
     display:inline-block;
-    margin: 5px 5px 5px 5px;
+    margin: 0.3rem 0.3rem 0.3rem 0.3rem;
   }
   .divBotoes{
     float:right;
-    margin: 10px 10px auto auto;
+    margin: 0.7rem 0.7rem auto auto;
 
   }
   .button{
     border:none;
-    border-radius: 5px;
-    padding: 4px 6px 4px 6px;
-    margin: 10px 3px 3px 3px;
+    border-radius: 0.3rem;
+    padding: 0.3rem 0.4rem 0.3rem 0.4rem;
+    margin: 0.7rem 0.2rem 0.2rem 0.2rem;
     cursor: pointer;
   }
   .button:hover {
