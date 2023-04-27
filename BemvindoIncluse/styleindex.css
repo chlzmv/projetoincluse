@@ -240,8 +240,10 @@ li a {
 
 .menuFlut{
   position: fixed;
-  margin: 380px 20px 30px 35px; 
+  bottom: 1.5rem;
+  left: 1.5rem;
 }
+
 .botMenuFlut{
   position: absolute;
   display: none;

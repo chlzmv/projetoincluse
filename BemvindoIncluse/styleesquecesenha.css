@@ -68,10 +68,10 @@
     border-radius: 15px;
     margin: 10rem auto;
     width: 23rem;
-    height: 23rem; 
+    height: 21rem; 
     border: none;
     box-shadow: 0px 3px 4px rgb(165, 163, 163);
-    padding: 1rem 2rem 1rem 2rem; 
+    padding: 1rem 2rem 0rem 2rem; 
     
   }
   /* titulo login  */
@@ -90,7 +90,7 @@
    /* botao confirma */
   .button{
       background-color: #e0853b;
-      margin: 45px auto 20px auto;
+      margin: 2rem auto 2rem auto;
       border-radius: 20px;
       border: none;
       width: 30%;
@@ -109,26 +109,20 @@
     background:#f3f3f3;
       border-radius: 5px;
       margin: 2% auto 0px auto;
-      width: 250px;
-      height: 4vh;
+      width: 20rem;
+      height: 2rem;
       border: none; 
       display: block;
       font-family: 'Nunito Sans', sans-serif;
-      font-weight: 300;
-      padding-left: 6px;
+      
   }
 
-  /* reset senha */
-  a{
+  /* texto */
+  p{
     font-family: 'Nunito Sans', sans-serif;
-    font-size: 14px;
+    font-size: 15px;
     color: #353535;
     text-decoration: none;
-    cursor: pointer;
-    margin: auto 2%;
     text-align: center;
-
-  }
-  .divA{
-    margin: 5px auto 0px 191px;
+    margin: auto 10% 2rem 6%;
   }

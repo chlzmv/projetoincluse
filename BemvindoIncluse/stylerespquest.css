@@ -240,8 +240,10 @@
   
   .menuFlut{
     position: fixed;
-    margin: 380px 20px 30px 35px; 
+    bottom: 1.5rem;
+    left: 1.5rem;
   }
+
   .botMenuFlut{
     position: absolute;
     display: none;
@@ -328,10 +330,10 @@
   .containerPlayer{
     display:inline-block;
     position:fixed;
-   margin: 160px auto auto 1100px;
+    right: 5rem;
+    top: 20rem;
     width: 180px;
     height: 100px;
-    /* border:#7a7a7a  solid 4px; */
     border-radius: 10px;
     background-color:#e0853b ;
     padding:2px 5px 1px 5px;
