@@ -242,8 +242,10 @@ li a {
 
 .menuFlut{
   position: fixed;
-  margin: 380px 20px 30px 35px; 
+  bottom: 1.5rem;
+  left: 1.5rem;
 }
+
 .botMenuFlut{
   position: absolute;
   display: none;
@@ -252,57 +254,3 @@ li a {
   /* ////////////////////////////////////// */
 
 
-#delete{
-color:grey;
-}
-
-#delete:hover{
-  color:red
-}
-
-
-.telona{
-  width: 50rem;
-  height: 25rem;
-  box-shadow: 2px 3px 3px 1px #c2c1c1;
-  background-color: #ffff;
-  border-radius: 5px;
-  margin: 2rem auto auto 15rem;
-  display:flex;
-}
-
-.espaco{
-  margin: auto auto 21rem auto;
-  border: none;
-  background-color: white;
-  border-radius: 1rem;
-  width: 7rem;
-  height: 2rem;
-  box-shadow: 2px 3px 3px 1px #c2c1c1;;
-
-}
-
-.alinhamento{
- margin: 2rem auto auto 35rem;
- width: 3rem;
- height: 2rem;
- border: none;
- background-color: white;
- border-radius: 1rem;
- box-shadow: 2px 3px 3px 1px #c2c1c1;
-}
-
-.borda{
-  border:none;
-  border-radius: 1rem;
-}
-
-.texto{
-  margin: 9rem auto auto auto;  
-  width: 15rem;
-  height: 10rem;
-  border:none;
-  background-color: white;
-  border-radius: 1rem;
-  box-shadow: 2px 3px 3px 1px #c2c1c1;
-}  

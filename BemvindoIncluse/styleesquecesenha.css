@@ -1,0 +1,128 @@
+@import url('https://fonts.googleapis.com/css2?family=Shrikhand&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Nunito&family=Nunito+Sans:wght@300;700;800&display=swap');
+
+    body{
+    background:#fafafa;
+  }
+  /* CONFIG MENU */
+  
+  
+  .divMenu{
+    
+    margin: 0px 0px 0px;
+    overflow: hidden;
+  }
+  ul {
+    list-style-type: none;
+    margin: 0px;
+    padding: 0px;
+  }
+  .aplicafontelogo{
+    font-family: 'Shrikhand', cursive;
+    font-size: 25px;
+    color:#e0853b;
+    margin: 10px 0px 0px 10%  
+  }
+
+  /* botao de fechar */
+  .close {
+    position: absolute;
+    right: 0px;
+    top: 18px;
+    width: 32px;
+    height: 32px;
+    opacity: 0.3;
+    color:  #e0853b;
+    margin: 0px 10%;
+    cursor: pointer;
+  }
+
+  .close:hover {
+    opacity: 1;
+  }
+  .close:before, .close:after {
+    position: absolute;
+    content: ' ';
+    height: 33px;
+    width: 2px;
+    background-color: #333;
+  }
+  .close:before {
+    transform: rotate(45deg);
+  }
+  .close:after {
+    transform: rotate(-45deg);
+  }
+
+ 
+  
+  /* ////////////////////////////////// */
+
+  /* CONTEUDO DA PAG */ 
+  
+  /* div do caixa */
+  .container{
+    background-color: white;
+    display: block;
+    border-radius: 15px;
+    margin: 10rem auto;
+    width: 23rem;
+    height: 21rem; 
+    border: none;
+    box-shadow: 0px 3px 4px rgb(165, 163, 163);
+    padding: 1rem 2rem 0rem 2rem; 
+    
+  }
+  /* titulo login  */
+  h1{
+      color: #e0853b;
+      font-size: 25px;
+      font-family: 'Nunito Sans', sans-serif;
+      font-weight: 800;
+
+  }
+
+  .divH1{
+    margin: 40px auto 40px auto;
+    text-align: center;
+  }
+   /* botao confirma */
+  .button{
+      background-color: #e0853b;
+      margin: 2rem auto 2rem auto;
+      border-radius: 20px;
+      border: none;
+      width: 30%;
+      height: 4vh;
+      display: block;
+      font-family: 'Nunito Sans', sans-serif;
+      cursor: pointer;
+  }
+  
+  .button:hover {
+    background-color: #c97d3f;
+  }
+  
+  /* config de entrada */
+  input{
+    background:#f3f3f3;
+      border-radius: 5px;
+      margin: 2% auto 0px auto;
+      width: 20rem;
+      height: 2rem;
+      border: none; 
+      display: block;
+      font-family: 'Nunito Sans', sans-serif;
+      
+  }
+
+  /* texto */
+  p{
+    font-family: 'Nunito Sans', sans-serif;
+    font-size: 15px;
+    color: #353535;
+    text-decoration: none;
+    text-align: center;
+    margin: auto 10% 2rem 6%;
+  }
