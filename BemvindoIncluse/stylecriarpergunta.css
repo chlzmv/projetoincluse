@@ -262,7 +262,7 @@ li a {
     margin:auto auto;
     padding: auto 3rem;
     display: block;
-    width: 70%;
+    width: 60%;
   }
   
   h1{
@@ -286,13 +286,13 @@ li a {
   }
   #tituloForm{
     width: auto;
-    margin: 1rem 1rem auto 1rem;
+    margin: 1rem 1rem auto rem;
     border: none;
     font-size: 30px;
     font-weight: 700;
   }
   .divInfoForm{
-    margin: 0rem 0rem 1.5rem;
+    margin: 0rem 0rem 5rem;
   }
   #numQuest{
     float:left;
@@ -301,6 +301,10 @@ li a {
     background-color: #f3f3f3;
     border-radius: 3px;
     font-size: 20px;
+  }
+  .inputSV{
+    float: right;
+    width: 50%;;
   }
   #formSelect{
     border:none;
@@ -325,12 +329,19 @@ li a {
     background-color: #f3f3f3;
     border-radius: 3px;
     font-size: 20px;
+    margin-bottom: 1rem;
+  }
+
+  
+  #checkbox{
+  
   }
   #checkText{
     border:none;
     background-color: #f3f3f3;
     border-radius: 3px;
     font-size: 20px;
+    margin:  0.2rem 0rem 0.2rem 0rem;
   }
   #delete{
 
