@@ -5,28 +5,32 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="stylelogin.css">
+    <link rel="stylesheet" type="text/css" href="styleforms.css">
 </head>
 <body >
+    
     <div class="divMenu">
         <ul>
             <li href="#" class="aplicafontelogo">Incluse.com</li>
-            <li onclick="window.location='index.html';" class="close"></li>
+            <li href="#" class="close"></li>
         </ul>
     </div>
-
     <div class="container">
-        <h1 class="divH1">Entrar</h1>
-        <!-- <hr class="hr"> -->
+        <div class="divH1">
+            <h1 >Cadastre-se</h1>
+        </div>
+        
         <form>
+            <div class="divInputNome">
+                <input class="inputNome" type="fname" id="fname" name="fnome" placeholder="Primeiro nome">
+                <input class="inputNome" type="lname" id="lname" name="lname" placeholder="Ultimo nome">
+            </div>
             <input class="input" type="email" id="email" name="email"placeholder="Email">
             <input class="input" type="password" id="senha" name="senha" placeholder="Senha">
-            <div class="divA">
-                <a href="esqueceSenha.html">Esqueceu a senha?</a>
-            </div>
+            <input class="input" type="password" id="csenha" name="csenha" placeholder="Confirmar senha">
             <input class="button" type="submit" value="Confirmar">
         </form>
     </div>
-    
+      
 </body>
 </html>
