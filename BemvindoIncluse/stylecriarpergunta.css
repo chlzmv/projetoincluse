@@ -192,7 +192,7 @@ li a {
   font-size: 62px;
 }
 
-#add{
+#add1{
   position: absolute;
   margin: 1px 0.7rem 0.7rem 0.6rem;
   font-size: 55px;
@@ -201,7 +201,7 @@ li a {
   transition: 0.25s;
 }
 
-#add:hover {
+#add1:hover {
   font-size: 57px;
 }
 
@@ -354,8 +354,13 @@ li a {
     background-color: #4ea845;
     border-radius: 2px;
   }
-  #add{
-    
+  #add2{
+    font-size: 25PX;
+  }
+  #add2:hover {
+    color: #ffffff;
+    background-color: #e4e4e4;
+    border-radius: 2px;
   }
 
   .divBotoesInfer{
@@ -365,6 +370,9 @@ li a {
     margin-top: -0.5rem;
     float:left;
     font-size: 35px;
+  }
+  #add_box:hover{
+    color:#e0853b
   }
   .botoesSR{
     width: 14rem;
