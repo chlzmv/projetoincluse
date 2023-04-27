@@ -243,7 +243,7 @@
 
   /* ///////////////// */
   
-  /* DISPLAY DE AUDIO */
+   /* DISPLAY DE AUDIO */
 
   /* barra de progres */
   .timeline {
@@ -301,7 +301,7 @@
   /* linha para progress inativa */
   hr{
     border-bottom: rgb(47, 42, 42) solid 3px;
-    margin-top:30px;
+    margin-top: 1.9rem;
     margin-bottom:0px;
   }
 
@@ -311,8 +311,8 @@
     position:fixed;
     right: 5rem;
     top: 20rem;
-    width: 180px;
-    height: 100px;
+    width: 11.3rem;
+    height: 6.3rem;
     border-radius: 10px;
     background-color:#e0853b ;
     padding:2px 5px 1px 5px;
