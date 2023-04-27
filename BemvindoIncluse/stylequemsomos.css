@@ -33,15 +33,6 @@
     text-decoration: none;
     
   }
-  
-  /* li a:hover:not(.active) {
-    background-color: #111;
-  }
-   */
-  /* .active {
-    background-color: #04AA6D;
-   
-  } */
 
   .liLogin{
     margin-top:13px;
@@ -241,7 +232,8 @@
   
   .menuFlut{
     position: fixed;
-    margin: 29.5% 0.5em 1em 1.5em; 
+    bottom: 1.5rem;
+    left: 1.5rem;
   }
 
   .botMenuFlut{
@@ -298,24 +290,12 @@
   
   }
 
-  /* barras de pause */
-  /* .play1, .play2 {
-    height: 22px;
-    width: 5px;
-    background-color:rgb(47, 42, 42);
-    margin-left:1px;
-    display: inline-block;
-    cursor: pointer;
-    
-   } */
-
    /* div para centralzr pause play */
    .center {
     margin-top: 9px; 
     margin-left: 35%;
     width: 45%;
     padding: 2px;
-    /* border: solid coral; */
   }
 
   /* linha para progress inativa */
@@ -329,10 +309,10 @@
   .containerPlayer{
     display:inline-block;
     position:fixed;
-   margin: 70px auto auto 83%;
+    right: 5rem;
+    top: 20rem;
     width: 180px;
     height: 100px;
-    /* border:#7a7a7a  solid 4px; */
     border-radius: 10px;
     background-color:#e0853b ;
     padding:2px 5px 1px 5px;
