@@ -23,9 +23,6 @@
         <li style="float: right">
             <ul>
                 <li><a class="liLogin" href="login.html">Entrar</a></li>
-                <li href="#">
-                    <div class="backgroundImagem"><img src="iconUser.png" class="configimagem" onclick = "clickProf()"></div>
-                </li>
             </ul>
         </li>
     </ul>
@@ -39,15 +36,7 @@
             <li><a href="quemsomos.html">Quem Somos?</a></li>
         </ul>   
     </menu>
-    
-    <!-- botões menu profile -->
-    <menu class="menuProf" id="prof">
-        <ul class="ulProf">
-            <li class="liProf"><a href="login.html" class="aProf">Trocar usuário</a></li>
-            <li class="liProf"><a href="#" class="aProf">Sair</a></li>
-        </ul>   
-    </menu>
-    
+
     <!-- menu flutuante -->
     <div class="menuFlut">
         <div class="botMenuFlut" id="botFlut">    
@@ -82,18 +71,6 @@
         </div>
     </div>
 
-
-
-
-
-
-
-
-
-
-
- <!-- DEIXAR O SCRIP ABAIXO NO FIM DO BODY!!!  -->
-
     <!-- Script botão menu -->
 
     <script>
@@ -104,12 +81,6 @@
             } 
             else {menu.style.display = "block"}
     
-        }
-        function clickProf(){
-            if (prof.style.display == "block") {
-                prof.style.display = "none"
-            } 
-            else {prof.style.display = "block"}
         }
 
         function clickflut(){
