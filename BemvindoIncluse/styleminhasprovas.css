@@ -1,10 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Shrikhand&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Nunito&family=Nunito+Sans:wght@300;700;800&display=swap');
+  body{
+    margin: 0px;
+  
+  } 
 
-/* BARRA DE MENU */
-*{
-    margin:0px
-}
 /* BARRA DE MENU */
 
 /* ul do conteudo da barra */
@@ -32,6 +32,15 @@ li a {
   text-decoration: none;
   
 }
+
+/* li a:hover:not(.active) {
+  background-color: #111;
+}
+ */
+/* .active {
+  background-color: #04AA6D;
+ 
+} */
 
 .liLogin{
   margin-top:13px;
@@ -231,110 +240,88 @@ li a {
 
 .menuFlut{
   position: fixed;
-  bottom: 1.5rem;
-  left: 1.5rem;
+  margin: 380px 20px 30px 35px; 
 }
-
 .botMenuFlut{
   position: absolute;
   display: none;
 }
 
-  /* //////////////////////////// */
+  /* ////////////////////////////////////// */
+
+  /* LISTA FORMS */
+
+  /* titulo pag */
+  h1{
+    font-family: 'Nunito Sans', sans-serif;
+    font-size: 35px;
+    font-weight: 300;
+    text-align: center;
+    color: #e0853b;
+  }
+  .divTitulo{
+    margin: 40px auto 40px auto;
+  }
+
+
+  .divForms{
+    box-shadow: 0px 1px 4px 0px #d6d5d5;
+    border: none;
+    border-radius: 15px;
+    font-family: 'Nunito Sans', sans-serif;
+    padding: 10px 10px 10px 10px;;
+    width: 550px;
+    margin: 10px auto 10px auto;
+    padding: 7px 7px 7px 7px;
+    cursor: pointer;
+    color:rgb(47, 42, 42);
+  }
+  .divForms:hover {
+    background-color: #f0f0f0;
+    
+  }
+  /* titulo forms */
+  h2{
+    display: inline;
+  }
+
+  /* icone prova */
+  #description{
+    float: left;
+    font-size: 80px;
+    color:#d3d1d1;
+    margin: 5px 5px 5px 5px;
+  }
   
-.container{
-margin: 1.5rem 10rem;
-padding: 1.5rem 12rem;
-font-family: 'Nunito Sans', sans-serif;
-font-size: larger;
-}
-
-.divWelc{
-  margin: auto auto 6rem auto;
-}
-
-.divWelc > a {
-float: right;
-}
-
-.divWelc > h1{
-  color: #e0853b;
-}
-
-.BotC{
-  display: flex;
-  border-radius: 10px;
-  box-shadow: 0px 1px 4px 0px #d6d5d5;
-  margin: auto auto 2rem auto;
-  padding: 3rem 10rem 3rem 8rem;
-  transition: 0.25s;
-  cursor: pointer;
-}
-
-.BotC:hover{
-  background-color: #f0f0f0;
+  /* icone lixo */
+  #delete{
+    font-size: 30px;
+    float:right;
+    margin: 0px auto 4px 0px;
+    cursor: pointer;;
+  }
+  #delete:hover{
+    color: rgb(192, 49, 49);
   }
 
-.BotC > span{
-margin-left: 5rem;
-}
-
-.divLowBot{
-  display: flex;
-}
-.botMP{
-  display: flex;
-  border-radius: 10px;
-  box-shadow: 0px 1px 4px 0px #d6d5d5;
-  padding: 2.5rem;
-  padding-right: 4rem;
-  margin-right: 1.7rem;
-  width: 13.7rem;
-  transition: 0.25s;
-  cursor: pointer;
-}
-
-.botMP:hover{
-  background-color: #f0f0f0;
+  /* infos forms */
+  .divInfoForms{
+    display:inline-block;
+    margin: 5px 5px 5px 5px;
   }
+  .divBotoes{
+    float:right;
+    margin: 10px 10px auto auto;
 
-
-.botMP > span{
-  margin-top: 1rem;
   }
-
-.botCI{
-  display: flex;
-  border-radius: 10px;
-  box-shadow: 0px 1px 4px 0px #d6d5d5;
-  padding: 2.5rem;
-  padding-right: 4rem;
-  padding-left: 3rem;
-  margin-left: 1.3rem;
-  width: 13.7rem;
-  transition: 0.25s;
-  cursor: pointer;
-}
-
-.botCI:hover{
-  background-color: #f0f0f0;
+  .button{
+    border:none;
+    border-radius: 5px;
+    padding: 4px 6px 4px 6px;
+    margin: 10px 3px 3px 3px;
+    cursor: pointer;
   }
-
-.botCI > span{
-  margin-top: 1rem;
+  .button:hover {
+    background-color:white;
+    
   }
-
-#pencil{
-  font-size: 40px;
-  color:#d3d1d1;
-}
-
-#book{
-  font-size: 40px;
-  color:#d3d1d1;
-}
-
-#info{
-  font-size: 40px;
-  color:#d3d1d1;
-}
