@@ -253,7 +253,7 @@ li a {
     margin:auto auto;
     padding: auto 3rem;
     display: block;
-    width: 60%;
+    width: 50%;
   }
   
   h1{
@@ -295,7 +295,7 @@ li a {
   }
   .inputSV{
     float: right;
-    width: 50%;;
+    width: 60%;;
   }
   #formSelect{
     border:none;
@@ -323,22 +323,39 @@ li a {
     margin-bottom: 1rem;
   }
 
-  
+  .divOpcao{
+
+  }
   #checkbox{
-  
+
   }
   #checkText{
+    position: relative;
     border:none;
     background-color: #f3f3f3;
     border-radius: 3px;
     font-size: 20px;
-    margin:  0.2rem 0rem 0.2rem 0rem;
+    margin:  0rem 0rem 0rem 0rem;
+    width: 50%;
+    height: 1.7rem;
   }
   #delete{
 
   }
+  #delete:hover {
+    color: #b42e2e;
+  }
   #check{
-
+    
+  }
+  
+  #check:hover {
+    color: #ffffff;
+    background-color: #4ea845;
+    border-radius: 2px;
+  }
+  #add{
+    
   }
 
   .divBotoesInfer{
