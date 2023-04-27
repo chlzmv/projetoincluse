@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <title>Menu Dropdown Horizontal - Linha de Código</title>
      <!-- Aqui chamamos o nosso arquivo css externo -->
-    <link rel="stylesheet" type="text/css"  href="estilo.css" /> 
+    <link rel="stylesheet" type="text/css"  href="stylecriarpergunta.css" /> 
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
 </head>
 <body>
@@ -60,16 +60,56 @@
     <!-- ///////////////////////// -->
 
     <!-- conteudo pagina -->
-
+    <h1>Criar formulário</h1>
     <div class="container">
-        <div class="divTitulo">
-            <input type="text" >
+       
+        <div class="divTituloForm">
+            <input type="text" id="tituloForm"  placeholder="Título" >
+        </div>
+        <hr>
+        <div class="divInfoForm">
+            <input type="text" id="numQuest" placeholder="N° Questão" >
+            <select id="formSelect" >
+                <option selected>Tipo da Questão:</option>
+                <option value="1">Resposta Única</option>
+                <option value="2">Múltipla Escolha</option>
+            </select>
+            <input type="text" id="valorQuest" placeholder="Valor">
+        </div>
+        <div class="divCaixaTexto">
+            <textarea id="caixaTexto" cols="30" rows="20" placeholder="Insira o texto"></textarea>
+        </div>
+        <div class="divCheckBox">
+            <div class="opcao1">
+                <input type="checkbox" id="checkbox1" placeholder="check1">
+                <textarea  id="checkText" cols="30" rows="1" placeholder="Insira o texto"></textarea>
+                <span id="delete" class="material-symbols-outlined">
+                    delete
+                </span>
+                <span id="check" class="material-symbols-outlined">
+                    check
+                </span>
+            </div>
+            
+            </span>
+        </div>
+        <hr>
+        <div class="divBotoesInfer">
+            <span id="add_box" class="material-symbols-outlined">
+                add_box
+            </span>
+            <div class="botoesSR">
+                <input type="button" id="botaoRascunho" value="Rascunho">
+                <input type="button" id="botaoSalva" value="Salvar formulário">
+            </div>
         </div>
 
     </div>
 
-
-
+<!-- 
+    <span class="material-symbols-outlined">
+                        delete
+                    </span> -->
 
 
      <!-- Script botão menu -->
