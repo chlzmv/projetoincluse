@@ -10,7 +10,8 @@
 </head>
 <body>
     <!-- codigo do menu -->
-    <div class="divMenu"><ul>
+    <div class="divMenu">
+    <ul>
         <li style="float: left">
             <div class="containerIconMenu">
                 <span class="material-symbols-outlined" onclick="clickMenu()" id="dropdown">menu</span>
@@ -20,9 +21,10 @@
         
       
         
-        <li style="float: right">
+        <li class="liLogin">
             <ul>
-                <li><a class="liLogin" href="login.html">Entrar</a></li>
+                <li><input type="button" id="botaoCad" value="Cadastre-se" onclick="window.location='cadastro.html';"></li>
+                <li><a href="login.html">Entrar</a></li>
             </ul>
         </li>
     </ul>

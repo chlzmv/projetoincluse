@@ -273,9 +273,17 @@ li a {
     background-color: #f0f0f0;
     
   }
+
   /* titulo forms */
   h2{
     display: inline;
+    font-size: 25px;
+    transition: 0.25s;
+  }
+
+  h2:hover{
+    font-size: 26px;
+    color: #e0853b;
   }
 
   /* icone prova */
