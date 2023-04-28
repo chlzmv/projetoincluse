@@ -219,18 +219,22 @@ li a {
   /* //////////////////////////// */
   
 .container{
-margin: 1.5rem 10rem;
-padding: 1.5rem 12rem;
-font-family: 'Nunito Sans', sans-serif;
-font-size: larger;
+  margin: auto auto;
+  padding: auto;
+  display: block;
+  width: 60%;
+  font-family: 'Nunito Sans', sans-serif;
+  font-size: larger;
 }
 
 .divWelc{
-  margin: auto auto 6rem auto;
+  margin: 10% 15%;
+  width: 70%;
+  display: block;
 }
 
 .divWelc > a {
-float: right;
+  float: right;
 }
 
 .divWelc > h1{
@@ -252,7 +256,8 @@ float: right;
   }
 
 .BotC > span{
-margin-left: 5rem;
+  display: block;
+  margin: auto auto;
 }
 
 .divLowBot{
@@ -268,6 +273,7 @@ margin-left: 5rem;
   width: 13.7rem;
   transition: 0.25s;
   cursor: pointer;
+  width: 40%;
 }
 
 .botMP:hover{
@@ -276,7 +282,8 @@ margin-left: 5rem;
 
 
 .botMP > span{
-  margin-top: 1rem;
+  display: block;
+  margin: auto auto;
   }
 
 .botCI{
@@ -290,6 +297,7 @@ margin-left: 5rem;
   width: 13.7rem;
   transition: 0.25s;
   cursor: pointer;
+  width: 40%;
 }
 
 .botCI:hover{
@@ -297,7 +305,8 @@ margin-left: 5rem;
   }
 
 .botCI > span{
-  margin-top: 1rem;
+  display: block;
+  margin: auto auto;
   }
 
 #pencil{
