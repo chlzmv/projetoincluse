@@ -36,17 +36,39 @@ li a {
 
 .liLogin{
   margin-top: 0.6rem;
+  margin-right: 1rem;
   text-align: right ;
   float: right;
   font-size: 22px;
   cursor: pointer;
   font-weight: 550;
   font-family: 'Nunito Sans', sans-serif;
+}
+
+.liLogin a{
   transition: 0.25s;
 }
 
-.liLogin:hover{
+.liLogin a:hover{
   font-size: 23px;
+}
+
+#botaoCad{
+  background-color: #e0853b;
+  border-radius: 1.5rem;
+  border: none;
+  cursor: pointer;
+  font-size: 1.2rem;
+  margin-top: 0.9rem;
+  margin-right: 1rem;
+  padding: 0.6rem;
+  color: white;
+  transition: 0.25s;
+  box-shadow: 0px 1px 0.3rem 0px #d6d5d5;
+}
+
+#botaoCad:hover{
+  font-size: 1.3rem;
 }
 
 .configimagem{
@@ -244,7 +266,7 @@ li a {
 .BotC{
   display: flex;
   border-radius: 10px;
-  box-shadow: 0px 1px 4px 0px #d6d5d5;
+  box-shadow: 0px 1px 0.3rem 0px #d6d5d5;
   margin: auto auto 2rem auto;
   padding: 3rem 10rem 3rem 8rem;
   transition: 0.25s;
@@ -266,7 +288,7 @@ li a {
 .botMP{
   display: flex;
   border-radius: 10px;
-  box-shadow: 0px 1px 4px 0px #d6d5d5;
+  box-shadow: 0px 1px 0.3rem 0px #d6d5d5;
   padding: 2.5rem;
   padding-right: 4rem;
   margin-right: 1.7rem;
@@ -289,7 +311,7 @@ li a {
 .botCI{
   display: flex;
   border-radius: 10px;
-  box-shadow: 0px 1px 4px 0px #d6d5d5;
+  box-shadow: 0px 1px 0.3rem 0px #d6d5d5;
   padding: 2.5rem;
   padding-right: 4rem;
   padding-left: 3rem;
