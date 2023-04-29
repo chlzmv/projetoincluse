@@ -1,57 +1,121 @@
+@import url('https://fonts.googleapis.com/css2?family=Shrikhand&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Nunito&family=Nunito+Sans:wght@300;700;800&display=swap');
+
 body{
-    background-color: #d4650b;
-    font-family:sans-serif;
-    margin: 0px;
-}
+    background:#fafafa;
+  }
 
-.h1{
-    color: #d4650b;
+   /* CONFIG MENU */
+  .divMenu{
+
+    margin: 0px 0px 0px;
+    overflow: hidden;
+  }
+  ul {
+    list-style-type: none;
+    margin: 0px;
+    padding: 0px;
+  }
+  .aplicafontelogo{
+    font-family: 'Shrikhand', cursive;
+    font-size: 25px;
+    color:#e0853b;
+    margin: 10px 0px 0px 10%
+  }
+  /* botao de fechar */
+  .close {
+    position: absolute;
+    right: 0px;
+    top: 18px;
+    width: 32px;
+    height: 32px;
+    opacity: 0.3;
+    color:  #e0853b;
+    margin: 0px 10%;
+    cursor: pointer;
+  }
+
+  .close:hover {
+    opacity: 1;
+  }
+  .close:before, .close:after {
+    position: absolute;
+    content: ' ';
+    height: 33px;
+    width: 2px;
+    background-color: #333;
+  }
+  .close:before {
+    transform: rotate(45deg);
+  }
+  .close:after {
+    transform: rotate(-45deg);
+  }
+
+  /* div do menu */
+ .container{
+    background-color: white;
+    display: block;
+    border-radius: 15px;
+    margin: 100px auto;
+    width: 390px;
+    height: 410px;
+    border: none;
+    box-shadow: 0px 3px 4px rgb(165, 163, 163);
+    padding: 1px;
+
+ }
+  /* titulo cadastro */
+  h1{
+      color: #e0853b;
+      font-size: 30px;
+      font-family: 'Nunito Sans', sans-serif;
+      font-weight: 800;
+
+  }
+
+  .divH1{
+    margin: 40px auto 40px auto;
     text-align: center;
-    margin: 10% auto;
-    height: 30%;
-}
-.hr{
-    margin: 10% auto;
-    width: 60%;
-    height: 10%;
-    
-}
-.barra{
-    background-color: white;
-    display: block;    
-    border: none;
-    margin: 0px;
-}
-.container{
-    background-color: white;
-    display: block;
-    border-radius: 5%;
-    margin: 30% auto;
-    width: 40%;
-    height: 50%; /*n ta mudando nada*/
-    border: none;
-    box-shadow: 5px 5px 10px black;
-  
-}
+  }
 
-.button{
-    background-color:#d4650b;
-    display: block;
-    margin: 4% auto;
-    border-radius: 5%;
-    border: none;
-    width: 30%;
+  /* config botao */
+  .button{
+      background-color: #e0853b;
+      margin: 45px auto 20px auto;
+      border-radius: 20px;
+      border: none;
+      width: 30%;
+      height: 4vh;
+      display: block;
+      font-family: 'Nunito Sans', sans-serif;
+      cursor: pointer;
+  }
+
+  .button:hover {
+    background-color: #c97d3f;
+  }
+
+  /* configs entradas */
+  input{
+    background:#f3f3f3;
+      border-radius: 5px;
+      margin: 2% auto 0px auto;
+      width: 250px;
+      height: 4vh;
+      border: none;
+      display: block;
+      font-family: 'Nunito Sans', sans-serif;
+      font-weight: 300;
+      padding-left: 6px;
+  }
+  .inputNome{
+    display: inline;
+    width: 119px;
     height: 4vh;
-    font-family:sans-serif; /*pq por uma fonte no body n ativa p tds*/
-
-}
-.input{
-    background-color: rgb(240, 238, 235);
-    border: none;
-    display: block;
-    margin: 2% auto;
-    width: 65%;
-    height: 4vh;
-   
-
-}
+  }
+  .divInputNome{
+    display:block;
+    margin: auto 10% auto 17%
+  }
