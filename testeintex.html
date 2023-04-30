@@ -1,0 +1,105 @@
+<!DOCTYPE HTML>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Menu Dropdown Horizontal - Linha de Código</title>
+     <!-- Aqui chamamos o nosso arquivo css externo -->
+    <link rel="stylesheet" type="text/css"  href="styletesteindex.css" /> 
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+</head>
+<body>
+   <!-- codigo do menu -->
+    <nav class="divMenu"><ul>
+        <li style="float: left">
+            <nav class="containerIconMenu">
+                <span class="material-symbols-outlined" onclick="clickMenu()" id="dropdown">menu</span>
+            </nav>
+        </li>    
+        <li><a href="index.html" class="aplicafontelogo">Incluse.com</a></li>
+        
+      
+        
+        <li class="liLogin">
+            <ul>
+                <li><input type="button" id="botaoCad" value="Cadastre-se" onclick="window.location='cadastro.html';"></li>
+                <li><a href="login.html">Entrar</a></li>
+            </ul>
+        </li>
+    </ul>
+    </nav>
+
+    <!-- botões menu hamburger -->
+    <menu id="menu">
+        <ul>
+            <li><a href="criarperguntas.html">Criar Formulário</a></li>
+            <li><a href="meusformularios.html">Meus Formulários</a></li>
+            <li><a href="quemsomos.html">Quem Somos?</a></li>
+        </ul>   
+    </menu>
+
+    <!--menu flutuante -->
+    <footer class="menuFlut">
+        <footer class="botMenuFlut" id="botFlut">    
+            <span class="material-symbols-outlined" id="add">add_circle</span>
+            <span class="material-symbols-outlined" id="minus">do_not_disturb_on</span>
+            <span class="material-symbols-outlined" id="color">contrast</span>
+        </footer>
+        <span class="material-symbols-outlined" id="arrow" onclick="clickflut()">expand_circle_down</span>
+    </footer>
+    <!-- ///////////////////////////////////////// -->
+
+    <!-- Conteudo pag -->
+    <section class="container">
+        <header class="headWelc">
+            <h1>Bem-Vindo a Incluse</h1>
+            <a>A sua plataforma de formulários acessíveis</a>
+        </header>
+        <section class="containerBotoes">
+            <nav class="criaForm">
+                <h2>Criar formulario</h2>
+                <span class="material-symbols-outlined" id="pencil">edit</span>
+            </nav>
+            <section class="sectionBotoesInf">
+                <nav class="meuForms">
+                    <h2>Meus Formulários</h2>
+                    <span class="material-symbols-outlined" id="book">menu_book</span>
+                </nav>
+                <nav class="conhecaIncluse">
+                    <h2>Conheça Incluse</h2>
+                    <span class="material-symbols-outlined" id="info">info</span>
+                </nav>
+            </section>
+        </section>
+        
+
+    </section>
+
+    
+    <!-- Script botão menu -->
+
+    <script>
+        function clickMenu(){
+
+            if (menu.style.display == "block") {
+                menu.style.display = "none"
+            } 
+            else {menu.style.display = "block"}
+    
+        }
+        function clickProf(){
+            if (prof.style.display == "block") {
+                prof.style.display = "none"
+            } 
+            else {prof.style.display = "block"}
+        }
+
+        function clickflut(){
+            if (botFlut.style.display == "block") {
+                botFlut.style.display = "none"
+            } 
+            else {botFlut.style.display = "block"}
+        }
+    </script>
+    
+</body>
+</html>
