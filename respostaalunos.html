@@ -10,25 +10,24 @@
 </head>
 <body>
     <!-- codigo do menu -->
-    <div class="divMenu"><ul>
-        <li style="float: left">
-            <div class="containerIconMenu">
-                <span class="material-symbols-outlined" onclick="clickMenu()" id="dropdown">menu</span>
-            </div>
-        </li>    
-        <li><a href="index.html" class="aplicafontelogo">Incluse.com</a></li>
-        
-      
-        
-        <li style="float: right">
-            <ul>
-                <li>
-                    <div class="backgroundImagem"><img src="iconUser.png" class="configimagem" onclick = "clickProf()"></div>
-                <li>
-            </ul>
-        </li>
+    <nav class="divMenu">
+        <ul>
+            <li style="float: left">
+                <nav class="containerIconMenu">
+                    <span class="material-symbols-outlined" onclick="clickMenu()" id="dropdown">menu</span>
+                </nav>
+            </li>    
+            <li><a href="index.html" class="aplicafontelogo">Incluse.com</a></li>
+            
+            <li style="float: right">
+                <ul>
+                    <li>
+                        <div class="backgroundImagem"><img src="iconUser.png" class="configimagem" onclick = "clickProf()"></div>
+                    <li>
+                </ul>
+            </li>
     </ul>
-    </div>
+    </nav>
 
     <!-- botões menu hamburger -->
     <menu id="menu">
@@ -48,42 +47,37 @@
     </menu>
 
     <!--menu flutuante -->
-    <div class="menuFlut">
-        <div class="botMenuFlut" id="botFlut">    
-            <span class="material-symbols-outlined" id="add">add_circle</span>
+    <footer class="menuFlut">
+        <footer class="botMenuFlut" id="botFlut">    
+            <span class="material-symbols-outlined" id="add1">add_circle</span>
             <span class="material-symbols-outlined" id="minus">do_not_disturb_on</span>
             <span class="material-symbols-outlined" id="color">contrast</span>
-        </div>
+        </footer>
         <span class="material-symbols-outlined" id="arrow" onclick="clickflut()">expand_circle_down</span>
-    </div>
-
+    </footer>
     <!-- ///////////////// -->
 
-    <div class="containerConteudo">
+    <section class="containerConteudo">
         <!-- titulo pag -->
     
             <!-- infos add forms -->
-            <div class="containerInfoForms">
+            <header class="containerInfoForms">
                 
-                <div class="divInfoForms">
+                <header class="divInfoForms">
                     <h1>Nome Aluno</h1>
                     <a>Concluido em:</a>
                     <a>xx/xx/xxxx</a>
                     <a class="espace"></a>
                     <a>Acertos:</a>
                     <a>xx/xx</a>
-                </div>
+                </header>
                 <a class="porcent">00%</a>
-            </div>
-            <!-- botao de ordenar -->
-            <forms>
-    
-            </forms>
+            </header>
     
             <!-- lista de alunos -->
             
-            <div class="divResultC">
-                <div class="divInfoResposta">   
+            <section class="divResultC">
+                <section class="divInfoResposta">   
                     <div class="numero">
                         <a>Questão 1</a>
                     </div>
@@ -98,10 +92,10 @@
                     <span id="check" class="material-symbols-outlined">
                         check
                         </span>               
-                </div>
-            </div>
-            <div class="divResultE">
-                <div class="divInfoResposta">   
+                    </section>
+            </section>
+            <section class="divResultE">
+                <section class="divInfoResposta">   
                     <div class="numero">
                         <a>Questão 2</a>
                     </div>
@@ -116,10 +110,10 @@
                     <span id="close" class="material-symbols-outlined">
                         close
                     </span>            
-                </div>
-            </div>
-            <div class="divResultC">
-                <div class="divInfoResposta">   
+                </section>
+            </section>
+            <section class="divResultC">
+                <section class="divInfoResposta">   
                     <div class="numero">
                         <a>Questão 3</a>
                     </div>
@@ -134,10 +128,10 @@
                     <span id="check" class="material-symbols-outlined">
                         check
                         </span>               
-                </div>
-            </div>
-            <div class="divResultE">
-                <div class="divInfoResposta">   
+                </section>
+            </section>
+            <section class="divResultE">
+                <section class="divInfoResposta">   
                     <div class="numero">
                         <a>Questão 4</a>
                     </div>
@@ -152,10 +146,10 @@
                     <span id="close" class="material-symbols-outlined">
                         close
                     </span>            
-                </div>
-            </div>
-            <div class="divResultE">
-                <div class="divInfoResposta">   
+                </section>
+            </section>
+            <section class="divResultE">
+                <section class="divInfoResposta">   
                     <div class="numero">
                         <a>Questão 5</a>
                     </div>
@@ -170,9 +164,9 @@
                     <span id="close" class="material-symbols-outlined">
                         close
                     </span>            
-                </div>
-            </div>
-
+                </section>
+            </section>
+    </section>
 
 
     <script>
