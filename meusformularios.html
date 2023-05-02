@@ -12,26 +12,22 @@
 </head>
 <body>
     <!-- codigo do menu -->
-    <div class="divMenu">
-        <ul>
-            <li style="float: left">
-                <div class="containerIconMenu">
-                     <span class="material-symbols-outlined" onclick="clickMenu()" id="dropdown">menu</span>
-                </div>
-            </li>    
-            <li><a href="index.html" class="aplicafontelogo">Incluse.com</a></li>
-            
+    <nav class="divMenu"><ul>
+        <li style="float: left">
+            <nav class="containerIconMenu">
+                <span class="material-symbols-outlined" onclick="clickMenu()" id="dropdown">menu</span>
+            </nav>
+        </li>    
+        <li><a href="index.html" class="aplicafontelogo">Incluse.com</a></li>
         
-            
-            <li style="float: right">
-                <ul>
-                    <li>
-                        <div class="backgroundImagem"><img src="iconUser.png" class="configimagem" onclick = "clickProf()"></div>
-                    <li>
-                </ul>
-            </li>
-        </ul>
-    </div>
+        <li style="float: right">
+            <ul>
+                <li>
+                    <div class="backgroundImagem"><img src="iconUser.png" class="configimagem" onclick = "clickProf()"></div>
+                <li>
+            </ul>
+        </li>
+    </nav>
 
     <!-- botões menu hamburger -->
     <menu id="menu">
@@ -50,64 +46,64 @@
         </ul>   
     </menu>
 
-     <!-- menu flutuante -->
-    <div class="menuFlut">
-        <div class="botMenuFlut" id="botFlut">    
+    <!--menu flutuante -->
+    <footer class="menuFlut">
+        <footer class="botMenuFlut" id="botFlut">    
             <span class="material-symbols-outlined" id="add">add_circle</span>
             <span class="material-symbols-outlined" id="minus">do_not_disturb_on</span>
             <span class="material-symbols-outlined" id="color">contrast</span>
-        </div>
+        </footer>
         <span class="material-symbols-outlined" id="arrow" onclick="clickflut()">expand_circle_down</span>
-    </div>
-
+    </footer>
+     
     <!-- LISTA DE FORMULARIOS -->
-    
-    <div class="divTitulo">
-        <h1> Meus Formulários</h1>
-    </div>
-    <div class="divForms">
-        <span id="description" class="material-symbols-outlined">description</span>
-        <div class="divInfoForms">       
-           <h2 onclick="window.location='questoesprontas.html';">Título do Formulário</h2>
-           <div>
-                <a>Criado em:</a>
-                <a>xx/xx/xxxx</a>
-           </div>
-           <div>
-                <a>Concluídos:</a>
-                <a>xx/xx</a>
-           </div>
-        </div>   
-        
-        <div class="divBotoes">
-            <span id="delete" class="material-symbols-outlined">delete</span>
+    <section>
+        <header class="divTitulo">
+            <h1> Meus Formulários</h1>
+        </header>
+        <section class="divForms">
+            <span id="description" class="material-symbols-outlined">description</span>
+            <div class="divInfoForms">       
+            <h2 onclick="window.location='questoesprontas.html';">Título do Formulário</h2>
             <div>
+                    <a>Criado em:</a>
+                    <a>xx/xx/xxxx</a>
+            </div>
+            <div>
+                    <a>Concluídos:</a>
+                    <a>xx/xx</a>
+            </div>
+            </div>   
+            
+            <div class="divBotoes">
+                <span id="delete" class="material-symbols-outlined">delete</span>
+                <div>
+                    <input class="button" type="submit" value="Acessar Resultados" onclick="window.location='resultadosalunos.html';">
+                </div>
+            </div>
+        </section>
+        <section class="divForms">
+            <span id="description" class="material-symbols-outlined">description</span>
+            <div class="divInfoForms">       
+            <h2 onclick="window.location='questoesprontas.html';" >Título do Formulário </h2>
+            <div>
+                    <a>Criado em:</a>
+                    <a>xx/xx/xxxx</a>
+            </div>
+            <div>
+                    <a>Concluídos:</a>
+                    <a>xx/xx</a>
+            </div>
+            </div>   
+            
+            <div class="divBotoes">
+                <span id="delete" class="material-symbols-outlined">delete</span>
+                <div>
                 <input class="button" type="submit" value="Acessar Resultados" onclick="window.location='resultadosalunos.html';">
+                </div>
             </div>
-        </div>
-    </div>
-    <div class="divForms">
-        <span id="description" class="material-symbols-outlined">description</span>
-        <div class="divInfoForms">       
-           <h2 onclick="window.location='questoesprontas.html';" >Título do Formulário </h2>
-           <div>
-                <a>Criado em:</a>
-                <a>xx/xx/xxxx</a>
-           </div>
-           <div>
-                <a>Concluídos:</a>
-                <a>xx/xx</a>
-           </div>
-        </div>   
-        
-        <div class="divBotoes">
-            <span id="delete" class="material-symbols-outlined">delete</span>
-            <div>
-            <input class="button" type="submit" value="Acessar Resultados" onclick="window.location='resultadosalunos.html';">
-            </div>
-        </div>
-    </div>
-
+        </section>
+    </section>
      <!-- Script botão menu -->
 
     <script>
