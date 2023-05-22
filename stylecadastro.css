@@ -64,8 +64,84 @@ body{
     border: none;
     box-shadow: 0px 3px 4px rgb(165, 163, 163);
     padding: 1px;
-
+  
  }
+
+ /* Menu Flutuante */
+
+.material-symbols-outlined {
+  font-variation-settings:
+  'FILL' 1,
+  'wght' 400,
+  'GRAD' 0,
+  'opsz' 48
+}
+
+#arrow{
+  cursor: pointer;
+  color: #e0853b;
+  font-size: 60px;
+  margin: 3.8rem auto 0.7rem auto;
+  border: #e0853b solid 2px;
+  border-radius: 50%;
+  transition: 0.25s;
+  transform: rotate(-180deg);
+}
+
+#arrow:hover {
+  font-size: 62px;
+}
+
+#add1{
+  position: absolute;
+  margin: 1px 0.7rem 0.7rem 0.6rem;
+  font-size: 55px;
+  color: #e0853b;
+  cursor: pointer;
+  transition: 0.25s;
+}
+
+#add1:hover {
+  font-size: 57px;
+}
+
+#minus{
+  position: absolute;
+  margin: 1.4rem 0.7rem 0px 4.4rem;
+  font-size: 55px;
+  color: #e0853b;
+  cursor: pointer;
+  transition: 0.25s;
+}
+
+#minus:hover {
+  font-size: 57px;
+}
+
+#color{
+  position: absolute;
+  margin: 5.4rem 0.7rem 0.7rem 4.3rem;
+  font-size: 55px;
+  color: #e0853b;
+  cursor: pointer;
+  transition: 0.25s;
+}
+
+#color:hover {
+  font-size: 57px;
+}
+
+.menuFlut{
+  position: fixed;
+  bottom: 1.5rem;
+  left: 1.5rem;
+}
+
+.botMenuFlut{
+  position: absolute;
+  display: none;
+}
+
   /* titulo cadastro */
   h1{
       color: #e0853b;
@@ -74,6 +150,8 @@ body{
       font-weight: 800;
 
   }
+
+  
 
   .divH1{
     margin: 40px auto 40px auto;
