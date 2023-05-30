@@ -66,7 +66,7 @@
     <div class="divForms">
         <span id="description" class="material-symbols-outlined">description</span>
         <div class="divInfoForms">       
-           <h2 onclick="window.location='questoesprontas.html';">Título do Formulário</h2>
+           <h2 onclick="window.location='questoesprontas.php';">Título do Formulário</h2>
            <div>
                 <a>Criado em:</a>
                 <a>xx/xx/xxxx</a>
@@ -80,14 +80,14 @@
         <div class="divBotoes">
             <span id="delete" class="material-symbols-outlined">delete</span>
             <div>
-                <input class="button" type="submit" value="Acessar Resultados" onclick="window.location='resultadosalunos.html';">
+                <input class="button" type="submit" value="Acessar Resultados" onclick="window.location='resultadosalunos.php';">
             </div>
         </div>
     </div>
     <div class="divForms">
         <span id="description" class="material-symbols-outlined">description</span>
         <div class="divInfoForms">       
-           <h2 onclick="window.location='questoesprontas.html';" >Título do Formulário </h2>
+           <h2 onclick="window.location='questoesprontas.php';" >Título do Formulário </h2>
            <div>
                 <a>Criado em:</a>
                 <a>xx/xx/xxxx</a>
@@ -101,7 +101,7 @@
         <div class="divBotoes">
             <span id="delete" class="material-symbols-outlined">delete</span>
             <div>
-            <input class="button" type="submit" value="Acessar Resultados" onclick="window.location='resultadosalunos.html';">
+            <input class="button" type="submit" value="Acessar Resultados" onclick="window.location='resultadosalunos.php';">
             </div>
         </div>
     </div>

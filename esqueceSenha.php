@@ -12,7 +12,7 @@
     <header class="divMenu">
         <ul>
             <li href="#" class="aplicafontelogo">Incluse.com</li>
-            <li class="close" onclick="window.location='login.html';"></li>
+            <li class="close" onclick="window.location='login.php';"></li>
         </ul>
     </header>
 
