@@ -4,14 +4,15 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <link rel="icon" href="icon.png" type="image/png">
+    <title>Redefinir Senha</title>
     <link rel="stylesheet" href="styleesquecesenha.css">
 </head>
 <body >
     <header class="divMenu">
         <ul>
             <li href="#" class="aplicafontelogo">Incluse.com</li>
-            <li class="close" onclick="window.location='login.html';"></li>
+            <li class="close" onclick="window.location='login.php';"></li>
         </ul>
     </header>
 

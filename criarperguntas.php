@@ -2,7 +2,8 @@
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
-    <title>Menu Dropdown Horizontal - Linha de Código</title>
+    <link rel="icon" href="icon.png" type="image/png">
+    <title>Criar Forms</title>
      <!-- Aqui chamamos o nosso arquivo css externo -->
     <link rel="stylesheet" type="text/css"  href="stylecriarpergunta.css" /> 
     <script src="botoestela.js"> </script>
@@ -32,9 +33,9 @@
     <!-- botões menu hamburger  -->
     <menu id="menu">
         <ul>
-            <li><a href="criarperguntas.html">Criar Formulário</a></li>
-            <li><a href="meusformularios.html">Meus Formulários</a></li>
-            <li><a href="quemsomos.html">Quem Somos?</a></li>
+            <li><a href="criarperguntas.php">Criar Formulário</a></li>
+            <li><a href="meusformularios.php">Meus Formulários</a></li>
+            <li><a href="quemsomos.php">Quem Somos?</a></li>
         </ul>   
     </menu>
     

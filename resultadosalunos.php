@@ -4,7 +4,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <link rel="icon" href="icon.png" type="image/png">
+    <title>Resultado Forms</title>
     <script src="botoestela.js"> </script>
     <link rel="stylesheet" type="text/css" href="styleresultadosalunos.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
@@ -17,7 +18,7 @@
                 <span class="material-symbols-outlined" onclick="clickMenu()" id="dropdown">menu</span>
             </div>
         </li>    
-        <li><a class="aplicafontelogo" href="index.html">Incluse.com</a></li>
+        <li><a class="aplicafontelogo" href="index.php">Incluse.com</a></li>
         <li style="float: right">
             <ul>
                 <li>
@@ -31,16 +32,16 @@
     <!-- botões menu hamburger -->
     <menu id="menu">
         <ul>
-            <li><a href="criarperguntas.html">Criar Formulário</a></li>
-            <li><a href="meusformularios.html">Meus Formulários</a></li>
-            <li><a href="quemsomos.html">Quem Somos?</a></li>
+            <li><a href="criarperguntas.php">Criar Formulário</a></li>
+            <li><a href="meusformularios.php">Meus Formulários</a></li>
+            <li><a href="quemsomos.php">Quem Somos?</a></li>
         </ul>   
     </menu>
     
     <!-- botões menu profile -->
     <menu class="menuProf" id="prof">
         <ul class="ulProf">
-            <li class="liProf"><a href="login.html" class="aProf">Trocar usuário</a></li>
+            <li class="liProf"><a href="login.php" class="aProf">Trocar usuário</a></li>
             <li class="liProf"><a href="#" class="aProf">Sair</a></li>
         </ul>   
     </menu>
@@ -94,7 +95,7 @@
             </div>
         </div>
         <div class="divResult">
-            <div class="divInfoAluno" onclick="window.location='respostaalunos.html';">
+            <div class="divInfoAluno" onclick="window.location='respostaalunos.php';">
                 <span id="school" class="material-symbols-outlined">school</span>       
                 <h2>Nome Aluno silva </h2>
                 <div class="emailAcertos">

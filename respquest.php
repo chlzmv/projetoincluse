@@ -4,7 +4,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <link rel="icon" href="icon.png" type="image/png">
+    <title>Forms</title>
     <script src="botoestela.js"> </script>
     <link rel="stylesheet" type="text/css" href="stylerespquest.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
@@ -17,7 +18,7 @@
                 <span class="material-symbols-outlined" onclick="clickMenu()" id="dropdown">menu</span>
             </nav>
         </li>    
-        <li><a href="index.html" class="aplicafontelogo">Incluse.com</a></li>
+        <li><a href="index.php" class="aplicafontelogo">Incluse.com</a></li>
         
         <li style="float: right">
             <ul>
@@ -31,16 +32,16 @@
     <!-- botões menu hamburger -->
     <menu id="menu">
         <ul>
-            <li><a href="criarperguntas.html">Criar Formulário</a></li>
-            <li><a href="meusformularios.html">Meus Formulários</a></li>
-            <li><a href="quemsomos.html">Quem Somos?</a></li>
+            <li><a href="criarperguntas.php">Criar Formulário</a></li>
+            <li><a href="meusformularios.php">Meus Formulários</a></li>
+            <li><a href="quemsomos.php">Quem Somos?</a></li>
         </ul>   
     </menu>
 
     <!-- botões menu profile -->
     <menu class="menuProf" id="prof">
         <ul class="ulProf">
-            <li class="liProf"><a href="login.html" class="aProf">Trocar usuário</a></li>
+            <li class="liProf"><a href="login.php" class="aProf">Trocar usuário</a></li>
             <li class="liProf"><a href="#" class="aProf">Sair</a></li>
         </ul>   
     </menu>

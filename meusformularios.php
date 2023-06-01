@@ -4,7 +4,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <link rel="icon" href="icon.png" type="image/png">
+    <title>Meus Forms</title>
     <link rel="stylesheet" type="text/css" href="styleminhasprovas.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
     <script src="botoestela.js"> </script>
@@ -65,7 +66,7 @@
     <div class="divForms">
         <span id="description" class="material-symbols-outlined">description</span>
         <div class="divInfoForms">       
-           <h2 onclick="window.location='questoesprontas.html';">Título do Formulário</h2>
+           <h2 onclick="window.location='questoesprontas.php';">Título do Formulário</h2>
            <div>
                 <a>Criado em:</a>
                 <a>xx/xx/xxxx</a>
@@ -79,14 +80,14 @@
         <div class="divBotoes">
             <span id="delete" class="material-symbols-outlined">delete</span>
             <div>
-                <input class="button" type="submit" value="Acessar Resultados" onclick="window.location='resultadosalunos.html';">
+                <input class="button" type="submit" value="Acessar Resultados" onclick="window.location='resultadosalunos.php';">
             </div>
         </div>
     </div>
     <div class="divForms">
         <span id="description" class="material-symbols-outlined">description</span>
         <div class="divInfoForms">       
-           <h2 onclick="window.location='questoesprontas.html';" >Título do Formulário </h2>
+           <h2 onclick="window.location='questoesprontas.php';" >Título do Formulário </h2>
            <div>
                 <a>Criado em:</a>
                 <a>xx/xx/xxxx</a>
@@ -100,7 +101,7 @@
         <div class="divBotoes">
             <span id="delete" class="material-symbols-outlined">delete</span>
             <div>
-            <input class="button" type="submit" value="Acessar Resultados" onclick="window.location='resultadosalunos.html';">
+            <input class="button" type="submit" value="Acessar Resultados" onclick="window.location='resultadosalunos.php';">
             </div>
         </div>
     </div>
