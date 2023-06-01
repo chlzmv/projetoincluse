@@ -18,7 +18,7 @@
 
     <section class="container">
         <h1 class="divH1">Redefina sua senha</h1>
-        <p>Se a conta existir, enviaremos um e-mail com instruções para redefinir a senha.</p>
+        <p>Se a conta existir,  enviaremos um e-mail com instruções para redefinir a senha.</p>
         <form>
             <input class="input" type="email" id="email" name="email"placeholder="Email">
             <input class="button" type="submit" value="Redefinir">
