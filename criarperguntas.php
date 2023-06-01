@@ -33,9 +33,9 @@
     <!-- botões menu hamburger  -->
     <menu id="menu">
         <ul>
-            <li><a href="criarperguntas.html">Criar Formulário</a></li>
-            <li><a href="meusformularios.html">Meus Formulários</a></li>
-            <li><a href="quemsomos.html">Quem Somos?</a></li>
+            <li><a href="criarperguntas.php">Criar Formulário</a></li>
+            <li><a href="meusformularios.php">Meus Formulários</a></li>
+            <li><a href="quemsomos.php">Quem Somos?</a></li>
         </ul>   
     </menu>
     

@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="icon.png" type="image/png">
     <title>Cadastro</title>
-    <link rel="stylesheet" type="text/css" href="styleredefinirsenha.css">
+    <link rel="stylesheet" type="text/css" href="stylecadastro.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
     <script src="botoestela.js"> </script>
 </head>
@@ -15,10 +15,10 @@
     <header class="divMenu">
         <ul>
             <li href="#" class="aplicafontelogo">Incluse.com</li>
-            <li href="#" class="close" onclick="window.location='index.html';"></li>
+            <li href="#" class="close" onclick="window.location='index.php';"></li>
         </ul>
     </header>
-    <!--menu flutuante -->
+    <!--menu flutuante  -->
     <footer class="menuFlut">
         <footer class="botMenuFlut" id="botFlut">    
             <span class="material-symbols-outlined" id="add1">add_circle</span>
@@ -30,12 +30,17 @@
 
     <section class="container">
         <header class="divH1">
-            <h1 >Redefina sua senha</h1>
+            <h1 >Cadastre-se</h1>
         </header>
         
         <form>
-            <input class="input" type="password" id="senha" name="senha" placeholder="Nova senha">
-            <input class="input" type="password" id="csenha" name="csenha" placeholder="Confirmar nova senha">
+            <div class="divInputNome">
+                <input class="inputNome" type="fname" id="fname" name="fnome" placeholder="Primeiro nome">
+                <input class="inputNome" type="lname" id="lname" name="lname" placeholder="Último nome">
+            </div>
+            <input class="input" type="email" id="email" name="email"placeholder="Email">
+            <input class="input" type="password" id="senha" name="senha" placeholder="Senha">
+            <input class="input" type="password" id="csenha" name="csenha" placeholder="Confirmar senha">
             <input class="button" type="submit" value="Confirmar">
         </form>
     </section>

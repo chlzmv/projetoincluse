@@ -18,7 +18,7 @@
                 <span class="material-symbols-outlined" onclick="clickMenu()" id="dropdown">menu</span>
             </nav>
         </li>    
-        <li><a href="index.html" class="aplicafontelogo">Incluse.com</a></li>
+        <li><a href="index.php" class="aplicafontelogo">Incluse.com</a></li>
         
         <li style="float: right">
             <ul>
@@ -32,16 +32,16 @@
     <!-- botões menu hamburger -->
     <menu id="menu">
         <ul>
-            <li><a href="criarperguntas.html">Criar Formulário</a></li>
-            <li><a href="meusformularios.html">Meus Formulários</a></li>
-            <li><a href="quemsomos.html">Quem Somos?</a></li>
+            <li><a href="criarperguntas.php">Criar Formulário</a></li>
+            <li><a href="meusformularios.php">Meus Formulários</a></li>
+            <li><a href="quemsomos.php">Quem Somos?</a></li>
         </ul>   
     </menu>
 
     <!-- botões menu profile -->
     <menu class="menuProf" id="prof">
         <ul class="ulProf">
-            <li class="liProf"><a href="login.html" class="aProf">Trocar usuário</a></li>
+            <li class="liProf"><a href="login.php" class="aProf">Trocar usuário</a></li>
             <li class="liProf"><a href="#" class="aProf">Sair</a></li>
         </ul>   
     </menu>

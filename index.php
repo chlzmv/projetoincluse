@@ -19,13 +19,13 @@
                     <span class="material-symbols-outlined" onclick="clickMenu()" id="dropdown">menu</span>
                 </nav>
             </li>    
-            <li><a href="index.html" class="aplicafontelogo">Incluse.com</a></li>
+            <li><a href="index.php" class="aplicafontelogo">Incluse.com</a></li>
             
         
             
             <li class="liLogin">
                 <ul>
-                    <li><input type="button" id="botaoCad" value="Cadastre-se" onclick="window.location='cadastro.html';"></li>
+                    <li><input type="button" id="botaoCad" value="Cadastre-se" onclick="window.location='cadastro.php';"></li>
                     <li><a href="login.html">Entrar</a></li>
                 </ul>
             </li>
@@ -35,9 +35,9 @@
     <!-- botões menu hamburger -->
     <menu id="menu">
         <ul>
-            <li><a href="criarperguntas.html">Criar Formulário</a></li>
-            <li><a href="meusformularios.html">Meus Formulários</a></li>
-            <li><a href="quemsomos.html">Quem Somos?</a></li>
+            <li><a href="criarperguntas.php">Criar Formulário</a></li>
+            <li><a href="meusformularios.php">Meus Formulários</a></li>
+            <li><a href="quemsomos.php">Quem Somos?</a></li>
         </ul>   
     </menu>
 
@@ -59,16 +59,16 @@
             <h1>Bem-vindo a Incluse</h1>
             <a>A sua plataforma de formulários acessiveis...</a>
         </header>
-        <nav class="BotC" onclick="window.location='criarperguntas.html';">
+        <nav class="BotC" onclick="window.location='criarperguntas.php';">
             <h2>Criar formulários</h2>
             <span class="material-symbols-outlined" id="pencil">edit</span>
         </nav>
         <section class="divLowBot">
-            <nav class="botMP" onclick="window.location='meusformularios.html';">
+            <nav class="botMP" onclick="window.location='meusformularios.php';">
                 <h2>Meus forms</h2>
                 <span class="material-symbols-outlined" id="book">menu_book</span>
             </nav>
-            <nav class="botCI" onclick="window.location='quemsomos.html';">
+            <nav class="botCI" onclick="window.location='quemsomos.php';">
                 <h2>Quem somos</h2>
                 <span class="material-symbols-outlined" id="info">info</span>
             </nav>
