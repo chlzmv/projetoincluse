@@ -10,7 +10,7 @@ function clickProf(){
     if (prof.style.display == "block") {
         prof.style.display = "none"
     } 
-    else {prof.style.display = "block"}
+    else {prof.style.display = "block "}
 }
 
 function clickflut(){

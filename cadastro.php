@@ -11,6 +11,35 @@
     <script src="botoestela.js"> </script>
 </head>
 <body >
+    <?php
+        if (isset($_POST['btn-entrar'])):
+            $erros = array();
+    
+            //1 - capturar dados
+            $nome=  $_POST['fnome'];
+            $email=  $_POST['email'];
+            $senha=  $_POST['senha'];
+            $csenha=  $_POST['csenha'];
+
+            //2 - sanitizar dados   
+            $nome = filter_input(INPUT_POST,'nome',FILTER_SANITIZE_SPECIAL_CHARS);
+            $email = filter_input(INPUT_POST,'email',FILTER_SANITIZE_EMAIL);
+            $senha = filter_input(INPUT_POST,'senha',FILTER_SANITIZE_NUMBER_INT);
+            $csenha = filter_input(INPUT_POST,'csenha',FILTER_SANITIZE_NUMBER_INT);
+	        
+            //3 - validar
+
+            if (!empty($erros)):
+                foreach($erros as $erro):
+                    echo "<li> $erro </li>";
+                endforeach;
+            else:
+                echo "Parabéns, seus dados estão corretos!";
+            endif;	
+
+            //echo 'capturando '.  $nome;
+        endif;
+    ?>
     
     <header class="divMenu">
         <ul>
