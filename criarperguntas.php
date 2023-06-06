@@ -18,7 +18,7 @@
                     <span class="material-symbols-outlined" onclick="clickMenu()" id="dropdown">menu</span>
                 </nav>
             </li>    
-            <li><a href="index.html" class="aplicafontelogo">Incluse.com</a></li>
+            <li><a href="index.php" class="aplicafontelogo">Incluse.com</a></li>
             
             <li style="float: right">
                 <ul>
