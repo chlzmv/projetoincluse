@@ -15,27 +15,45 @@
         if (isset($_POST['btn-entrar'])):
             $erros = array();
     
-            //1 - capturar dados
-            $nome=  $_POST['fnome'];
-            $email=  $_POST['email'];
-            $senha=  $_POST['senha'];
-            $csenha=  $_POST['csenha'];
-
-            //2 - sanitizar dados   
-            $nome = filter_input(INPUT_POST,'nome',FILTER_SANITIZE_SPECIAL_CHARS);
-            $email = filter_input(INPUT_POST,'email',FILTER_SANITIZE_EMAIL);
-            $senha = filter_input(INPUT_POST,'senha',FILTER_SANITIZE_NUMBER_INT);
+         
+            //1 - capturar e sanitizar dados   
+            $nome = filter_input(INPUT_POST,'fnome',FILTER_SANITIZE_SPECIAL_CHARS);            
+            $email = filter_input(INPUT_POST,'email',FILTER_SANITIZE_EMAIL);            
+            $senha = filter_input(INPUT_POST,'senha',FILTER_SANITIZE_NUMBER_INT);            
             $csenha = filter_input(INPUT_POST,'csenha',FILTER_SANITIZE_NUMBER_INT);
 	        
             //3 - validar
+            $res = array("options"=>array("regexp"=>"/^([a-zA-Z]+\s)*[a-zA-Z]+$/"));
+            if(! filter_var($nome, FILTER_VALIDATE_REGEXP,$res)) {		  
+                $erros[]= "Nome deve possuir somente letras [a-zA-Z].";
 
-            if (!empty($erros)):
-                foreach($erros as $erro):
-                    echo "<li> $erro </li>";
-                endforeach;
-            else:
-                echo "Parabéns, seus dados estão corretos!";
-            endif;	
+                echo "nome invalido". $nome;
+            }
+
+            if(filter_input(INPUT_POST,'email',FILTER_VALIDATE_EMAIL)===false): 
+                $erros[] = "Email inválido";
+            endif;
+
+
+             if (!empty($erros)):
+                 foreach($erros as $erro):
+                     echo "<li> $erro </li>";
+                 endforeach;
+             else:
+                //Conexão
+                require_once 'dbconexao.php';
+
+                $sql="INSERT INTO usuario(nome,sobrenome,email,senha) VALUES ('$nome', '$sobrenome', '$email', $idade)";
+                if(mysqli_query($connect,$sql)):
+                    echo "Parabéns, seus dados estão corretos!";   
+                    
+                else:
+                    echo "Erro ao cadastrar!";		                    
+                endif;
+
+
+                 
+             endif;	
 
             //echo 'capturando '.  $nome;
         endif;
@@ -62,7 +80,7 @@
             <h1 >Cadastre-se</h1>
         </header>
         
-        <form>
+        <form action="cadastro.php" method="post">
             <div class="divInputNome">
                 <input class="inputNome" type="fname" id="fname" name="fnome" placeholder="Primeiro nome">
                 <input class="inputNome" type="lname" id="lname" name="lname" placeholder="Último nome">
@@ -70,7 +88,7 @@
             <input class="input" type="email" id="email" name="email"placeholder="Email">
             <input class="input" type="password" id="senha" name="senha" placeholder="Senha">
             <input class="input" type="password" id="csenha" name="csenha" placeholder="Confirmar senha">
-            <input class="button" type="submit" value="Confirmar">
+            <input class="button" type="submit" value="Confirmar" name="btn-entrar">
         </form>
     </section>
 
