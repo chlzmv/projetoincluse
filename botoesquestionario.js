@@ -6,7 +6,7 @@ var x2=  document.getElementById("delete2");
 x2.addEventListener("click", deletar2)
 
 
-function clickdelete(){
+function clickdelete1(){
     document.getElementById("checkbox1").remove();
 }
 
