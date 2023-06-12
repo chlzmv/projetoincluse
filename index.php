@@ -1,3 +1,7 @@
+<?php 
+    session_start();
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -26,7 +30,7 @@
             <li class="liLogin">
                 <ul>
                     <li><input type="button" id="botaoCad" value="Cadastre-se" onclick="window.location='cadastro.php';"></li>
-                    <li><a href="login.html">Entrar</a></li>
+                    <li><a href="login.php">Entrar</a></li>
                 </ul>
             </li>
         </ul>

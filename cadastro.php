@@ -43,7 +43,7 @@
                 //Conexão
                 require_once 'dbconexao.php';
 
-                $sql="INSERT INTO usuario(nome,sobrenome,email,senha) VALUES ('$nome', '$sobrenome', '$email', $idade)";
+                $sql="INSERT INTO usuario(nome,email,senha) VALUES ('$nome', '$senha', '$email')";
                 if(mysqli_query($connect,$sql)):
                     echo "Parabéns, seus dados estão corretos!";   
                     
@@ -81,10 +81,7 @@
         </header>
         
         <form action="cadastro.php" method="post">
-            <div class="divInputNome">
-                <input class="inputNome" type="fname" id="fname" name="fnome" placeholder="Primeiro nome">
-                <input class="inputNome" type="lname" id="lname" name="lname" placeholder="Último nome">
-            </div>
+            <input class="input" type="fname" id="fname" name="fnome" placeholder="Nome completo">
             <input class="input" type="email" id="email" name="email"placeholder="Email">
             <input class="input" type="password" id="senha" name="senha" placeholder="Senha">
             <input class="input" type="password" id="csenha" name="csenha" placeholder="Confirmar senha">

@@ -11,6 +11,24 @@
     <script src="botoestela.js"> </script>
 </head>
 <body >
+    <?php
+    session_start();
+    if(isset($_POST[btn-entrar])){
+        $erros=array();
+        
+        $email = filter_input(INPUT_POST,'email',FILTER_SANITIZE_EMAIL);            
+        $senha = filter_input(INPUT_POST,'senha',FILTER_SANITIZE_NUMBER_INT);        
+        
+        $res = array("options"=>array("regexp"=>"/^([a-zA-Z]+\s)*[a-zA-Z]+$/"));
+        if((isset($_POST['email'])) && (isset($_POST['senha']))){
+
+        }else{
+            $_SESSION['loginErro'] = "Usuário ou senha inválido";
+            header("Location: login.php");
+        }
+    }
+
+    ?>
     <header class="divMenu">
         <ul>
             <li href="#" class="aplicafontelogo">Incluse.com</li>
@@ -36,8 +54,15 @@
             <nav class="divA">
                 <a href="esqueceSenha.php">Esqueceu a senha?</a>
             </nav>
-            <input class="button" type="submit" value="Confirmar">
+            <input class="button" type="submit" name="btn-entrar" value="Confirmar">
         </form>
+        <p class="errorMessage">
+            <?php if(isset($_SESSION['loginErro'])){
+                echo $_SESSION['loginErro'];
+                unset ($_SESSION['loginErro']);  
+            }
+            ?>
+        </p>
     </section>
     
 </body>

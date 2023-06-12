@@ -188,11 +188,6 @@ body{
       font-weight: 300;
       padding-left: 6px;
   }
-  .inputNome{
-    display: inline;
-    width: 119px;
-    height: 4vh;
-  }
   .divInputNome{
     display:block;
     margin: auto 10% auto 17%
