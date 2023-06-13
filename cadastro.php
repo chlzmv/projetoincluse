@@ -12,14 +12,14 @@
 </head>
 <body >
     <?php
-        if (isset($_POST['btn-entrar'])):
+        if (isset($_POST['btn-entrar'])){
             $erros = array();
     
          
             //1 - capturar e sanitizar dados   
             $nome = filter_input(INPUT_POST,'fnome',FILTER_SANITIZE_SPECIAL_CHARS);            
             $email = filter_input(INPUT_POST,'email',FILTER_SANITIZE_EMAIL);            
-            $senha = filter_input(INPUT_POST,'senha',FILTER_SANITIZE_NUMBER_INT);            
+            $senha = filter_input(INPUT_POST,'senha',FILTER_SANITIZE_STRING);            
             $csenha = filter_input(INPUT_POST,'csenha',FILTER_SANITIZE_NUMBER_INT);
 	        
             //3 - validar
@@ -30,33 +30,28 @@
                 echo "nome invalido". $nome;
             }
 
-            if(filter_input(INPUT_POST,'email',FILTER_VALIDATE_EMAIL)===false): 
+            if(filter_input(INPUT_POST,'email',FILTER_VALIDATE_EMAIL)===false) {
                 $erros[] = "Email inválido";
-            endif;
+            } else {
+                if (!empty($erros)){
+                    foreach($erros as $erro):
+                        echo "<li> $erro </li>";
+                    endforeach;
+                } else {
+                    //Conexão
+                    require_once 'dbconexao.php';
 
-
-             if (!empty($erros)):
-                 foreach($erros as $erro):
-                     echo "<li> $erro </li>";
-                 endforeach;
-             else:
-                //Conexão
-                require_once 'dbconexao.php';
-
-                $sql="INSERT INTO usuario(nome,email,senha) VALUES ('$nome', '$senha', '$email')";
-                if(mysqli_query($connect,$sql)):
-                    echo "Parabéns, seus dados estão corretos!";   
-                    
-                else:
-                    echo "Erro ao cadastrar!";		                    
-                endif;
-
-
-                 
-             endif;	
-
+                    $sql="INSERT INTO usuario(nome,email,senha) VALUES ('$nome', '$senha', '$email')";
+                    if(mysqli_query($connect,$sql)){
+                        echo "Parabéns, seus dados estão corretos!";   
+                        
+                    }else{
+                        echo "Erro ao cadastrar!";		                    
+                    }    
+                }	
+            }
             //echo 'capturando '.  $nome;
-        endif;
+        }
     ?>
     
     <header class="divMenu">
