@@ -2,7 +2,7 @@
 //Conexão com banco de dados
 $servername = "localhost"; //endereço do servidor
 $username="root";
-$password="usbw";
+$password="root";
 $db_name="projetoincluse";
 
 //pdo - somente orientado objeto
@@ -15,6 +15,4 @@ if(mysqli_connect_error()){
 	echo "Falha na conexão: ". mysqli_connect_error();
 }else;
 
-
-//eu amo muito hanaa tipo muito mesmooooooo
 ?> 

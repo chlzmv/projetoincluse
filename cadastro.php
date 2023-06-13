@@ -41,7 +41,7 @@
                     //Conexão
                     require_once 'dbconexao.php';
 
-                    $sql="INSERT INTO usuario(nome,email,senha) VALUES ('$nome', '$senha', '$email')";
+                    $sql="INSERT INTO usuario(nomUser,dscEmailUser,senhaUser) VALUES ('$nome', '$senha', '$email')";
                     if(mysqli_query($connect,$sql)){
                         echo "Parabéns, seus dados estão corretos!";   
                         
