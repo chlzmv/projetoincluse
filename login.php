@@ -12,20 +12,30 @@
 </head>
 <body >
     <?php
-    session_start();
-    if(isset($_POST[btn-entrar])){
-        $erros=array();
-        
-        $email = filter_input(INPUT_POST,'email',FILTER_SANITIZE_EMAIL);            
-        $senha = filter_input(INPUT_POST,'senha',FILTER_SANITIZE_NUMBER_INT);        
-        
-        $res = array("options"=>array("regexp"=>"/^([a-zA-Z]+\s)*[a-zA-Z]+$/"));
-        if((isset($_POST['email'])) && (isset($_POST['senha']))){
+    
 
-        }else{
-            $_SESSION['loginErro'] = "Usuário ou senha inválido";
+    if(isset($_POST['btn-entrar'])){
+        session_start();
+
+        $email = filter_input(INPUT_POST,'email',FILTER_SANITIZE_EMAIL);            
+        $senha = filter_input(INPUT_POST,'senha',FILTER_SANITIZE_STRING); 
+        $senha = md5($senha);       
+        
+        $sql = "SELECT * FROM usuario WHERE dscEmailUser = '$email' && senhaUser = '$senha' LIMIT 1" ;
+        $resultado = mysqli_query($connect, $sql);
+        $result = mysqli_fetch_assoc($resultado);
+        
+        if(empty($result)){
+            echo "Usuário ou senha invalido";
             header("Location: login.php");
-        }
+        } elseif(isset($result)){
+            header("Location: administrativo.php");
+        } else{
+            echo "Usuário ou senha invalido";
+            header("Location: login.php");
+        } 
+    } else{
+        //echo "Usuário ou senha invalido";
     }
 
     ?>
@@ -48,7 +58,7 @@
     <section class="container">
         <h1 class="divH1">Entrar</h1>
         <!-- <hr class="hr" > -->
-        <form>
+        <form action="login.php" method="post">
             <input class="input" type="email" id="email" name="email"placeholder="Email">
             <input class="input" type="password" id="senha" name="senha" placeholder="Senha">
             <nav class="divA">
@@ -56,13 +66,6 @@
             </nav>
             <input class="button" type="submit" name="btn-entrar" value="Confirmar">
         </form>
-        <p class="errorMessage">
-            <?php if(isset($_SESSION['loginErro'])){
-                echo $_SESSION['loginErro'];
-                unset ($_SESSION['loginErro']);  
-            }
-            ?>
-        </p>
     </section>
     
 </body>
