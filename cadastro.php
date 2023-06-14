@@ -11,49 +11,6 @@
     <script src="botoestela.js"> </script>
 </head>
 <body >
-    <?php
-        if (isset($_POST['btn-entrar'])){
-            $erros = array();
-    
-         
-            //1 - capturar e sanitizar dados   
-            $nome = filter_input(INPUT_POST,'fnome',FILTER_SANITIZE_SPECIAL_CHARS);            
-            $email = filter_input(INPUT_POST,'email',FILTER_SANITIZE_EMAIL);            
-            $senha = filter_input(INPUT_POST,'senha',FILTER_SANITIZE_STRING);            
-            $csenha = filter_input(INPUT_POST,'csenha',FILTER_SANITIZE_NUMBER_INT);
-	        
-            //3 - validar
-            $res = array("options"=>array("regexp"=>"/^([a-zA-Z]+\s)*[a-zA-Z]+$/"));
-            if(! filter_var($nome, FILTER_VALIDATE_REGEXP,$res)) {		  
-                $erros[]= "Nome deve possuir somente letras [a-zA-Z].";
-
-                echo "nome invalido". $nome;
-            }
-
-            if(filter_input(INPUT_POST,'email',FILTER_VALIDATE_EMAIL)===false) {
-                $erros[] = "Email inválido";
-            } else {
-                if (!empty($erros)){
-                    foreach($erros as $erro):
-                        echo "<li> $erro </li>";
-                    endforeach;
-                } else {
-                    //Conexão
-                    require_once 'dbconexao.php';
-
-                    $sql="INSERT INTO usuario(nomUser,dscEmailUser,senhaUser) VALUES ('$nome', '$senha', '$email')";
-                    if(mysqli_query($connect,$sql)){
-                        echo "Parabéns, seus dados estão corretos!";   
-                        
-                    }else{
-                        echo "Erro ao cadastrar!";		                    
-                    }    
-                }	
-            }
-            //echo 'capturando '.  $nome;
-        }
-    ?>
-    
     <header class="divMenu">
         <ul>
             <li href="#" class="aplicafontelogo">Incluse.com</li>
@@ -80,10 +37,53 @@
             <input class="input" type="email" id="email" name="email"placeholder="Email">
             <input class="input" type="password" id="senha" name="senha" placeholder="Senha">
             <input class="input" type="password" id="csenha" name="csenha" placeholder="Confirmar senha">
+            <p class="message">    
+                <?php
+                    if (isset($_POST['btn-entrar'])){
+                    $erros = array();
+            
+                
+                    //1 - capturar e sanitizar dados   
+                    $nome = filter_input(INPUT_POST,'fnome',FILTER_SANITIZE_SPECIAL_CHARS);            
+                    $email = filter_input(INPUT_POST,'email',FILTER_SANITIZE_EMAIL);            
+                    $senha = filter_input(INPUT_POST,'senha',FILTER_SANITIZE_STRING);            
+                    $csenha = filter_input(INPUT_POST,'csenha',FILTER_SANITIZE_NUMBER_INT);
+                    
+                    //3 - validar
+                    $res = array("options"=>array("regexp"=>"/^([a-zA-Z]+\s)*[a-zA-Z]+$/"));
+                    if(! filter_var($nome, FILTER_VALIDATE_REGEXP,$res)) {		  
+                        $erros[]= "Nome deve possuir somente letras [a-zA-Z].";
+
+                        echo "nome invalido". $nome;
+                    }
+
+                    if(filter_input(INPUT_POST,'email',FILTER_VALIDATE_EMAIL)===false) {
+                        $erros[] = "Email inválido";
+                    } else {
+                        if (!empty($erros)){
+                            foreach($erros as $erro):
+                                echo "<li> $erro </li>";
+                            endforeach;
+                        } else {
+                            //Conexão
+                            require_once 'dbconexao.php';
+
+                            $sql="INSERT INTO usuario(nomUser,dscEmailUser,senhaUser) VALUES ('$nome', '$senha', '$email')";
+                            if(mysqli_query($connect,$sql)){
+                                echo "Parabéns, seus dados estão corretos!";   
+                                
+                            }else{
+                                echo "Erro ao cadastrar!";		                    
+                            }    
+                        }	
+                    }
+                    }
+                ?> 
+            </p>
             <input class="button" type="submit" value="Confirmar" name="btn-entrar">
         </form>
     </section>
-
+    
     
 </body>
 </html>
