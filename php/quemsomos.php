@@ -79,22 +79,22 @@
                 <h2>Nossa Equipe</h2>
                 <a>A equipe é formada por estudantes do Instituto Federal do Espírito Santo do curso de Técnico em informática. Foi projetado um site para oferecer melhor solução de formulário acessíveis. Cada membro da equipe trouxe habilidades e perspectivas únicas para o projeto, o que enriqueceu bastante o processo de desenvolvimento desse. </a>
                 <figure class="photoTextCo">
-                    <p class="photoTextCo"><img src="davi.png" width="150x" height="150px">
+                    <p class="photoTextCo"><img src="../png/davi.png" width="150x" height="150px">
                     <p class="pName">Davi Campos Sutil</p>
                     <p class="pDesc">BACK-END FRONT-END</p>
                 </figure>
                 <figure class="photoTextCo">
-                    <p class="photoTextCo"><img src="sthefany.png" width="150x" height="150px"></p>
+                    <p class="photoTextCo"><img src="../png/davisthefany.png" width="150x" height="150px"></p>
                     <p class="pName">Sthefany dos Santos</p>
                     <p class="pDesc">BACK-END FRONT-END</P>
                 </figure>
                 <figure class="photoTextCo">
-                    <p class="photoTextCo"><img src="vinicius.png" width="150x" height="150px"></P>
+                    <p class="photoTextCo"><img src="../png/davivinicius.png" width="150x" height="150px"></P>
                     <p class="pName">Vinícius Oliveira</p>
                     <p class="pDesc">BACK-END FRONT-END</p>
                 </figure>
                 <figure class="photoTextCo">
-                    <p class="photoTextCo"><img src="charlize.png" width="150x" height="150px"></a>
+                    <p class="photoTextCo"><img src="../png/davicharlize.png" width="150x" height="150px"></a>
                     <p class="pName">Charlize Moura</p>
                     <p class="pDesc">BACK-END FRONT-END</ class="pDesc">
                 </figure>

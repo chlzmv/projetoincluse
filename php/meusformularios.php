@@ -25,7 +25,7 @@
         <li style="float: right">
             <ul>
                 <li>
-                    <div class="backgroundImagem"><img src="iconUser.png" class="configimagem" onclick = "clickProf()"></div>
+                    <div class="backgroundImagem"><img src="../png/iconUser.png" class="configimagem" onclick = "clickProf()"></div>
                 <li>
             </ul>
         </li>
