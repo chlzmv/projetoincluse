@@ -3,16 +3,11 @@
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
-<<<<<<< HEAD
-    <title>Menu Dropdown Horizontal - Linha de Código</title>
-     <!-- Aqui chamamos o nosso arquivo css e javascript externo  -->
-=======
     <link rel="icon" href="icon.png" type="image/png">
     <title>Quem Somos</title>
      <!-- Aqui chamamos o nosso arquivo css e javascript externo -->
->>>>>>> 64fedf0fa5e1f8509076b78f7b2f6331615b8097
-    <script src="botoestela.js"> </script>
-    <link rel="stylesheet" type="text/css"  href="stylequemsomos.css" /> 
+    <script src="../js/botoestela.js"> </script>
+    <link rel="stylesheet" type="text/css"  href="../css/stylequemsomos.css" /> 
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
 </head>
 <body>

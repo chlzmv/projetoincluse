@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="icon.png" type="image/png">
     <title>Redefinir Senha</title>
-    <link rel="stylesheet" href="styleesquecesenha.css">
+    <link rel="stylesheet" href="../css/styleesquecesenha.css">
 </head>
 <body >
     <header class="divMenu">
