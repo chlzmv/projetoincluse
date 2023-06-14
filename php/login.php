@@ -12,7 +12,6 @@
 </head>
 <body >
     <?php
-    
 
     if(isset($_POST['btn-entrar'])){
         session_start();
