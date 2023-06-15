@@ -8,8 +8,8 @@
     <title>Meus Forms</title>
     <link rel="stylesheet" type="text/css" href="../css/styleminhasprovas.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <script src="../js/meusquestionarios.js"> </script>
     <script src="../js/botoestela.js"> </script>
-
 
 </head>
 <body>
@@ -99,7 +99,7 @@
         </div>   
         
         <div class="divBotoes">
-            <span id="delete" class="material-symbols-outlined">delete</span>
+            <span id="delete" class="material-symbols-outlined" onclick="questionario.apagar()">delete</span>
             <div>
             <input class="button" type="submit" value="Acessar Resultados" onclick="window.location='resultadosalunos.php';">
             </div>

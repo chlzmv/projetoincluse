@@ -114,7 +114,7 @@
             <div class="opcao1">
                 <input type="checkbox" id="checkbox1" placeholder="check1">
                 <textarea  id="checkText" cols="30" rows="1" placeholder="Insira o texto"></textarea>
-                <span id="delete3" class="material-symbols-outlined">
+                <span id="delete3" class="material-symbols-outlined" >
                     delete
                 </span>
                 <span id="check" class="material-symbols-outlined">
