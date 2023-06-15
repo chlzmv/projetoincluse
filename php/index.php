@@ -40,7 +40,7 @@
     <menu id="menu">
         <ul>
             <li><a href="criarperguntas.php">Criar Formulário</a></li>
-            <li><a href="meusformularios.php">Meus Formulários</a></li>
+            <li><a href="meusquestionarios.php">Meus Formulários</a></li>
             <li><a href="quemsomos.php">Quem Somos?</a></li>
         </ul>   
     </menu>
