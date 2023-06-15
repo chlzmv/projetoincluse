@@ -84,7 +84,22 @@
             </div>
         </div>
     </div>
-
+    <table id="table">
+        <tr>
+            <td>
+                <span id="description" class="material-symbols-outlined">description</span>
+            </td>
+            <td>
+                <h2 onclick="window.location='questoesprontas.php';" >Título do Formulário </h2>
+            </td>
+            <td>
+                <input class="button" type="submit" value="Acessar Resultados" onclick="window.location='resultadosalunos.php';">
+            </td>
+            <td>
+                <span id="delete" class="material-symbols-outlined" onclick="questionario.apagar()">delete</span>
+            </td>
+        </tr>
+    </table>
      <!-- Script botão menu -->
 
     <script>

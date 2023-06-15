@@ -82,39 +82,12 @@
         <section class="divCaixaTexto">
             <textarea id="caixaTexto" cols="30" rows="20" placeholder="Insira o texto"></textarea>
         </section>
-        <section class="divCheckBox1">
-            <div class="opcao1">
+        
+        <!-- <section class="divCheckBox">
+            <div class="opcao">
                 <input type="checkbox" id="checkbox1" placeholder="check1">
                 <textarea  id="checkText" cols="30" rows="1" placeholder="Insira o texto"></textarea>
-                <span id="delete1" class="material-symbols-outlined">
-                    delete
-                </span>
-                <span id="check" class="material-symbols-outlined">
-                    check
-                </span>
-            </div>
-            
-            </span>
-        </section>
-        <section class="divCheckBox2>
-            <div class="opcao1">
-                <input type="checkbox" id="checkbox1" placeholder="check1">
-                <textarea  id="checkText" cols="30" rows="1" placeholder="Insira o texto"></textarea>
-                <span id="delete2" class="material-symbols-outlined">
-                    delete
-                </span>
-                <span id="check" class="material-symbols-outlined">
-                    check
-                </span>
-            </div>
-            
-            </span>
-        </section>
-        <section class="divCheckBox3">
-            <div class="opcao1">
-                <input type="checkbox" id="checkbox1" placeholder="check1">
-                <textarea  id="checkText" cols="30" rows="1" placeholder="Insira o texto"></textarea>
-                <span id="delete3" class="material-symbols-outlined" >
+                <span id="delete" class="material-symbols-outlined" >
                     delete
                 </span>
                 <span id="check" class="material-symbols-outlined">
@@ -124,9 +97,27 @@
                     add
                 </span>
             </div>
-            
-            </span>
-        </section>
+        </section> -->
+        <table id="table">
+            <tr>
+                <td>
+                    <input type="checkbox" id="checkbox1" placeholder="check1">
+                </td>
+                <td>
+                    <textarea  id="checkText" cols="30" rows="1" placeholder="Insira o texto"></textarea>
+                </td>
+                <td>
+                    <span id="delete" class="material-symbols-outlined" onclick="questao.apagar()">delete</span>
+                </td>
+                <td>
+                <span id="check" class="material-symbols-outlined">check</span>
+                </td>
+                <td>
+                <span id="add2" class="material-symbols-outlined" onclick="questao.adicionar()">add</span>
+                </td>
+                
+            </tr>
+        </table>
         <hr>
         <footer class="divBotoesInfer">
             <span id="add_box" class="material-symbols-outlined">
