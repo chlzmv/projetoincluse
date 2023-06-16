@@ -107,13 +107,13 @@
                     <textarea  id="checkText" cols="30" rows="1" placeholder="Insira o texto"></textarea>
                 </td>
                 <td>
-                    <span id="delete" class="material-symbols-outlined" onclick="questao.apagar()">delete</span>
-                </td>
-                <td>
                 <span id="check" class="material-symbols-outlined">check</span>
                 </td>
                 <td>
                 <span id="add2" class="material-symbols-outlined" onclick="adicionar()">add</span>
+                </td>
+                <td>
+                <span id="delete" class="material-symbols-outlined" onclick="apagar()">delete</span>
                 </td>
                 
             </tr>

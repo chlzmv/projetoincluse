@@ -51,7 +51,7 @@
 
             $email = filter_input(INPUT_POST,'email',FILTER_SANITIZE_EMAIL);            
             $senha = filter_input(INPUT_POST,'senha',FILTER_SANITIZE_STRING); 
-            $senha = md5($senha);       
+            // $senha = md5($senha);       
             
             $sql = "SELECT * FROM usuario WHERE dscEmailUser = '$email' AND senhaUser = '$senha' " ;
             $resultado = mysqli_query($connect, $sql);
@@ -64,8 +64,6 @@
                 echo "Usuário ou senha inválido!";
                 
             } 
-                //  } else{
-                //      echo "n cliclou ainda";
             }
         ?>
         </form>
