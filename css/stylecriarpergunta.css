@@ -323,12 +323,6 @@ li a {
     margin-bottom: 1rem;
   }
 
-  .divOpcao{
-
-  }
-  #checkbox{
-
-  }
   #checkText{
     position: relative;
     border:none;
@@ -339,14 +333,8 @@ li a {
     width: 50%;
     height: 1.7rem;
   }
-  #delete{
-
-  }
   #delete:hover {
     color: #b42e2e;
-  }
-  #check{
-    
   }
   
   #check:hover {
@@ -354,18 +342,17 @@ li a {
     background-color: #4ea845;
     border-radius: 2px;
   }
+
   #add2{
     font-size: 25PX;
   }
+
   #add2:hover {
     color: #ffffff;
     background-color: #e4e4e4;
     border-radius: 2px;
   }
 
-  .divBotoesInfer{
-
-  }
   #add_box{
     margin-top: -0.5rem;
     float:left;
