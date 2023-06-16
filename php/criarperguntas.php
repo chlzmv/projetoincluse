@@ -63,57 +63,42 @@
     <!-- conteudo pagina -->
     <h1>Criar formulário</h1>
     <section class="container">
-       
-        <div class="divTituloForm">
-            <input type="text" id="tituloForm"  placeholder="Título" >
-        </div>
-        <hr>
-        <section class="divInfoForm">
-            <input type="text" id="numQuest" placeholder="N° Questão" >
-            <div class="inputSV">
-                <select id="formSelect">
-                    <option selected disabled>Tipo da Questão:</option>
-                    <option value="1">Resposta Única</option>
-                    <option value="2">Múltipla Escolha</option>
-                </select>
-                <input type="text" id="valorQuest" placeholder="Valor">
+            <div class="divTituloForm">
+                <input type="text" id="tituloForm"  placeholder="Título" >
             </div>
-        </section>
-        <section class="divCaixaTexto">
-            <textarea id="caixaTexto" cols="30" rows="20" placeholder="Insira o texto"></textarea>
-        </section>
-        
-        <!-- <section class="divCheckBox">
-            <div class="opcao">
-                <input type="checkbox" id="checkbox1" placeholder="check1">
-                <textarea  id="checkText" cols="30" rows="1" placeholder="Insira o texto"></textarea>
-                <span id="delete" class="material-symbols-outlined" >
-                    delete
-                </span>
-                <span id="check" class="material-symbols-outlined">
-                    check
-                </span>
-                <span id="add2" class="material-symbols-outlined">
-                    add
-                </span>
+            <hr>
+            <divid id = "section">
+                <section class="divInfoForm">
+                    <input type="text" id="numQuest" placeholder="N° Questão" >
+                    <div class="inputSV">
+                        <select id="formSelect">
+                            <option selected disabled>Tipo da Questão:</option>
+                            <option value="1">Resposta Única</option>
+                            <option value="2">Múltipla Escolha</option>
+                        </select>
+                        <input type="text" id="valorQuest" placeholder="Valor">
+                    </div>
+                </section>
+                <section class="divCaixaTexto">
+                    <textarea id="caixaTexto" cols="30" rows="20" placeholder="Insira o texto"></textarea>
+                </section>
+                <div id="table">
+                    <input type="checkbox" id="checkbox1" placeholder="check1">
+                    <textarea  id="checkText" cols="30" rows="1" placeholder="Insira o texto"></textarea>
+                    <span id="check" class="material-symbols-outlined">check</span>
+                    <span id="add2" class="material-symbols-outlined" onclick="adicionarCampo()">add</span>   
+                </div>
             </div>
-        </section> -->
-        <div id="table">
-            <input type="checkbox" id="checkbox1" placeholder="check1">
-            <textarea  id="checkText" cols="30" rows="1" placeholder="Insira o texto"></textarea>
-            <span id="check" class="material-symbols-outlined">check</span>
-            <span id="add2" class="material-symbols-outlined" onclick="adicionarCampo()">add</span>   
-        </div>
-        <hr>
-        <footer class="divBotoesInfer">
-            <span id="add_box" class="material-symbols-outlined">
-                add_box
-            </span>
-            <div class="botoesSR">
-                <!-- <input type="button" id="botaoRascunho" value="Rascunho"> -->
-                <input type="button" id="botaoSalva" value="Salvar formulário">
-            </div>
-        </footer>
+            <hr>
+            <footer class="divBotoesInfer">
+                <span id="add_box" class="material-symbols-outlined" onclick="adicionarQuestao()">
+                    add_box
+                </span>
+                <div class="botoesSR">
+                    <!-- <input type="button" id="botaoRascunho" value="Rascunho"> -->
+                    <input type="button" id="botaoSalva" value="Salvar formulário">
+                </div>
+            </footer>
 
     </section>
 </body>
