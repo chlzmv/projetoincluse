@@ -1,1 +1,3 @@
-area do adm
+<?php 
+    echo "area do adm"
+?>

@@ -40,7 +40,7 @@
     <menu id="menu">
         <ul>
             <li><a href="criarperguntas.php">Criar Formulário</a></li>
-            <li><a href="meusformularios.php">Meus Formulários</a></li>
+            <li><a href="meusquestionarios.php">Meus Formulários</a></li>
             <li><a href="quemsomos.php">Quem Somos?</a></li>
         </ul>   
     </menu>
@@ -68,7 +68,7 @@
             <span class="material-symbols-outlined" id="pencil">edit</span>
         </nav>
         <section class="divLowBot">
-            <nav class="botMP" onclick="window.location='meusformularios.php';">
+            <nav class="botMP" onclick="window.location='meusquestionarios.php';">
                 <h2>Meus forms</h2>
                 <span class="material-symbols-outlined" id="book">menu_book</span>
             </nav>

@@ -2,7 +2,7 @@
 //Conexão com banco de dados
 $servername = "localhost"; //endereço do servidor
 $username="root";
-$password="root";
+$password="usbw";
 $db_name="projetoincluse";
 
 //pdo - somente orientado objeto

@@ -11,34 +11,7 @@
     <script src="../js/botoestela.js"> </script>
 </head>
 <body >
-    <?php
-
-    if(isset($_POST['btn-entrar'])){
-        session_start();
-
-        $email = filter_input(INPUT_POST,'email',FILTER_SANITIZE_EMAIL);            
-        $senha = filter_input(INPUT_POST,'senha',FILTER_SANITIZE_STRING); 
-        $senha = md5($senha);       
-        
-        $sql = "SELECT * FROM usuario WHERE dscEmailUser = '$email' && senhaUser = '$senha' LIMIT 1" ;
-        $resultado = mysqli_query($connect, $sql);
-        $result = mysqli_fetch_assoc($resultado);
-        
-        if(empty($result)){
-            echo "Usuário ou senha invalido";
-            header("Location: login.php");
-        } elseif(isset($result)){
-            header("Location: administrativo.php");
-        } else{
-            echo "Usuário ou senha invalido";
-            header("Location: login.php");
-        } 
-    } else{
-        //echo "Usuário ou senha invalido";
-    }
-
-    ?>
-    <header class="divMenu">
+       <header class="divMenu">
         <ul>
             <li href="#" class="aplicafontelogo">Incluse.com</li>
             <li onclick="window.location='index.php';" class="close"></li>
@@ -64,6 +37,35 @@
                 <a href="esqueceSenha.php">Esqueceu a senha?</a>
             </nav>
             <input class="button" type="submit" name="btn-entrar" value="Confirmar">
+
+            <?php
+    
+
+        session_start(); 
+        
+        if (isset($_POST['btn-entrar'])){
+        
+            echo "Clicou";
+            //Conexão
+            require_once 'dbconexao.php';
+
+            $email = filter_input(INPUT_POST,'email',FILTER_SANITIZE_EMAIL);            
+            $senha = filter_input(INPUT_POST,'senha',FILTER_SANITIZE_STRING); 
+            // $senha = md5($senha);       
+            
+            $sql = "SELECT * FROM usuario WHERE dscEmailUser = '$email' AND senhaUser = '$senha' " ;
+            $resultado = mysqli_query($connect, $sql);
+            // echo $sql;
+
+            if (mysqli_num_rows($resultado) > 0){
+                //  echo "usuario encontrado.";
+                header("Location: administrativo.php");         
+            } else{
+                echo "Usuário ou senha inválido!";
+                
+            } 
+            }
+        ?>
         </form>
     </section>
     
