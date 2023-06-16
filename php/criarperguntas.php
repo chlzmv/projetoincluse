@@ -98,26 +98,12 @@
                 </span>
             </div>
         </section> -->
-        <table id="table">
-            <tr>
-                <td>
-                    <input type="checkbox" id="checkbox1" placeholder="check1">
-                </td>
-                <td>
-                    <textarea  id="checkText" cols="30" rows="1" placeholder="Insira o texto"></textarea>
-                </td>
-                <td>
-                <span id="check" class="material-symbols-outlined">check</span>
-                </td>
-                <td>
-                <span id="add2" class="material-symbols-outlined" onclick="adicionar()">add</span>
-                </td>
-                <td>
-                <span id="delete" class="material-symbols-outlined" onclick="apagar()">delete</span>
-                </td>
-                
-            </tr>
-        </table>
+        <div id="table">
+            <input type="checkbox" id="checkbox1" placeholder="check1">
+            <textarea  id="checkText" cols="30" rows="1" placeholder="Insira o texto"></textarea>
+            <span id="check" class="material-symbols-outlined">check</span>
+            <span id="add2" class="material-symbols-outlined" onclick="adicionarCampo()">add</span>   
+        </div>
         <hr>
         <footer class="divBotoesInfer">
             <span id="add_box" class="material-symbols-outlined">
