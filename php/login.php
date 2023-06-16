@@ -11,99 +11,7 @@
     <script src="../js/botoestela.js"> </script>
 </head>
 <body >
-    <?php
-    
-
-    session_start(); 
-    
-     if (isset($_POST['btn-entrar'])){
-       
-        echo "Clicou";
-         $email = filter_input(INPUT_POST,'email',FILTER_SANITIZE_EMAIL);            
-         $senha = filter_input(INPUT_POST,'senha',FILTER_SANITIZE_STRING); 
-         $senha = md5($senha);       
-        
-         $sql = "SELECT * FROM usuario WHERE dscEmailUser = '$email' && senhaUser = '$senha' LIMIT 1" ;
-         $resultado = mysqli_query($connect, $sql);
-        
-         if(empty($resultado)){
-             echo "Usuário ou senha invalido";
-             header("Location: login.php");
-         } elseif(isset($resultado)){
-             header("Location: administrativo.php");
-         } else{
-             echo "Usuário ou senha invalido";
-             header("Location: login.php");
-         } 
-     } else{
-         echo "n cliclou ainda";
-     }
-
-//     //Conexão
-// //The require_once expression is identical to require except PHP will check if the file has already been included, and if so, not include (require) it again.
-//         // require_once 'dbconexao.php';
-
-//         //iniciar a sessão
-
-//         //Conexão com banco de dados
-//         $servername = "localhost"; //endereço do servidor
-//         $username="root";
-//         $password="usbw";
-//         $db_name="projetoincluse";
-
-//         //pdo - somente orientado objeto
-//         $connect = mysqli_connect($servername,$username,$password,$db_name);
-
-//         //codifica com o caracteres ao manipular dados do banco de dados
-//         //mysqli_set_charset($connect, "utf8");
-
-//         if(mysqli_connect_error()){
-//         echo "Falha na conexão: ". mysqli_connect_error();
-//         }else;
-//         session_start();
-
-//         //se existir o indice btn_entrar , é porque alguem clicou no botão
-//         if (isset($_POST['btn-entrar'])):
-            
-//             echo "Clicou";
-//             $erros = array();
-//             //mysqli_escape_string - função que limpa os dados e evita sqlinjection e outros caracteres indevidos.
-//             $email = filter_input(INPUT_POST,'email',FILTER_SANITIZE_EMAIL);            
-//             $senha = filter_input(INPUT_POST,'senha',FILTER_SANITIZE_STRING); 
-            
-            
-//             if(empty($email) or empty($senha)):
-//                 echo "O campo login/senha precisa ser preenchido";
-//             else:
-//                 //criptografando a senha
-//                 $senha=md5($senha);
-//                 //usuario: marta/senha:123456
-//                 $sql= "SELECT * FROM usuarios WHERE dscEmailUser= '$email' AND senhaUser='$senha'";
-                
-//                 $resultado = mysqli_query($connect,$sql);
-//                 //fechando a conexão depois de armazenar os dados
-//                 mysqli_close($connect);
-                
-//                 //numeros de linhas do resultado da query maior que 0 ou Se houver algum registro na tabela
-//                 if (mysqli_num_rows($resultado) > 0):
-//                     $dados=mysqli_fetch_array($resultado);
-//                     $_SESSION['logado']= true;
-//                     $_SESSION['email_usuario']= $dados['email'];
-//                     //comenado que redireciona para página 16home.php - deve criar essa página
-//                     header('Location: administrador.php');		
-                
-//                 else:
-//                     echo "Usuário e senha não conferem";
-                    
-//                 endif;
-                
-//             endif;	
-//         endif;	
-
-//         // include "login.php";
-
-    ?>
-    <header class="divMenu">
+       <header class="divMenu">
         <ul>
             <li href="#" class="aplicafontelogo">Incluse.com</li>
             <li onclick="window.location='index.php';" class="close"></li>
@@ -129,6 +37,37 @@
                 <a href="esqueceSenha.php">Esqueceu a senha?</a>
             </nav>
             <input class="button" type="submit" name="btn-entrar" value="Confirmar">
+
+            <?php
+    
+
+        session_start(); 
+        
+        if (isset($_POST['btn-entrar'])){
+        
+            echo "Clicou";
+            //Conexão
+            require_once 'dbconexao.php';
+
+            $email = filter_input(INPUT_POST,'email',FILTER_SANITIZE_EMAIL);            
+            $senha = filter_input(INPUT_POST,'senha',FILTER_SANITIZE_STRING); 
+            $senha = md5($senha);       
+            
+            $sql = "SELECT * FROM usuario WHERE dscEmailUser = '$email' AND senhaUser = '$senha' " ;
+            $resultado = mysqli_query($connect, $sql);
+            // echo $sql;
+
+            if (mysqli_num_rows($resultado) > 0){
+                //  echo "usuario encontrado.";
+                header("Location: administrativo.php");         
+            } else{
+                echo "Usuário ou senha inválido!";
+                
+            } 
+                //  } else{
+                //      echo "n cliclou ainda";
+            }
+        ?>
         </form>
     </section>
     

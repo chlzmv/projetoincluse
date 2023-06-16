@@ -7,7 +7,7 @@
      <!-- Aqui chamamos o nosso arquivo css externo -->
     <link rel="stylesheet" type="text/css"  href="../css/stylecriarpergunta.css" /> 
      <script src="../js/botoestela.js" defer> </script>
-    <script src="botoesquestionario.js" defer></script>
+    <script src="../js/botoescriarquestao.js" defer></script>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
 </head>
 <body>
@@ -113,7 +113,7 @@
                 <span id="check" class="material-symbols-outlined">check</span>
                 </td>
                 <td>
-                <span id="add2" class="material-symbols-outlined" onclick="questao.adicionar()">add</span>
+                <span id="add2" class="material-symbols-outlined" onclick="adicionar()">add</span>
                 </td>
                 
             </tr>
