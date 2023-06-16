@@ -64,17 +64,22 @@ body{
     border: none;
     box-shadow: 0px 3px 4px rgb(165, 163, 163);
     padding: 1px;
-  
+    color: #e0853b;
+    font-family: 'Nunito Sans', sans-serif;
+ }
+
+ .message{
+    margin: 5% 15.8%;
  }
 
  /* Menu Flutuante */
 
 .material-symbols-outlined {
-  font-variation-settings:
-  'FILL' 1,
-  'wght' 400,
-  'GRAD' 0,
-  'opsz' 48
+    font-variation-settings:
+    'FILL' 1,
+    'wght' 400,
+    'GRAD' 0,
+    'opsz' 48
 }
 
 #arrow{
@@ -161,7 +166,7 @@ body{
   /* config botao */
   .button{
       background-color: #e0853b;
-      margin: 45px auto 20px auto;
+      margin: 20px auto 20px auto;
       border-radius: 20px;
       border: none;
       width: 30%;
@@ -188,12 +193,9 @@ body{
       font-weight: 300;
       padding-left: 6px;
   }
-  .inputNome{
-    display: inline;
-    width: 119px;
-    height: 4vh;
-  }
   .divInputNome{
     display:block;
     margin: auto 10% auto 17%
   }
+
+  

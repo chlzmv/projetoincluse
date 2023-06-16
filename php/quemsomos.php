@@ -3,16 +3,11 @@
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
-<<<<<<< HEAD
-    <title>Menu Dropdown Horizontal - Linha de Código</title>
-     <!-- Aqui chamamos o nosso arquivo css e javascript externo  -->
-=======
     <link rel="icon" href="icon.png" type="image/png">
     <title>Quem Somos</title>
      <!-- Aqui chamamos o nosso arquivo css e javascript externo -->
->>>>>>> 64fedf0fa5e1f8509076b78f7b2f6331615b8097
-    <script src="botoestela.js"> </script>
-    <link rel="stylesheet" type="text/css"  href="stylequemsomos.css" /> 
+    <script src="../js/botoestela.js"> </script>
+    <link rel="stylesheet" type="text/css"  href="../css/stylequemsomos.css" /> 
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
 </head>
 <body>
@@ -84,22 +79,22 @@
                 <h2>Nossa Equipe</h2>
                 <a>A equipe é formada por estudantes do Instituto Federal do Espírito Santo do curso de Técnico em informática. Foi projetado um site para oferecer melhor solução de formulário acessíveis. Cada membro da equipe trouxe habilidades e perspectivas únicas para o projeto, o que enriqueceu bastante o processo de desenvolvimento desse. </a>
                 <figure class="photoTextCo">
-                    <p class="photoTextCo"><img src="davi.png" width="150x" height="150px">
+                    <p class="photoTextCo"><img src="../png/davi.png" width="150x" height="150px">
                     <p class="pName">Davi Campos Sutil</p>
                     <p class="pDesc">BACK-END FRONT-END</p>
                 </figure>
                 <figure class="photoTextCo">
-                    <p class="photoTextCo"><img src="sthefany.png" width="150x" height="150px"></p>
+                    <p class="photoTextCo"><img src="../png/davisthefany.png" width="150x" height="150px"></p>
                     <p class="pName">Sthefany dos Santos</p>
                     <p class="pDesc">BACK-END FRONT-END</P>
                 </figure>
                 <figure class="photoTextCo">
-                    <p class="photoTextCo"><img src="vinicius.png" width="150x" height="150px"></P>
+                    <p class="photoTextCo"><img src="../png/davivinicius.png" width="150x" height="150px"></P>
                     <p class="pName">Vinícius Oliveira</p>
                     <p class="pDesc">BACK-END FRONT-END</p>
                 </figure>
                 <figure class="photoTextCo">
-                    <p class="photoTextCo"><img src="charlize.png" width="150x" height="150px"></a>
+                    <p class="photoTextCo"><img src="../png/davicharlize.png" width="150x" height="150px"></a>
                     <p class="pName">Charlize Moura</p>
                     <p class="pDesc">BACK-END FRONT-END</ class="pDesc">
                 </figure>

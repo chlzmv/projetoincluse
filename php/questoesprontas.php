@@ -6,8 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="icon.png" type="image/png">
     <title>Forms</title>
-    <script src="botoestela.js"> </script>
-    <link rel="stylesheet" type="text/css" href="stylequestoesprontas.css">
+    <script src="../js/botoestela.js"> </script>
+    <link rel="stylesheet" type="text/css" href="../css/stylequestoesprontas.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
 </head>
 <body>
@@ -23,7 +23,7 @@
         <li style="float: right">
             <ul>
                 <li>
-                    <div class="backgroundImagem"><img src="iconUser.png" class="configimagem" onclick = "clickProf()"></div>
+                    <div class="backgroundImagem"><img src="../png/iconUser.png" class="configimagem" onclick = "clickProf()"></div>
                 <li>
             </ul>
         </li>

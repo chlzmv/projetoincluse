@@ -6,10 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="icon.png" type="image/png">
     <title>Meus Forms</title>
-    <link rel="stylesheet" type="text/css" href="styleminhasprovas.css">
+    <link rel="stylesheet" type="text/css" href="../css/stylemeusquestionarios.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
-    <script src="botoestela.js"> </script>
-
+    <script src="../js/meusquestionarios.js"> </script>
+    <script src="../js/botoestela.js"> </script>
 
 </head>
 <body>
@@ -20,12 +20,12 @@
                 <span class="material-symbols-outlined" onclick="clickMenu()" id="dropdown">menu</span>
             </nav>
         </li>    
-        <li><a href="index.html" class="aplicafontelogo">Incluse.com</a></li>
+        <li><a href="index.php" class="aplicafontelogo">Incluse.com</a></li>
         
         <li style="float: right">
             <ul>
                 <li>
-                    <div class="backgroundImagem"><img src="iconUser.png" class="configimagem" onclick = "clickProf()"></div>
+                    <div class="backgroundImagem"><img src="../png/iconUser.png" class="configimagem" onclick = "clickProf()"></div>
                 <li>
             </ul>
         </li>
@@ -34,16 +34,16 @@
     <!-- botões menu hamburger -->
     <menu id="menu">
         <ul>
-            <li><a href="criarperguntas.html">Criar Formulário</a></li>
-            <li><a href="meusformularios.html">Meus Formulários</a></li>
-            <li><a href="quemsomos.html">Quem Somos?</a></li>
+            <li><a href="criarperguntas.php">Criar Formulário</a></li>
+            <li><a href="meusquestionarios.php">Meus Formulários</a></li>
+            <li><a href="quemsomos.php">Quem Somos?</a></li>
         </ul>   
     </menu>
     
     <!-- botões menu profile -->
     <menu class="menuProf" id="prof">
         <ul class="ulProf">
-            <li class="liProf"><a href="login.html" class="aProf">Trocar usuário</a></li>
+            <li class="liProf"><a href="login.php" class="aProf">Trocar usuário</a></li>
             <li class="liProf"><a href="#" class="aProf">Sair</a></li>
         </ul>   
     </menu>
@@ -59,31 +59,10 @@
     </footer>
      
     <!-- LISTA DE FORMULARIOS -->
+    <header class="divTitulo">
+        <h1>Meus formulários</h1>
+    </header>
     
-    <div class="divTitulo">
-        <h1> Meus Formulários</h1>
-    </div>
-    <div class="divForms">
-        <span id="description" class="material-symbols-outlined">description</span>
-        <div class="divInfoForms">       
-           <h2 onclick="window.location='questoesprontas.php';">Título do Formulário</h2>
-           <div>
-                <a>Criado em:</a>
-                <a>xx/xx/xxxx</a>
-           </div>
-           <div>
-                <a>Concluídos:</a>
-                <a>xx/xx</a>
-           </div>
-        </div>   
-        
-        <div class="divBotoes">
-            <span id="delete" class="material-symbols-outlined">delete</span>
-            <div>
-                <input class="button" type="submit" value="Acessar Resultados" onclick="window.location='resultadosalunos.php';">
-            </div>
-        </div>
-    </div>
     <div class="divForms">
         <span id="description" class="material-symbols-outlined">description</span>
         <div class="divInfoForms">       
@@ -99,13 +78,28 @@
         </div>   
         
         <div class="divBotoes">
-            <span id="delete" class="material-symbols-outlined">delete</span>
+            <span id="delete" class="material-symbols-outlined" onclick="questionario.apagar()">delete</span>
             <div>
             <input class="button" type="submit" value="Acessar Resultados" onclick="window.location='resultadosalunos.php';">
             </div>
         </div>
     </div>
-
+    <table id="table">
+        <tr>
+            <td>
+                <span id="description" class="material-symbols-outlined">description</span>
+            </td>
+            <td>
+                <h2 onclick="window.location='questoesprontas.php';" >Título do Formulário </h2>
+            </td>
+            <td>
+                <input class="button" type="submit" value="Acessar Resultados" onclick="window.location='resultadosalunos.php';">
+            </td>
+            <td>
+                <span id="delete" class="material-symbols-outlined" onclick="questionario.apagar()">delete</span>
+            </td>
+        </tr>
+    </table>
      <!-- Script botão menu -->
 
     <script>

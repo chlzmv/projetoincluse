@@ -1,3 +1,7 @@
+<?php 
+    session_start();
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,8 +10,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="icon.png" type="image/png">
     <title>Incluse</title>
-    <script src="botoestela.js"> </script>
-    <link rel="stylesheet" type="text/css" href="styleindex.css">
+    <script src="../js/botoestela.js"> </script>
+    <link rel="stylesheet" type="text/css" href="../css/styleindex.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
 </head>
 <body>
@@ -26,7 +30,7 @@
             <li class="liLogin">
                 <ul>
                     <li><input type="button" id="botaoCad" value="Cadastre-se" onclick="window.location='cadastro.php';"></li>
-                    <li><a href="login.html">Entrar</a></li>
+                    <li><a href="login.php">Entrar</a></li>
                 </ul>
             </li>
         </ul>
@@ -36,7 +40,7 @@
     <menu id="menu">
         <ul>
             <li><a href="criarperguntas.php">Criar Formulário</a></li>
-            <li><a href="meusformularios.php">Meus Formulários</a></li>
+            <li><a href="meusquestionarios.php">Meus Formulários</a></li>
             <li><a href="quemsomos.php">Quem Somos?</a></li>
         </ul>   
     </menu>
@@ -64,7 +68,7 @@
             <span class="material-symbols-outlined" id="pencil">edit</span>
         </nav>
         <section class="divLowBot">
-            <nav class="botMP" onclick="window.location='meusformularios.php';">
+            <nav class="botMP" onclick="window.location='meusquestionarios.php';">
                 <h2>Meus forms</h2>
                 <span class="material-symbols-outlined" id="book">menu_book</span>
             </nav>

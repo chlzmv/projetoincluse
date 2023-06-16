@@ -11,6 +11,51 @@
     <script src="botoestela.js"> </script>
 </head>
 <body >
+    <?php
+    
+
+    if(isset($_POST['btn-entrar'])){
+        session_start();
+    
+        $email = filter_input(INPUT_POST, 'email', FILTER_SANITIZE_EMAIL);            
+        $senha = filter_input(INPUT_POST, 'senha', FILTER_SANITIZE_STRING); 
+        $senha = md5($senha); // Recomenda-se usar algoritmos mais seguros, como bcrypt
+    
+        // Conexão com o banco de dados (exemplo usando MySQLi)
+        $servername = "localhost";
+        $username = "root";
+        $password = "usbw";
+        $dbname = "projetoincluse";
+    
+        $conn = new mysqli($servername, $username, $password, $dbname);
+    
+        if ($conn->connect_error) {
+            die("Falha na conexão com o banco de dados: " . $conn->connect_error);
+        }
+        
+        $email = $conn->real_escape_string($email); // Escape de caracteres especiais
+        $senha = $conn->real_escape_string($senha); // Escape de caracteres especiais
+    
+        $sql = "SELECT * FROM usuario WHERE dscEmailUser = '$email' && senhaUser = '$senha' LIMIT 1";
+        $resultado = $conn->query($sql);
+    
+        if ($resultado && $resultado->num_rows > 0) {
+            // Autenticação bem-sucedida
+            header("Location: administrativo.php");
+            exit();
+        } else {
+            // Autenticação falhou
+            echo "Usuário ou senha inválido";
+            header("Location: login.php");
+            exit();
+        }
+    
+        $conn->close();
+    } else {
+        // Nenhum formulário enviado
+    }
+
+    ?>
     <header class="divMenu">
         <ul>
             <li href="#" class="aplicafontelogo">Incluse.com</li>
@@ -30,13 +75,13 @@
     <section class="container">
         <h1 class="divH1">Entrar</h1>
         <!-- <hr class="hr" > -->
-        <form>
+        <form action="login.php" method="post">
             <input class="input" type="email" id="email" name="email"placeholder="Email">
             <input class="input" type="password" id="senha" name="senha" placeholder="Senha">
             <nav class="divA">
                 <a href="esqueceSenha.php">Esqueceu a senha?</a>
             </nav>
-            <input class="button" type="submit" value="Confirmar">
+            <input class="button" type="submit" name="btn-entrar" value="Confirmar">
         </form>
     </section>
     
