@@ -20,17 +20,22 @@ var controleQuestao = 1;
 function adicionarQuestao() {
     controleQuestao++;
     console.log(controleQuestao);
-    document.getElementById('section').insertAdjacentHTML('afterend', '<div class="section" id="questao' + controleQuestao + '"> <input type="text" id="numQuest" placeholder="N° Questão" ><div class="inputSV"><select id="formSelect"><option selected disabled>Tipo da Questão:</option><option value="1">Resposta Única</option><option value="2">Múltipla Escolha</option></select><input type="text" id="valorQuest" placeholder="Valor"></div></section><section class="divCaixaTexto"><textarea id="caixaTexto" cols="30" rows="20" placeholder="Insira o texto"></textarea></section><div id="table"><input type="checkbox" id="checkbox1" placeholder="check1"> <textarea  id="checkText" cols="30" rows="1" placeholder="Insira o texto"></textarea><span id="check" class="material-symbols-outlined">check</span><span id="add2" class="material-symbols-outlined" onclick="adicionarCampo()">add</span></div> </section>');
+    document.getElementById('section').insertAdjacentHTML('afterend', '<div class="section" id="questao' + controleQuestao + '">  <section class="divInfoForm"> <input type="text" id="numQuest" placeholder="N° Questão" ><div class="inputSV"><select id="formSelect"><option selected disabled>Tipo da Questão:</option><option value="1">Resposta Única</option><option value="2">Múltipla Escolha</option></select><input type="text" id="valorQuest" placeholder="Valor"></div></section><section class="divCaixaTexto"><textarea id="caixaTexto" cols="30" rows="20" placeholder="Insira o texto"></textarea></section><div id="table"><input type="checkbox" id="checkbox1" placeholder="check1"> <textarea  id="checkText" cols="30" rows="1" placeholder="Insira o texto"></textarea><span id="check" class="material-symbols-outlined">check</span><span id="add2" class="material-symbols-outlined" onclick="adicionarCampo()">add</span></div> </section>');
 }
 
 function removerQuestao(idQuestao){   
     console.log(idQuestao);
-    document.getElementById('questao' + idQuestao).remove();
-    controleCampo = controleQuestao - 1;
+    // document.getElementById(controleQuestao + idQuestao).remove();
+    controleQuestao = controleQuestao - 1;
 }
 
+// function removerQuestao(idQuestao){   
+//     console.log(idQuestao);
+//     document.getElementById('questao' + idQuestao).remove();
+//     controleCampo = controleQuestao - 1;
+// }
 
-<<<<<<< HEAD
+
 // // if(controleQuestao<2){
 // //     funcçao dditemderesposta
 // //     controcamo ++
@@ -39,17 +44,6 @@ function removerQuestao(idQuestao){
 // // elif(controleQuestao>1){
     
 // // }
-=======
-
-// if(controleQuestao<2){
-//     funcçao dditemderesposta
-//     controcamo ++
-
-// }
-// elif(controleQuestao>1){
-
-// }
->>>>>>> 82f4becb64e5826b3d3cca50a3bb6cc78f87ef20
 
 // <!DOCTYPE html>
 // <html>

@@ -283,7 +283,8 @@ li a {
     font-weight: 700;
   }
   .divInfoForm{
-    margin: 0rem 0rem 5rem;
+    /* margin: 0rem 0rem 1rem; */
+    margin-bottom: 1rem;
   }
   #numQuest{
     float:left;
@@ -293,6 +294,7 @@ li a {
     border-radius: 3px;
     font-size: 20px;
   }
+  
   .inputSV{
     float: right;
     width: 60%;;
@@ -321,8 +323,13 @@ li a {
     border-radius: 3px;
     font-size: 20px;
     margin-bottom: 1rem;
+    margin-top: 1rem;
   }
+  #table{
+    margin-bottom: 1rem;
+    margin-top: 1rem;
 
+  }
   #checkText{
     position: relative;
     border:none;
