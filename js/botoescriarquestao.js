@@ -21,14 +21,14 @@ function adicionarQuestao() {
 }
 
 
-if(controleQuestao<2){
-    funcçao dditemderesposta
-    controcamo ++
+// // if(controleQuestao<2){
+// //     funcçao dditemderesposta
+// //     controcamo ++
 
-}
-elif(controleQuestao>1){
+// // }
+// // elif(controleQuestao>1){
     
-}
+// // }
 
 // <!DOCTYPE html>
 // <html>
