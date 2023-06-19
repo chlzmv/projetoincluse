@@ -343,6 +343,15 @@ li a {
     border-radius: 2px;
   }
 
+  table{
+    display: inline;
+    width: 1rem;
+  }  
+
+  #delete_box{
+    font-size: 35px;
+    margin-top: -0.15rem;
+  }
   #add2{
     font-size: 25PX;
   }
@@ -354,7 +363,7 @@ li a {
   }
 
   #add_box{
-    margin-top: -0.5rem;
+    margin-top: -1rem;
     float:left;
     font-size: 35px;
   }
@@ -383,7 +392,7 @@ li a {
     border-radius: 10px;
     border: none;
     cursor: pointer;
-    font-size: 15px;
+    font-size: 18px;
   }
   
   #botaoSalva:hover {
