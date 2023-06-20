@@ -2,7 +2,7 @@
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
-    <link rel="icon" href="icon.png" type="image/png">
+    <link rel="icon" href="../png/icon.png" type="image/png">
     <title>Criar Forms</title>
      <!-- Aqui chamamos o nosso arquivo css externo -->
     <link rel="stylesheet" type="text/css"  href="../css/stylecriarpergunta.css" /> 
