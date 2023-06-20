@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" href="icon.png" type="image/png">
+    <link rel="icon" href="../png/icon.png" type="image/png">
     <title>Cadastro</title>
     <link rel="stylesheet" type="text/css" href="../css/stylecadastro.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
@@ -53,13 +53,17 @@
                     $res = array("options"=>array("regexp"=>"/^([a-zA-Z]+\s)*[a-zA-Z]+$/"));
                     if(! filter_var($nome, FILTER_VALIDATE_REGEXP,$res)) {		  
                         $erros[]= "Nome deve possuir somente letras [a-zA-Z].";
-
-                        echo "nome invalido". $nome;
                     }
 
                     if(filter_input(INPUT_POST,'email',FILTER_VALIDATE_EMAIL)===false) {
                         $erros[] = "Email inválido";
-                    } else {
+                    } 
+                    
+                    if($senha <> $csenha){
+                        echo "Senhas não coincidem";                  
+                    }
+
+                    else {
                         if (!empty($erros)){
                             foreach($erros as $erro):
                                 echo "<li> $erro </li>";

@@ -3,7 +3,7 @@
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
-    <link rel="icon" href="icon.png" type="image/png">
+    <link rel="icon" href="../png/icon.png" type="image/png">
     <title>Quem Somos</title>
      <!-- Aqui chamamos o nosso arquivo css e javascript externo -->
     <script src="../js/botoestela.js"> </script>
