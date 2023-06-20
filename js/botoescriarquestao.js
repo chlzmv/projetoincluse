@@ -4,10 +4,19 @@
 var controleCampo = 1;
 function adicionarCampo(e) {
     controleCampo++;   
-    console.log(controleCampo);
+    
     questao = e.id;
-    console.log(questao);
-    document.getElementById(questao).insertAdjacentHTML('beforeend', '<div class="table" id="campo' + controleCampo +  '" data-questao="' + questao + '"> <input type="checkbox" id="checkbox1" placeholder="check1"> <textarea  id="checkText" cols="30" rows="1" placeholder="Insira o texto"></textarea> <span  class="material-symbols-outlined" id="check" >check</span> <span class="material-symbols-outlined" id="add2"  onclick="adicionarCampo(this.parentElement.parentElement)">add</span> <span class="material-symbols-outlined" id="' + controleCampo + '" onclick="removerCampo(' + controleCampo + ')"> delete </span></div>');
+    
+    //console.log(e);
+
+    var target = e.target || e.srcElement;
+    var id = e.id
+    //console.log(id);
+
+    const tabela = document.getElementById(id);  
+
+    html= '<div class="table" id="campo"' + questao + 'data-questao="' + questao + '"> <input type="checkbox" id="checkbox1" placeholder="check1"> <textarea  id="checkText" cols="30" rows="1" placeholder="Insira o texto"></textarea> <span  class="material-symbols-outlined" id="check" >check</span> <span class="material-symbols-outlined" id="add' + questao + '"  onclick="adicionarCampo(this.parentElement.parentElement)">add</span> <span class="material-symbols-outlined" id="' + controleCampo + '" onclick="removerCampo(' + controleCampo + ')"> delete </span></div>'
+    tabela.insertAdjacentHTML('beforeend', html);
 }
 
 function removerCampo(idCampo){   
@@ -22,7 +31,7 @@ var controleQuestao = 1;
 function adicionarQuestao() {
     controleQuestao++;
     console.log(controleQuestao);
-    document.getElementById('section').insertAdjacentHTML('afterbegin', '<div class="section" id="questao' + controleQuestao + '">  <section class="divInfoForm"> <input type="text" id="numQuest" placeholder="N° Questão" ><div class="inputSV"><select id="formSelect"><option selected disabled>Tipo da Questão:</option><option value="1">Resposta Única</option><option value="2">Múltipla Escolha</option></select><input type="text" id="valorQuest" placeholder="Valor"></div></section><section class="divCaixaTexto"><textarea id="caixaTexto" cols="30" rows="20" placeholder="Insira o texto"></textarea></section><div id="table"><input type="checkbox" id="checkbox1" placeholder="check1"> <textarea  id="checkText" cols="30" rows="1" placeholder="Insira o texto"></textarea><span id="check" class="material-symbols-outlined">check</span><span id="add2" class="material-symbols-outlined" onclick="adicionarCampo(this.parentElement)">add</span></div> </section>');
+    document.getElementById('section').insertAdjacentHTML('afterend', '<div class="section" id="questao' + controleQuestao + '">  <section class="divInfoForm"> <input type="text" id="numQuest" placeholder="'+ controleQuestao +'" ><div class="inputSV"><select id="formSelect"><option selected disabled>Tipo da Questão:</option><option value="1">Resposta Única</option><option value="2">Múltipla Escolha</option></select><input type="text" id="valorQuest" placeholder="Valor"></div></section><section class="divCaixaTexto"><textarea id="caixaTexto" cols="30" rows="20" placeholder="Insira o texto"></textarea></section><div id="table' + controleQuestao + '"><input type="checkbox" id="checkbox1" placeholder="check1"> <textarea  id="checkText" cols="30" rows="1" placeholder="Insira o texto"></textarea><span id="check" class="material-symbols-outlined">check</span><span id="add' + controleQuestao + '" class="material-symbols-outlined" onclick="adicionarCampo(this.parentElement)">add</span></div> </section>');
 }
 
 function removerQuestao(idQuestao){   
