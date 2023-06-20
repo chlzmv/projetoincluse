@@ -5,9 +5,9 @@
     <link rel="icon" href="icon.png" type="image/png">
     <title>Criar Forms</title>
      <!-- Aqui chamamos o nosso arquivo css externo -->
-    <link rel="stylesheet" type="text/css"  href="../css/stylecriarpergunta.css" /> 
-     <script src="../js/botoestela.js" defer> </script>
-    <script src="../js/botoescriarquestao.js" defer></script>
+    <link rel="stylesheet" type="text/css"  href="stylecriarpergunta.css" /> 
+     <script src="botoestela.js" defer> </script>
+    <script src="botoescriarquestao.js" defer></script>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
 </head>
 <body>
@@ -84,10 +84,12 @@
                 </section>
                 <div id="table">
                     <input type="checkbox" id="checkbox1" placeholder="check1">
-                    <textarea  id="checkText" cols="30" rows="1" placeholder="Insira o texto"></textarea>
+
+                    <textarea  id="areaText" cols="30" rows="1" placeholder="Insira o texto"></textarea> 
                     <span id="check" class="material-symbols-outlined">check</span>
-                    <span id="add2" class="material-symbols-outlined" onclick="adicionarCampo()">add</span>   
+                    <span id="add2" class="material-symbols-outlined" onclick="adicionarCampo(this.parent)">add</span>   
                 </div>
+                
             </div>
             <hr>
             <footer class="divBotoesInfer">
