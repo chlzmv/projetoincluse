@@ -67,7 +67,7 @@
                 <input type="text" id="tituloForm"  placeholder="Título" >
             </div>
             <hr>
-            <divid id = "section">
+            <div id = "section">
                 <section class="divInfoForm">
                     <input type="text" id="numQuest" placeholder="N° Questão" >
                     <div class="inputSV">
@@ -91,13 +91,18 @@
             </div>
             <hr>
             <footer class="divBotoesInfer">
-                <span id="add_box" class="material-symbols-outlined" onclick="adicionarQuestao()">
-                    add_box
-                </span>
-                <div class="botoesSR">
-                    <!-- <input type="button" id="botaoRascunho" value="Rascunho"> -->
-                    <input type="button" id="botaoSalva" value="Salvar formulário">
-                </div>
+                <table>
+                    <tr>
+                        <td>
+                            <span id="add_box" class="material-symbols-outlined" onclick="adicionarQuestao()">add_box</span>
+                        </td>
+                        <td>
+                            <span id="delete_box" class="material-symbols-outlined" onclick="removerQuestao()">delete</span>
+                        </td>
+                        
+                    </tr>
+                </table>
+                <input type="button" id="botaoSalva" value="Salvar formulário">
             </footer>
 
     </section>
