@@ -1,3 +1,6 @@
+<?php 
+    session_start();
+?>
 <!DOCTYPE HTML>
 <html lang="pt-br">
 <head>
@@ -97,9 +100,19 @@
                         
                     </tr>
                 </table>
-                <input type="button" id="botaoSalva" value="Salvar formulário">
+                <input type="button" id="botaoSalva" name="btn-salvar" value="Salvar formulário">
             </footer>
-
+            <?php
+                
+                if (isset($_POST['btn-salvar'])){
+                    echo "Clicou";
+                    //Conexão
+                    require_once 'dbconexao.php'; 
+                }
+                else{
+                    echo "n clicou";
+                }
+            ?>
     </section>
 </body>
 </html>

@@ -1,3 +1,8 @@
+<?php
+    include("dbconexao.php");
+    $sql = "SELECT * FROM questionario";
+    $resultado = mysqli_query($connect, $sql);
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -62,29 +67,28 @@
     <header class="divTitulo">
         <h1>Meus formulários</h1>
     </header>
-    
-    <div class="divForms">
-        <span id="description" class="material-symbols-outlined">description</span>
-        <div class="divInfoForms">       
-           <h2 onclick="window.location='questoesprontas.php';" >Título do Formulário </h2>
-           <div>
-                <a>Criado em:</a>
-                <a>xx/xx/xxxx</a>
-           </div>
-           <div>
-                <a>Concluídos:</a>
-                <a>xx/xx</a>
-           </div>
-        </div>   
-        
-        <div class="divBotoes">
-            <span id="delete" class="material-symbols-outlined" onclick="questionario.apagar()">delete</span>
-            <div>
-            <input class="button" type="submit" value="Acessar Resultados" onclick="window.location='resultadosalunos.php';">
+    <?php if($resultado){
+        while($dado = $resultado->fetch_array()) { ?>
+            <div class="divForms">
+                <span id="description" class="material-symbols-outlined">description</span>
+                <div class="divInfoForms">       
+                <h2 onclick="window.location='questoesprontas.php';" ><?php echo $dado['dscQuestn'] ?></h2>
+                <div>
+                        <a>Criado em:</a>
+                        <a><?php echo $dado['datCriacQuestn'] ?></a>
+                </div>
+                <div class="divBotoes">
+                    <span id="delete" class="material-symbols-outlined">delete <?php?></span>
+                    <div>
+                    <input class="button" type="submit" value="Acessar Resultados" onclick="window.location='resultadosalunos.php';">
+                    </div>
+                </div>
             </div>
-        </div>
-    </div>
-    <table id="table">
+    <?php } 
+        }else {
+        echo "Erro na consulta: " . mysqli_error($connect);}?>
+    
+    <!-- <table id="table">
         <tr>
             <td>
                 <span id="description" class="material-symbols-outlined">description</span>
@@ -99,7 +103,9 @@
                 <span id="delete" class="material-symbols-outlined" onclick="questionario.apagar()">delete</span>
             </td>
         </tr>
-    </table>
+    </table>] -->
+
+
      <!-- Script botão menu -->
 
     <script>
