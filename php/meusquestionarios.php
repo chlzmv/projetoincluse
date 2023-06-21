@@ -1,8 +1,3 @@
-<?php
-    include("dbconexao.php");
-    $sql = "SELECT * FROM questionario";
-    $resultado = mysqli_query($connect, $sql);
-?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -12,6 +7,7 @@
     <link rel="icon" href="../png/icon.png" type="image/png">
     <title>Meus Forms</title>
     <link rel="stylesheet" type="text/css" href="../css/stylemeusquestionarios.css">
+    <link rel="stylesheet" type="text/css" href="../js/botoesmeusquestionarios.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
     <script src="../js/meusquestionarios.js"> </script>
     <script src="../js/botoestela.js"> </script>
@@ -67,44 +63,34 @@
     <header class="divTitulo">
         <h1>Meus formulários</h1>
     </header>
-    <?php if($resultado){
-        while($dado = $resultado->fetch_array()) { ?>
-            <div class="divForms">
-                <span id="description" class="material-symbols-outlined">description</span>
-                <div class="divInfoForms">       
-                <h2 onclick="window.location='questoesprontas.php';" ><?php echo $dado['dscQuestn'] ?></h2>
-                <div>
-                        <a>Criado em:</a>
-                        <a><?php echo $dado['datCriacQuestn'] ?></a>
-                </div>
-                <div class="divBotoes">
-                    <span id="delete" class="material-symbols-outlined">delete <?php?></span>
-                    <div>
-                    <input class="button" type="submit" value="Acessar Resultados" onclick="window.location='resultadosalunos.php';">
+    <?php
+        include("dbconexao.php");
+        $sql = "SELECT * FROM questionario";
+        $resultado = mysqli_query($connect, $sql);
+
+        if ($resultado) {
+            while ($dado = mysqli_fetch_assoc($resultado)) {
+                extract($dado);
+                ?>
+                <a><?php echo $idQuestn ?></a>
+                <div class="divForms">
+                    <span id="description" class="material-symbols-outlined">description</span>
+                    <div class="divInfoForms">
+                        <h2 onclick="window.location='questoesprontas.php';"><?php echo $dado['dscQuestn'] ?></h2><br>
+                        <a>Criado em: <?php echo $dado['datCriacQuestn'] ?></a>
+                    </div>
+                    <div class="divBotoes">
+                        <span id="delete" class="material-symbols-outlined" onclick="apagarQuestionario($idQuestn)">delete</span>
+                        <input class="button" type="submit" value="Acessar Resultados" onclick="window.location='resultadosalunos.php';">
                     </div>
                 </div>
-            </div>
-    <?php } 
-        }else {
-        echo "Erro na consulta: " . mysqli_error($connect);}?>
-    
-    <!-- <table id="table">
-        <tr>
-            <td>
-                <span id="description" class="material-symbols-outlined">description</span>
-            </td>
-            <td>
-                <h2 onclick="window.location='questoesprontas.php';" >Título do Formulário </h2>
-            </td>
-            <td>
-                <input class="button" type="submit" value="Acessar Resultados" onclick="window.location='resultadosalunos.php';">
-            </td>
-            <td>
-                <span id="delete" class="material-symbols-outlined" onclick="questionario.apagar()">delete</span>
-            </td>
-        </tr>
-    </table>] -->
-
+                
+                <?php
+            }
+        } else {
+            echo "Erro na consulta: " . mysqli_error($resultado);
+        }
+    ?>
 
      <!-- Script botão menu -->
 
