@@ -69,25 +69,18 @@
             <hr>
             <div id = "section">
                 <section class="divInfoForm">
-                    <input type="text" id="numQuest" placeholder="N° Questão" >
-                    <div class="inputSV">
-                        <select id="formSelect">
-                            <option selected disabled>Tipo da Questão:</option>
-                            <option value="1">Resposta Única</option>
-                            <option value="2">Múltipla Escolha</option>
-                        </select>
-                        <input type="text" id="valorQuest" placeholder="Valor">
-                    </div>
+                    <input type="text" id="numQuest" placeholder="N° Questão" >  
+                    <input type="text" id="valorQuest" placeholder="Valor">
                 </section>
                 <section class="divCaixaTexto">
                     <textarea id="caixaTexto" cols="30" rows="20" placeholder="Insira o texto"></textarea>
                 </section>
                 <div id="table">
-                    <input type="checkbox" id="checkbox1" placeholder="check1">
+                    <input type="radio" name="select" placeholder="check1">
 
                     <textarea  id="areaText" cols="30" rows="1" placeholder="Insira o texto"></textarea> 
                     <span id="check" class="material-symbols-outlined">check</span>
-                    <span id="add2" class="material-symbols-outlined" onclick="adicionarCampo(this.parent)">add</span>   
+                    <span id="add" class="material-symbols-outlined" onclick="adicionarCampo(this.parent)">add</span>   
                 </div>
                 
             </div>
