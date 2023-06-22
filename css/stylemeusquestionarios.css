@@ -265,7 +265,7 @@ li a {
     font-family: 'Nunito Sans', sans-serif;
     padding: 0.7rem 0.7rem 0.7rem 0.7rem;;
     width: 35rem;
-    margin: 0.7rem auto 0.7rem auto;
+    margin: 0 auto 1rem auto;
     padding: 0.5rem 0.5rem 0.5rem 0.5rem;
     cursor: pointer;
     color:rgb(47, 42, 42);

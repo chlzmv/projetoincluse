@@ -7,9 +7,8 @@
     <link rel="icon" href="../png/icon.png" type="image/png">
     <title>Meus Forms</title>
     <link rel="stylesheet" type="text/css" href="../css/stylemeusquestionarios.css">
-    <link rel="stylesheet" type="text/css" href="../js/botoesmeusquestionarios.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
-    <script src="../js/meusquestionarios.js"> </script>
+    <script src="../js/botoesmeusquestionarios.js"> </script>
     <script src="../js/botoestela.js"> </script>
 
 </head>
@@ -72,15 +71,14 @@
             while ($dado = mysqli_fetch_assoc($resultado)) {
                 extract($dado);
                 ?>
-                <a><?php echo $idQuestn ?></a>
                 <div class="divForms">
                     <span id="description" class="material-symbols-outlined">description</span>
                     <div class="divInfoForms">
-                        <h2 onclick="window.location='questoesprontas.php';"><?php echo $dado['dscQuestn'] ?></h2><br>
-                        <a>Criado em: <?php echo $dado['datCriacQuestn'] ?></a>
+                        <h2 onclick="window.location='questoesprontas.php';"><?php echo $dscQuestn ?></h2><br>
+                        <a>Criado em: <?php echo $datCriacQuestn ?></a>
                     </div>
                     <div class="divBotoes">
-                        <span id="delete" class="material-symbols-outlined" onclick="apagarQuestionario($idQuestn)">delete</span>
+                        <span id="delete" class="material-symbols-outlined" onclick="apagarQuestionario(<?php echo $idQuestn ?>)">delete</span>
                         <input class="button" type="submit" value="Acessar Resultados" onclick="window.location='resultadosalunos.php';">
                     </div>
                 </div>
