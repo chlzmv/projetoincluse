@@ -1,3 +1,5 @@
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -70,78 +72,55 @@
         <!-- Cabeçalho -->
         <header class="containerInfoForms bottom">
             <!-- titulo pag -->
-            <h1>Título do Formulário</h1>
-            <div class="divInfoForms">
-                <a>Criado em:</a>
-                <a>xx/xx/xxxx</a>
-                <a class="espace"></a>
-                <a>Concluídos:</a>
-                <a>xx/xx</a>
-            </div>
-        </header>
-        
+            <?php
+                include("dbconexao.php");
 
-        <!-- Questão -->
-        <section class="divQuest">
-            <div class="divValor">
-                <a style="float: left;">Questão 1</a>
-                <a style="float: right;">2,0</a>
-            </div>
-            <div>
-                <a>Para realizar a construção de um projeto de banco de dados de forma correta deve-se passar por necessariamente três fases. Dentre as afirmativas a seguir, escolha a que compreende a alternativa correta.</a>
-            </div>
-            <form class="divResp">
-                <input type="radio" id="radio" name="Resposta1" value="resposta1">
-                <label>Entidade, relacionamento e atributo.  </label>
-                <span id="check" class="material-symbols-outlined">
-                    check
-                </span> <br>
-                <input type="radio" id="radio" name="Resposta2" value="resposta2">
-                <label>Modelo conceitual, projeto lógico e projeto físico. </label><br>
-                <input type="radio" id="radio" name="Resposta3" value="resposta3">
-                <label >Um-para-um, um-para-muitos e muitos-para-muitos. </label><br><br>
-            </form>
-        </section>
-        <section class="divQuest">
-            <div class="divValor">
-                <a style="float: left;">Questão 2</a>
-                <a style="float: right;">2,0</a>
-            </div>
-            <div>
-                <a>Os algoritmos de ordenação são um conjunto de instruções que recebem um array ou lista como entrada e organizam os itens em uma ordem específica. Segundo seus conhecimentos, qual método não pertence aos métodos conhecidos?</a>
-            </div>
-            <form class="divResp">
-                <input type="checkbox" id="checkbox" name="Resposta1" value="Resposta1">
-                <label >Insertion Sort (ordenação por inserção).  </label><br>
-                <input type="checkbox" id="checkbox" name="Resposta2" value="Resposta2">
-                <label >Executable Sort (ordenação p) </label>
-                <span id="check" class="material-symbols-outlined">
-                    check
-                </span> <br>
-                <input type="checkbox" id="checkbox" name="Resposta3" value="Resposta3">
-                <label >Quick Sort (ordenação rápida) </label><br><br>
-            </form>
-        </section>
-        <section class="divQuest">
-            <div class="divValor">
-                <a style="float: left;">Questão 3</a>
-                <a style="float: right;">2,0</a>
-            </div>
-            <div>
-                <a>As estruturas de dados são formas de distribuir e relacionar os dados disponíveis, de modo a tornar mais eficientes os algoritmos que manipulam esses dados. Existe uma grande variedade de estruturas de dados que podemos utilizar. Analisando as alternativas, qual não faz parte da estrutura de dados?</a>
-            </div>
-            <form class="divResp">
-                <input type="checkbox" id="checkbox" name="Resposta1" value="Resposta1">
-                <label >Pilhas   </label><br>
-                <input type="checkbox" id="checkbox" name="Resposta2" value="Resposta2">
-                <label >Vetores. </label><br>
-                <input type="checkbox" id="checkbox" name="Resposta3" value="Resposta3">
-                <label >Sequências. </label>
-                <span id="check" class="material-symbols-outlined">
-                    check
-                </span>
-            </form>
-        </section>
+                $idQuestn = filter_input(INPUT_GET, "idQuestn");
+                var_dump($idQuestn);
+
+                $sql1 = "SELECT * FROM questionario INNER JOIN questoes ON questionario.idQuestn = questoes.questionario_idQuestn INNER JOIN item ON questoes.idQuest=item.questoes_idQuest ";
+                $sql2 = "SELECT * FROM questionario WHERE idQuestn = $idQuestn";
+ 
+                $resultado1 = mysqli_query($connect, $sql1);
+                $resultado2 = mysqli_query($connect, $sql2);
+
+                if ($resultado1 && $resultado2) {
+                    $dado1 = mysqli_fetch_assoc($resultado1);
+                    $dado2 = mysqli_fetch_assoc($resultado2);
+            
+                    if ($dado1 && $dado2) {
+                        extract($dado1);
+                        extract($dado2);?>
+                        <h1><?php echo $dscTituloQuestn ?></h1>
+                        <div class="divInfoForms">
+                            <a>Criado em: <?php echo $datCriacQuestn ?></a>
+                            <a class="espace"></a>
+                            <a>Concluídos:</a>
+                        </div>
+                        <section class="divQuest">
+                            <div class="divValor">
+                                <a style="float: left;"><?php $numQuest ?></a>
+                                <a style="float: right;"><?php $valUnitQuest ?></a>
+                            </div>
+                            <div>
+                                <a><?php $dscEnuncQuest ?></a>
+                            </div>
+                            <form class="divResp">
+                                <input type="radio" name="resp">
+                                <label><?php echo $dscEnuncItem ?></label> 
+                            </form>
+                        </section>
+            <?php
+                    }else {
+                        echo "Nenhum dado encontrado.";
+                    }
+                } else {
+                    echo "Erro na consulta: " . mysqli_error($connect);
+                }
+            ?>
+
+            
+        </header>
         <hr>
         <footer class="divBotoesInfer">
             <span id="delete" class="material-symbols-outlined">

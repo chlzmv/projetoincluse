@@ -74,7 +74,7 @@
                 <div class="divForms">
                     <span id="description" class="material-symbols-outlined">description</span>
                     <div class="divInfoForms">
-                        <h2 onclick="window.location='questoesprontas.php';"><?php echo $dscQuestn ?></h2><br>
+                        <h2 id='<?php echo $idQuestn; ?>' onclick="location.href='questoesprontas.php?idQuestn=<?php echo $idQuestn; ?>'"><?php echo $dscTituloQuestn ?></h2><br>
                         <a>Criado em: <?php echo $datCriacQuestn ?></a>
                     </div>
                     <div class="divBotoes">

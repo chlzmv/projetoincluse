@@ -1,6 +1,7 @@
-<?php 
+<?php
     session_start();
 ?>
+
 <!DOCTYPE HTML>
 <html lang="pt-br">
 <head>
@@ -65,7 +66,7 @@
 
     <!-- conteudo pagina -->
     <h1>Criar formulário</h1>
-    <section class="container">
+    <section class="container" action="criarperguntas.php" method="post">
             <div class="divTituloForm">
                 <input type="text" id="tituloForm"  placeholder="Título" >
             </div>
@@ -100,18 +101,17 @@
                         
                     </tr>
                 </table>
-                <input type="button" id="botaoSalva" name="btn-salvar" value="Salvar formulário">
+                <input type="submit" id="botaoSalva" name="btn-salvar" value="Salvar formulário">
             </footer>
             <?php
-                
-                if (isset($_POST['btn-salvar'])){
-                    echo "Clicou";
-                    //Conexão
-                    require_once 'dbconexao.php'; 
-                }
-                else{
-                    echo "n clicou";
-                }
+
+            if (isset($_POST['btn-salvar'])){
+                //Conexão
+                require_once 'dbconexao.php';
+            }else{
+                echo "n clicou";
+            }
+
             ?>
     </section>
 </body>
