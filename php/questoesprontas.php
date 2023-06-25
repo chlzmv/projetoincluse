@@ -10,6 +10,7 @@
     <title>Forms</title>
     <script src="../js/botoestela.js"> </script>
     <link rel="stylesheet" type="text/css" href="../css/stylequestoesprontas.css">
+    <script src="../js/botoesquestoesprontas.js"></script>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
 </head>
 <body>
@@ -78,54 +79,72 @@
                 $idQuestn = filter_input(INPUT_GET, "idQuestn");
                 var_dump($idQuestn);
 
-                $sql1 = "SELECT * FROM questionario INNER JOIN questoes ON questionario.idQuestn = questoes.questionario_idQuestn INNER JOIN item ON questoes.idQuest=item.questoes_idQuest ";
-                $sql2 = "SELECT * FROM questionario WHERE idQuestn = $idQuestn";
- 
-                $resultado1 = mysqli_query($connect, $sql1);
-                $resultado2 = mysqli_query($connect, $sql2);
+                // Parte 1: Resgatando as informações do questionário
+                $sql = "SELECT dscTituloQuestn, datCriacQuestn FROM questionario WHERE idQuestn = $idQuestn";
+                $resultado = mysqli_query($connect, $sql);
 
-                if ($resultado1 && $resultado2) {
-                    $dado1 = mysqli_fetch_assoc($resultado1);
-                    $dado2 = mysqli_fetch_assoc($resultado2);
-            
-                    if ($dado1 && $dado2) {
-                        extract($dado1);
-                        extract($dado2);?>
-                        <h1><?php echo $dscTituloQuestn ?></h1>
-                        <div class="divInfoForms">
-                            <a>Criado em: <?php echo $datCriacQuestn ?></a>
-                            <a class="espace"></a>
-                            <a>Concluídos:</a>
-                        </div>
-                        <section class="divQuest">
-                            <div class="divValor">
-                                <a style="float: left;"><?php $numQuest ?></a>
-                                <a style="float: right;"><?php $valUnitQuest ?></a>
-                            </div>
-                            <div>
-                                <a><?php $dscEnuncQuest ?></a>
-                            </div>
-                            <form class="divResp">
-                                <input type="radio" name="resp">
-                                <label><?php echo $dscEnuncItem ?></label> 
-                            </form>
-                        </section>
-            <?php
-                    }else {
-                        echo "Nenhum dado encontrado.";
+                if ($resultado) {
+                    $dadosQuestionario = mysqli_fetch_assoc($resultado);
+                    $dscTituloQuestn = $dadosQuestionario['dscTituloQuestn'];
+                    $datCriacQuestn = $dadosQuestionario['datCriacQuestn'];
+
+                    // Exibir o bloco de informações do questionário apenas uma vez
+                    echo "<h1>$dscTituloQuestn</h1>";
+                    echo "<div class='divInfoForms'>";
+                    echo "<a>Criado em: $datCriacQuestn</a>";
+                    echo "<a class='espace'></a>";
+                    echo "<a>Concluídos:</a>";
+                    echo "</div>";
+                }
+
+                // Parte 2: Criando blocos de informações das questões e suas respostas
+                
+                $sql = "SELECT * FROM questoes INNER JOIN item ON questoes.idQuest = item.questoes_idQuest WHERE questoes.questionario_idQuestn = $idQuestn";
+                $resultado = mysqli_query($connect, $sql);
+
+                if ($resultado) {
+                    while ($dadosQuestao = mysqli_fetch_assoc($resultado)) {
+                        $idQuest = $dadosQuestao['idQuest'];
+                        $dscEnuncQuest = $dadosQuestao['dscEnuncQuest'];
+                        $numQuest = $dadosQuestao['numQuest'];
+                        $valUnitQuest = $dadosQuestao['valUnitQuest'];
+
+                        echo "<section class='divQuest'>";
+                        echo "<div class='divValor'>";
+                        echo "<a style='float: left;'>$numQuest</a>";
+                        echo "<a style='float: right;'>$valUnitQuest</a>";
+                        echo "</div>";
+                        echo "<div>";
+                        echo "<a>$dscEnuncQuest</a>";
+                        echo "</div>";
+
+                        $sqlRespostas = "SELECT * FROM item WHERE questoes_idQuest = $idQuest";
+                        $resultadoRespostas = mysqli_query($connect, $sqlRespostas);
+
+                        if ($resultadoRespostas) {
+                            while ($dadosResposta = mysqli_fetch_assoc($resultadoRespostas)) {
+                                $dscEnuncItem = $dadosResposta['dscEnuncItem'];
+
+                                echo "<form class='divResp'>";
+                                echo "<input type='radio' name='resp'>";
+                                echo "<label>$dscEnuncItem</label>";
+                                echo "</form>";
+                            }
+                        } else {
+                            echo "Erro na consulta: " . mysqli_error($connect);
+                        }
+
+                        echo "</section>";
                     }
                 } else {
                     echo "Erro na consulta: " . mysqli_error($connect);
                 }
-            ?>
-
+                ?>
             
         </header>
         <hr>
         <footer class="divBotoesInfer">
-            <span id="delete" class="material-symbols-outlined">
-                delete
-            </span>
+            <span id="link" class="material-symbols-outlined" onclick="copiarTexto(<?php echo $idQuestn; ?>)">link</span>
             <input id="button" type="submit" value="Acessar Resultados" onclick="window.location='resultadosalunos.html';">
             
         </footer>

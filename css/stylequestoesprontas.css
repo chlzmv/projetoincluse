@@ -414,12 +414,15 @@ li a {
   margin:0rem 0rem 2rem 0rem;
     /* add posicao para ficar fixo na tela */
  }
- #delete{
+ #link{
     float: left;
-    font-size: 25px;
+    font-size: 30px;
+    cursor: pointer;
+    
  }
- #delete:hover {
-   color: #b42e2e;
+ #link:hover {
+    background-color:#e0853b;
+    border-radius: 4px;
  }
  #button{
     float: right ;
