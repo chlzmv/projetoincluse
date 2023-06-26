@@ -5,23 +5,23 @@
     include_once "dbconexao.php";
 
     if(isset($dados['btn-salvar'])){ 
-        $tituloForm = filter_input(INPUT_POST,'tituloForm',FILTER_SANITIZE_SPECIAL_CHARS);
-        $valorTotQuestn = filter_input(INPUT_POST,'valorTotQuestn',FILTER_SANITIZE_NUMBER_INT); 
-        $sql="INSERT INTO questionario (dscTituloQuestn, valTotQuestn, datCriacQuestn ) VALUES ('$tituloForm', '$valorTotQuestn', CURRENT_DATE())";
+        $sql1 = "INSERT INTO questionario (dscTituloQuestn, valTotQuestn, datCriacQuestn) VALUES (?, ?, CURRENT_DATE())";
+        $resultado1 = $connect->prepare($sql1);
+        $resultado1->bind_param('sd', $tituloForm, $valorTotQuestn);
+        $resultado1->execute();
+
+        $sql2 = "INSERT INTO questoes (dscEnuncQuest, numQuest, valUnitQuest) VALUES (?, ?, ?)";
+        $resultado2 = $connect->prepare($sql2);
+        $resultado2->bind_param('ssd', $caixaTexto, $numQuest, $valorQuest);
+        $resultado2->execute();
+
+        $sql3 = "INSERT INTO item (dscEnuncItem) VALUES (?)";
+        $resultado3 = $connect->prepare($sql3);
+        $resultado3->bind_param('s', $checkText);
+        $resultado3->execute();
+
         
-        $numQuest = filter_input(INPUT_POST,'numQuest',FILTER_SANITIZE_SPECIAL_CHARS);
-        $valorQuest = filter_input(INPUT_POST,'valorQuest',FILTER_SANITIZE_NUMBER_FLOAT); 
-        $dscEnuncQuest = filter_input(INPUT_POST,'dscEnuncQuest',FILTER_SANITIZE_SPECIAL_CHARS);
-        $sql2="INSERT INTO questoes (numQuest, valorQuest,dscEnuncQuest ) VALUES ('$numQuest', '$valorQuest', '$dscEnuncQuest' )";
         
-        $sqls = $sql . ";" . $sql2;
-        if(mysqli_multi_query($connect, $sqls)){
-            echo "Parabéns, dados salvos "  ;
-            header("Location: criarperguntas.php ");   
-            
-        }else{
-            echo "Erro ao cadastrar!";		                    
-        } 
     }else{
         echo "erro";
     }
