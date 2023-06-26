@@ -39,7 +39,7 @@
     <menu id="menu">
         <ul>
             <li><a href="criarperguntas.php">Criar Formulário</a></li>
-            <li><a href="meusformularios.php">Meus Formulários</a></li>
+            <li><a href="meusquestionarios.php">Meus Formulários</a></li>
             <li><a href="quemsomos.php">Quem Somos?</a></li>
         </ul>   
     </menu>
@@ -66,26 +66,28 @@
 
     <!-- conteudo pagina -->
     <h1>Criar formulário</h1>
-    <section class="container" action="criarperguntas.php" method="post">
+    <form class="container" action="acaocriarperguntas.php" method="post">
             <div class="divTituloForm">
-                <input type="text" id="tituloForm"  placeholder="Título" >
+                <input type="text" id="tituloForm" name="tituloForm"  placeholder="Título" >
+                <input type="text" name="valorTotQuestn" id="valorTotQuestn" placeholder="Valor total">
+
             </div>
             <hr>
             <div id = "section">
                 <section class="divInfoForm">
-                    <input type="text" id="numQuest" placeholder="N° Questão" >  
-                    <input type="text" id="valorQuest" placeholder="Valor">
+                    <input type="text" name="numQuest" id="numQuest" placeholder="N° Questão" >  
+                    <input type="text" name="valorQuest" id="valorQuest" placeholder="Valor">
                 </section>
                 <section class="divCaixaTexto">
-                    <textarea id="caixaTexto" cols="30" rows="20" placeholder="Insira o texto"></textarea>
+                    <textarea id="caixaTexto" name="caixaTexto"  cols="30" rows="20" placeholder="Insira o texto"></textarea>
                 </section>
                 <div id="table">
-                    <input type="radio" name="select" placeholder="check1">
-
-                    <textarea  id="areaText" cols="30" rows="1" placeholder="Insira o texto"></textarea> 
-                    <span id="check" class="material-symbols-outlined">check</span>
+                    <input type="radio" id="select"  name="select" >
+                    <textarea  id="checkText" name="checkText" cols="30" rows="1" placeholder="Insira o texto"></textarea> 
+                    <span id="check" name="check"class="material-symbols-outlined">check</span>
                     <span id="add" class="material-symbols-outlined" onclick="adicionarCampo(this.parent)">add</span>   
                 </div>
+                
                 
             </div>
             <hr>
@@ -103,17 +105,7 @@
                 </table>
                 <input type="submit" id="botaoSalva" name="btn-salvar" value="Salvar formulário">
             </footer>
-            <?php
-
-            if (isset($_POST['btn-salvar'])){
-                //Conexão
-                require_once 'dbconexao.php';
-            }else{
-                echo "n clicou";
-            }
-
-            ?>
-    </section>
+</form>
 </body>
 </html>
 <!-- teste  -->

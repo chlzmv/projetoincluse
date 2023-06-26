@@ -1,5 +1,4 @@
-
-function copiarTexto(idQuestn) { // Substitua pelo valor do idQuestn que deseja copiar
+function copiarTexto(idQuestn) { 
     let textoCopiado = 'http://localhost:8080/projetoincluse/php/respquest.php?idQuestn=' + idQuestn;
     console.log("id captado: "+idQuestn)
     navigator.clipboard.writeText(textoCopiado)

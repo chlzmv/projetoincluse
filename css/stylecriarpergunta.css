@@ -307,6 +307,13 @@ li a {
     font-size: 20px;
     color: rgb(134, 134, 134);
   }
+  #valorTotQuestn{
+    float: right;
+    width: 5em;
+    border:none;
+
+    font-size: 25px;
+  }
   #valorQuest{
     float: right;
     width: 3em;
@@ -359,11 +366,11 @@ li a {
     font-size: 35px;
     margin-top: -0.15rem;
   }
-  #add2{
+  #add{
     font-size: 25PX;
   }
 
-  #add2:hover {
+  #add:hover {
     color: #ffffff;
     background-color: #e4e4e4;
     border-radius: 2px;
