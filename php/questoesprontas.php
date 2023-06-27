@@ -99,9 +99,9 @@
 
                 // Parte 2: Criando blocos de informações das questões e suas respostas
                 
-                $sql = "SELECT * FROM questoes INNER JOIN item ON questoes.idQuest = item.questoes_idQuest WHERE questoes.questionario_idQuestn = $idQuestn";
+                $sql = "SELECT * FROM questoes WHERE questoes.questionario_idQuestn = $idQuestn";
                 $resultado = mysqli_query($connect, $sql);
-
+                echo $sql;
                 if ($resultado) {
                     while ($dadosQuestao = mysqli_fetch_assoc($resultado)) {
                         $idQuest = $dadosQuestao['idQuest'];
@@ -118,25 +118,27 @@
                         echo "<a>$dscEnuncQuest</a>";
                         echo "</div>";
 
-                        $sqlRespostas = "SELECT * FROM item WHERE questoes_idQuest = $idQuest";
-                        $resultadoRespostas = mysqli_query($connect, $sqlRespostas);
+                         $sqlRespostas = "SELECT * FROM item WHERE questoes_idQuest = $idQuest";
+                         $resultadoRespostas = mysqli_query($connect, $sqlRespostas);
+                        echo $sqlRespostas;
+                         if ($resultadoRespostas) {
+                             while ($dadosResposta = mysqli_fetch_assoc($resultadoRespostas)) {
+                                 $dscEnuncItem = $dadosResposta['dscEnuncItem'];
 
-                        if ($resultadoRespostas) {
-                            while ($dadosResposta = mysqli_fetch_assoc($resultadoRespostas)) {
-                                $dscEnuncItem = $dadosResposta['dscEnuncItem'];
+                                 echo "<form class='divResp'>";
+                                 echo "<input type='radio' name='resp'>";
+                                 echo "<label>$dscEnuncItem</label>";
+                                 echo "</form>";
+                             }
+                         } else {
+                             echo "Erro na consulta: " . mysqli_error($connect);
+                         }
 
-                                echo "<form class='divResp'>";
-                                echo "<input type='radio' name='resp'>";
-                                echo "<label>$dscEnuncItem</label>";
-                                echo "</form>";
-                            }
-                        } else {
-                            echo "Erro na consulta: " . mysqli_error($connect);
-                        }
-
+                         
                         echo "</section>";
-                    }
-                } else {
+                    }    
+                } 
+                else {
                     echo "Erro na consulta: " . mysqli_error($connect);
                 }
                 ?>
