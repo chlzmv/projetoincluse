@@ -18,7 +18,7 @@
             <li href="#" class="close" onclick="window.location='index.php';"></li>
         </ul>
     </header>
-    <!--menu flutuante  -->
+    <!--menu flutuante   -->
     <footer class="menuFlut">
         <footer class="botMenuFlut" id="botFlut">    
             <span class="material-symbols-outlined" id="add1">add_circle</span>
