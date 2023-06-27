@@ -1,3 +1,5 @@
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,6 +10,7 @@
     <title>Forms</title>
     <script src="../js/botoestela.js"> </script>
     <link rel="stylesheet" type="text/css" href="../css/stylequestoesprontas.css">
+    <script src="../js/botoesquestoesprontas.js"></script>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
 </head>
 <body>
@@ -70,83 +73,80 @@
         <!-- Cabeçalho -->
         <header class="containerInfoForms bottom">
             <!-- titulo pag -->
-            <h1>Título do Formulário</h1>
-            <div class="divInfoForms">
-                <a>Criado em:</a>
-                <a>xx/xx/xxxx</a>
-                <a class="espace"></a>
-                <a>Concluídos:</a>
-                <a>xx/xx</a>
-            </div>
-        </header>
-        
+            <?php
+                include("dbconexao.php");
 
-        <!-- Questão -->
-        <section class="divQuest">
-            <div class="divValor">
-                <a style="float: left;">Questão 1</a>
-                <a style="float: right;">2,0</a>
-            </div>
-            <div>
-                <a>Para realizar a construção de um projeto de banco de dados de forma correta deve-se passar por necessariamente três fases. Dentre as afirmativas a seguir, escolha a que compreende a alternativa correta.</a>
-            </div>
-            <form class="divResp">
-                <input type="radio" id="radio" name="Resposta1" value="resposta1">
-                <label>Entidade, relacionamento e atributo.  </label>
-                <span id="check" class="material-symbols-outlined">
-                    check
-                </span> <br>
-                <input type="radio" id="radio" name="Resposta2" value="resposta2">
-                <label>Modelo conceitual, projeto lógico e projeto físico. </label><br>
-                <input type="radio" id="radio" name="Resposta3" value="resposta3">
-                <label >Um-para-um, um-para-muitos e muitos-para-muitos. </label><br><br>
-            </form>
-        </section>
-        <section class="divQuest">
-            <div class="divValor">
-                <a style="float: left;">Questão 2</a>
-                <a style="float: right;">2,0</a>
-            </div>
-            <div>
-                <a>Os algoritmos de ordenação são um conjunto de instruções que recebem um array ou lista como entrada e organizam os itens em uma ordem específica. Segundo seus conhecimentos, qual método não pertence aos métodos conhecidos?</a>
-            </div>
-            <form class="divResp">
-                <input type="checkbox" id="checkbox" name="Resposta1" value="Resposta1">
-                <label >Insertion Sort (ordenação por inserção).  </label><br>
-                <input type="checkbox" id="checkbox" name="Resposta2" value="Resposta2">
-                <label >Executable Sort (ordenação p) </label>
-                <span id="check" class="material-symbols-outlined">
-                    check
-                </span> <br>
-                <input type="checkbox" id="checkbox" name="Resposta3" value="Resposta3">
-                <label >Quick Sort (ordenação rápida) </label><br><br>
-            </form>
-        </section>
-        <section class="divQuest">
-            <div class="divValor">
-                <a style="float: left;">Questão 3</a>
-                <a style="float: right;">2,0</a>
-            </div>
-            <div>
-                <a>As estruturas de dados são formas de distribuir e relacionar os dados disponíveis, de modo a tornar mais eficientes os algoritmos que manipulam esses dados. Existe uma grande variedade de estruturas de dados que podemos utilizar. Analisando as alternativas, qual não faz parte da estrutura de dados?</a>
-            </div>
-            <form class="divResp">
-                <input type="checkbox" id="checkbox" name="Resposta1" value="Resposta1">
-                <label >Pilhas   </label><br>
-                <input type="checkbox" id="checkbox" name="Resposta2" value="Resposta2">
-                <label >Vetores. </label><br>
-                <input type="checkbox" id="checkbox" name="Resposta3" value="Resposta3">
-                <label >Sequências. </label>
-                <span id="check" class="material-symbols-outlined">
-                    check
-                </span>
-            </form>
-        </section>
+                $idQuestn = filter_input(INPUT_GET, "idQuestn");
+                var_dump($idQuestn);
+
+                // Parte 1: Resgatando as informações do questionário
+                $sql = "SELECT dscTituloQuestn, datCriacQuestn FROM questionario WHERE idQuestn = $idQuestn";
+                $resultado = mysqli_query($connect, $sql);
+
+                if ($resultado) {
+                    $dadosQuestionario = mysqli_fetch_assoc($resultado);
+                    $dscTituloQuestn = $dadosQuestionario['dscTituloQuestn'];
+                    $datCriacQuestn = $dadosQuestionario['datCriacQuestn'];
+
+                    // Exibir o bloco de informações do questionário apenas uma vez
+                    echo "<h1>$dscTituloQuestn</h1>";
+                    echo "<div class='divInfoForms'>";
+                    echo "<a>Criado em: $datCriacQuestn</a>";
+                    echo "<a class='espace'></a>";
+                    echo "<a>Concluídos:</a>";
+                    echo "</div>";
+                }
+
+                // Parte 2: Criando blocos de informações das questões e suas respostas
+                
+                $sql = "SELECT * FROM questoes WHERE questoes.questionario_idQuestn = $idQuestn";
+                $resultado = mysqli_query($connect, $sql);
+                echo $sql;
+                if ($resultado) {
+                    while ($dadosQuestao = mysqli_fetch_assoc($resultado)) {
+                        $idQuest = $dadosQuestao['idQuest'];
+                        $dscEnuncQuest = $dadosQuestao['dscEnuncQuest'];
+                        $numQuest = $dadosQuestao['numQuest'];
+                        $valUnitQuest = $dadosQuestao['valUnitQuest'];
+
+                        echo "<section class='divQuest'>";
+                        echo "<div class='divValor'>";
+                        echo "<a style='float: left;'>$numQuest</a>";
+                        echo "<a style='float: right;'>$valUnitQuest</a>";
+                        echo "</div>";
+                        echo "<div>";
+                        echo "<a>$dscEnuncQuest</a>";
+                        echo "</div>";
+
+                         $sqlRespostas = "SELECT * FROM item WHERE questoes_idQuest = $idQuest";
+                         $resultadoRespostas = mysqli_query($connect, $sqlRespostas);
+                        echo $sqlRespostas;
+                         if ($resultadoRespostas) {
+                             while ($dadosResposta = mysqli_fetch_assoc($resultadoRespostas)) {
+                                 $dscEnuncItem = $dadosResposta['dscEnuncItem'];
+
+                                 echo "<form class='divResp'>";
+                                 echo "<input type='radio' name='resp'>";
+                                 echo "<label>$dscEnuncItem</label>";
+                                 echo "</form>";
+                             }
+                         } else {
+                             echo "Erro na consulta: " . mysqli_error($connect);
+                         }
+
+                         
+                        echo "</section>";
+                    }    
+                } 
+                else {
+                    echo "Erro na consulta: " . mysqli_error($connect);
+                }
+                ?>
+            
+        </header>
         <hr>
         <footer class="divBotoesInfer">
-            <span id="delete" class="material-symbols-outlined">
-                delete
-            </span>
+            <span id="link" class="material-symbols-outlined" onclick="copiarTexto(<?php echo $idQuestn; ?>)">link</span>
             <input id="button" type="submit" value="Acessar Resultados" onclick="window.location='resultadosalunos.html';">
             
         </footer>

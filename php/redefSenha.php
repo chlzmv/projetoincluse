@@ -37,7 +37,8 @@
             <input class="input" type="password" id="senha" name="senha" placeholder="Nova senha">
             <input class="input" type="password" id="csenha" name="csenha" placeholder="Confirmar senha">
             <input class="button" type="submit" value="Confirmar">
-        </form>
+        </form> 
+        
     </section>
 
     

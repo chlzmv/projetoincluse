@@ -327,33 +327,17 @@ li a {
     margin: 1.9rem 20rem 1.9rem 20rem ;
     font-family: 'Nunito Sans', sans-serif;
   }
-  .divInfoAlu{
-    margin: 0px 5px 1.3rem 5px;
-    padding: 1rem;
-    border-radius: 10px;
-    box-shadow: 0px 1px 4px 0px #d6d5d5;
-    align-items: center;
-  }
-  
-  .boxInfo{
-    background:#f3f3f3;
-    border-radius: 5px;
-    margin: 2.4px auto 0px auto;
-    width: 31.3rem;
-    height: 4vh;
-    border: none;
-    display: block;
+  h1{
     font-family: 'Nunito Sans', sans-serif;
+    font-size: 35px;
     font-weight: 300;
-    padding-left: 6px;
+    text-align: center;
+    margin: 40px auto 0px auto;
   }
 
-  .labelInfo{
-    float: left;
-    margin-top: 8px;
-    margin-left: 1rem;
+  .infoQuestn{
+    margin-bottom: 2rem;
   }
-
   .divQuest{
     margin: 0px 5px 1.3rem 5px;
     padding: 1.3rem;

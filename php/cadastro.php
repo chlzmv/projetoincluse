@@ -74,7 +74,8 @@
 
                             $sql="INSERT INTO usuario(nomUser,dscEmailUser,senhaUser) VALUES ('$nome','$email','$senha')";
                             if(mysqli_query($connect,$sql)){
-                                echo "Parabéns, seus dados estão corretos!";   
+                                echo "Parabéns, seus dados estão corretos!";
+                                header("Location: login.php ");   
                                 
                             }else{
                                 echo "Erro ao cadastrar!";		                    

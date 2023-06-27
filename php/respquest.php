@@ -56,34 +56,17 @@
         <span class="material-symbols-outlined" id="arrow" onclick="clickflut()">expand_circle_down</span>
     </footer>
 
-    <aside class="containerPlayer">
-        <!-- <hr> -->
-        <div class="timeline">
-            <div class="objProgress"></div>
-        </div>
-        <div class="center">
-            <!-- <div href="#" class="play1"></div>
-            <div href="#" class="play2"></div> -->
-            <div class="borderTriangle">
-                <div href="#" class="triangle"></div>
-            </div>
-        </div>
-    </aside>
-
     <!-- codigo do conteudo -->
     <section class="divConteudo">
 
         <!-- Cabeçalho -->
-        <div class="divInfoAlu">
-            <div class="labelInfo">
-                <label for="email">Email: </label><br>
-                <label for="nome">Nome:</label><br>
-            </div>
-            <div>
-                <input type="email" id="email" name="email" class="boxInfo" >
-                <input type="name" id="name" name="nome" class="boxInfo">
-            </div>
+        <div class="infoQuestn">
+            <?php 
+                echo"<h1>Titulo Questionario</h1>";
+            ?>
         </div>
+        
+        
 
         <!-- Questão -->
         <section class="divQuest">
@@ -103,16 +86,6 @@
                 <label for="vehicle3"> Um-para-um, um-para-muitos e muitos-para-muitos.</label><br><br>
             </form>
         </section>
-
-        <!-- Botões -->
-        <footer class="botQuest">
-            <div class="botBack">
-                <span class="material-symbols-outlined" id="arrowBac">arrow_forward_ios</span>
-            </div>
-            <div class="botForw">
-                <span class="material-symbols-outlined" id="arrowFor">arrow_forward_ios</span>          
-            </div>
-        </footer>
     </section>
 
     
