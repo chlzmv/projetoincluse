@@ -28,15 +28,29 @@
         <span class="material-symbols-outlined" id="arrow" onclick="clickflut()">expand_circle_down</span>
     </footer>  
 
+    <?php
+        include("dbconexao.php")
+
+        $senha = filter_input(INPUT_POST,'senha',FILTER_SANITIZE_STRING);
+        $csenha = filter_input(INPUT_POST,'csenha',FILTER_SANITIZE_STRING);
+        $email = filter_input(INPUT_POST,'email',FILTER_SANITIZE_EMAIL);
+
+        if(isset($_POST[confirmar])){
+            $sql_code = "UPDATE usuario SET senhaUser = '$senha' WHERE dscEmailUser = '$email'";
+            $sql_query = $mysqli->query($sql_code) or die($mysqli->error);
+        }
+    ?>
+
     <section class="container">
         <header class="divH1">
             <h1 >Redefina Senha</h1>
         </header>
         
-        <form>
+        <form action="" method="post">
+            <input class="input" type="email" id="email" name="email" placeholder="Email cadastrado">
             <input class="input" type="password" id="senha" name="senha" placeholder="Nova senha">
             <input class="input" type="password" id="csenha" name="csenha" placeholder="Confirmar senha">
-            <input class="button" type="submit" value="Confirmar">
+            <input class="button" type="submit" value="confirmar" name="confirmar">
         </form> 
         
     </section>
