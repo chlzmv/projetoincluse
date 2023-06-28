@@ -81,11 +81,11 @@
                 <section class="divCaixaTexto">
                     <textarea id="caixaTexto" name="caixaTexto"  cols="30" rows="20" placeholder="Insira o texto"></textarea>
                 </section>
-                <div id="table">
+                <div id="campo" >
                     <input type="radio" id="select"  name="select" >
                     <textarea  id="checkText" name="checkText" cols="30" rows="1" placeholder="Insira o texto"></textarea> 
                     <span id="check" name="check"class="material-symbols-outlined">check</span>
-                    <span id="add" class="material-symbols-outlined" onclick="adicionarCampo(this.parent)">add</span>   
+                    <span id="add" class="material-symbols-outlined" onclick="adicionarCampo(this.parentElement.parentElement)">add</span>   
                 </div>
                 
                 
