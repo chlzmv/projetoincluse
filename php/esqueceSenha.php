@@ -9,6 +9,11 @@
     <link rel="stylesheet" href="../css/styleesquecesenha.css">
 </head>
 <body >
+    <?php
+        include("dbconexao.php")
+
+        if(isset($_POST[redefinir]))
+    ?>
     <header class="divMenu">
         <ul>
             <li href="#" class="aplicafontelogo">Incluse.com</li>
@@ -19,9 +24,9 @@
     <section class="container">
         <h1 class="divH1">Redefina sua senha</h1>
         <p>Se a conta existir,  enviaremos um e-mail com instruções para redefinir a senha.</p>
-        <form>
+        <form action="" method="post">
             <input class="input" type="email" id="email" name="email"placeholder="Email">
-            <input class="button" type="submit" value="Redefinir">
+            <input class="button" type="submit" value="redefinir" name="redefinir">
         </form>
     </section>
     
