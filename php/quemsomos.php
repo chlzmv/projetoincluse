@@ -84,17 +84,17 @@
                     <p class="pDesc">BACK-END FRONT-END</p>
                 </figure>
                 <figure class="photoTextCo">
-                    <p class="photoTextCo"><img src="../png/davisthefany.png" width="150x" height="150px"></p>
+                    <p class="photoTextCo"><img src="../png/sthefany.png" width="150x" height="150px"></p>
                     <p class="pName">Sthefany dos Santos</p>
                     <p class="pDesc">BACK-END FRONT-END</P>
                 </figure>
                 <figure class="photoTextCo">
-                    <p class="photoTextCo"><img src="../png/davivinicius.png" width="150x" height="150px"></P>
+                    <p class="photoTextCo"><img src="../png/vinicius.png" width="150x" height="150px"></P>
                     <p class="pName">Vinícius Oliveira</p>
                     <p class="pDesc">BACK-END FRONT-END</p>
                 </figure>
                 <figure class="photoTextCo">
-                    <p class="photoTextCo"><img src="../png/davicharlize.png" width="150x" height="150px"></a>
+                    <p class="photoTextCo"><img src="../png/charlize.png" width="150x" height="150px"></a>
                     <p class="pName">Charlize Moura</p>
                     <p class="pDesc">BACK-END FRONT-END</ class="pDesc">
                 </figure>
