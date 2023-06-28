@@ -43,7 +43,7 @@
 
     <section class="container">
         <header class="divH1">
-            <h1 >Redefina Senha</h1>
+            <h1 >Redefina Senha </h1>
         </header>
         
         <form action="" method="post">
