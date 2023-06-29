@@ -77,7 +77,7 @@
                 include("dbconexao.php");
 
                 $idQuestn = filter_input(INPUT_GET, "idQuestn");
-                var_dump($idQuestn);
+                
 
                 // Parte 1: Resgatando as informações do questionário
                 $sql = "SELECT dscTituloQuestn, datCriacQuestn FROM questionario WHERE idQuestn = $idQuestn";
@@ -99,9 +99,8 @@
 
                 // Parte 2: Criando blocos de informações das questões e suas respostas
                 
-                $sql = "SELECT * FROM questoes WHERE questoes.questionario_idQuestn = $idQuestn";
+                $sql = "SELECT * FROM questoes WHERE idQuestn = $idQuestn";
                 $resultado = mysqli_query($connect, $sql);
-                echo $sql;
                 if ($resultado) {
                     while ($dadosQuestao = mysqli_fetch_assoc($resultado)) {
                         $idQuest = $dadosQuestao['idQuest'];
@@ -118,9 +117,8 @@
                         echo "<a>$dscEnuncQuest</a>";
                         echo "</div>";
 
-                         $sqlRespostas = "SELECT * FROM item WHERE questoes_idQuest = $idQuest";
+                         $sqlRespostas = "SELECT * FROM item WHERE idQuest = $idQuest";
                          $resultadoRespostas = mysqli_query($connect, $sqlRespostas);
-                        echo $sqlRespostas;
                          if ($resultadoRespostas) {
                              while ($dadosResposta = mysqli_fetch_assoc($resultadoRespostas)) {
                                  $dscEnuncItem = $dadosResposta['dscEnuncItem'];
