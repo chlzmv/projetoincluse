@@ -39,7 +39,6 @@
             <input class="button" type="submit" value="Confirmar">
         </form>
     </section>
-
     
 </body>
 </html>
