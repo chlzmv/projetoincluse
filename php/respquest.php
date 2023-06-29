@@ -58,18 +58,15 @@
 
     <!-- codigo do conteudo -->
     <section class="divConteudo">
-
-        <!-- Cabeçalho -->
-        <div class="infoQuestn">
-            <?php 
-                echo"<h1>Titulo Questionario</h1>";
-            ?>
-        </div>
+    <?php
+    include
+        // Cabeçalho 
+        echo "<div class='infoQuestn'>"
+        echo "<h1>Titulo Questionario</h1>"
+        echo "</div>"
         
-        
-
-        <!-- Questão -->
-        <section class="divQuest">
+        // Questão 
+        echo "<section class='divQuest'>"
             <div class="divValor">
                 <a style="float: left;">Questão 1</a>
                 <a style="float: right;">2,0</a>
@@ -85,7 +82,8 @@
                 <input type="checkbox" id="checkbox" name="Resposta3" value="Equum">
                 <label for="vehicle3"> Um-para-um, um-para-muitos e muitos-para-muitos.</label><br><br>
             </form>
-        </section>
+        </section> 
+    ?>
     </section>
 
     

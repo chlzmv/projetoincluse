@@ -6,6 +6,9 @@ $sql = "DELETE FROM questionario WHERE idQuestn=$idQuestn";
 $resultado = mysqli_query($connect, $sql);
 if(mysqli_affected_rows($connect)){
     header("Location: meusquestionarios.php");
+    exit();
+}else{
+    echo "erro ao apagar";
 }
 
 ?>
