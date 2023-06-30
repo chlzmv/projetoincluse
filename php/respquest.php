@@ -23,7 +23,7 @@
         <li style="float: right">
             <ul>
                 <li>
-                    <div class="backgroundImagem"><img src="iconUser.png" class="configimagem" onclick = "clickProf()"></div>
+                    <div class="backgroundImagem"><img src="..iconUser.png" class="configimagem" onclick = "clickProf()"></div>
                 <li>
             </ul>
         </li>
@@ -58,15 +58,14 @@
 
     <!-- codigo do conteudo -->
     <section class="divConteudo">
-    <?php
-    include
-        // Cabeçalho 
-        echo "<div class='infoQuestn'>"
-        echo "<h1>Titulo Questionario</h1>"
-        echo "</div>"
-        
-        // Questão 
-        echo "<section class='divQuest'>"
+    
+        <!-- Cabeçalho  -->
+        <div class='infoQuestn'>
+            <h1>Titulo Questionario</h1>
+        </div>
+
+        <!-- Questão  -->
+        <section class='divQuest'>
             <div class="divValor">
                 <a style="float: left;">Questão 1</a>
                 <a style="float: right;">2,0</a>
@@ -83,9 +82,7 @@
                 <label for="vehicle3"> Um-para-um, um-para-muitos e muitos-para-muitos.</label><br><br>
             </form>
         </section> 
-    ?>
     </section>
 
-    
 </body>
 </html>
