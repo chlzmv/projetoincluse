@@ -1,3 +1,20 @@
+<?php
+    session_start();
+    require 'dbconexao.php';
+   
+    $idUser = $_SESSION['idUser'];
+
+    $sql = "SELECT * FROM usuario WHERE idUser = '$idUser'";
+    $resultado = mysqli_query($connect, $sql);
+
+    if ($resultado && mysqli_num_rows($resultado) > 0) {
+        $dados = mysqli_fetch_assoc($resultado);
+        $nomeUsuario = $dados['nomUser']; // Obter o nome do usuário a partir dos dados do banco de dados
+    } else {
+        // Trate o caso em que os dados do usuário não são encontrados
+        $nomeUsuario = "Usuário Desconhecido";
+    }
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,7 +24,7 @@
     <link rel="icon" href="../png/icon.png" type="image/png">
     <title>Incluse</title>
     <script src="../js/botoestela.js"> </script>
-    <link rel="stylesheet" type="text/css" href="../css/styleindex.css">
+    <link rel="stylesheet" type="text/css" href="../css/styleareadousuario.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
 </head>
 <body>
@@ -24,10 +41,8 @@
         
             
             <li class="liLogin">
-                <ul>
-                    <li><input type="button" id="botaoCad" value="Cadastre-se" onclick="window.location='cadastro.php';"></li>
-                    <li><a href="login.php">Entrar</a></li>
-                </ul>
+                <div class="nomeUser"><?php echo "Olá, " . $nomeUsuario; ?></div>
+                <div class="backgroundImagem"><img src="../png/iconUser.png" class="configimagem" onclick = "clickProf()"></div>
             </li>
         </ul>
     </nav>
@@ -35,9 +50,9 @@
     <!-- botões menu hamburger -->
     <menu id="menu">
         <ul>
-            <li><a href="criarperguntas.php">Criar Formulário</a></li>
-            <li><a href="meusquestionarios.php">Meus Formulários</a></li>
-            <li><a href="quemsomos.php">Quem Somos?</a></li>
+            <li><a href="criarperguntas.php?idUser=<?php echo $idUser; ?>">Criar Formulário</a></li>
+            <li><a href="meusquestionarios.php?idUser=<?php echo $idUser; ?>">Meus Formulários</a></li>
+            <li><a href="quemsomos.php?idUser=<?php echo $idUser; ?>">Quem Somos?</a></li>
         </ul>   
     </menu>
 
@@ -57,18 +72,18 @@
     <section class="container">
         <header class="divWelc">
             <h1>Bem-vindo a Incluse</h1>
-            <a>A sua plataforma de formulários acessiveis...</a>
+            <a>A sua plataforma de formulários acessíveis...</a>
         </header>
-        <nav class="BotC" onclick="window.location='criarperguntas.php';">
+        <nav class="BotC" onclick="window.location='criarperguntas.php?idUser=<?php echo $idUser; ?>';">
             <h2>Criar formulários</h2>
             <span class="material-symbols-outlined" id="pencil">edit</span>
         </nav>
         <section class="divLowBot">
-            <nav class="botMP" onclick="window.location='meusquestionarios.php';">
+            <nav class="botMP" onclick="window.location='meusquestionarios.php?idUser=<?php echo $idUser; ?>';">
                 <h2>Meus forms</h2>
                 <span class="material-symbols-outlined" id="book">menu_book</span>
             </nav>
-            <nav class="botCI" onclick="window.location='quemsomos.php';">
+            <nav class="botCI" onclick="window.location='quemsomos.php?idUser=<?php echo $idUser; ?>';">
                 <h2>Quem somos</h2>
                 <span class="material-symbols-outlined" id="info">info</span>
             </nav>

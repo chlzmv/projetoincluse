@@ -59,12 +59,20 @@
     <!-- codigo do conteudo -->
     <section class="divConteudo">
     
+<<<<<<< HEAD
         <!-- Cabeçalho  -->
         <div class='infoQuestn'>
             <h1>Titulo Questionario</h1>
         </div>
 
         <!-- Questão  -->
+=======
+        
+        <div class='infoQuestn'>
+            <h1>Titulo Questionario</h1>
+        </div>
+        
+>>>>>>> d92dad5019817bde6c71ec776fe068e2fa49978b
         <section class='divQuest'>
             <div class="divValor">
                 <a style="float: left;">Questão 1</a>
@@ -82,6 +90,10 @@
                 <label for="vehicle3"> Um-para-um, um-para-muitos e muitos-para-muitos.</label><br><br>
             </form>
         </section> 
+<<<<<<< HEAD
+=======
+    
+>>>>>>> d92dad5019817bde6c71ec776fe068e2fa49978b
     </section>
 
 </body>

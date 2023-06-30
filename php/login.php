@@ -39,33 +39,27 @@
             <input class="button" type="submit" name="btn-entrar" value="Confirmar">
 
             <?php
-    
+                session_start();
+                require_once 'dbconexao.php';
 
-        session_start(); 
-        
-        if (isset($_POST['btn-entrar'])){
-        
-            echo "Clicou";
-            //Conexão
-            require_once 'dbconexao.php';
+                if (isset($_POST['btn-entrar'])) {
+                    $email = filter_input(INPUT_POST, 'email', FILTER_SANITIZE_EMAIL);
+                    $senha = filter_input(INPUT_POST, 'senha', FILTER_SANITIZE_STRING);
 
-            $email = filter_input(INPUT_POST,'email',FILTER_SANITIZE_EMAIL);            
-            $senha = filter_input(INPUT_POST,'senha',FILTER_SANITIZE_STRING); 
-            // $senha = md5($senha);       
-            
-            $sql = "SELECT * FROM usuario WHERE dscEmailUser = '$email' AND senhaUser = '$senha' " ;
-            $resultado = mysqli_query($connect, $sql);
-            // echo $sql;
+                    $sql = "SELECT * FROM usuario WHERE dscEmailUser = '$email' AND senhaUser = '$senha'";
+                    $resultado = mysqli_query($connect, $sql);
 
-            if (mysqli_num_rows($resultado) > 0){
-                //  echo "usuario encontrado.";
-                header("Location: administrativo.php");         
-            } else{
-                echo "Usuário ou senha inválido!";
-                
-            } 
-            }
-        ?>
+                    if ($resultado && mysqli_num_rows($resultado) > 0) {
+                        $dados = mysqli_fetch_assoc($resultado); // Obter os dados do usuário como um array associativo
+
+                        $_SESSION['idUser'] = $dados['idUser'];
+                        header("Location: areadousuario.php?idUser=" . $dados['idUser']);
+                        exit(); // Finalizar o script para evitar a execução do restante do código
+                    } else {
+                        echo "Usuário ou senha inválido!";
+                    }
+                }
+            ?>
         </form>
     </section>
     
