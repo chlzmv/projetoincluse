@@ -27,20 +27,7 @@
         </footer>
         <span class="material-symbols-outlined" id="arrow" onclick="clickflut()">expand_circle_down</span>
     </footer>  
-
-    <?php
-        include("dbconexao.php")
-
-        $senha = filter_input(INPUT_POST,'senha',FILTER_SANITIZE_STRING);
-        $csenha = filter_input(INPUT_POST,'csenha',FILTER_SANITIZE_STRING);
-        $email = filter_input(INPUT_POST,'email',FILTER_SANITIZE_EMAIL);
-
-        if(isset($_POST[confirmar])){
-            $sql_code = "UPDATE usuario SET senhaUser = '$senha' WHERE dscEmailUser = '$email'";
-            $sql_query = $mysqli->query($sql_code) or die($mysqli->error);
-        }
-    ?>
-
+    
     <section class="container">
         <header class="divH1">
             <h1 >Redefina Senha </h1>
@@ -51,10 +38,43 @@
             <input class="input" type="password" id="senha" name="senha" placeholder="Nova senha">
             <input class="input" type="password" id="csenha" name="csenha" placeholder="Confirmar senha">
             <input class="button" type="submit" value="confirmar" name="confirmar">
-        </form> 
-        
+        </form>
+
+        <p class="mensagem">
+            <?php
+                // Cria a conexão com o banco de dados
+                include("dbconexao.php");
+
+                // Verifica se a conexão foi estabelecida corretamente
+                if ($connect->connect_error) {
+                    die("Falha na conexão: " . $connect->connect_error);
+                }
+
+                // Dados para atualização
+                $senha = filter_input(INPUT_POST, 'senha', FILTER_SANITIZE_STRING);
+                $csenha = filter_input(INPUT_POST, 'csenha', FILTER_SANITIZE_STRING);
+                $email = filter_input(INPUT_POST, 'email', FILTER_SANITIZE_EMAIL);
+                
+                // Query SQL para atualizar os dados
+                if (isset($_POST['confirmar'])) {
+                    $sql = "UPDATE usuario SET senhaUser = '$senha' WHERE dscEmailUser = '$email'";
+                    
+                    // verifica se as senhas são iguais
+                    if($senha <> $csenha){
+                        echo "Senhas não coincidem";
+
+                    }else{
+                        // Executa a query de atualização
+                        if ($connect->query($sql) === TRUE) {
+                            echo "Dados atualizados com sucesso.";
+                        } else {
+                            echo "Erro na atualização dos dados: " . $connect->error;
+                        }
+                    }
+                }
+            ?>
+        </p> 
     </section>
 
-    
 </body>
 </html>

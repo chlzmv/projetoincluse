@@ -37,7 +37,7 @@
             <input class="input" type="email" id="email" name="email"placeholder="Email">
             <input class="input" type="password" id="senha" name="senha" placeholder="Senha">
             <input class="input" type="password" id="csenha" name="csenha" placeholder="Confirmar senha">
-            <p class="message">    
+            <p class="mensagem">    
                 <?php
                     if (isset($_POST['btn-entrar'])){
                     $erros = array();
