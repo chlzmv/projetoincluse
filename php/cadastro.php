@@ -47,8 +47,9 @@
                     $nome = filter_input(INPUT_POST,'fnome',FILTER_SANITIZE_SPECIAL_CHARS);            
                     $email = filter_input(INPUT_POST,'email',FILTER_SANITIZE_EMAIL);            
                     $senha = filter_input(INPUT_POST,'senha',FILTER_SANITIZE_STRING);            
+                    $senha = md5($senha);
                     $csenha = filter_input(INPUT_POST,'csenha',FILTER_SANITIZE_NUMBER_INT);
-                    
+                    $csenha = md5($csenha);
                     //3 - validar
                     $res = array("options"=>array("regexp"=>"/^([a-zA-Z]+\s)*[a-zA-Z]+$/"));
                     if(! filter_var($nome, FILTER_VALIDATE_REGEXP,$res)) {		  
