@@ -35,26 +35,35 @@
         
         <form action='' method='post'>
             <p>Insira abaixo o código enviado ao email disponibilizado anteriormente.</p>
+            <input class="input" type="text" id="email" name="email" placeholder="E-mail para troca">
             <input class="input" type="password" id="cod" name="cod" placeholder="Código de validação">
             <input class="button" type="submit" value="Confirmar" name="confirmar">
         </form>
         <?php
-            if (isset($_POST['confirmar'])) {
-                // Conexão
-                require('dbconexao.php');
-            
-                $cod = filter_input(INPUT_POST, 'senha', FILTER_SANITIZE_STRING);
-            
-                $sql = "SELECT * FROM redsenha WHERE codRedSenha = '$cod'";
-                $result = $connect->query($sql);
-            
-                if ($result->num_rows > 0) {
-                    header("Location: redefSenha.php");
-                    exit();
-                } else {
-                    echo "Código inválido!";
-                }
-            }
+             session_start(); 
+        
+             if (isset($_POST['btn-entrar'])){
+             
+                 echo "Clicou";
+                 //Conexão
+                 require_once 'dbconexao.php';
+     
+                 $email = filter_input(INPUT_POST,'email',FILTER_SANITIZE_EMAIL);            
+                 $cod = filter_input(INPUT_POST,'senha',FILTER_SANITIZE_STRING); 
+                 // $senha = md5($senha);       
+                 
+                 $sql = "SELECT * FROM usuario WHERE dscEmailUser = '$email' AND senhaUser = '$senha' " ;
+                 $resultado = mysqli_query($connect, $sql);
+                 // echo $sql;
+     
+                 if (mysqli_num_rows($resultado) > 0){
+                     //  echo "usuario encontrado.";
+                     header("Location: administrativo.php");         
+                 } else{
+                     echo "Usuário ou senha inválido!";
+                     
+                 } 
+                 }
         ?>        
     </section>
     
