@@ -33,11 +33,29 @@
             <h1 >Redefina Senha</h1>
         </header>
         
-        <form>
+        <form action='' method='post'>
             <p>Insira abaixo o código enviado ao email disponibilizado anteriormente.</p>
-            <input class="input" type="password" id="csenha" name="csenha" placeholder="Código de validação">
-            <input class="button" type="submit" value="Confirmar">
+            <input class="input" type="password" id="cod" name="cod" placeholder="Código de validação">
+            <input class="button" type="submit" value="Confirmar" name="confirmar">
         </form>
+        <?php
+            if (isset($_POST['confirmar'])) {
+                // Conexão
+                require('dbconexao.php');
+            
+                $cod = filter_input(INPUT_POST, 'senha', FILTER_SANITIZE_STRING);
+            
+                $sql = "SELECT * FROM redsenha WHERE codRedSenha = '$cod'";
+                $result = $connect->query($sql);
+            
+                if ($result->num_rows > 0) {
+                    header("Location: redefSenha.php");
+                    exit();
+                } else {
+                    echo "Código inválido!";
+                }
+            }
+        ?>        
     </section>
     
 </body>
