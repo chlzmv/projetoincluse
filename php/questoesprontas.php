@@ -1,4 +1,19 @@
+<?php
+    session_start();
+    require 'dbconexao.php';
+   
+    $idUser = $_SESSION['idUser'];
+    $sql = "SELECT * FROM usuario WHERE idUser = '$idUser'";
+    $resultado = mysqli_query($connect, $sql);
 
+    if ($resultado && mysqli_num_rows($resultado) > 0) {
+        $dados = mysqli_fetch_assoc($resultado);
+        $nomeUsuario = $dados['nomUser']; // Obter o nome do usuário a partir dos dados do banco de dados
+    } else {
+        // Trate o caso em que os dados do usuário não são encontrados
+        $nomeUsuario = "Usuário Desconhecido";
+    }
+?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -76,6 +91,7 @@
             <?php
                 include("dbconexao.php");
 
+
                 $idQuestn = filter_input(INPUT_GET, "idQuestn");
                 
 
@@ -144,7 +160,7 @@
         </header>
         <hr>
         <footer class="divBotoesInfer">
-            <span id="link" class="material-symbols-outlined" onclick="copiarTexto(<?php echo $idQuestn; ?>)">link</span>
+            <span id="link" class="material-symbols-outlined" onclick="copiarTexto(<?php echo $idQuestn ; ?>)">link</span>
             <input id="button" type="submit" value="Acessar Resultados" onclick="window.location='resultadosalunos.html';">
             
         </footer>

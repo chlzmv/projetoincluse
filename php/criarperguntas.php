@@ -14,6 +14,7 @@
         // Trate o caso em que os dados do usuário não são encontrados
         $nomeUsuario = "Usuário Desconhecido";
     }
+    
 ?>
 
 <!DOCTYPE HTML>
@@ -77,7 +78,7 @@
 
     <!-- conteudo pagina -->
     <h1>Criar formulário</h1>
-    <form class="container" action="acaocriarperguntas.php" method="post">
+    <form class="container" action="acaocriarperguntas.php " method="post">
             <div class="divTituloForm">
                 <input type="text" id="tituloForm" name="tituloForm"  placeholder="Título" >
                 <input type="text" name="valorTotQuestn" id="valorTotQuestn" placeholder="Valor total">
@@ -86,6 +87,7 @@
             <hr>
             <div id = "section">
                 <section class="divInfoForm">
+                    <input type="hidden" name="idUser" value="<?php echo $idUser ?>">
                     <input type="text" name="numQuest" id="numQuest" placeholder="N° Questão" >  
                     <input type="text" name="valorQuest" id="valorQuest" placeholder="Valor">
                 </section>
@@ -119,4 +121,3 @@
 </form>
 </body>
 </html>
-<!-- teste  -->
