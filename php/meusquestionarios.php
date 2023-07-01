@@ -78,7 +78,8 @@
     </header>
     <?php
         include("dbconexao.php");
-        $sql = "SELECT * FROM questionario";
+        $idUser = $_SESSION['idUser'];
+        $sql = "SELECT * FROM questionario WHERE idUser = '$idUser'";
         $resultado = mysqli_query($connect, $sql);
 
         if ($resultado) {

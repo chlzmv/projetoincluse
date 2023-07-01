@@ -33,7 +33,7 @@
             <h1 >Redefina Senha</h1>
         </header>
         
-        <form action='' method='post'>
+        <form>
             <p>Insira abaixo o código enviado ao email disponibilizado anteriormente.</p>
             <input class="input" type="text" id="email" name="email" placeholder="E-mail para troca">
             <input class="input" type="password" id="cod" name="cod" placeholder="Código de validação">

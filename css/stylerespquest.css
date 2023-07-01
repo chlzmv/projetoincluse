@@ -167,6 +167,34 @@ li a {
 
 /* Menu Flutuante */
 
+.liLogin{
+  margin-top: -0.5rem;
+  margin-right: 1rem;
+  margin-bottom: 1rem;
+  float: right;
+  font-size: 22px;
+  font-weight: 550;
+  font-family: 'Nunito Sans', sans-serif;
+  display: flex;
+  height: 4rem;
+}
+
+.liLogin a{
+  transition: 0.25s;
+}
+
+.liLogin a:hover{
+  font-size: 23px;
+}
+
+.nomeUser{
+  float: left;
+  color:#e0853b;
+  margin-top: 2rem;
+  margin-right:1rem;
+}
+
+
 .material-symbols-outlined {
   font-variation-settings:
   'FILL' 1,

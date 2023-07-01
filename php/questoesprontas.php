@@ -1,4 +1,19 @@
+<?php
+    session_start();
+    require 'dbconexao.php';
+   
+    $idUser = $_SESSION['idUser'];
+    $sql = "SELECT * FROM usuario WHERE idUser = '$idUser'";
+    $resultado = mysqli_query($connect, $sql);
 
+    if ($resultado && mysqli_num_rows($resultado) > 0) {
+        $dados = mysqli_fetch_assoc($resultado);
+        $nomeUsuario = $dados['nomUser']; // Obter o nome do usuário a partir dos dados do banco de dados
+    } else {
+        // Trate o caso em que os dados do usuário não são encontrados
+        $nomeUsuario = "Usuário Desconhecido";
+    }
+?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -23,12 +38,9 @@
         </li>    
         <li><a href="index.php" class="aplicafontelogo">Incluse.com</a></li>
         
-        <li style="float: right">
-            <ul>
-                <li>
-                    <div class="backgroundImagem"><img src="../png/iconUser.png" class="configimagem" onclick = "clickProf()"></div>
-                <li>
-            </ul>
+        <li class="liLogin">
+            <div class="nomeUser"><?php echo "Olá, " . $nomeUsuario; ?></div>          
+            <div class="backgroundImagem"><img src="../png/iconUser.png" class="configimagem" onclick = "clickProf()"></div>
         </li>
     </nav>
 
@@ -76,11 +88,12 @@
             <?php
                 include("dbconexao.php");
 
+
                 $idQuestn = filter_input(INPUT_GET, "idQuestn");
-                
+                $idUser = $_SESSION['idUser'];
 
                 // Parte 1: Resgatando as informações do questionário
-                $sql = "SELECT dscTituloQuestn, datCriacQuestn FROM questionario WHERE idQuestn = $idQuestn";
+                $sql = "SELECT dscTituloQuestn, datCriacQuestn FROM questionario  WHERE idQuestn = $idQuestn AND idUser = '$idUser'";
                 $resultado = mysqli_query($connect, $sql);
 
                 if ($resultado) {
@@ -99,7 +112,7 @@
 
                 // Parte 2: Criando blocos de informações das questões e suas respostas
                 
-                $sql = "SELECT * FROM questoes WHERE idQuestn = $idQuestn";
+                $sql = "SELECT * FROM questoes qst JOIN questionario qstn on qst.idQuestn = qstn.idQuestn WHERE qst.idQuestn = $idQuestn AND qstn.idUser = '$idUser' ";
                 $resultado = mysqli_query($connect, $sql);
                 if ($resultado) {
                     while ($dadosQuestao = mysqli_fetch_assoc($resultado)) {
@@ -144,7 +157,7 @@
         </header>
         <hr>
         <footer class="divBotoesInfer">
-            <span id="link" class="material-symbols-outlined" onclick="copiarTexto(<?php echo $idQuestn; ?>)">link</span>
+            <span id="link" class="material-symbols-outlined" onclick="copiarTexto(<?php echo $idQuestn ; ?>)">link</span>
             <input id="button" type="submit" value="Acessar Resultados" onclick="window.location='resultadosalunos.html';">
             
         </footer>
