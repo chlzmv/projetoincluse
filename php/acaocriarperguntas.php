@@ -7,7 +7,7 @@ include_once "dbconexao.php";
 if (isset($dados['btn-salvar'])) {
 
     // Inserir questionário
-    $sql1 = "INSERT INTO questionario (dscTituloQuestn, valTotQuestn, datCriacQuestn,idUser) VALUES (?, ?, CURRENT_DATE(), ?)";
+    $sql1 = "INSERT INTO questionario (dscTituloQuestn, valTotQuestn, datCriacQuestn,idUser) VALUES (?, ?, CURRENT_DATE(), ?) WHERE ";
     $resultado1 = $connect->prepare($sql1);
     $resultado1->bind_param('sdi', $dados['tituloForm'], $dados['valorTotQuestn'], $dados['idUser']);
     $resultado1->execute();
