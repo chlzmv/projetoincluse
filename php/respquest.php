@@ -34,8 +34,16 @@
         <li><a href="index.php" class="aplicafontelogo">Incluse.com</a></li>
         
         <li style="float: right">
+<<<<<<< HEAD
             <div class="nomeUser"><?php echo "Olá, " . $nomeUsuario; ?></div>
             <div class="backgroundImagem"><img src="../png/iconUser.png" class="configimagem" onclick = "clickProf()"></div>
+=======
+            <ul>
+                <li>
+                    <div class="backgroundImagem"><img src="../png/iconUser.png" class="configimagem" onclick = "clickProf()"></div>
+                <li>
+            </ul>
+>>>>>>> d29ce6cf7d55dafab2568a86a2fd3cfe53547752
         </li>
     </nav>
 
@@ -61,11 +69,12 @@
     <!-- codigo do conteudo -->
     <section class="divConteudo">
     
-        
+        <!-- Cabeçalho  -->
         <div class='infoQuestn'>
             <h1>Titulo Questionario</h1>
         </div>
-        
+
+        <!-- Questão  -->
         <section class='divQuest'>
             <div class="divValor">
                 <a style="float: left;">Questão 1</a>
@@ -86,6 +95,5 @@
     
     </section>
 
-    
 </body>
 </html>
