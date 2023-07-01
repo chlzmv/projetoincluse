@@ -33,17 +33,9 @@
           
         <li><a href="index.php" class="aplicafontelogo">Incluse.com</a></li>
         
-        <li style="float: right">
-<<<<<<< HEAD
+        <li class="liLogin">
             <div class="nomeUser"><?php echo "Olá, " . $nomeUsuario; ?></div>
             <div class="backgroundImagem"><img src="../png/iconUser.png" class="configimagem" onclick = "clickProf()"></div>
-=======
-            <ul>
-                <li>
-                    <div class="backgroundImagem"><img src="../png/iconUser.png" class="configimagem" onclick = "clickProf()"></div>
-                <li>
-            </ul>
->>>>>>> d29ce6cf7d55dafab2568a86a2fd3cfe53547752
         </li>
     </nav>
 
