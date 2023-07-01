@@ -1,4 +1,20 @@
+<?php
+    session_start();
+    require 'dbconexao.php';
+   
+    $idUser = $_SESSION['idUser'];
 
+    $sql = "SELECT * FROM usuario WHERE idUser = '$idUser'";
+    $resultado = mysqli_query($connect, $sql);
+
+    if ($resultado && mysqli_num_rows($resultado) > 0) {
+        $dados = mysqli_fetch_assoc($resultado);
+        $nomeUsuario = $dados['nomUser']; // Obter o nome do usuário a partir dos dados do banco de dados
+    } else {
+        // Trate o caso em que os dados do usuário não são encontrados
+        $nomeUsuario = "Usuário Desconhecido";
+    }
+?>
 <!DOCTYPE HTML>
 <html lang="pt-br">
 <head>
@@ -13,29 +29,26 @@
 <body>
    <!-- codigo do menu -->
    <nav class="divMenu"><ul>
-    <li style="float: left">
-        <nav class="containerIconMenu">
-            <span class="material-symbols-outlined" onclick="clickMenu()" id="dropdown">menu</span>
-        </nav>
-    </li>    
-    <li><a href="index.php" class="aplicafontelogo">Incluse.com</a></li>
+        <li style="float: left">
+            <nav class="containerIconMenu">
+                <span class="material-symbols-outlined" onclick="clickMenu()" id="dropdown">menu</span>
+            </nav>
+        </li>    
+        <li><a href="index.php" class="aplicafontelogo">Incluse.com</a></li>
     
   
     
-    <li class="liLogin">
-        <ul>
-            <li><input type="button" id="botaoCad" value="Cadastre-se" onclick="window.location='cadastro.php';"></li>
-            <li><a href="login.php">Entrar</a></li>
-        </ul>
-    </li>
+        <li class="liLogin">
+            <div class="nomeUser"><?php echo "Olá, " . $nomeUsuario; ?></div>     
+            <div class="backgroundImagem"><img src="../png/iconUser.png" class="configimagem" onclick = "clickProf()"></div>     
+        </li>
     </nav>
-
     <!-- botões menu hamburger -->
     <menu id="menu">
         <ul>
-            <li><a href="criarperguntas.php">Criar Formulário</a></li>
-            <li><a href="meusformularios.php">Meus Formulários</a></li>
-            <li><a href="quemsomos.php">Quem Somos?</a></li>
+            <li><a href="criarperguntas.php?idUser=<?php echo $idUser; ?>">Criar Formulário</a></li>
+            <li><a href="meusquestionarios.php?idUser=<?php echo $idUser; ?>">Meus Formulários</a></li>
+            <li><a href="quemsomosusuario.php?idUser=<?php echo $idUser; ?>">Quem Somos?</a></li>
         </ul>   
     </menu>
 
@@ -51,19 +64,7 @@
 
     <!-- codigo do conteudo -->
     <section class="divConteudo">
-        <aside class="containerPlayer">
-            <!-- <hr> -->
-            <div class="timeline">
-                <div class="objProgress"></div>
-            </div>
-            <div class="center">
-                <!-- <div href="#" class="play1"></div>
-                <div href="#" class="play2"></div> -->
-                <div class="borderTriangle">
-                    <div href="#" class="triangle"></div>
-                </div>
-            </div>
-        </aside>
+        
         <header class="divText">
             <h1>Acreditamos que a inclusão é um processo contínuo que exige compromisso</h1>   
         </header>      

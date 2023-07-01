@@ -52,7 +52,7 @@
         <ul>
             <li><a href="criarperguntas.php?idUser=<?php echo $idUser; ?>">Criar Formulário</a></li>
             <li><a href="meusquestionarios.php?idUser=<?php echo $idUser; ?>">Meus Formulários</a></li>
-            <li><a href="quemsomos.php?idUser=<?php echo $idUser; ?>">Quem Somos?</a></li>
+            <li><a href="quemsomosusuario.php?idUser=<?php echo $idUser; ?>">Quem Somos?</a></li>
         </ul>   
     </menu>
 
@@ -91,7 +91,7 @@
                 <h2>Meus forms</h2>
                 <span class="material-symbols-outlined" id="book">menu_book</span>
             </nav>
-            <nav class="botCI" onclick="window.location='quemsomos.php?idUser=<?php echo $idUser; ?>';">
+            <nav class="botCI" onclick="window.location='quemsomosusuario.php?idUser=<?php echo $idUser; ?>';">
                 <h2>Quem somos</h2>
                 <span class="material-symbols-outlined" id="info">info</span>
             </nav>

@@ -48,9 +48,9 @@
     <!-- botões menu hamburger  -->
     <menu id="menu">
         <ul>
-            <li><a href="criarperguntas.php">Criar Formulário</a></li>
-            <li><a href="meusquestionarios.php">Meus Formulários</a></li>
-            <li><a href="quemsomos.php">Quem Somos?</a></li>
+            <li><a href="criarperguntas.php?idUser=<?php echo $idUser; ?>">Criar Formulário</a></li>
+            <li><a href="meusquestionarios.php?idUser=<?php echo $idUser; ?>">Meus Formulários</a></li>
+            <li><a href="quemsomosusuario.php?idUser=<?php echo $idUser; ?>">Quem Somos?</a></li>
         </ul>   
     </menu>
     

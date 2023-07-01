@@ -22,7 +22,7 @@
     
   
     
-    <li class="liLogin">
+    <li class="liLogin2">
         <ul>
             <li><input type="button" id="botaoCad" value="Cadastre-se" onclick="window.location='cadastro.php';"></li>
             <li><a href="login.php">Entrar</a></li>
@@ -33,8 +33,6 @@
     <!-- botões menu hamburger -->
     <menu id="menu">
         <ul>
-            <li><a href="criarperguntas.php">Criar Formulário</a></li>
-            <li><a href="meusformularios.php">Meus Formulários</a></li>
             <li><a href="quemsomos.php">Quem Somos?</a></li>
         </ul>   
     </menu>

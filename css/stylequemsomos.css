@@ -35,23 +35,60 @@
   }
 
   .liLogin{
-    margin-top: 0.6rem;
-    margin-right: 1rem;
-    text-align: right ;
-    float: right;
-    cursor: pointer;
-    font-weight: 550;
-    font-family: 'Nunito Sans', sans-serif;
-  }
-  
-  .liLogin a{
-    transition: 0.25s;
-    font-size: 22px;
-  }
-  
-  .liLogin a:hover{
-    font-size: 23px;
-  }
+    margin-top: -0.5rem;
+  margin-right: 1rem;
+  margin-bottom: 1rem;
+  float: right;
+  font-size: 22px;
+  font-weight: 550;
+  font-family: 'Nunito Sans', sans-serif;
+  display: flex;
+  height: 4rem;
+}
+
+.liLogin a{
+  transition: 0.25s;
+}
+
+.liLogin a:hover{
+  font-size: 23px;
+}
+.liLogin2{
+  margin-top: 0.6rem;
+  margin-right: 1rem;
+  text-align: right ;
+  float: right;
+  font-size: 22px;
+  cursor: pointer;
+  font-weight: 550;
+  font-family: 'Nunito Sans', sans-serif;
+  display: flex;
+}
+
+.liLogin2 a{
+  transition: 0.25s;
+}
+
+.liLogin2 a:hover{
+  font-size: 23px;
+}
+.nomeUser{
+    float: left;
+    color:#e0853b;
+    margin-top: 2rem;
+    margin-right:1rem;
+}
+.configimagem{
+  width: 2em;
+  height: 2em;
+  cursor: pointer;
+  transition: 0.5s;
+}
+
+.configimagem:hover{
+  width: 2.2em;
+  height: 2.2em;
+}
   #botaoCad{
   background-color: #e0853b;
   border-radius: 1.5rem;
