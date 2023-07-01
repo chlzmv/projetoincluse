@@ -38,12 +38,9 @@
         </li>    
         <li><a href="index.php" class="aplicafontelogo">Incluse.com</a></li>
         
-        <li style="float: right">
-            <ul>
-                <li>
-                    <div class="backgroundImagem"><img src="../png/iconUser.png" class="configimagem" onclick = "clickProf()"></div>
-                <li>
-            </ul>
+        <li class="liLogin">
+            <div class="nomeUser"><?php echo "Olá, " . $nomeUsuario; ?></div>          
+            <div class="backgroundImagem"><img src="../png/iconUser.png" class="configimagem" onclick = "clickProf()"></div>
         </li>
     </nav>
 
@@ -93,10 +90,10 @@
 
 
                 $idQuestn = filter_input(INPUT_GET, "idQuestn");
-                
+                $idUser = $_SESSION['idUser'];
 
                 // Parte 1: Resgatando as informações do questionário
-                $sql = "SELECT dscTituloQuestn, datCriacQuestn FROM questionario WHERE idQuestn = $idQuestn";
+                $sql = "SELECT dscTituloQuestn, datCriacQuestn FROM questionario  WHERE idQuestn = $idQuestn AND idUser = '$idUser'";
                 $resultado = mysqli_query($connect, $sql);
 
                 if ($resultado) {
@@ -115,7 +112,7 @@
 
                 // Parte 2: Criando blocos de informações das questões e suas respostas
                 
-                $sql = "SELECT * FROM questoes WHERE idQuestn = $idQuestn";
+                $sql = "SELECT * FROM questoes qst JOIN questionario qstn on qst.idQuestn = qstn.idQuestn WHERE qst.idQuestn = $idQuestn AND qstn.idUser = '$idUser' ";
                 $resultado = mysqli_query($connect, $sql);
                 if ($resultado) {
                     while ($dadosQuestao = mysqli_fetch_assoc($resultado)) {
