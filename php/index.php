@@ -60,12 +60,12 @@
             <h1>Bem-vindo a Incluse</h1>
             <a>A sua plataforma de formulários acessiveis...</a>
         </header>
-        <nav class="BotC" onclick="confirmarRed1()">
+        <nav class="BotC" onclick="confirmarRed()">
             <h2>Criar formulários</h2>
             <span class="material-symbols-outlined" id="pencil">edit</span>
         </nav>
         <section class="divLowBot">
-            <nav class="botMP" onclick="confirmarRed1()">
+            <nav class="botMP" onclick="confirmarRed()">
                 <h2>Meus forms</h2>
                 <span class="material-symbols-outlined" id="book">menu_book</span>
             </nav>
