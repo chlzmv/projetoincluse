@@ -49,7 +49,9 @@
 
                     // Dados para atualização
                     $senha = filter_input(INPUT_POST, 'senha', FILTER_SANITIZE_STRING);
+                    $senha = md5($senha);
                     $csenha = filter_input(INPUT_POST, 'csenha', FILTER_SANITIZE_STRING);
+                    $csenha = md5($csenha);
                     $email = filter_input(INPUT_POST, 'email', FILTER_SANITIZE_EMAIL);
                     
                     // Query SQL para atualizar os dados

@@ -29,37 +29,40 @@
 
     <section class="container">
         <h1 class="divH1">Entrar</h1>
-        <!-- <hr class="hr" > -->
+
         <form action="login.php" method="post">
             <input class="input" type="email" id="email" name="email"placeholder="Email">
             <input class="input" type="password" id="senha" name="senha" placeholder="Senha">
             <nav class="divA">
                 <a href="esqueceSenha.php">Esqueceu a senha?</a>
             </nav>
-            <input class="button" type="submit" name="btn-entrar" value="Confirmar">
+            <p class="mensagem">
+                <?php
+                    session_start();
+                    require_once 'dbconexao.php';
 
-            <?php
-                session_start();
-                require_once 'dbconexao.php';
+                    if (isset($_POST['btn-entrar'])) {
+                        $email = filter_input(INPUT_POST, 'email', FILTER_SANITIZE_EMAIL);
+                        $senha = filter_input(INPUT_POST, 'senha', FILTER_SANITIZE_STRING);
+                        
+                        $senha = md5($senha);
 
-                if (isset($_POST['btn-entrar'])) {
-                    $email = filter_input(INPUT_POST, 'email', FILTER_SANITIZE_EMAIL);
-                    $senha = filter_input(INPUT_POST, 'senha', FILTER_SANITIZE_STRING);
+                        $sql = "SELECT * FROM usuario WHERE dscEmailUser = '$email' AND senhaUser = '$senha'";
+                        $resultado = mysqli_query($connect, $sql);
 
-                    $sql = "SELECT * FROM usuario WHERE dscEmailUser = '$email' AND senhaUser = '$senha'";
-                    $resultado = mysqli_query($connect, $sql);
+                        if ($resultado && mysqli_num_rows($resultado) > 0) {
+                            $dados = mysqli_fetch_assoc($resultado); // Obter os dados do usuário como um array associativo
 
-                    if ($resultado && mysqli_num_rows($resultado) > 0) {
-                        $dados = mysqli_fetch_assoc($resultado); // Obter os dados do usuário como um array associativo
-
-                        $_SESSION['idUser'] = $dados['idUser'];
-                        header("Location: areadousuario.php?idUser=" . $dados['idUser']);
-                        exit(); // Finalizar o script para evitar a execução do restante do código
-                    } else {
-                        echo "Usuário ou senha inválido!";
+                            $_SESSION['idUser'] = $dados['idUser'];
+                            header("Location: areadousuario.php?idUser=" . $dados['idUser']);
+                            exit(); // Finalizar o script para evitar a execução do restante do código
+                        } else {
+                            echo "Usuário ou senha inválido!";
+                        }
                     }
-                }
-            ?>
+                ?>
+            </p>
+            <input class="button" type="submit" name="btn-entrar" value="Confirmar">
         </form>
     </section>
     

@@ -1,35 +1,90 @@
 //adicionar e apagar iten de resposta
-
-var controleCampo = 1;
+var optionsControl = 0;
 
 function adicionarCampo(e) {
-    controleCampo++;
-    const questao = e.id;
-    var target = e.target || e.srcElement;
-    const tabela = document.getElementById(id);
-    // html = '<div class="table" id="campo' + questao + '" data-questao="' + questao + '"> <input type="radio" id="select" name="select"> <textarea name="checkText" id="checkText" cols="30" rows="1" placeholder="Insira o texto"></textarea> <span class="material-symbols-outlined" name="check" id="check">check</span> <span class="material-symbols-outlined" id="add' + questao + '" onclick="adicionarCampo(this.parentElement.parentElement)">add</span> <span class="material-symbols-outlined" id="' + controleCampo + '" onclick="removerCampo(' + controleCampo + ')">delete</span></div>'
-    html = '<div class="table" id="campo"' + questao + 'data-questao="' + questao + '"> <input type="radio" id="select" name="select"> <textarea  name="checkText" id="checkText" cols="30" rows="1" placeholder="Insira o texto"></textarea> <span  class="material-symbols-outlined" name="check" id="check">check</span> <span class="material-symbols-outlined" id="add' + questao + '"  onclick="adicionarCampo(this.parentElement.parentElement)">add</span> <span class="material-symbols-outlined" id="' + controleCampo + '" onclick="removerCampo(' + controleCampo + ')"> delete </span></div>'
-    tabela.insertAdjacentHTML('beforeend', html);
+  optionsControl++;
+  const optionId = e.id;
+  const questionId = e.parentElement.id;
+  const question = document.getElementById(questionId);
+  const secaoOpcoes = question.querySelector(`#${optionId}`);
+
+  const html =
+    `<div id="option${optionsControl}" class="option"> 
+      <span id="check" class="btn-action material-symbols-outlined" onclick="checkOption(this.parentElement)">check</span>
+      <input type="hidden" name="check" value="false">
+      <textarea name="checkText" cols="30" rows="1" class="checkText" placeholder="Digite a opção de resposta."></textarea>
+      <span class="btn-remove btn-action material-symbols-outlined" onclick="removerCampo(${optionsControl})">delete</span>
+    </div>`;
+
+  secaoOpcoes.insertAdjacentHTML("beforeend", html);
 }
 
 function removerCampo(idCampo) {
-    console.log('campo' + idCampo);
-    document.getElementById('campo' + idCampo).remove();
-    controleCampo = controleCampo - 1;
+  document.getElementById("option" + idCampo).remove();
 }
 
 //adicionar e apagar questao completa
+var questionsControl = 0;
 
-var controleQuestao = 1;
 function adicionarQuestao() {
-    controleQuestao++;
-    console.log(controleQuestao);
-    document.getElementById('section').insertAdjacentHTML('beforeend', '<div class="section" id="questao' + controleQuestao + '">  <section class="divInfoForm"> <input type="text" name="numQuest" id="numQuest" placeholder="' + controleQuestao + '" ><input type="text" name="valorQuest" id="valorQuest" placeholder="Valor"></section><section class="divCaixaTexto"><textarea id="caixaTexto" name="caixaTexto" cols="30" rows="20" placeholder="Insira o texto"></textarea></section><div id="table' + controleQuestao + '"><input type="radio" name="select" id="select"> <textarea  id="checkText" name="checkText" cols="30" rows="1" placeholder="Insira o texto"></textarea><span id="check" name="check" class="material-symbols-outlined">check</span><span id="add' + controleQuestao + '" class="material-symbols-outlined" onclick="adicionarCampo(this.parentElement)">add</span></div> </section>');
+  questionsControl++;
+  optionsControl++;
+  let hiddenBtn = removeControlActive == false ? "hiddenBtn" : "";
+  const html =
+    `<div id="question${questionsControl}" class="question">
+      <div class="div-excluir ${hiddenBtn}">
+        <p>Excluir essa Questão?</p>
+        <input type="button" class="botaoExcluir" value="Sim" onclick="removerQuestao(question${questionsControl})" />
+      </div>
+      <section class="divInfoForm">                    
+          <input type="text" name="numQuest" class="numQuest" placeholder="N° Questão" />
+          <input type="text" name="valorQuest" class="valorQuest" placeholder="Valor" />
+      </section>
+      <section class="divCaixaTexto">
+          <textarea class="caixaTexto" name="caixaTexto" cols="30" rows="10" placeholder="Digite a pergunta."></textarea>
+      </section>
+      <section id="sectionOptions" class="sectionOptions">
+          <div id="option${optionsControl}" class="option">
+            <span id="check" class="btn-action material-symbols-outlined" onclick="checkOption(this.parentElement)">check</span>
+            <input type="hidden" name="check" value="false">
+            <textarea id="checkText" name="checkText" cols="30" rows="1" class="checkText" placeholder="Digite a opção de resposta."></textarea>
+            <span id="add" class="btn-add btn-action material-symbols-outlined" onclick="adicionarCampo(this.parentElement.parentElement)">add</span>
+          </div>
+      </section>
+      <hr>
+    </div>`;
+
+  document.getElementById("sectionQuestions").insertAdjacentHTML("beforeend", html);
+  window.scrollTo({ left: 0, top: document.body.scrollHeight, behavior: "smooth" });
+}
+
+var removeControlActive = false;
+
+function ativarRemoverQuestao() {
+  let btnExcluir = document.querySelectorAll('.div-excluir');
+  if (removeControlActive) {
+    btnExcluir.forEach(x => x.classList.add("hiddenBtn"));
+  } else {
+    btnExcluir.forEach(x => x.classList.remove("hiddenBtn"));
+  }
+  removeControlActive = !removeControlActive;
 }
 
 function removerQuestao(idQuestao) {
-    console.log('questao' + idQuestao);
-    document.getElementById('questao' + idQuestao).remove();
-    controleQuestao = controleQuestao - 1;
+  document.getElementById(idQuestao.id).remove();
+  if (document.getElementById("sectionQuestions").children.length == 0) removeControlActive = false;
 }
 
+function checkOption(e) {
+  const optionId = e.id;
+  const questionId = e.parentElement.parentElement.id;
+  const question = document.getElementById(questionId);
+  let secaoOpcoes = question.querySelector(`#${optionId}`);
+  if (secaoOpcoes.querySelector(`#check`).classList.contains("check")) {
+    secaoOpcoes.querySelector(`#check`).classList.remove("check");
+    secaoOpcoes.querySelector('input[name="check"]').value = false;
+  } else {
+    secaoOpcoes.querySelector(`#check`).classList.add("check");
+    secaoOpcoes.querySelector('input[name="check"]').value = true;
+  }
+}

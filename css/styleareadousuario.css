@@ -171,6 +171,34 @@ li a {
     color: white;
 
   }
+
+  /* profile */
+
+.menuProf{
+  display: none;
+  position: absolute;
+  margin-left: 75%;
+}
+
+.ulProf{
+  list-style-type: none;
+}
+.liProf{
+  float: none;
+}
+.aProf{
+  padding: 0.7rem;
+  margin: 0.3rem;
+  background-color: white;
+  text-decoration: none;
+  color: #e0853b;
+  font-weight: 600;
+  font-family: 'Nunito Sans', sans-serif;
+  text-align: center;
+  box-shadow: 2px 0.2rem 0.2rem 1px #c2c1c1;
+  border-radius: 0.7rem;
+}
+
  
 /* Menu Flutuante */
 

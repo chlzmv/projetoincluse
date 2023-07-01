@@ -62,7 +62,7 @@
                             header("Location: redefSenha.php");
                             exit();
                         } else {
-                            // echo "Usuário ou senha inválido!";
+                            echo "Usuário ou senha inválido!";
                         }
                     }
                 }

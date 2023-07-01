@@ -58,7 +58,7 @@
     <menu class="menuProf" id="prof">
         <ul class="ulProf">
             <li class="liProf"><a href="login.php" class="aProf">Trocar usuário</a></li>
-            <li class="liProf"><a href="#" class="aProf">Sair</a></li>
+            <li class="liProf"><a href="../php/logout.php" class="aProf">Sair</a></li>
         </ul>   
     </menu>
 

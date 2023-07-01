@@ -1,11 +1,10 @@
-
 @import url('https://fonts.googleapis.com/css2?family=Shrikhand&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Nunito&family=Nunito+Sans:wght@300;700;800&display=swap');
-  body{
-    margin: 0px;
-    font-family: 'nunito sans', sans-serif;
-  
-  } 
+
+body {
+  margin: 0px;
+  font-family: 'nunito sans', sans-serif;
+}
 
 /* BARRA DE MENU */
 
@@ -15,10 +14,10 @@ ul {
   margin: 0;
   padding: 0;
   overflow: hidden;
-  background-color:   white;
+  background-color: white;
 }
 
-.divMenu{
+.divMenu {
   box-shadow: 0px 3px 4px 0px #d6d5d5;
 }
 
@@ -28,145 +27,145 @@ li {
 
 li a {
   display: block;
-  color:  #e0853b;
+  color: #e0853b;
   text-align: right;
   padding: 1.2rem;
   text-decoration: none;
-  
 }
 
-.liLogin{
-margin-top: -0.5rem;
-margin-right: 1rem;
-margin-bottom: 1rem;
-float: right;
-font-size: 22px;
-font-weight: 550;
-font-family: 'Nunito Sans', sans-serif;
-display: flex;
-height: 4rem;
+.liLogin {
+  margin-top: -0.5rem;
+  margin-right: 1rem;
+  margin-bottom: 1rem;
+  float: right;
+  font-size: 22px;
+  font-weight: 550;
+  font-family: 'Nunito Sans', sans-serif;
+  display: flex;
+  height: 4rem;
 }
 
-.liLogin a{
-transition: 0.25s;
+.liLogin a {
+  transition: 0.25s;
 }
 
-.liLogin a:hover{
-font-size: 23px;
+.liLogin a:hover {
+  font-size: 23px;
 }
 
-.nomeUser{
+.nomeUser {
   float: left;
-  color:#e0853b;
+  color: #e0853b;
   margin-top: 2rem;
-  margin-right:1rem;
+  margin-right: 1rem;
 }
 
-.configimagem{
+.configimagem {
   width: 2em;
   height: 2em;
   cursor: pointer;
   transition: 0.5s;
 }
 
-.configimagem:hover{
+.configimagem:hover {
   width: 2.2em;
   height: 2.2em;
 }
 
-.backgroundImagem{
+.backgroundImagem {
   background-color: white;
   border-radius: 100%;
-  padding: 8px ; 
+  padding: 8px;
   width: 2em;
   height: 2em;
   margin: 1.1rem 1.4rem 0.8rem auto;
 }
 
 /* caract da font logo */
-.aplicafontelogo{
+.aplicafontelogo {
   font-family: 'Shrikhand', cursive;
   font-size: 25px;
   margin-top: 0.4rem;
   transition: 0.25s;
 }
 
-.aplicafontelogo:hover{
+.aplicafontelogo:hover {
   font-size: 25.8px;
 }
 
-  /* Icon menu hamburg */
+/* Icon menu hamburg */
 
-  .containerIconMenu {
-    cursor: pointer;
-    margin-top: 1.5rem;
-    margin-left: 1.55rem;
-    margin-right: 0.8rem;
-    position: static ;
-  }
+.containerIconMenu {
+  cursor: pointer;
+  margin-top: 1.5rem;
+  margin-left: 1.55rem;
+  margin-right: 0.8rem;
+  position: static;
+}
 
- #dropdown{
+#dropdown {
   font-size: 40px;
   color: #e0853b;
   transition: 0.5s;
- }
+}
 
- #dropdown:hover {
+#dropdown:hover {
   font-size: 43px;
 }
-  
-    /* Botões dropdown */
 
-  /* hamburg */
+/* Botões dropdown */
 
-  menu{
-    display: none;
-    position: absolute;
-    width: 15.7rem;
-  }
-    
-  menu > ul{
-    list-style-type: none;
-  }
+/* hamburg */
+menu {
+  display: none;
+  position: absolute;
+  width: 15.7rem;
+}
 
-  menu > ul > li{
-    float: none;
-  }
+menu>ul {
+  list-style-type: none;
+}
 
-  menu > ul > li > a{
-    padding: 0.7rem;
-    margin: 5px;
-    background-color: white;
-    text-decoration: none;
-    color: #e0853b;
-    font-weight: 600;
-    font-family: 'Nunito Sans', sans-serif;
-    text-align: center;
-    box-shadow: 2px 3px 3px 1px #c2c1c1;
-    border-radius: 10px;
-    transition: 0.5s;
-  }
+menu>ul>li {
+  float: none;
+}
 
-  menu > ul > li > a:hover {
-    background: #e0853b ;
-    color: white;
+menu>ul>li>a {
+  padding: 0.7rem;
+  margin: 5px;
+  background-color: white;
+  text-decoration: none;
+  color: #e0853b;
+  font-weight: 600;
+  font-family: 'Nunito Sans', sans-serif;
+  text-align: center;
+  box-shadow: 2px 3px 3px 1px #c2c1c1;
+  border-radius: 10px;
+  transition: 0.5s;
+}
 
-  }
-  /* profile */
+menu>ul>li>a:hover {
+  background: #e0853b;
+  color: white;
+}
 
-.menuProf{
+/* profile */
+
+.menuProf {
   display: none;
   position: absolute;
   margin-left: 75%;
 }
 
-.ulProf{
+.ulProf {
   list-style-type: none;
 }
-.liProf{
+
+.liProf {
   float: none;
 }
-.aProf{
+
+.aProf {
   padding: 0.7rem;
   margin: 5px;
   background-color: white;
@@ -180,16 +179,19 @@ font-size: 23px;
 }
 
 /* Menu Flutuante */
+.cursor:hover {
+  cursor: pointer;
+}
 
 .material-symbols-outlined {
   font-variation-settings:
-  'FILL' 1,
-  'wght' 400,
-  'GRAD' 0,
-  'opsz' 48
+    'FILL' 1,
+    'wght' 400,
+    'GRAD' 0,
+    'opsz' 48
 }
 
-#arrow{
+#arrow {
   cursor: pointer;
   color: #e0853b;
   font-size: 60px;
@@ -204,9 +206,9 @@ font-size: 23px;
   font-size: 62px;
 }
 
-#add1{
+#add1 {
   position: absolute;
-  margin: 1px 0.7rem 0.7rem 0.6rem;
+  margin: 0px -0.3rem -0.3rem -0.4rem;
   font-size: 55px;
   color: #e0853b;
   cursor: pointer;
@@ -217,9 +219,9 @@ font-size: 23px;
   font-size: 57px;
 }
 
-#minus{
+#minus {
   position: absolute;
-  margin: 1.4rem 0.7rem 0px 4.4rem;
+  margin: 2.4rem 0.7rem 0px -3.6rem;
   font-size: 55px;
   color: #e0853b;
   cursor: pointer;
@@ -230,9 +232,9 @@ font-size: 23px;
   font-size: 57px;
 }
 
-#color{
+#color {
   position: absolute;
-  margin: 5.4rem 0.7rem 0.7rem 4.3rem;
+  margin: 6.2rem 0.7rem 0.7rem -3.3rem;
   font-size: 55px;
   color: #e0853b;
   cursor: pointer;
@@ -243,184 +245,253 @@ font-size: 23px;
   font-size: 57px;
 }
 
-.menuFlut{
+.menuFlut {
   position: fixed;
   bottom: 1.5rem;
-  left: 1.5rem;
+  right: 1.5rem;
 }
 
-.botMenuFlut{
+.botMenuFlut {
   position: absolute;
   display: none;
 }
 
-  /* ////////////////////////////////////// */
+/* ////////////////////////////////////// */
 
-  /* CONTEUDO PAGINA */
-  *{
-    font-family: 'Nunito Sans', sans-seri
-  }
-  /* div conteudo */
-  .container{
-    margin:auto auto;
-    padding: auto 3rem;
-    display: block;
-    width: 50%;
-  }
-  
-  h1{
-    color: #e0853b;
-    font-size: 35px;
-    font-weight: 300;
-    text-align: center;
-    margin: 1rem auto 1rem auto;
-    
-  }
-  hr {
-    border:none;
-    width:100%;
-    height: 2rem ;
-    box-shadow: 0px 10px 6px -10px #d6d5d5;
-    margin: -1.5rem 0rem 2rem 0rem ;
-    padding: 0rem;
-  }
-  .divTiTuloForm{
-    padding: 1rem 1rem 1rem 1rem;
-  }
-  #tituloForm{
-    width: auto;
-    margin: 1rem 1rem auto rem;
-    border: none;
-    font-size: 30px;
-    font-weight: 700;
-  }
-  .divInfoForm{
-    /* margin: 0rem 0rem 1rem; */
-    margin-bottom: 1rem;
-  }
-  #numQuest{
-    float:left;
-    width: 5.5em;
-    border:none;
-    background-color: #f3f3f3;
-    border-radius: 3px;
-    font-size: 20px;
-  }
-  
-  .inputSV{
-    float: right;
-    width: 60%;;
-  }
-  #formSelect{
-    border:none;
-    margin: 0rem auto;
-    background-color: #f3f3f3;
-    border-radius: 3px;
-    font-size: 20px;
-    color: rgb(134, 134, 134);
-  }
-  #valorTotQuestn{
-    float: right;
-    width: 5em;
-    border:none;
+/* CONTEUDO PAGINA */
+* {
+  font-family: 'Nunito Sans', sans-serif
+}
 
-    font-size: 25px;
-  }
-  #valorQuest{
-    float: right;
-    width: 3em;
-    border:none;
-    background-color: #f3f3f3;
-    border-radius: 3px;
-    font-size: 20px;
-  }
-  #caixaTexto{
-    width: 100%;
-    height: 14rem;
-    border:none;
-    background-color: #f3f3f3;
-    border-radius: 3px;
-    font-size: 20px;
-    margin-bottom: 1rem;
-    margin-top: 1rem;
-  }
-  #table{
-    margin-bottom: 1rem;
-    margin-top: 1rem;
+/* div conteudo */
+h1 {
+  color: #e0853b;
+  font-size: 35px;
+  font-weight: 300;
+  text-align: center;
+  margin: 1rem auto 1rem auto;
+}
 
-  }
-  #checkText{
-    position: relative;
-    border:none;
-    background-color: #f3f3f3;
-    border-radius: 3px;
-    font-size: 20px;
-    margin:  0rem 0rem 0rem 0rem;
-    width: 50%;
-    height: 1.7rem;
-  }
-  #delete:hover {
-    color: #b42e2e;
-  }
-  
-  #check:hover {
-    color: #ffffff;
-    background-color: #4ea845;
-    border-radius: 2px;
-  }
+hr {
+  margin-top: 20px;
+  width: 100%;
+  height: 10px;
+  border: 0;
+  box-shadow: 0 10px 8px -14px #333 inset;
+}
 
-  table{
-    display: inline;
-    width: 1rem;
-  }  
+.container-form {
+  margin: auto auto;
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+}
 
-  #delete_box{
-    font-size: 35px;
-    margin-top: -0.15rem;
+@media screen and (max-width: 720px) {
+  .container-form {
+    margin: auto auto;
+    display: flex;
+    flex-direction: column;
+    width: calc(100% - 40px);
   }
-  #add{
-    font-size: 25PX;
-  }
+}
 
-  #add:hover {
-    color: #ffffff;
-    background-color: #e4e4e4;
-    border-radius: 2px;
-  }
+.container-form-title {
+  display: flex;
+}
 
-  #add_box{
-    margin-top: -1rem;
-    float:left;
-    font-size: 35px;
-  }
-  #add_box:hover{
-    color:#e0853b
-  }
-  .botoesSR{
-    width: 14rem;
-    float:right;
-  }
-  #botaoRascunho{
-    float: left;
-    background-color: #f3f3f3;
-    border-radius: 10px;
-    border: none;
-    cursor: pointer;
-    font-size: 15px;
-  }
-  #botaoRascunho:hover {
-    
-    background-color: #e4e4e4;
-  }
-  #botaoSalva{
-    float:right;
-    background-color: #e0853b;
-    border-radius: 10px;
-    border: none;
-    cursor: pointer;
-    font-size: 18px;
-  }
-  
-  #botaoSalva:hover {
-    background-color: #c97d3f;
-  }
+.container-form-title .titulo-form {
+  border: none;
+  font-size: 30px;
+  font-weight: 700;
+  width: calc(100% - 105px);
+  padding-right: 10px;
+}
+
+.container-form-title .amount-form {
+  border: none;
+  font-size: 20px;
+  width: 90px;
+}
+
+#sectionQuestions .question {
+  display: flex;
+  flex-direction: column;
+}
+
+.botaoExcluir {
+  background-color: #4ea845;
+  border-radius: 3px;
+  border: none;
+  cursor: pointer;
+  font-size: 18px;
+  color: white;
+  font-weight: 600;
+  padding: 2px 12px;
+}
+
+.hiddenBtn {
+  display: none !important;
+}
+
+.div-excluir {
+  background-color: #f94449;
+  display: flex;
+  border-radius: 3px;
+  margin-bottom: 10px;
+  align-items: center;
+  padding: 0 20px;
+  height: 35px;
+  color: white;
+  font-weight: bold;
+  justify-content: space-between;
+}
+
+
+
+.divInfoForm {
+  margin-bottom: 1rem;
+}
+
+.numQuest {
+  float: left;
+  width: 5.5em;
+  border: none;
+  background-color: #f3f3f3;
+  border-radius: 3px;
+  font-size: 20px;
+  padding: 0 10px;
+}
+
+.inputSV {
+  float: right;
+  width: 60%;
+}
+
+#formSelect {
+  border: none;
+  margin: 0rem auto;
+  background-color: #f3f3f3;
+  border-radius: 3px;
+  font-size: 20px;
+  color: rgb(134, 134, 134);
+}
+
+.valorQuest {
+  float: right;
+  width: 3em;
+  border: none;
+  background-color: #f3f3f3;
+  border-radius: 3px;
+  font-size: 20px;
+  padding: 0 10px;
+}
+
+.caixaTexto {
+  width: calc(100% - 20px);
+  border: none;
+  background-color: #f3f3f3;
+  border-radius: 3px;
+  font-size: 20px;
+  margin-bottom: 1rem;
+  margin-top: 1rem;
+  padding: 5px 10px;
+}
+
+.checkText {
+  position: relative;
+  border: none;
+  background-color: #f3f3f3;
+  border-radius: 3px;
+  font-size: 20px;
+  width: 100%;
+  height: 1.7rem;
+  padding: 0 10px;
+}
+
+.sectionOptions {
+  display: flex;
+  flex-direction: column;
+  row-gap: 15px;
+}
+
+.option {
+  display: flex;
+  align-items: center;
+  column-gap: 10px;
+}
+
+.check {
+  border: solid 1px gray;
+  border-radius: 3px;
+  background-color: #4ea845;
+  color: #ffffff;
+}
+
+.btn-add {
+  font-size: 25px;
+}
+
+.btn-remove {
+  font-size: 19px !important;
+  padding: 3px;
+}
+
+.btn-action:hover {
+  color: #ffffff;
+  background-color: #4ea845;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+.btn-add:hover {
+  background-color: #e4e4e4;
+}
+
+.check:hover {
+  background-color: #4ea845;
+}
+
+.btn-remove:hover {
+  background-color: red;
+}
+
+/* Footer */
+
+.footer {
+  display: flex;
+}
+
+.container-actions-footer {
+  display: flex;
+  flex: auto;
+  column-gap: 10px;
+}
+
+.btn-footer {
+  font-size: 35px !important;
+  cursor: pointer;
+}
+
+.delete_box:hover {
+  color: red
+}
+
+.add_box:hover {
+  color: #e0853b
+}
+
+.botaoSalva {
+  background-color: #e0853b;
+  border-radius: 3px;
+  border: none;
+  cursor: pointer;
+  font-size: 18px;
+  color: white;
+  font-weight: bold;
+  padding: 0 10px;
+}
+
+.botaoSalva:hover {
+  background-color: #c97d3f;
+}

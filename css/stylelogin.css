@@ -60,14 +60,19 @@
     background-color: white;
     display: block;
     border-radius: 15px;
-    margin: 6.3rem auto;
-    width: 22.5rem;
-    height: 20.7rem; 
+    margin: 100px auto;
+    width: 390px;
+    height: 350px;
     border: none;
     box-shadow: 0px 3px 4px rgb(165, 163, 163);
-    padding: 1px; 
-    
-  }
+    padding: 20px 5px;
+    color: #e0853b;
+    font-family: 'Nunito Sans', sans-serif;
+ }
+
+ .mensagem{
+  text-align: center;
+}
   /* Menu Flutuante */
 
 .material-symbols-outlined {
@@ -149,7 +154,7 @@
   /* titulo login  */
   h1{
       color: #e0853b;
-      font-size: 30px;
+      font-size: 25px;
       font-family: 'Nunito Sans', sans-serif;
       font-weight: 800;
 
