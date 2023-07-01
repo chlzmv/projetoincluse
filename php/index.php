@@ -7,6 +7,7 @@
     <link rel="icon" href="../png/icon.png" type="image/png">
     <title>Incluse</title>
     <script src="../js/botoestela.js"> </script>
+    <script src="../js/confirmred.js"> </script>
     <link rel="stylesheet" type="text/css" href="../css/styleindex.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
 </head>
@@ -59,12 +60,12 @@
             <h1>Bem-vindo a Incluse</h1>
             <a>A sua plataforma de formulários acessiveis...</a>
         </header>
-        <nav class="BotC" onclick="window.location='criarperguntas.php';">
+        <nav class="BotC" onclick="confirmarRed1()">
             <h2>Criar formulários</h2>
             <span class="material-symbols-outlined" id="pencil">edit</span>
         </nav>
         <section class="divLowBot">
-            <nav class="botMP" onclick="window.location='meusquestionarios.php';">
+            <nav class="botMP" onclick="confirmarRed1()">
                 <h2>Meus forms</h2>
                 <span class="material-symbols-outlined" id="book">menu_book</span>
             </nav>

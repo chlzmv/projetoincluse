@@ -66,6 +66,14 @@
         <span class="material-symbols-outlined" id="arrow" onclick="clickflut()">expand_circle_down</span>
     </footer>
 
+    <!-- botões menu profile -->
+    <menu class="menuProf" id="prof">
+        <ul class="ulProf">
+            <li class="liProf"><a href="login.php" class="aProf">Trocar usuário</a></li>
+            <li class="liProf"><a href="../php/logout.php" class="aProf">Sair</a></li>
+        </ul>   
+    </menu>
+
 
     <!-- Conteudo pag -->
 

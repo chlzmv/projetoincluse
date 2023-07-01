@@ -37,6 +37,42 @@
             <input class="input" type="email" id="email" name="email" placeholder="Email cadastrado">
             <input class="input" type="password" id="senha" name="senha" placeholder="Nova senha">
             <input class="input" type="password" id="csenha" name="csenha" placeholder="Confirmar senha">
+            <p class="mensagem">
+                <?php
+                    // Cria a conexão com o banco de dados
+                    include("dbconexao.php");
+
+                    // Verifica se a conexão foi estabelecida corretamente
+                    if ($connect->connect_error) {
+                        die("Falha na conexão: " . $connect->connect_error);
+                    }
+
+                    // Dados para atualização
+                    $senha = filter_input(INPUT_POST, 'senha', FILTER_SANITIZE_STRING);
+                    $senha = md5($senha);
+                    $csenha = filter_input(INPUT_POST, 'csenha', FILTER_SANITIZE_STRING);
+                    $csenha = md5($csenha);
+                    $email = filter_input(INPUT_POST, 'email', FILTER_SANITIZE_EMAIL);
+                    
+                    // Query SQL para atualizar os dados
+                    if (isset($_POST['confirmar'])) {
+                        $sql = "UPDATE usuario SET senhaUser = '$senha' WHERE dscEmailUser = '$email'";
+                        
+                        // verifica se as senhas são iguais
+                        if($senha <> $csenha){
+                            echo "Senhas não coincidem";
+
+                        }else{
+                            // Executa a query de atualização
+                            if ($connect->query($sql) === TRUE) {
+                                echo "Dados atualizados com sucesso.";
+                            } else {
+                                echo "Erro na atualização dos dados: " . $connect->error;
+                            }
+                        }
+                    }
+                ?>
+            </p> 
             <input class="button" type="submit" value="confirmar" name="confirmar">
         </form>
 

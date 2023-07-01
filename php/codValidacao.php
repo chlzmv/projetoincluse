@@ -35,9 +35,42 @@
         
         <form>
             <p>Insira abaixo o código enviado ao email disponibilizado anteriormente.</p>
-            <input class="input" type="password" id="csenha" name="csenha" placeholder="Código de validação">
-            <input class="button" type="submit" value="Confirmar">
-        </form>
+            <input class="input" type="text" id="email" name="email" placeholder="E-mail para troca">
+            <input class="input" type="password" id="cod" name="cod" placeholder="Código de validação">
+            <p class="mensagem">
+                <?php
+                session_start();
+
+                if (isset($_POST['confirmar'])) {
+                    // Conexão
+                    require_once 'dbconexao.php';
+                
+                    $email = filter_input(INPUT_POST, 'email', FILTER_SANITIZE_EMAIL);
+                    $cod = filter_input(INPUT_POST, 'cod', FILTER_SANITIZE_STRING);
+                
+                    $sql1 = "SELECT idUser FROM usuario WHERE dscEmailUser = '$email'";
+                    $result = $connect->query($sql1);
+                
+                    if ($result->num_rows > 0) {
+                        $row = $result->fetch_assoc();
+                        $idUser = $row["idUser"];
+                
+                        $sql = "SELECT * FROM redsenha WHERE idUser = '$idUser' AND codRedSenha = '$cod'";
+                        $resultado = $connect->query($sql);
+                
+                        if ($resultado->num_rows > 0) {
+                            header("Location: redefSenha.php");
+                            exit();
+                        } else {
+                            echo "Usuário ou senha inválido!";
+                        }
+                    }
+                }
+                    
+                ?>
+            </p>
+            <input class="button" type="submit" value="confirmar" name="confirmar">
+        </form>        
     </section>
     
 </body>

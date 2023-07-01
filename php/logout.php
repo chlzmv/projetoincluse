@@ -4,6 +4,6 @@
 
 //inicia
 session_start();
-unset($_SESSION['idUser'])
-header('Location: login.php');
+unset($_SESSION['idUser']);
+header("Location: login.php");
 ?>
