@@ -93,12 +93,13 @@
                 $idUser = $_SESSION['idUser'];
 
                 // Parte 1: Resgatando as informações do questionário
-                $sql = "SELECT dscTituloQuestn, datCriacQuestn FROM questionario  WHERE idQuestn = $idQuestn AND idUser = '$idUser'";
+                $sql = "SELECT dscTituloQuestn, datCriacQuestn, valTotQuestn FROM questionario  WHERE idQuestn = $idQuestn AND idUser = '$idUser'";
                 $resultado = mysqli_query($connect, $sql);
 
                 if ($resultado) {
                     $dadosQuestionario = mysqli_fetch_assoc($resultado);
                     $dscTituloQuestn = $dadosQuestionario['dscTituloQuestn'];
+                    $valTotQuestn = $dadosQuestionario['valTotQuestn'];
                     $datCriacQuestn = $dadosQuestionario['datCriacQuestn'];
 
                     // Exibir o bloco de informações do questionário apenas uma vez
@@ -106,7 +107,7 @@
                     echo "<div class='divInfoForms'>";
                     echo "<a>Criado em: $datCriacQuestn</a>";
                     echo "<a class='espace'></a>";
-                    echo "<a>Concluídos:</a>";
+                    echo "<a>Valor: $valTotQuestn pontos</a>";
                     echo "</div>";
                 }
 
