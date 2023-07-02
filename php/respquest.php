@@ -61,29 +61,78 @@
     <!-- codigo do conteudo -->
     <section class="divConteudo">
     
-        <!-- Cabeçalho  -->
-        <div class='infoQuestn'>
-            <h1>Titulo Questionario</h1>
-        </div>
+    <header class="containerInfoForms bottom">
+            <!-- titulo pag -->
+            <?php
+                include("dbconexao.php");
 
-        <!-- Questão  -->
-        <section class='divQuest'>
-            <div class="divValor">
-                <a style="float: left;">Questão 1</a>
-                <a style="float: right;">2,0</a>
-            </div>
-            <div>
-                <a>Para realizar a construção de um projeto de banco de dados de forma correta deve-se passar por necessariamente três fases. Dentre as afirmativas a seguir, escolha a que compreende a alternativa correta.</a>
-            </div>
-            <form class="divResp">
-                <input type="checkbox" id="checkbox" name="Resposta1" value="Troiani">
-                <label for="Resposta1"> Entidade, relacionamento e atributo</label><br>
-                <input type="checkbox" id="checkbox" name="Resposta2" value="Serpentus">
-                <label for="Resposta2">Modelo conceitual, projeto lógico e projeto físico.</label><br>
-                <input type="checkbox" id="checkbox" name="Resposta3" value="Equum">
-                <label for="vehicle3"> Um-para-um, um-para-muitos e muitos-para-muitos.</label><br><br>
-            </form>
-        </section> 
+
+                $idQuestn = filter_input(INPUT_GET, "idQuestn");
+                $idUser = $_SESSION['idUser'];
+
+                // Parte 1: Resgatando as informações do questionário
+                $sql = "SELECT dscTituloQuestn, datCriacQuestn FROM questionario  WHERE idQuestn = $idQuestn AND idUser = '$idUser'";
+                $resultado = mysqli_query($connect, $sql);
+
+                if ($resultado) {
+                    $dadosQuestionario = mysqli_fetch_assoc($resultado);
+                    $dscTituloQuestn = $dadosQuestionario['dscTituloQuestn'];
+                    $datCriacQuestn = $dadosQuestionario['datCriacQuestn'];
+
+                    // Exibir o bloco de informações do questionário apenas uma vez
+                    echo "<h1>$dscTituloQuestn</h1>";
+                    echo "<div class='divInfoForms'>";
+                    echo "<a>Criado em: $datCriacQuestn</a>";
+                    echo "<a class='espace'></a>";
+                    echo "<a>Concluídos:</a>";
+                    echo "</div>";
+                }
+
+                // Parte 2: Criando blocos de informações das questões e suas respostas
+                
+                $sql = "SELECT * FROM questoes qst JOIN questionario qstn on qst.idQuestn = qstn.idQuestn WHERE qst.idQuestn = $idQuestn AND qstn.idUser = '$idUser' ";
+                $resultado = mysqli_query($connect, $sql);
+                if ($resultado) {
+                    while ($dadosQuestao = mysqli_fetch_assoc($resultado)) {
+                        $idQuest = $dadosQuestao['idQuest'];
+                        $dscEnuncQuest = $dadosQuestao['dscEnuncQuest'];
+                        $numQuest = $dadosQuestao['numQuest'];
+                        $valUnitQuest = $dadosQuestao['valUnitQuest'];
+
+                        echo "<section class='divQuest'>";
+                        echo "<div class='divValor'>";
+                        echo "<a style='float: left;'>$numQuest</a>";
+                        echo "<a style='float: right;'>$valUnitQuest</a>";
+                        echo "</div>";
+                        echo "<div>";
+                        echo "<a>$dscEnuncQuest</a>";
+                        echo "</div>";
+
+                         $sqlRespostas = "SELECT * FROM item WHERE idQuest = $idQuest";
+                         $resultadoRespostas = mysqli_query($connect, $sqlRespostas);
+                         if ($resultadoRespostas) {
+                             while ($dadosResposta = mysqli_fetch_assoc($resultadoRespostas)) {
+                                 $dscEnuncItem = $dadosResposta['dscEnuncItem'];
+
+                                 echo "<form class='divResp'>";
+                                 echo "<input type='radio' name='resp'>";
+                                 echo "<label>$dscEnuncItem</label>";
+                                 echo "</form>";
+                             }
+                         } else {
+                             echo "Erro na consulta: " . mysqli_error($connect);
+                         }
+
+                         
+                        echo "</section>";
+                    }    
+                } 
+                else {
+                    echo "Erro na consulta: " . mysqli_error($connect);
+                }
+                ?>
+            
+        </header>
     
     </section>
 
