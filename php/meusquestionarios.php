@@ -94,7 +94,7 @@
                     </div>
                     <div class="divBotoes">
                         <span id="delete" class="material-symbols-outlined" onclick="location.href='apagarquestionario.php?idQuestn=<?php echo $idQuestn; ?>'">delete</span>
-                        <input class="button" type="submit" value="Acessar Resultados" onclick="window.location='resultadosalunos.php';">
+                        <input class="button" type="submit" value="Acessar Resultados" onclick="window.location='resultadosalunos.php?idQuestn=<?php echo $idQuestn; ?>'">
                     </div>
                 </div>
                 

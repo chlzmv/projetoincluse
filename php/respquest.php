@@ -3,13 +3,10 @@
     require 'dbconexao.php';
     
     if (isset($_SESSION['loggedIn']) && $_SESSION['loggedIn'] === true) {
-        
     } else {
-        
         header('Location: loginresp.php');
         exit();
     }
-   
     $idUser = $_SESSION['idUser'];
     $sql = "SELECT * FROM usuario WHERE idUser = '$idUser'";
     $resultado = mysqli_query($connect, $sql);
@@ -52,7 +49,7 @@
     <menu class="menuProf" id="prof">
         <ul class="ulProf">
             <li class="liProf"><a href="login.php" class="aProf">Trocar usuário</a></li>
-            <li class="liProf"><a href="#" class="aProf">Sair</a></li>
+            <li class="liProf"><a href="../php/logout.php" class="aProf">Sair</a></li>
         </ul>   
     </menu>
 
