@@ -123,7 +123,7 @@
 
                         echo "<section class='divQuest'>";
                         echo "<div class='divValor'>";
-                        echo "<a style='float: left;'>$numQuest</a>";
+                        echo "<a style='float: left;'>Questão $numQuest</a>";
                         echo "<a style='float: right;'>$valUnitQuest</a>";
                         echo "</div>";
                         echo "<div>";
