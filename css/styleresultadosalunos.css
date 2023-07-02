@@ -35,17 +35,28 @@ li a {
 }
 
 .liLogin{
-  margin-top: 0.6rem;
-  text-align: right ;
+  margin-top: -0.5rem;
+  margin-right: 1rem;
+  margin-bottom: 1rem;
   float: right;
   font-size: 22px;
-  cursor: pointer;
   font-weight: 550;
   font-family: 'Nunito Sans', sans-serif;
+  display: flex;
+  height: 4rem;
+}
+.nomeUser{
+  float: left;
+  color:#e0853b;
+  margin-top: 2rem;
+  margin-right:1rem;
+}
+
+.liLogin a{
   transition: 0.25s;
 }
 
-.liLogin:hover{
+.liLogin a:hover{
   font-size: 23px;
 }
 

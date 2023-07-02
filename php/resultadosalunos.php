@@ -1,3 +1,20 @@
+<?php
+    session_start();
+    require 'dbconexao.php';
+   
+    $idUser = $_SESSION['idUser'];
+    $sql = "SELECT * FROM usuario WHERE idUser = '$idUser'";
+    $resultado = mysqli_query($connect, $sql);
+
+    if ($resultado && mysqli_num_rows($resultado) > 0) {
+        $dados = mysqli_fetch_assoc($resultado);
+        $nomeUsuario = $dados['nomUser']; // Obter o nome do usuário a partir dos dados do banco de dados
+    } else {
+        // Trate o caso em que os dados do usuário não são encontrados
+        $nomeUsuario = "Usuário Desconhecido";
+    }
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -11,30 +28,27 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
 </head>
 <body>
-    <!-- codigo do menu -->
-    <div class="divMenu"><ul>
+        <!-- codigo do menu -->
+        <nav class="divMenu"><ul>
         <li style="float: left">
-            <div class="containerIconMenu">
+            <nav class="containerIconMenu">
                 <span class="material-symbols-outlined" onclick="clickMenu()" id="dropdown">menu</span>
-            </div>
+            </nav>
         </li>    
-        <li><a class="aplicafontelogo" href="index.php">Incluse.com</a></li>
-        <li style="float: right">
-            <ul>
-                <li>
-                    <div class="backgroundImagem"><img src="../png/iconUser.png" class="configimagem" onclick = "clickProf()"></div>
-                <li>
-            </ul>
+        <li><a href="index.php" class="aplicafontelogo">Incluse.com</a></li>
+        
+        <li class="liLogin">
+            <div class="nomeUser"><?php echo "Olá, " . $nomeUsuario; ?></div>     
+            <div class="backgroundImagem"><img src="../png/iconUser.png" class="configimagem" onclick = "clickProf()"></div>     
         </li>
-    </ul>
-    </div>
+    </nav>
 
-    <!-- botões menu hamburger -->
+    <!-- botões menu hamburger  -->
     <menu id="menu">
         <ul>
-            <li><a href="criarperguntas.php">Criar Formulário</a></li>
-            <li><a href="meusformularios.php">Meus Formulários</a></li>
-            <li><a href="quemsomos.php">Quem Somos?</a></li>
+            <li><a href="criarperguntas.php?idUser=<?php echo $idUser; ?>">Criar Formulário</a></li>
+            <li><a href="meusquestionarios.php?idUser=<?php echo $idUser; ?>">Meus Formulários</a></li>
+            <li><a href="quemsomosusuario.php?idUser=<?php echo $idUser; ?>">Quem Somos?</a></li>
         </ul>   
     </menu>
     
@@ -42,7 +56,7 @@
     <menu class="menuProf" id="prof">
         <ul class="ulProf">
             <li class="liProf"><a href="login.php" class="aProf">Trocar usuário</a></li>
-            <li class="liProf"><a href="#" class="aProf">Sair</a></li>
+            <li class="liProf"><a href="../php/logout.php" class="aProf">Sair</a></li>
         </ul>   
     </menu>
 
@@ -76,7 +90,7 @@
         <!-- lista de alunos -->
         
         <div class="divResult">
-            <div class="divInfoAluno" onclick="window.location='respostaalunos.html';">
+            <div class="divInfoAluno" >
                 <span id="school" class="material-symbols-outlined">school</span>       
                 <h2>Nome Aluno santos</h2>
                 <div class="emailAcertos">
@@ -94,44 +108,7 @@
                 </div>
             </div>
         </div>
-        <div class="divResult">
-            <div class="divInfoAluno" onclick="window.location='respostaalunos.php';">
-                <span id="school" class="material-symbols-outlined">school</span>       
-                <h2>Nome Aluno silva </h2>
-                <div class="emailAcertos">
-                    <div >
-                        <a>Email:</a>
-                        <a>nomesobrenome@email.com</a>
-                    </div>
-                    <div >
-                        <a>Acertos:</a>
-                        <a>xx/xx</a>
-                    </div>
-                </div> 
-                <div class="porcent">
-                    <a>00%</a>
-                </div>
-            </div>
-        </div>
-        <div class="divResult">
-            <div class="divInfoAluno" onclick="window.location='respostaalunos.html';">
-                <span id="school" class="material-symbols-outlined">school</span>       
-                <h2>Nome Aluno vieira</h2>
-                <div class="emailAcertos">
-                    <div >
-                        <a>Email:</a>
-                        <a>nomesobrenome@email.com</a>
-                    </div>
-                    <div >
-                        <a>Acertos:</a>
-                        <a>xx/xx</a>
-                    </div>
-                </div> 
-                <div class="porcent">
-                    <a>00%</a>
-                </div>
-            </div>
-        </div>
+        
     </div>
     
 

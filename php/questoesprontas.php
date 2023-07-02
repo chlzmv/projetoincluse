@@ -47,9 +47,9 @@
     <!-- botões menu hamburger -->
     <menu id="menu">
         <ul>
-            <li><a href="criarperguntas.php">Criar Formulário</a></li>
-            <li><a href="meusformularios.php">Meus Formulários</a></li>
-            <li><a href="quemsomos.php">Quem Somos?</a></li>
+            <li><a href="criarperguntas.php?idUser=<?php echo $idUser; ?>">Criar Formulário</a></li>
+            <li><a href="meusquestionarios.php?idUser=<?php echo $idUser; ?>">Meus Formulários</a></li>
+            <li><a href="quemsomosusuario.php?idUser=<?php echo $idUser; ?>">Quem Somos?</a></li>
         </ul>   
     </menu>
 
@@ -57,7 +57,7 @@
     <menu class="menuProf" id="prof">
         <ul class="ulProf">
             <li class="liProf"><a href="login.php" class="aProf">Trocar usuário</a></li>
-            <li class="liProf"><a href="#" class="aProf">Sair</a></li>
+            <li class="liProf"><a href="../php/logout.php" class="aProf">Sair</a></li>        
         </ul>   
     </menu>
 
@@ -159,8 +159,8 @@
         <hr>
         <footer class="divBotoesInfer">
             <span id="link" class="material-symbols-outlined" onclick="copiarTexto(<?php echo $idQuestn ; ?>)">link</span>
-            <input id="button" type="submit" value="Acessar Resultados" onclick="window.location='resultadosalunos.html';">
-            
+            <input id="button" type="submit" value="Acessar Resultados" onclick="window.location='resultadosalunos.php?idQuestn=<?php echo $idQuestn; ?>'">
+
         </footer>
 
     </section>
