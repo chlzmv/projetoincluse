@@ -130,20 +130,21 @@
                         echo "<a>$dscEnuncQuest</a>";
                         echo "</div>";
 
-                         $sqlRespostas = "SELECT * FROM item WHERE idQuest = $idQuest";
-                         $resultadoRespostas = mysqli_query($connect, $sqlRespostas);
-                         if ($resultadoRespostas) {
-                             while ($dadosResposta = mysqli_fetch_assoc($resultadoRespostas)) {
-                                 $dscEnuncItem = $dadosResposta['dscEnuncItem'];
+                        $sqlRespostas = "SELECT * FROM item WHERE idQuest = $idQuest";
+                        $resultadoRespostas = mysqli_query($connect, $sqlRespostas);
+                        if ($resultadoRespostas) {
+                        echo "<form class='divResp'>";
+                            while ($dadosResposta = mysqli_fetch_assoc($resultadoRespostas)) {
+                            $dscEnuncItem = $dadosResposta['dscEnuncItem'];
 
-                                 echo "<form class='divResp'>";
-                                 echo "<input type='radio' name='resp'>";
-                                 echo "<label>$dscEnuncItem</label>";
-                                 echo "</form>";
-                             }
-                         } else {
-                             echo "Erro na consulta: " . mysqli_error($connect);
-                         }
+                                echo "<input type='radio' name='resp'>";
+                                echo "<label>$dscEnuncItem</label><br><br>";
+                                
+                            }
+                            echo "</form>";
+                        } else {
+                            echo "Erro na consulta: " . mysqli_error($connect);
+                        }
 
                          
                         echo "</section>";

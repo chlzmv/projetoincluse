@@ -76,20 +76,17 @@
                 $idUser = $_SESSION['idUser'];
 
                 // Parte 1: Resgatando as informações do questionário
-                $sql = "SELECT dscTituloQuestn, datCriacQuestn FROM questionario  WHERE idQuestn = $idQuestn AND idUser = '$idUser'";
+                $sql = "SELECT dscTituloQuestn FROM questionario  WHERE idQuestn = $idQuestn AND idUser = '$idUser'";
                 $resultado = mysqli_query($connect, $sql);
 
                 if ($resultado) {
                     $dadosQuestionario = mysqli_fetch_assoc($resultado);
                     $dscTituloQuestn = $dadosQuestionario['dscTituloQuestn'];
-                    $datCriacQuestn = $dadosQuestionario['datCriacQuestn'];
-
+                   
                     // Exibir o bloco de informações do questionário apenas uma vez
                     echo "<h1>$dscTituloQuestn</h1>";
                     echo "<div class='divInfoForms'>";
-                    echo "<a>Criado em: $datCriacQuestn</a>";
                     echo "<a class='espace'></a>";
-                    echo "<a>Concluídos:</a>";
                     echo "</div>";
                 }
 
@@ -106,27 +103,28 @@
 
                         echo "<section class='divQuest'>";
                         echo "<div class='divValor'>";
-                        echo "<a style='float: left;'>$numQuest</a>";
+                        echo "<a class='numQuest' style='float: left;'>Questão $numQuest</a>";
                         echo "<a style='float: right;'>$valUnitQuest</a>";
                         echo "</div>";
                         echo "<div>";
-                        echo "<a>$dscEnuncQuest</a>";
+                        echo "<a class='dscQuest'>$dscEnuncQuest</a>";
                         echo "</div>";
 
-                         $sqlRespostas = "SELECT * FROM item WHERE idQuest = $idQuest";
-                         $resultadoRespostas = mysqli_query($connect, $sqlRespostas);
-                         if ($resultadoRespostas) {
-                             while ($dadosResposta = mysqli_fetch_assoc($resultadoRespostas)) {
-                                 $dscEnuncItem = $dadosResposta['dscEnuncItem'];
+                        $sqlRespostas = "SELECT * FROM item WHERE idQuest = $idQuest";
+                        $resultadoRespostas = mysqli_query($connect, $sqlRespostas);
+                        if ($resultadoRespostas) {
+                            echo "<form class='divResp'>";
+                                while ($dadosResposta = mysqli_fetch_assoc($resultadoRespostas)) {
+                                    $dscEnuncItem = $dadosResposta['dscEnuncItem'];
 
-                                 echo "<form class='divResp'>";
-                                 echo "<input type='radio' name='resp'>";
-                                 echo "<label>$dscEnuncItem</label>";
-                                 echo "</form>";
-                             }
-                         } else {
-                             echo "Erro na consulta: " . mysqli_error($connect);
-                         }
+                                    echo "<input type='radio' name='resp'>";
+                                    echo "<label>$dscEnuncItem</label><br><br>";
+                                    
+                                }
+                            echo "</form>";
+                        } else {
+                            echo "Erro na consulta: " . mysqli_error($connect);
+                        }
 
                          
                         echo "</section>";
