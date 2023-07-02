@@ -49,19 +49,7 @@
 
     <!-- codigo do conteudo -->
     <section class="divConteudo">
-        <aside class="containerPlayer">
-            <!-- <hr> -->
-            <div class="timeline">
-                <div class="objProgress"></div>
-            </div>
-            <div class="center">
-                <!-- <div href="#" class="play1"></div>
-                <div href="#" class="play2"></div> -->
-                <div class="borderTriangle">
-                    <div href="#" class="triangle"></div>
-                </div>
-            </div>
-        </aside>
+        
         <header class="divText">
             <h1>Acreditamos que a inclusão é um processo contínuo que exige compromisso</h1>   
         </header>      

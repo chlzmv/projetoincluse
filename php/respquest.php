@@ -1,16 +1,24 @@
 <?php
     session_start();
     require 'dbconexao.php';
+    
+    if (isset($_SESSION['loggedIn']) && $_SESSION['loggedIn'] === true) {
+        
+    } else {
+        
+        header('Location: loginresp.php');
+        exit();
+    }
    
-    $idUserResp = $_SESSION['idUser'];
+    $idUser = $_SESSION['idUser'];
     $sql = "SELECT * FROM usuario WHERE idUser = '$idUser'";
     $resultado = mysqli_query($connect, $sql);
 
     if ($resultado && mysqli_num_rows($resultado) > 0) {
         $dados = mysqli_fetch_assoc($resultado);
-        $nomeUsuario = $dados['nomUser']; // Obter o nome do usuário a partir dos dados do banco de dados
+        $nomeUsuario = $dados['nomUser']; 
     } else {
-        // Trate o caso em que os dados do usuário não são encontrados
+       
         $nomeUsuario = "Usuário Desconhecido";
     }
 ?>
