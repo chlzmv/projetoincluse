@@ -1,6 +1,6 @@
 function copiarTexto(idQuestn) { 
     // Constrói o texto a ser copiado, adicionando o ID do questionário ao URL
-    let textoCopiado = 'http://localhost:8080/projetoincluse/php/respquest.php?idQuestn=' + idQuestn;
+    let textoCopiado = 'http://localhost/projetoincluse/php/respquest.php?idQuestn=' + idQuestn;
 
     // Imprime o ID captado para fins de depuração
     console.log("id captado: " + idQuestn);
