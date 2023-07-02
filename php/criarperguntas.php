@@ -95,17 +95,17 @@ if ($resultado && mysqli_num_rows($resultado) > 0) {
                         <input type="button" class="botaoExcluir" value="Sim" onclick="removerQuestao(question0)" />
                     </div>
                     <section class="divInfoForm">                    
-                        <input type="text" name="numQuest" class="numQuest" placeholder="N° Questão" />
-                        <input type="text" name="valorQuest" class="valorQuest" placeholder="Valor" />
+                        <input type="text" name="numQuest[]" class="numQuest" placeholder="N° Questão" />
+                        <input type="text" name="valorQuest[]" class="valorQuest" placeholder="Valor" />
                     </section>
                     <section class="divCaixaTexto">
-                        <textarea class="caixaTexto" name="caixaTexto" cols="30" rows="10" placeholder="Digite a pergunta."></textarea>
+                        <textarea class="caixaTexto" name="caixaTexto[]" cols="30" rows="10" placeholder="Digite a pergunta."></textarea>
                     </section>
                     <section id="sectionOptions" class="sectionOptions">
                         <div id="option0" class="option">
                             <span id="check" class="btn-action material-symbols-outlined" onclick="checkOption(this.parentElement)">check</span>
-                            <input type="hidden" name="check" value="false">
-                            <textarea id="checkText" name="checkText" cols="30" rows="1" class="checkText" placeholder="Digite a opção de resposta."></textarea>
+                            <input type="hidden" name="check[]" value="false">
+                            <textarea id="checkText" name="checkText[]" cols="30" rows="1" class="checkText" placeholder="Digite a opção de resposta."></textarea>
                             <span id="add" class="btn-add btn-action material-symbols-outlined" onclick="adicionarCampo(this.parentElement.parentElement)">add</span>
                         </div>
                     </section>

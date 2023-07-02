@@ -11,8 +11,8 @@ function adicionarCampo(e) {
   const html =
     `<div id="option${optionsControl}" class="option"> 
       <span id="check" class="btn-action material-symbols-outlined" onclick="checkOption(this.parentElement)">check</span>
-      <input type="hidden" name="check" value="false">
-      <textarea name="checkText" cols="30" rows="1" class="checkText" placeholder="Digite a opção de resposta."></textarea>
+      <input type="hidden" name="check[]" value="false">
+      <textarea name="checkText[]" cols="30" rows="1" class="checkText" placeholder="Digite a opção de resposta."></textarea>
       <span class="btn-remove btn-action material-symbols-outlined" onclick="removerCampo(${optionsControl})">delete</span>
     </div>`;
 
@@ -37,17 +37,17 @@ function adicionarQuestao() {
         <input type="button" class="botaoExcluir" value="Sim" onclick="removerQuestao(question${questionsControl})" />
       </div>
       <section class="divInfoForm">                    
-          <input type="text" name="numQuest" class="numQuest" placeholder="N° Questão" />
-          <input type="text" name="valorQuest" class="valorQuest" placeholder="Valor" />
+          <input type="text" name="numQuest[]" class="numQuest" placeholder="N° Questão" />
+          <input type="text" name="valorQuest[]" class="valorQuest" placeholder="Valor" />
       </section>
       <section class="divCaixaTexto">
-          <textarea class="caixaTexto" name="caixaTexto" cols="30" rows="10" placeholder="Digite a pergunta."></textarea>
+          <textarea class="caixaTexto" name="caixaTexto[]" cols="30" rows="10" placeholder="Digite a pergunta."></textarea>
       </section>
       <section id="sectionOptions" class="sectionOptions">
           <div id="option${optionsControl}" class="option">
             <span id="check" class="btn-action material-symbols-outlined" onclick="checkOption(this.parentElement)">check</span>
-            <input type="hidden" name="check" value="false">
-            <textarea id="checkText" name="checkText" cols="30" rows="1" class="checkText" placeholder="Digite a opção de resposta."></textarea>
+            <input type="hidden" name="check[]" value="false">
+            <textarea id="checkText" name="checkText[]" cols="30" rows="1" class="checkText" placeholder="Digite a opção de resposta."></textarea>
             <span id="add" class="btn-add btn-action material-symbols-outlined" onclick="adicionarCampo(this.parentElement.parentElement)">add</span>
           </div>
       </section>
@@ -82,9 +82,9 @@ function checkOption(e) {
   let secaoOpcoes = question.querySelector(`#${optionId}`);
   if (secaoOpcoes.querySelector(`#check`).classList.contains("check")) {
     secaoOpcoes.querySelector(`#check`).classList.remove("check");
-    secaoOpcoes.querySelector('input[name="check"]').value = false;
+    secaoOpcoes.querySelector('input[name="check[]"]').value = false;
   } else {
     secaoOpcoes.querySelector(`#check`).classList.add("check");
-    secaoOpcoes.querySelector('input[name="check"]').value = true;
+    secaoOpcoes.querySelector('input[name="check[]"]').value = true;
   }
 }
