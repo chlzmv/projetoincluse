@@ -66,14 +66,13 @@
     <!-- codigo do conteudo -->
     <section class="divConteudo">
     
-    <header class="containerInfoForms bottom">
+        <header class="containerInfoForms bottom">
             <!-- titulo pag -->
             <?php
                 include("dbconexao.php");
 
 
                 $idQuestn = filter_input(INPUT_GET, "idQuestn");
-                echo $idQuestn;
                 $sql = "SELECT idUser FROM questionario WHERE idQuestn = '$idQuestn'";
                 $result = mysqli_query($connect, $sql);
 
@@ -97,8 +96,8 @@
                     echo "</div>";
                 }
 
-                
-                
+                $contQuest = 1;
+                $countResp = 1;
 
                 // Parte 2: Criando blocos de informações das questões e suas respostas
                 
@@ -110,8 +109,7 @@
                         $dscEnuncQuest = $dadosQuestao['dscEnuncQuest'];
                         $numQuest = $dadosQuestao['numQuest'];
                         $valUnitQuest = $dadosQuestao['valUnitQuest'];
-                        $contQuest = 1;
-                        $countResp = 1;
+                        $contQuest++;
 
                         echo "<section class='divQuest'>";
                         echo "<div class='divValor'>";
@@ -126,34 +124,37 @@
                         $resultadoRespostas = mysqli_query($connect, $sqlRespostas);
                         if ($resultadoRespostas) {
 
-                            echo "<form class='divResp'>";
+                            $name = 'resp' . $countResp;
+                            echo "<form class='divResp'action='' method='post'>";
                                 while ($dadosResposta = mysqli_fetch_assoc($resultadoRespostas)) {
                                     $dscEnuncItem = $dadosResposta['dscEnuncItem'];
 
-                                    echo "<input type='radio' name='resp" . $countResp . "' value='" . $dscEnuncItem . "'>";
+                                    echo "<input type='radio' name='$name' value= '$dscEnuncItem'>";
                                     echo "<label>$dscEnuncItem</label><br><br>";
                                     
                                 }
                             echo "</form>";
+                            $countResp++;
                         
-                        $countResp++;
-        
                         } else {
                             echo "Erro na consulta: " . mysqli_error($connect);
                         }
 
-                         
                         echo "</section>";
-                        $contQuest++;
+                        $sql = "SELECT dscEnuncItem FROM item WHERE idItemCorreto = 'S' AND idQuest = $idQuest"
                     }    
                 } 
                 else {
                     echo "Erro na consulta: " . mysqli_error($connect);
                 }
+
                 ?>
-            
         </header>
-    
+        <form action="" method='post'>
+            <footer class="footer">
+                    <input type="submit" class="botaoSalva" name="btn-salvar" value="Enviar formulário" >
+            </footer>
+        </form>
     </section>
 
 </body>
