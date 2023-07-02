@@ -44,7 +44,7 @@
                     
 
                     if (isset($_POST['btn-entrar'])) {
-                        $email = filter_input(INPUT_POST, 'email', FILTER_SANITIZE_EMAIL);
+                        $email = filter_input(INPUT_POST,  'email', FILTER_SANITIZE_EMAIL);
                         $senha = filter_input(INPUT_POST, 'senha', FILTER_SANITIZE_STRING);
                         
                         $senha = md5($senha);
