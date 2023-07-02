@@ -41,7 +41,6 @@
                     session_start();
                     require_once 'dbconexao.php';
 
-                    
 
                     if (isset($_POST['btn-entrar'])) {
                         $email = filter_input(INPUT_POST,  'email', FILTER_SANITIZE_EMAIL);
@@ -49,15 +48,15 @@
                         
                         $senha = md5($senha);
 
-                        $sql = "SELECT * FROM usuario WHERE dscEmailUser = '$email' AND senhaUser = '$senha'";
+                        $sql = "SELECT * FROM usuario user JOIN questionario qstn on user.idUser = qstn.idUser WHERE dscEmailUser = '$email' AND senhaUser = '$senha'";
                         $resultado = mysqli_query($connect, $sql);
 
                         if ($resultado && mysqli_num_rows($resultado) > 0) {
                             $dados = mysqli_fetch_assoc($resultado); // Obter os dados do usuário como um array associativo
-
+                            $_SESSION['idQuestn'] = $dados['idQuestn'];
                             $_SESSION['idUser'] = $dados['idUser'];
                             $_SESSION['loggedIn'] = true;
-                            header("Location: http://localhost:8080/projetoincluse/php/respquest.php?idQuestn=" . $dados['idUser']);
+                            header("Location: http://localhost:8080/projetoincluse/php/respquest.php?idQuestn=" . $idQuestn );
                             exit(); // Finalizar o script para evitar a execução do restante do código
                         } else {
                             echo "Usuário ou senha inválido!";
