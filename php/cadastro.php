@@ -13,8 +13,8 @@
 <body >
     <header class="divMenu">
         <ul>
-            <li href="#" class="aplicafontelogo">Incluse.com</li>
-            <li href="#" class="close" onclick="window.location='index.php';"></li>
+            <li  tabindex="1" class="aplicafontelogo">Incluse.com </li>
+            <li  class="close" onclick="window.location='index.php';"></li>
         </ul>
     </header>
     <!--menu  flutuante  -->
@@ -24,7 +24,7 @@
             <span class="material-symbols-outlined" id="minus">do_not_disturb_on</span>
             <span class="material-symbols-outlined" id="color">contrast</span>
         </footer>
-        <span class="material-symbols-outlined" id="arrow" onclick="clickflut()">expand_circle_down</span>
+        <span class="material-symbols-outlined" tabindex="2" id="arrow" onclick="clickflut()">expand_circle_down</span>
     </footer>  
 
     <section class="container">
@@ -33,10 +33,10 @@
         </header>
         
         <form action="cadastro.php" method="post">
-            <input class="input" type="fname" id="fname" name="fnome" placeholder="Nome completo">
-            <input class="input" type="email" id="email" name="email"placeholder="Email">
-            <input class="input" type="password" id="senha" name="senha" placeholder="Senha">
-            <input class="input" type="password" id="csenha" name="csenha" placeholder="Confirmar senha">
+            <input class="input" type="fname" id="fname" name="fnome" placeholder="Nome completo" tabindex="3">
+            <input class="input" type="email" id="email" name="email"placeholder="Email" tabindex="4">
+            <input class="input" type="password" id="senha" name="senha" placeholder="Senha" tabindex="5">
+            <input class="input" type="password" id="csenha" name="csenha" placeholder="Confirmar senha" tabindex="6">
             <p class="mensagem">    
                 <?php
                     if (isset($_POST['btn-entrar'])){
@@ -50,7 +50,6 @@
                     $senha = md5($senha);
                     $csenha = filter_input(INPUT_POST,'csenha',FILTER_SANITIZE_NUMBER_INT);
                     $csenha = md5($csenha);
-                    
                     //3 - validar
                     $res = array("options"=>array("regexp"=>"/^([a-zA-Z]+\s)*[a-zA-Z]+$/"));
                     if(! filter_var($nome, FILTER_VALIDATE_REGEXP,$res)) {		  
@@ -87,7 +86,7 @@
                     }
                 ?> 
             </p>
-            <input class="button" type="submit" value="Confirmar" name="btn-entrar">
+            <input class="button" type="submit" tabindex="7" value="Confirmar" name="btn-entrar" tabindex="1">
         </form>
     </section>
     
