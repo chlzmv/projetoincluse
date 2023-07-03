@@ -140,7 +140,6 @@ if ($resultado && mysqli_num_rows($resultado) > 0) {
                     } else {
                         echo "Erro na consulta: " . mysqli_error($connect);
                     }
-
                     echo "</section>";
                 }
             } else {

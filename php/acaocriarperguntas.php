@@ -57,6 +57,10 @@ if ($resultado1->affected_rows > 0) {
                     $respostaCorreta = 'N';
                 }
 
+            // Loop foreach para percorrer os itens
+            foreach ($dados['checkText'] as $key => $checkText) {
+                $check = $dados['check'][$key];
+                
                 // Inserir item
                 $sql3 = "INSERT INTO item (dscEnuncItem, idQuest, indItemCorreto) VALUES (?, ?, ?)";
                 $resultado3 = $connect->prepare($sql3);
@@ -66,6 +70,11 @@ if ($resultado1->affected_rows > 0) {
                 // Verificar se a inserção do item foi bem-sucedida
                 if ($resultado3->affected_rows > 0) {
                     echo "Dados inseridos com sucesso!";
+                    echo "texto resp: $numQuest";
+                    echo "texto resp: $valorQuest";
+                    echo "texto resp: $caixaTexto";
+                    echo "texto resp: $checkText";
+                    echo "check: $check";
                 } else {
                     echo "Erro ao inserir o item.";
                     var_dump($sql3);
@@ -81,5 +90,5 @@ if ($resultado1->affected_rows > 0) {
     echo "Erro ao inserir o questionário.";
     var_dump($resultado1);
 }
-
+}
 ?>
