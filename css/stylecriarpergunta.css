@@ -495,3 +495,71 @@ hr {
 .botaoSalva:hover {
   background-color: #c97d3f;
 }
+
+
+/* Modal Header */
+.modal-header {
+  padding: 2px 16px;
+  background-color: red;
+  color: white;
+  display: flex;
+  justify-content: center;
+}
+
+.modal-header h2 {
+  margin: 10px;
+}
+
+.close {
+  cursor: pointer;
+  position: absolute;
+  right: -12px;
+  top: -13px;
+  background: gray;
+  border-radius: 50%;
+  width: 25px;
+  height: 25px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Modal Body */
+.modal-body {
+  padding: 2px 16px;
+  justify-content: center;
+  display: flex;
+}
+
+/* Modal Content */
+.modal-content {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  top: 0;
+  height: 180px;
+  background-color: #fefefe;
+  margin: auto;
+  padding: 0;
+  border: 1px solid #bbb;
+  border-radius: 3px;
+  width: 50%;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  animation-name: animatetop;
+  animation-duration: 0.4s;
+  display: none;
+}
+
+/* Add Animation */
+@keyframes animatetop {
+  from {
+    top: -300px;
+    opacity: 0
+  }
+
+  to {
+    top: 0;
+    opacity: 1
+  }
+}

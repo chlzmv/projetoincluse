@@ -1,24 +1,25 @@
 <?php
-    session_start();
-    require 'dbconexao.php';
-   
-    $idUser = $_SESSION['idUser'];
-    $sql = "SELECT * FROM usuario WHERE idUser = '$idUser'";
-    $resultado = mysqli_query($connect, $sql);
+session_start();
+require 'dbconexao.php';
 
-    if ($resultado && mysqli_num_rows($resultado) > 0) {
-        $dados = mysqli_fetch_assoc($resultado);
-        $nomeUsuario = $dados['nomUser']; // Obter o nome do usuário a partir dos dados do banco de dados
-    } else {
-        // Trate o caso em que os dados do usuário não são encontrados
-        $nomeUsuario = "Usuário Desconhecido";
-    }
+$idUser = $_SESSION['idUser'];
+$sql = "SELECT * FROM usuario WHERE idUser = '$idUser'";
+$resultado = mysqli_query($connect, $sql);
+
+if ($resultado && mysqli_num_rows($resultado) > 0) {
+    $dados = mysqli_fetch_assoc($resultado);
+    $nomeUsuario = $dados['nomUser']; // Obter o nome do usuário a partir dos dados do banco de dados
+} else {
+    // Trate o caso em que os dados do usuário não são encontrados
+    $nomeUsuario = "Usuário Desconhecido";
+}
 ?>
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
+
 <head>
-    <meta charset="UTF-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="../png/icon.png" type="image/png">
@@ -28,20 +29,24 @@
     <script src="../js/botoesquestoesprontas.js"></script>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
 </head>
+
 <body>
     <!-- codigo do menu  -->
-    <nav class="divMenu"><ul>
-        <li style="float: left">
-            <nav class="containerIconMenu">
-                <span class="material-symbols-outlined" onclick="clickMenu()" id="dropdown">menu</span>
-            </nav>
-        </li>    
-        <li><a href="index.php" class="aplicafontelogo">Incluse.com</a></li>
-        
-        <li class="liLogin">
-            <div class="nomeUser"><?php echo "Olá, " . $nomeUsuario; ?></div>          
-            <div class="backgroundImagem"><img src="../png/iconUser.png" class="configimagem" onclick = "clickProf()"></div>
-        </li>
+    <nav class="divMenu">
+        <ul>
+            <li style="float: left">
+                <nav class="containerIconMenu">
+                    <span class="material-symbols-outlined" onclick="clickMenu()" id="dropdown">menu</span>
+                </nav>
+            </li>
+            <li>
+                <a href="index.php" class="aplicafontelogo">Incluse.com</a>
+            </li>
+            <li class="liLogin">
+                <div class="nomeUser"><?php echo "Olá, " . $nomeUsuario; ?></div>
+                <div class="backgroundImagem"><img src="../png/iconUser.png" class="configimagem" onclick="clickProf()"></div>
+            </li>
+        </ul>
     </nav>
 
     <!-- botões menu hamburger -->
@@ -50,20 +55,20 @@
             <li><a href="criarperguntas.php?idUser=<?php echo $idUser; ?>">Criar Formulário</a></li>
             <li><a href="meusquestionarios.php?idUser=<?php echo $idUser; ?>">Meus Formulários</a></li>
             <li><a href="quemsomosusuario.php?idUser=<?php echo $idUser; ?>">Quem Somos?</a></li>
-        </ul>   
+        </ul>
     </menu>
 
     <!-- botões menu profile -->
     <menu class="menuProf" id="prof">
         <ul class="ulProf">
             <li class="liProf"><a href="login.php" class="aProf">Trocar usuário</a></li>
-            <li class="liProf"><a href="../php/logout.php" class="aProf">Sair</a></li>        
-        </ul>   
+            <li class="liProf"><a href="../php/logout.php" class="aProf">Sair</a></li>
+        </ul>
     </menu>
 
     <!--menu flutuante -->
     <footer class="menuFlut">
-        <footer class="botMenuFlut" id="botFlut">    
+        <footer class="botMenuFlut" id="botFlut">
             <span class="material-symbols-outlined" id="add">add_circle</span>
             <span class="material-symbols-outlined" id="minus">do_not_disturb_on</span>
             <span class="material-symbols-outlined" id="color">contrast</span>
@@ -71,100 +76,87 @@
         <span class="material-symbols-outlined" id="arrow" onclick="clickflut()">expand_circle_down</span>
     </footer>
 
-
-
-
-<!-- ///////////////////////////////////////////////////////////////////////////////////////// -->
-    
-
-
-
-<!-- codigo do conteudo -->
+    <!-- codigo do conteudo -->
     <section class="divConteudo">
 
         <!-- Cabeçalho -->
         <header class="containerInfoForms bottom">
+
             <!-- titulo pag -->
             <?php
-                include("dbconexao.php");
+            include("dbconexao.php");
 
+            $idQuestn = filter_input(INPUT_GET, "idQuestn");
+            $idUser = $_SESSION['idUser'];
 
-                $idQuestn = filter_input(INPUT_GET, "idQuestn");
-                $idUser = $_SESSION['idUser'];
+            // Parte 1: Resgatando as informações do questionário
+            $sql = "SELECT dscTituloQuestn, datCriacQuestn FROM questionario WHERE idQuestn=$idQuestn AND idUser=$idUser";
+            $resultado = mysqli_query($connect, $sql);
 
-                // Parte 1: Resgatando as informações do questionário
-                $sql = "SELECT dscTituloQuestn, datCriacQuestn FROM questionario  WHERE idQuestn = $idQuestn AND idUser = '$idUser'";
-                $resultado = mysqli_query($connect, $sql);
+            if ($resultado) {
+                $dadosQuestionario = mysqli_fetch_assoc($resultado);
+                $dscTituloQuestn = $dadosQuestionario['dscTituloQuestn'];
+                $datCriacQuestn = $dadosQuestionario['datCriacQuestn'];
 
-                if ($resultado) {
-                    $dadosQuestionario = mysqli_fetch_assoc($resultado);
-                    $dscTituloQuestn = $dadosQuestionario['dscTituloQuestn'];
-                    $datCriacQuestn = $dadosQuestionario['datCriacQuestn'];
+                // Exibir o bloco de informações do questionário apenas uma vez
+                echo "<h1>$dscTituloQuestn</h1>";
+                echo "<div class='divInfoForms'>";
+                echo "<a>Criado em: $datCriacQuestn</a>";
+                echo "<a class='espace'></a>";
+                echo "<a>Concluídos:</a>";
+                echo "</div>";
+            }
 
-                    // Exibir o bloco de informações do questionário apenas uma vez
-                    echo "<h1>$dscTituloQuestn</h1>";
-                    echo "<div class='divInfoForms'>";
-                    echo "<a>Criado em: $datCriacQuestn</a>";
-                    echo "<a class='espace'></a>";
-                    echo "<a>Concluídos:</a>";
+            // Parte 2: Criando blocos de informações das questões e suas respostas
+            $sql = "SELECT * FROM questoes qst JOIN questionario qstn on qst.idQuestn=qstn.idQuestn WHERE qst.idQuestn=$idQuestn AND qstn.idUser=$idUser";
+            $resultado = mysqli_query($connect, $sql);
+            if ($resultado) {
+                while ($dadosQuestao = mysqli_fetch_assoc($resultado)) {
+                    $idQuest = $dadosQuestao['idQuest'];
+                    $dscEnuncQuest = $dadosQuestao['dscEnuncQuest'];
+                    $numQuest = $dadosQuestao['numQuest'];
+                    $valUnitQuest = $dadosQuestao['valUnitQuest'];
+
+                    echo "<section class='divQuest'>";
+                    echo "<div class='divValor'>";
+                    echo "<a style='float: left;'>Questão $numQuest</a>";
+                    echo "<a style='float: right;'>$valUnitQuest</a>";
                     echo "</div>";
-                }
+                    echo "<div>";
+                    echo "<a>$dscEnuncQuest</a>";
+                    echo "</div>";
 
-                // Parte 2: Criando blocos de informações das questões e suas respostas
-                
-                $sql = "SELECT * FROM questoes qst JOIN questionario qstn on qst.idQuestn = qstn.idQuestn WHERE qst.idQuestn = $idQuestn AND qstn.idUser = '$idUser' ";
-                $resultado = mysqli_query($connect, $sql);
-                if ($resultado) {
-                    while ($dadosQuestao = mysqli_fetch_assoc($resultado)) {
-                        $idQuest = $dadosQuestao['idQuest'];
-                        $dscEnuncQuest = $dadosQuestao['dscEnuncQuest'];
-                        $numQuest = $dadosQuestao['numQuest'];
-                        $valUnitQuest = $dadosQuestao['valUnitQuest'];
-
-                        echo "<section class='divQuest'>";
-                        echo "<div class='divValor'>";
-                        echo "<a style='float: left;'>Questão $numQuest</a>";
-                        echo "<a style='float: right;'>$valUnitQuest</a>";
-                        echo "</div>";
-                        echo "<div>";
-                        echo "<a>$dscEnuncQuest</a>";
-                        echo "</div>";
-
-                        $sqlRespostas = "SELECT * FROM item WHERE idQuest = $idQuest";
-                        $resultadoRespostas = mysqli_query($connect, $sqlRespostas);
-                        if ($resultadoRespostas) {
+                    $sqlRespostas = "SELECT * FROM item WHERE idQuest = $idQuest";
+                    $resultadoRespostas = mysqli_query($connect, $sqlRespostas);
+                    if ($resultadoRespostas) {
                         echo "<form class='divResp'>";
-                            while ($dadosResposta = mysqli_fetch_assoc($resultadoRespostas)) {
+                        while ($dadosResposta = mysqli_fetch_assoc($resultadoRespostas)) {
                             $dscEnuncItem = $dadosResposta['dscEnuncItem'];
 
-                                echo "<input type='radio' name='resp'>";
-                                echo "<label>$dscEnuncItem</label><br><br>";
-                                
-                            }
-                            echo "</form>";
-                        } else {
-                            echo "Erro na consulta: " . mysqli_error($connect);
+                            echo "<input type='radio' name='resp'>";
+                            echo "<label>$dscEnuncItem</label><br><br>";
                         }
+                        echo "</form>";
+                    } else {
+                        echo "Erro na consulta: " . mysqli_error($connect);
+                    }
 
-                         
-                        echo "</section>";
-                    }    
-                } 
-                else {
-                    echo "Erro na consulta: " . mysqli_error($connect);
+                    echo "</section>";
                 }
-                ?>
-            
+            } else {
+                echo "Erro na consulta: " . mysqli_error($connect);
+            }
+            ?>
+
         </header>
+
         <hr>
         <footer class="divBotoesInfer">
-            <span id="link" class="material-symbols-outlined" onclick="copiarTexto(<?php echo $idQuestn ; ?>)">link</span>
+            <span id="link" class="material-symbols-outlined" onclick="copiarTexto(<?php echo $idQuestn; ?>)">link</span>
             <input id="button" type="submit" value="Acessar Resultados" onclick="window.location='resultadosalunos.php?idQuestn=<?php echo $idQuestn; ?>'">
-
         </footer>
 
     </section>
-
-    
 </body>
+
 </html>
