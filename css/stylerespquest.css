@@ -433,3 +433,25 @@ li a {
 #checkbox{
   cursor: pointer;
  }
+
+ /* Footer */
+
+.footer {
+  float: right;
+  margin-bottom: 3rem ;
+}
+
+.botaoSalva {
+  background-color: #e0853b;
+  border-radius: 3px;
+  border: none;
+  cursor: pointer;
+  font-size: 18px;
+  color: white;
+  font-weight: bold;
+  padding: 5px 10px;
+}
+
+.botaoSalva:hover {
+  background-color: #c97d3f;
+}
