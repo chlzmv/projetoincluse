@@ -72,7 +72,7 @@ if ($resultado && mysqli_num_rows($resultado) > 0) {
                 <!-- titulo pag -->
                 <?php
                 include("dbconexao.php");
-            
+
                 $idQuestn = filter_input(INPUT_GET, "idQuestn");
                 $sql = "SELECT idUser FROM questionario WHERE idQuestn=$idQuestn";
                 $result = mysqli_query($connect, $sql);
@@ -97,8 +97,9 @@ if ($resultado && mysqli_num_rows($resultado) > 0) {
                     echo "</div>";
                 }
 
-                $contQuest = 1;
+                $contQuest = 0;
                 $countResp = 1;
+                $arrayC = array();
 
                 // Parte 2: Criando blocos de informações das questões e suas respostas
                 $sql = "SELECT * FROM questoes qst JOIN questionario qstn on qst.idQuestn=qstn.idQuestn WHERE qst.idQuestn=$idQuestn AND qstn.idUser=$idUser";
@@ -139,17 +140,54 @@ if ($resultado && mysqli_num_rows($resultado) > 0) {
                         }
 
                         echo "</section>";
-                        $sql = "SELECT dscEnuncItem FROM item WHERE idItemCorreto='S' AND idQuest=$idQuest";
+
+                        $sql = "SELECT idItem FROM item WHERE indItemCorreto='S' AND idQuest = $idQuest";
+                        $resultado1 = mysqli_query($connect, $sql);
+                        $respC = mysqli_fetch_assoc($resultado1);
+                        $idItemC = $respC['idItem'];
+                        array_push($arrayC, $idItemC);
                     }
                 } else {
                     echo "Erro na consulta: " . mysqli_error($connect);
                 }
+                if (isset($_POST['btn-enviar'])) {
+                    $countResp2 = 0;
+                    $contNota = 0;
+                    $i = 0;
 
+                    while ($i < $contQuest) {
+                        $countResp2++;
+                        $name2 = 'resp' . $countResp2;
+                        $respostaSelecionada = $_POST[$name2];
+
+
+                        foreach ($arrayC as $value) {
+                            $sql = "SELECT idQuest FROM item WHERE idItem = $value";
+                            $resultado2 = mysqli_query($connect, $sql);
+                            $idQuestV = mysqli_fetch_assoc($resultado2);
+                            $questaoC = $idQuestV['idQuest'];
+
+                            if ($value == $respostaSelecionada) {
+                                $sql = "SELECT valUnitQuest FROM questoes WHERE idQuest = $questaoC";
+                                $resultado3 = mysqli_query($connect, $sql);
+                                $totQuest = mysqli_fetch_assoc($resultado3);
+                                $valQuest = $totQuest['valUnitQuest'];
+
+                                $contNota = $contNota + $valQuest;
+                            } else {
+                                $contNota = $contNota + 0;
+                            }
+                        }
+                        $i++;
+                    }
+                    $sql = "INSERT INTO usuarioquestn(datRespQuestn,valNotUser,idQuestn,idUser) VALUES (CURRENT_DATE(), $contNota, $idQuestn, $idUser)";
+                    mysqli_query($connect, $sql);
+                }
                 ?>
             </div>
 
             <footer class="footer">
-                <input type="submit" class="botaoSalva" name="btn-salvar" value="Enviar formulário">
+                <input type="submit" class="botaoSalva" name="btn-enviar" value="Enviar formulário">
             </footer>
         </form>
     </section>

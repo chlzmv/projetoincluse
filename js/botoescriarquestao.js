@@ -7,7 +7,7 @@ document.getElementById("btn-salvar").addEventListener("click", function (e) {
   if (questions.length <= 0) {
     activeModal("Deve ter ao menos uma questão!");
     stopPost(e);
-  } else if (titulo.length <= 3) {
+  } else if (titulo.length < 3) {
     activeModal("Título é obrigatório e deve ter ao menos 3 caracteres!");
     stopPost(e);
   } else if (valorTotal.length <= 0) {
@@ -35,7 +35,7 @@ document.getElementById("btn-salvar").addEventListener("click", function (e) {
       if (x.opcoesResposta.filter(d => d.check == 'true').length <= 0) {
         questionsFail.push({ option: x });
       }
-      if (x.opcoesResposta.filter(d => d.checkText.length <= 1).length >= 1) {
+      if (x.opcoesResposta.filter(d => d.checkText.length < 1).length >= 1) {
         questionsFail.push({ option: x });
       }
       if (x.caixaTexto.length <= 3 || x.numQuest.length <= 0 || x.valorQuest.length <= 0){
@@ -67,6 +67,7 @@ async function postData(form) {
   xhr.onreadystatechange = function () {
     if (xhr.readyState == XMLHttpRequest.DONE) {
       alert(xhr.responseText);
+      // windo
     }
   };
   xhr.send(JSON.stringify(form));
@@ -208,6 +209,9 @@ var span = document.getElementsByClassName("close")[0];
 
 // When the user clicks on <span> (x), close the modal
 span.onclick = function () {
+  let modalBody = document.getElementById("modal-body");
+  // modal.removeChild(modal);
+  modalBody.innerHTML = '';
   modal.style.display = "none";
 }
 

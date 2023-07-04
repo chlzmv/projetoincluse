@@ -1,12 +1,6 @@
 <?php
 
 $dados = json_decode(file_get_contents("php://input"), true);
-// echo $dados[0]["numQuest"];
-// echo $dados['tituloForm'];
-// echo $dados['valorTotQuestn'];
-// echo $dados['idUser'];
-//$dados = filter_input_array(INPUT_POST, FILTER_DEFAULT);
-//var_dump($dados);
 
 include_once "dbconexao.php";
 
@@ -21,46 +15,30 @@ if ($resultado1->affected_rows > 0) {
     // Obter o ID do questionário recém-inserido
     $questionarioId = $resultado1->insert_id;
 
-    // Loop foreach para percorrer os elementos do array
-    //FAZER UM FOR EM $dados['questions']
-    //$dados['questions']['numQuest']
-    //$dados['questions']['valorQuest']
-    //$dados['questions']['caixaTexto']
-    //$dados['questions']['opcoesResposta']
-    //$dados['questions']['opcoesResposta']['checkText']
-    //$dados['questions']['opcoesResposta']['check']
-    foreach ($dados['questions'] as $questions) {
-        $numQuest = $questions['numQuest'];
-        $valorQuest = $questions['valorQuest'];
-        $caixaTexto = $questions['caixaTexto'];
-        $options = $questions['opcoesResposta'];        
+    // Loop foreach para percorrer as questões
+    foreach ($dados['questions'] as $question) {
+        $numQuest = $question['numQuest'];
+        $valorQuest = $question['valorQuest'];
+        $caixaTexto = $question['caixaTexto'];
+        $options = $question['opcoesResposta'];
 
-        // Inserir questões
+        // Inserir questão
         $sql2 = "INSERT INTO questoes (dscEnuncQuest, numQuest, valUnitQuest, idQuestn) VALUES (?, ?, ?, ?)";
         $resultado2 = $connect->prepare($sql2);
         $resultado2->bind_param('ssdi', $caixaTexto, $numQuest, $valorQuest, $questionarioId);
         $resultado2->execute();
 
-        // Verificar se a inserção das questões foi bem-sucedida
+        // Verificar se a inserção da questão foi bem-sucedida
         if ($resultado2->affected_rows > 0) {
             // Obter o ID da questão recém-inserida
             $questaoId = $resultado2->insert_id;
 
-            foreach($options as $option) {
+            // Loop foreach para percorrer as opções de resposta
+            foreach ($options as $option) {
                 $checkText = $option['checkText'];
                 $check = $option['check'];
+                $respostaCorreta = ($check == "true") ? 'S' : 'N';
 
-                $respostaCorreta;
-                if($check == "true") {
-                    $respostaCorreta = 'S';
-                } else {
-                    $respostaCorreta = 'N';
-                }
-
-            // Loop foreach para percorrer os itens
-            foreach ($dados['checkText'] as $key => $checkText) {
-                $check = $dados['check'][$key];
-                
                 // Inserir item
                 $sql3 = "INSERT INTO item (dscEnuncItem, idQuest, indItemCorreto) VALUES (?, ?, ?)";
                 $resultado3 = $connect->prepare($sql3);
@@ -69,26 +47,17 @@ if ($resultado1->affected_rows > 0) {
 
                 // Verificar se a inserção do item foi bem-sucedida
                 if ($resultado3->affected_rows > 0) {
-                    echo "Dados inseridos com sucesso!";
-                    echo "texto resp: $numQuest";
-                    echo "texto resp: $valorQuest";
-                    echo "texto resp: $caixaTexto";
-                    echo "texto resp: $checkText";
-                    echo "check: $check";
+                    echo "Item inserido com sucesso!";
+                    echo "Texto da resposta: $checkText";
+                    echo "É a resposta correta? $respostaCorreta";
                 } else {
                     echo "Erro ao inserir o item.";
-                    var_dump($sql3);
                 }
             }
-            
         } else {
-            echo "Erro ao inserir as questões.";
-            var_dump($sql2);
+            echo "Erro ao inserir a questão.";
         }
     }
 } else {
     echo "Erro ao inserir o questionário.";
-    var_dump($resultado1);
 }
-}
-?>

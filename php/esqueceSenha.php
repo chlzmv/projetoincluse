@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,8 +9,9 @@
     <title>Redefinir Senha</title>
     <link rel="stylesheet" href="../css/styleesquecesenha.css">
 </head>
-<body >
-   
+
+<body>
+
     <header class="divMenu">
         <ul>
             <li href="#" class="aplicafontelogo">Incluse.com</li>
@@ -19,95 +21,97 @@
 
     <section class="container">
         <h1 class="divH1">Redefina sua senha</h1>
-        <p>Se a conta existir,  enviaremos um e-mail com instruções para redefinir a senha.</p>
+        <p>Se a conta existir, enviaremos um e-mail com instruções para redefinir a senha.</p>
         <form action="" method="post">
-            <input class="input" type="email" id="email" name="email"placeholder="Email">
+            <input class="input" type="email" id="email" name="email" placeholder="Email">
             <p class="mensagem">
                 <?php
-                    if(isset($_POST['redefinir'])) {
-                        include("dbconexao.php");
+                if (isset($_POST['redefinir'])) {
+                    include("dbconexao.php");
 
-                        $email = filter_input(INPUT_POST,'email',FILTER_SANITIZE_EMAIL);
+                    $email = filter_input(INPUT_POST, 'email', FILTER_SANITIZE_EMAIL);
 
-                        // Função para gerar código aleatório
-                        function gerarCodigo($tamanho) {
-                            $codigo = '';
-                            $caracteres = '0123456789';
+                    // Função para gerar código aleatório
+                    function gerarCodigo($tamanho)
+                    {
+                        $codigo = '';
+                        $caracteres = '0123456789';
 
-                            for ($i = 0; $i < $tamanho; $i++) {
-                                $codigo .= $caracteres[rand(0, strlen($caracteres) - 1)];
-                            }
-
-                            return $codigo;
-                            }
-
-                        // Definir tamanho do código
-                        $codigoAleatorio = gerarCodigo(4);
-                            
-
-                        // Preparar a query SQL
-
-                        $sql1 = "SELECT idUser FROM usuario WHERE dscEmailUser = '$email'";
-                        $result = $connect->query($sql1);
-                        if ($result->num_rows > 0) {
-                            $row = $result->fetch_assoc();
-                            $idUser = $row["idUser"];
-            
-                            $sql2 = "INSERT INTO redsenha (codRedSenha, idUser) VALUES ('$codigoAleatorio', $idUser)";
-                            $result2 = $connect->query($sql2);
+                        for ($i = 0; $i < $tamanho; $i++) {
+                            $codigo .= $caracteres[rand(0, strlen($caracteres) - 1)];
                         }
 
-                    
-
-                        require_once "../mailer/SMTP.php"; 
-                        require_once "../mailer/PHPMailer.php"; 
-                        require_once "../mailer/Exception.php"; 
-
-                        // Configurações do servidor SMTP do Gmail
-                        $smtpHost = 'smtp.gmail.com';
-                        $smtpPort = 587;
-                        $smtpUsername = 'Inclusecorp@gmail.com';
-                        $smtpPassword = 'zcehagpsrwuxquem';
-
-                        // Configurações de e-mail
-                        $fromEmail = 'Inclusecorp@gmail.com';
-                        $toEmail = $email;
-                        $subject = 'Código redefinição de senha';
-                        $message = 'Utilize o código a seguir para redefinir sua senha: ' . $codigoAleatorio;
-
-                        // Cria uma nova instância do PHPMailer
-                        $mail = new PHPMailer\PHPMailer\PHPMailer();
-
-                        // Configurações do servidor SMTP
-                        $mail->isSMTP();
-                        $mail->Host = $smtpHost;
-                        $mail->Port = $smtpPort;
-                        $mail->SMTPAuth = true;
-                        $mail->Username = $smtpUsername;
-                        $mail->Password = $smtpPassword;
-
-                        // Configurações do e-mail
-                        $mail->setFrom($fromEmail);
-                        $mail->addAddress($toEmail);
-                        $mail->Subject = $subject;
-                        $mail->Body = $message;
-
-                        // Envia o e-mail
-                        if ($mail->send()) {
-                            echo 'E-mail enviado com sucesso.';
-                            header("Location: codValidacao.php");
-                        } else {
-                            echo 'Falha ao enviar o e-mail.';
-                        }
+                        return $codigo;
                     }
+
+                    // Definir tamanho do código
+                    $codigoAleatorio = gerarCodigo(4);
+
+
+                    // Preparar a query SQL
+
+                    $sql1 = "SELECT idUser FROM usuario WHERE dscEmailUser = '$email'";
+                    $result = $connect->query($sql1);
+                    if ($result->num_rows > 0) {
+                        $row = $result->fetch_assoc();
+                        $idUser = $row["idUser"];
+
+                        $sql2 = "INSERT INTO redsenha (codRedSenha, idUser) VALUES ('$codigoAleatorio', $idUser)";
+                        $result2 = $connect->query($sql2);
+                    }
+
+
+
+                    require_once "../mailer/SMTP.php";
+                    require_once "../mailer/PHPMailer.php";
+                    require_once "../mailer/Exception.php";
+
+                    // Configurações do servidor SMTP do Gmail
+                    $smtpHost = 'smtp.gmail.com';
+                    $smtpPort = 587;
+                    $smtpUsername = 'Inclusecorp@gmail.com';
+                    $smtpPassword = 'zcehagpsrwuxquem';
+
+                    // Configurações de e-mail
+                    $fromEmail = 'Inclusecorp@gmail.com';
+                    $toEmail = $email;
+                    $subject = 'Codigo redefinicao de senha';
+                    $message = 'Utilize o código a seguir para redefinir sua senha: ' . $codigoAleatorio;
+
+                    // Cria uma nova instância do PHPMailer
+                    $mail = new PHPMailer\PHPMailer\PHPMailer();
+
+                    // Configurações do servidor SMTP
+                    $mail->isSMTP();
+                    $mail->Host = $smtpHost;
+                    $mail->Port = $smtpPort;
+                    $mail->SMTPAuth = true;
+                    $mail->Username = $smtpUsername;
+                    $mail->Password = $smtpPassword;
+
+                    // Configurações do e-mail
+                    $mail->setFrom($fromEmail);
+                    $mail->addAddress($toEmail);
+                    $mail->Subject = $subject;
+                    $mail->Body = $message;
+
+                    // Envia o e-mail
+                    if ($mail->send()) {
+                        echo 'E-mail enviado com sucesso.';
+                        header("Location: codValidacao.php");
+                    } else {
+                        echo 'Falha ao enviar o e-mail.';
+                    }
+                }
                 ?>
             </p>
             <input class="button" type="submit" value="redefinir" name="redefinir">
         </form>
 
-        
+
     </section>
-    
+
 
 </body>
+
 </html>

@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -11,6 +12,7 @@
     <link rel="stylesheet" type="text/css" href="../css/styleindex.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
 </head>
+
 <body>
     <!-- codigo do menu  -->
     <nav class="divMenu">
@@ -19,11 +21,11 @@
                 <nav class="containerIconMenu">
                     <span class="material-symbols-outlined" onclick="clickMenu()" id="dropdown">menu</span>
                 </nav>
-            </li>    
+            </li>
             <li><a href="index.php" class="aplicafontelogo">Incluse.com</a></li>
-            
-        
-            
+
+
+
             <li class="liLogin">
                 <ul>
                     <li><input type="button" id="botaoCad" value="Cadastre-se" onclick="window.location='cadastro.php';"></li>
@@ -37,12 +39,12 @@
     <menu id="menu">
         <ul>
             <li><a href="criarperguntas.php">Criar Formulário</a></li>
-        </ul>   
+        </ul>
     </menu>
 
     <!-- menu flutuante -->
     <footer class="menuFlut">
-        <footer class="botMenuFlut" id="botFlut">    
+        <footer class="botMenuFlut" id="botFlut">
             <span class="material-symbols-outlined" id="add">add_circle</span>
             <span class="material-symbols-outlined" id="minus">do_not_disturb_on</span>
             <span class="material-symbols-outlined" id="color">contrast</span>
@@ -73,6 +75,7 @@
             </nav>
         </section>
     </section>
-    
+
 </body>
+
 </html>
