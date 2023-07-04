@@ -83,45 +83,44 @@ if ($resultado && mysqli_num_rows($resultado) > 0) {
     $dadosQuestao = mysqli_fetch_assoc($resultado);
     $dscTituloQuestn = $dadosQuestao['dscTituloQuestn'];
     $datCriacQuestn = $dadosQuestao['datCriacQuestn'];
-    $dscEmailUser = $dadosQuestao['dscEmailUser'];
-    $nomUser = $dadosQuestao['nomUser'];
-    $valNotUser = $dadosQuestao['valNotUser'];
 
+    echo '<div class="containerConteudo">';
+        echo '<div class="containerInfoForms bottom">';
+        echo "'<h1>$dscTituloQuestn</h1>'";
+            echo '<div class="divInfoForms">';
+            echo '<a>Criado em:</a>';
+            echo "<a>$datCriacQuestn</a>";
+            echo '</div>';
+        echo '</div>';
+
+
+        if ($resultado) {
+            while ($dadosQuestao = mysqli_fetch_assoc($resultado)) {
+                $dscEmailUser = $dadosQuestao['dscEmailUser'];
+                $nomUser = $dadosQuestao['nomUser'];
+                $valNotUser = $dadosQuestao['valNotUser'];
+
+                // <!-- lista de alunos -->
+
+                echo '<div class="divResult">';
+                    echo '<div class="divInfoAluno">';
+                        echo '<span id="school" class="material-symbols-outlined">school</span>';
+                        echo "<h2>$nomUser</h2>";
+                            echo '<div class="emailAcertos">';
+                                echo  '<div>';
+                                echo  '<a>Email: </a>';
+                                echo  "<a>$dscEmailUser</a>";
+                                echo  '</div>';
+                            echo '</div>';
+                        echo '<div class="porcent">';
+                        echo "<a>$valNotUser</a>";
+                        echo '</div>';
+                    echo '</div>';
+                echo  '</div>';
+            }
+    }
+    echo '</div>';
     ?>
-    <!-- CONTEUDO PAGINA -->
-    <div class="containerConteudo">
-
-
-        <!-- infos add forms -->
-        <div class="containerInfoForms bottom">
-            <!-- titulo pag -->
-            <h1><?php echo $dscTituloQuestn; ?></h1>
-            <div class="divInfoForms">
-                <a>Criado em:</a>
-                <a><?php echo $datCriacQuestn; ?></a>
-            </div>
-        </div>
-
-        <!-- lista de alunos -->
-
-        <div class="divResult">
-            <div class="divInfoAluno">
-                <span id="school" class="material-symbols-outlined">school</span>
-                <h2><?php echo $nomUser; ?></h2>
-                <div class="emailAcertos">
-                    <div>
-                        <a>Email:     </a>
-                        <a><?php echo $dscEmailUser; ?></a>
-                    </div>
-                </div>
-                <div class="porcent">
-                    <a><?php echo $valNotUser; ?></a>
-                </div>
-            </div>
-        </div>
-
-    </div>
-
 
 </body>
 
