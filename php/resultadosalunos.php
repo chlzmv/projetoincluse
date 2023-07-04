@@ -73,6 +73,21 @@ if ($resultado && mysqli_num_rows($resultado) > 0) {
         <span class="material-symbols-outlined" id="arrow" onclick="clickflut()">expand_circle_down</span>
     </div>
 
+    <?php
+    $idQuestn = filter_input(INPUT_GET, "idQuestn");
+    $sql = "SELECT quest.dscTituloQuestn, quest.datCriacQuestn, usu.dscEmailUser, usu.nomUser, usuquest.valNotUser 
+            FROM usuario usu JOIN questionario quest ON (usu.idUser = quest.idUser) 
+            JOIN usuarioquestn usuquest ON (quest.idQuestn = usuquest.idQuestn) 
+            WHERE quest.idQuestn = $idQuestn and usu.idUser = $idUser";
+    $resultado = mysqli_query($connect, $sql);
+    $dadosQuestao = mysqli_fetch_assoc($resultado);
+    $dscTituloQuestn = $dadosQuestao['dscTituloQuestn'];
+    $datCriacQuestn = $dadosQuestao['datCriacQuestn'];
+    $dscEmailUser = $dadosQuestao['dscEmailUser'];
+    $nomUser = $dadosQuestao['nomUser'];
+    $valNotUser = $dadosQuestao['valNotUser'];
+
+    ?>
     <!-- CONTEUDO PAGINA -->
     <div class="containerConteudo">
 
@@ -80,13 +95,10 @@ if ($resultado && mysqli_num_rows($resultado) > 0) {
         <!-- infos add forms -->
         <div class="containerInfoForms bottom">
             <!-- titulo pag -->
-            <h1>Título do Formulário</h1>
+            <h1><?php echo $dscTituloQuestn; ?></h1>
             <div class="divInfoForms">
                 <a>Criado em:</a>
-                <a>xx/xx/xxxx</a>
-                <a class="espace"></a>
-                <a>Concluídos:</a>
-                <a>xx/xx</a>
+                <a><?php echo $datCriacQuestn; ?></a>
             </div>
         </div>
 
@@ -95,19 +107,15 @@ if ($resultado && mysqli_num_rows($resultado) > 0) {
         <div class="divResult">
             <div class="divInfoAluno">
                 <span id="school" class="material-symbols-outlined">school</span>
-                <h2>Nome Aluno santos</h2>
+                <h2><?php echo $nomUser; ?></h2>
                 <div class="emailAcertos">
                     <div>
-                        <a>Email:</a>
-                        <a>nomesobrenome@email.com</a>
-                    </div>
-                    <div>
-                        <a>Acertos:</a>
-                        <a>xx/xx</a>
+                        <a>Email:     </a>
+                        <a><?php echo $dscEmailUser; ?></a>
                     </div>
                 </div>
                 <div class="porcent">
-                    <a>00%</a>
+                    <a><?php echo $valNotUser; ?></a>
                 </div>
             </div>
         </div>
