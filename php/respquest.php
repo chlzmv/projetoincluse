@@ -17,6 +17,10 @@ if ($resultado && mysqli_num_rows($resultado) > 0) {
 } else {
     $nomeUsuario = "Usuário Desconhecido";
 }
+
+$idUserLog = $idUser;
+$idQuestn = filter_input(INPUT_GET, "idQuestn");
+
 ?>
 
 <!DOCTYPE html>
@@ -67,13 +71,12 @@ if ($resultado && mysqli_num_rows($resultado) > 0) {
 
     <!-- codigo do conteudo -->
     <section class="divConteudo">
-        <form action="" method='post'>
+        <form action="resultadoquestionario.php?idQuestn=<?php echo $idQuestn;?>&idUserLog=<?php echo $idUserLog;?>" method='post'>
             <div class="containerInfoForms bottom">
                 <!-- titulo pag -->
                 <?php
                 include("dbconexao.php");
 
-                $idQuestn = filter_input(INPUT_GET, "idQuestn");
                 $sql = "SELECT idUser FROM questionario WHERE idQuestn=$idQuestn";
                 $result = mysqli_query($connect, $sql);
 
