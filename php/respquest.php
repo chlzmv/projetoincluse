@@ -34,7 +34,7 @@ if ($resultado && mysqli_num_rows($resultado) > 0) {
 </head>
 
 <body>
-    <!-- codigo do menu -->
+    <!-- codigo do menu  -->
     <nav class="divMenu">
         <ul>
             <li>
